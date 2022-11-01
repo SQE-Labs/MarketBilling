@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [MarketBilling]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="TestCases.TestBillRunWithNoCycle">
+        <methods>
+          <include name="SetProp"/>
+          <include name="setExtent"/>
+          <include name="endReport"/>
+          <include name="BillrunMethod_NoCycle"/>
+          <include name="tearDown"/>
+          <include name="BillRunWithNoCycle"/>
+        </methods>
+      </class> <!-- TestCases.TestBillRunWithNoCycle -->
+      <class name="TestCases.TestAddPlan">
+        <methods>
+          <include name="SetProp"/>
+          <include name="setExtent"/>
+          <include name="endReport"/>
+          <include name="tearDown"/>
+          <include name="Add_ProRated_Rates"/>
+          <include name="OtherPlan"/>
+          <include name="TouImport"/>
+        </methods>
+      </class> <!-- TestCases.TestAddPlan -->
+      <class name="TestCases.TestAddService">
+        <methods>
+          <include name="Service"/>
+          <include name="SetProp"/>
+          <include name="setExtent"/>
+          <include name="endReport"/>
+          <include name="tearDown"/>
+          <include name="AddMeter_MeterRegisterC"/>
+        </methods>
+      </class> <!-- TestCases.TestAddService -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [MarketBilling] -->

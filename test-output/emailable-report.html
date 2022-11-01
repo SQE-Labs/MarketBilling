@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">MarketBilling</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num attn">7</td><td class="num">553,789</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MarketBilling</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">TestCases.TestAddPlan</td><td><a href="#m0">Add_ProRated_Rates</a></td><td rowspan="1">1666867314719</td><td rowspan="1">10339</td></tr><tr class="failedeven"><td><a href="#m1">OtherPlan</a></td><td rowspan="1">1666867294147</td><td rowspan="1">20184</td></tr><tr class="failedeven"><td><a href="#m2">TouImport</a></td><td rowspan="1">1666867164029</td><td rowspan="1">21756</td></tr><tr class="failedodd"><td rowspan="2">TestCases.TestAddService</td><td><a href="#m3">AddMeter_MeterRegisterC</a></td><td rowspan="1">1666867686567</td><td rowspan="1">12054</td></tr><tr class="failedodd"><td><a href="#m4">Service</a></td><td rowspan="1">1666867464013</td><td rowspan="1">115766</td></tr><tr class="failedeven"><td rowspan="2">TestCases.TestBillRunWithNoCycle</td><td><a href="#m5">BillRunWithNoCycle</a></td><td rowspan="1">1666867325497</td><td rowspan="1">11</td></tr><tr class="failedeven"><td><a href="#m6">BillrunMethod_NoCycle</a></td><td rowspan="1">1666867325986</td><td rowspan="1">1426</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">TestCases.TestAddPlan</td><td><a href="#m7">AddPlanwithoutTOUDefinition</a></td><td rowspan="1">1666867186102</td><td rowspan="1">45686</td></tr><tr class="passedeven"><td><a href="#m8">PlanwithDemandTOUdefinition_Network_and_Retail_Trf</a></td><td rowspan="1">1666867268932</td><td rowspan="1">25212</td></tr><tr class="passedeven"><td><a href="#m9">PlanwithTOUDefinition_Network_and_Retail_Trf</a></td><td rowspan="1">1666867231793</td><td rowspan="1">37131</td></tr><tr class="passedodd"><td rowspan="4">TestCases.TestAddService</td><td><a href="#m10">BAddMeter_MeterRegister</a></td><td rowspan="1">1666867618400</td><td rowspan="1">68163</td></tr><tr class="passedodd"><td><a href="#m11">EditSecondService</a></td><td rowspan="1">1666867609489</td><td rowspan="1">8908</td></tr><tr class="passedodd"><td><a href="#m12">EditThirdService</a></td><td rowspan="1">1666867698964</td><td rowspan="1">11727</td></tr><tr class="passedodd"><td><a href="#m13">SecondService</a></td><td rowspan="1">1666867580150</td><td rowspan="1">29336</td></tr><tr class="passedeven"><td rowspan="3">TestCases.TestCustomers</td><td><a href="#m14">Customer</a></td><td rowspan="1">1666867327910</td><td rowspan="1">55291</td></tr><tr class="passedeven"><td><a href="#m15">SecondCustomer</a></td><td rowspan="1">1666867383203</td><td rowspan="1">39532</td></tr><tr class="passedeven"><td><a href="#m16">ThirdCustomer</a></td><td rowspan="1">1666867422738</td><td rowspan="1">41272</td></tr><tr class="passedodd"><td rowspan="1">TestCases.TestLogin</td><td><a href="#m17">ValidLogin</a></td><td rowspan="1">1666867156963</td><td rowspan="1">7039</td></tr></tbody>
+</table>
+<h2>Test</h2><h3 id="m0">TestCases.TestAddPlan#Add_ProRated_Rates</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class=&apos;dataTables_filter&apos;]/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+	at POM.Flow2_3AddTOUFileAndPlan$Plans.Add_ProRated_Rates(Flow2_3AddTOUFileAndPlan.java:490)
+	at TestCases.TestAddPlan.Add_ProRated_Rates(TestAddPlan.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestCases.TestAddPlan#OtherPlan</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id=&apos;unit-type&apos;]/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+	at POM.Flow2_3AddTOUFileAndPlan$Plans.OtherPlan(Flow2_3AddTOUFileAndPlan.java:456)
+	at TestCases.TestAddPlan.OtherPlan(TestAddPlan.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: (//*[@id=&apos;unit-type&apos;]/option)[2]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 31 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestCases.TestAddPlan#TouImport</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;alert alert-success&apos;]/strong (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.GetText(WebDriverWaits.java:65)
+	at POM.Flow2_3AddTOUFileAndPlan$TouImport.TOUImportFile(Flow2_3AddTOUFileAndPlan.java:61)
+	at TestCases.TestAddPlan.TouImport(TestAddPlan.java:14)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@class=&apos;alert alert-success&apos;]/strong
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 31 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestCases.TestAddService#AddMeter_MeterRegisterC</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;element&quot; is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+	at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+	at POM.Flow6_7AddingServiceAndMeter$X_AddService.AddMeter_MeterRegisterC(Flow6_7AddingServiceAndMeter.java:382)
+	at TestCases.TestAddService.AddMeter_MeterRegisterC(TestAddService.java:69)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestCases.TestAddService#Service</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;element&quot; is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+	at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+	at POM.Flow6_7AddingServiceAndMeter$X_AddService.Service_MeterR(Flow6_7AddingServiceAndMeter.java:177)
+	at TestCases.TestAddService.Service(TestAddService.java:12)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">TestCases.TestBillRunWithNoCycle#BillRunWithNoCycle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method AddMeter_MeterRegisterR() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
+
+	at POM.Flow4_BillRunWithNoCycle.BillRunWithNoCycle(Flow4_BillRunWithNoCycle.java:24)
+	at TestCases.TestBillRunWithNoCycle.BillRunWithNoCycle(TestBillRunWithNoCycle.java:14)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">TestCases.TestBillRunWithNoCycle#BillrunMethod_NoCycle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;i class=&quot;icon-tasks&quot;&gt;&lt;/i&gt; is not clickable at point (401, 38). Other element would receive the click: &lt;div class=&quot;modal fade  in&quot; id=&quot;createTariffPopup&quot; role=&quot;dialog&quot; style=&quot;display: block;&quot; aria-hidden=&quot;false&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=107.0.5304.63)
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:44)
+	at POM.Flow4_BillRunWithNoCycle$Billrun.BillrunMethod_NoCycle(Flow4_BillRunWithNoCycle.java:54)
+	at TestCases.TestBillRunWithNoCycle.BillrunMethod_NoCycle(TestBillRunWithNoCycle.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">TestCases.TestAddPlan#AddPlanwithoutTOUDefinition</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">TestCases.TestAddPlan#PlanwithDemandTOUdefinition_Network_and_Retail_Trf</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">TestCases.TestAddPlan#PlanwithTOUDefinition_Network_and_Retail_Trf</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">TestCases.TestAddService#BAddMeter_MeterRegister</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">TestCases.TestAddService#EditSecondService</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">TestCases.TestAddService#EditThirdService</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">TestCases.TestAddService#SecondService</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">TestCases.TestCustomers#Customer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">TestCases.TestCustomers#SecondCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">TestCases.TestCustomers#ThirdCustomer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">TestCases.TestLogin#ValidLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

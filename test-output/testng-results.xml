@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="17" total="35" passed="11" failed="7" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-27T16:09:16 IST" name="MarketBilling" finished-at="2022-10-27T16:18:30 IST" duration-ms="553789">
+    <groups>
+    </groups>
+    <test started-at="2022-10-27T16:09:16 IST" name="Test" finished-at="2022-10-27T16:18:30 IST" duration-ms="553789">
+      <class name="TestCases.TestBillRunWithNoCycle">
+        <test-method signature="BillRunWithNoCycle()[pri:1, instance:TestCases.TestBillRunWithNoCycle@6e535154]" started-at="2022-10-27T16:12:05 IST" name="BillRunWithNoCycle" finished-at="2022-10-27T16:12:05 IST" duration-ms="11" status="FAIL">
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Unresolved compilation problem: 
+The method AddMeter_MeterRegisterR() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+The method AddMeter_MeterRegisterR() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
+
+at POM.Flow4_BillRunWithNoCycle.BillRunWithNoCycle(Flow4_BillRunWithNoCycle.java:24)
+at TestCases.TestBillRunWithNoCycle.BillRunWithNoCycle(TestBillRunWithNoCycle.java:14)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BillRunWithNoCycle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestBillRunWithNoCycle@6e535154]" started-at="2022-10-27T16:12:05 IST" name="tearDown" finished-at="2022-10-27T16:12:05 IST" duration-ms="473" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BillRunWithNoCycle status=FAILURE method=TestBillRunWithNoCycle.BillRunWithNoCycle()[pri:1, instance:TestCases.TestBillRunWithNoCycle@6e535154] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="BillrunMethod_NoCycle()[pri:2, instance:TestCases.TestBillRunWithNoCycle@6e535154]" started-at="2022-10-27T16:12:05 IST" name="BillrunMethod_NoCycle" finished-at="2022-10-27T16:12:07 IST" duration-ms="1426" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[element click intercepted: Element <i class="icon-tasks"></i> is not clickable at point (401, 38). Other element would receive the click: <div class="modal fade  in" id="createTariffPopup" role="dialog" style="display: block;" aria-hidden="false">...</div>
+  (Session info: chrome=107.0.5304.63)
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: element click intercepted: Element <i class="icon-tasks"></i> is not clickable at point (401, 38). Other element would receive the click: <div class="modal fade  in" id="createTariffPopup" role="dialog" style="display: block;" aria-hidden="false">...</div>
+  (Session info: chrome=107.0.5304.63)
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:44)
+at POM.Flow4_BillRunWithNoCycle$Billrun.BillrunMethod_NoCycle(Flow4_BillRunWithNoCycle.java:54)
+at TestCases.TestBillRunWithNoCycle.BillrunMethod_NoCycle(TestBillRunWithNoCycle.java:22)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BillrunMethod_NoCycle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestBillRunWithNoCycle@6e535154]" started-at="2022-10-27T16:12:07 IST" name="tearDown" finished-at="2022-10-27T16:12:07 IST" duration-ms="493" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BillrunMethod_NoCycle status=FAILURE method=TestBillRunWithNoCycle.BillrunMethod_NoCycle()[pri:2, instance:TestCases.TestBillRunWithNoCycle@6e535154] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.TestBillRunWithNoCycle -->
+      <class name="TestCases.TestCustomers">
+        <test-method signature="Customer()[pri:1, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:12:07 IST" name="Customer" finished-at="2022-10-27T16:13:03 IST" duration-ms="55291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Customer -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:13:03 IST" name="tearDown" finished-at="2022-10-27T16:13:03 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Customer status=SUCCESS method=TestCustomers.Customer()[pri:1, instance:TestCases.TestCustomers@5b38c1ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="SecondCustomer()[pri:2, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:13:03 IST" name="SecondCustomer" finished-at="2022-10-27T16:13:42 IST" duration-ms="39532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondCustomer -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:13:42 IST" name="tearDown" finished-at="2022-10-27T16:13:42 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SecondCustomer status=SUCCESS method=TestCustomers.SecondCustomer()[pri:2, instance:TestCases.TestCustomers@5b38c1ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="ThirdCustomer()[pri:3, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:13:42 IST" name="ThirdCustomer" finished-at="2022-10-27T16:14:24 IST" duration-ms="41272" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ThirdCustomer -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestCustomers@5b38c1ec]" started-at="2022-10-27T16:14:24 IST" name="tearDown" finished-at="2022-10-27T16:14:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ThirdCustomer status=SUCCESS method=TestCustomers.ThirdCustomer()[pri:3, instance:TestCases.TestCustomers@5b38c1ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.TestCustomers -->
+      <class name="TestCases.TestAddPlan">
+        <test-method signature="TouImport()[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:09:24 IST" name="TouImport" finished-at="2022-10-27T16:09:45 IST" duration-ms="21756" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='alert alert-success']/strong (tried for 10 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='alert alert-success']/strong (tried for 10 second(s) with 500 MILLISECONDS interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+at CommonMethods.WebDriverWaits.GetText(WebDriverWaits.java:65)
+at POM.Flow2_3AddTOUFileAndPlan$TouImport.TOUImportFile(Flow2_3AddTOUFileAndPlan.java:61)
+at TestCases.TestAddPlan.TouImport(TestAddPlan.java:14)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@class='alert alert-success']/strong
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TouImport -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:09:45 IST" name="tearDown" finished-at="2022-10-27T16:09:46 IST" duration-ms="302" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TouImport status=FAILURE method=TestAddPlan.TouImport()[pri:0, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="AddPlanwithoutTOUDefinition()[pri:1, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:09:46 IST" name="AddPlanwithoutTOUDefinition" finished-at="2022-10-27T16:10:31 IST" duration-ms="45686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddPlanwithoutTOUDefinition -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:10:31 IST" name="tearDown" finished-at="2022-10-27T16:10:31 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddPlanwithoutTOUDefinition status=SUCCESS method=TestAddPlan.AddPlanwithoutTOUDefinition()[pri:1, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="PlanwithTOUDefinition_Network_and_Retail_Trf()[pri:2, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:10:31 IST" name="PlanwithTOUDefinition_Network_and_Retail_Trf" finished-at="2022-10-27T16:11:08 IST" duration-ms="37131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlanwithTOUDefinition_Network_and_Retail_Trf -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:08 IST" name="tearDown" finished-at="2022-10-27T16:11:08 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PlanwithTOUDefinition_Network_and_Retail_Trf status=SUCCESS method=TestAddPlan.PlanwithTOUDefinition_Network_and_Retail_Trf()[pri:2, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="PlanwithDemandTOUdefinition_Network_and_Retail_Trf()[pri:3, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:08 IST" name="PlanwithDemandTOUdefinition_Network_and_Retail_Trf" finished-at="2022-10-27T16:11:34 IST" duration-ms="25212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlanwithDemandTOUdefinition_Network_and_Retail_Trf -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:34 IST" name="tearDown" finished-at="2022-10-27T16:11:34 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PlanwithDemandTOUdefinition_Network_and_Retail_Trf status=SUCCESS method=TestAddPlan.PlanwithDemandTOUdefinition_Network_and_Retail_Trf()[pri:3, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="OtherPlan()[pri:4, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:34 IST" name="OtherPlan" finished-at="2022-10-27T16:11:54 IST" duration-ms="20184" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id='unit-type']/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id='unit-type']/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+at POM.Flow2_3AddTOUFileAndPlan$Plans.OtherPlan(Flow2_3AddTOUFileAndPlan.java:456)
+at TestCases.TestAddPlan.OtherPlan(TestAddPlan.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: (//*[@id='unit-type']/option)[2]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OtherPlan -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:54 IST" name="tearDown" finished-at="2022-10-27T16:11:54 IST" duration-ms="383" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OtherPlan status=FAILURE method=TestAddPlan.OtherPlan()[pri:4, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="Add_ProRated_Rates()[pri:5, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:11:54 IST" name="Add_ProRated_Rates" finished-at="2022-10-27T16:12:05 IST" duration-ms="10339" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class='dataTables_filter']/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class='dataTables_filter']/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.25', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+at POM.Flow2_3AddTOUFileAndPlan$Plans.Add_ProRated_Rates(Flow2_3AddTOUFileAndPlan.java:490)
+at TestCases.TestAddPlan.Add_ProRated_Rates(TestAddPlan.java:50)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_ProRated_Rates -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddPlan@3cce5371]" started-at="2022-10-27T16:12:05 IST" name="tearDown" finished-at="2022-10-27T16:12:05 IST" duration-ms="433" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Add_ProRated_Rates status=FAILURE method=TestAddPlan.Add_ProRated_Rates()[pri:5, instance:TestCases.TestAddPlan@3cce5371] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.TestAddPlan -->
+      <class name="TestCases.TestAddService">
+        <test-method signature="Service()[pri:1, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:14:24 IST" name="Service" finished-at="2022-10-27T16:16:19 IST" duration-ms="115766" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+at POM.Flow6_7AddingServiceAndMeter$X_AddService.Service_MeterR(Flow6_7AddingServiceAndMeter.java:177)
+at TestCases.TestAddService.Service(TestAddService.java:12)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Service -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:19 IST" name="tearDown" finished-at="2022-10-27T16:16:20 IST" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Service status=FAILURE method=TestAddService.Service()[pri:1, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="SecondService()[pri:4, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:20 IST" name="SecondService" finished-at="2022-10-27T16:16:49 IST" duration-ms="29336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondService -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:49 IST" name="tearDown" finished-at="2022-10-27T16:16:49 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SecondService status=SUCCESS method=TestAddService.SecondService()[pri:4, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="EditSecondService()[pri:5, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:49 IST" name="EditSecondService" finished-at="2022-10-27T16:16:58 IST" duration-ms="8908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditSecondService -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:58 IST" name="tearDown" finished-at="2022-10-27T16:16:58 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EditSecondService status=SUCCESS method=TestAddService.EditSecondService()[pri:5, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="BAddMeter_MeterRegister()[pri:6, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:16:58 IST" name="BAddMeter_MeterRegister" finished-at="2022-10-27T16:18:06 IST" duration-ms="68163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BAddMeter_MeterRegister -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:18:06 IST" name="tearDown" finished-at="2022-10-27T16:18:06 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=BAddMeter_MeterRegister status=SUCCESS method=TestAddService.BAddMeter_MeterRegister()[pri:6, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="AddMeter_MeterRegisterC()[pri:7, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:18:06 IST" name="AddMeter_MeterRegisterC" finished-at="2022-10-27T16:18:18 IST" duration-ms="12054" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+at POM.Flow6_7AddingServiceAndMeter$X_AddService.AddMeter_MeterRegisterC(Flow6_7AddingServiceAndMeter.java:382)
+at TestCases.TestAddService.AddMeter_MeterRegisterC(TestAddService.java:69)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddMeter_MeterRegisterC -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:18:18 IST" name="tearDown" finished-at="2022-10-27T16:18:18 IST" duration-ms="339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddMeter_MeterRegisterC status=FAILURE method=TestAddService.AddMeter_MeterRegisterC()[pri:7, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="EditThirdService()[pri:7, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:18:18 IST" name="EditThirdService" finished-at="2022-10-27T16:18:30 IST" duration-ms="11727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditThirdService -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestAddService@4722ef0c]" started-at="2022-10-27T16:18:30 IST" name="tearDown" finished-at="2022-10-27T16:18:30 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EditThirdService status=SUCCESS method=TestAddService.EditThirdService()[pri:7, instance:TestCases.TestAddService@4722ef0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.TestAddService -->
+      <class name="TestCases.TestLogin">
+        <test-method is-config="true" signature="SetProp()[pri:0, instance:TestCases.TestLogin@2ab4bc72]" started-at="2022-10-27T16:09:07 IST" name="SetProp" finished-at="2022-10-27T16:09:16 IST" duration-ms="8993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetProp -->
+        <test-method is-config="true" signature="setExtent()[pri:0, instance:TestCases.TestLogin@2ab4bc72]" started-at="2022-10-27T16:09:16 IST" name="setExtent" finished-at="2022-10-27T16:09:16 IST" depends-on-methods="BrowsersBase.BrowsersInvoked.SetProp" duration-ms="325" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtent -->
+        <test-method signature="ValidLogin()[pri:0, instance:TestCases.TestLogin@2ab4bc72]" started-at="2022-10-27T16:09:16 IST" name="ValidLogin" finished-at="2022-10-27T16:09:24 IST" duration-ms="7039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidLogin -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCases.TestLogin@2ab4bc72]" started-at="2022-10-27T16:09:24 IST" name="tearDown" finished-at="2022-10-27T16:09:24 IST" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ValidLogin status=SUCCESS method=TestLogin.ValidLogin()[pri:0, instance:TestCases.TestLogin@2ab4bc72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:TestCases.TestLogin@2ab4bc72]" started-at="2022-10-27T16:18:30 IST" name="endReport" finished-at="2022-10-27T16:18:31 IST" duration-ms="828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- TestCases.TestLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- MarketBilling -->
+</testng-results>

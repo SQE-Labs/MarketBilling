@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 7 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-MarketBilling" class="navigator-link">
+              <span class="suite-name border-failed">MarketBilling</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-MarketBilling" class="navigator-link ">
+                    <span>C:\Users\SQE Labs\Documents\MarketBillingFramework\MarketBillingFramework\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-MarketBilling" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-MarketBilling" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-MarketBilling" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-MarketBilling" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-MarketBilling" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-MarketBilling" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">18 methods, 7 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-MarketBilling" class="hide-methods failed suite-MarketBilling"> (hide)</a> <!-- hide-methods failed suite-MarketBilling -->
+                      <a href="#" panel-name="suite-MarketBilling" class="show-methods failed suite-MarketBilling"> (show)</a> <!-- show-methods failed suite-MarketBilling -->
+                    </span>
+                    <div class="method-list-content failed suite-MarketBilling">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="AddMeter_MeterRegisterC">AddMeter_MeterRegisterC</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="Add_ProRated_Rates">Add_ProRated_Rates</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestBillRunWithNoCycle" class="method navigator-link" hash-for-method="BillRunWithNoCycle">BillRunWithNoCycle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestBillRunWithNoCycle" class="method navigator-link" hash-for-method="BillrunMethod_NoCycle">BillrunMethod_NoCycle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="OtherPlan">OtherPlan</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="Service">Service</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="TouImport">TouImport</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-MarketBilling -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-MarketBilling" class="hide-methods passed suite-MarketBilling"> (hide)</a> <!-- hide-methods passed suite-MarketBilling -->
+                      <a href="#" panel-name="suite-MarketBilling" class="show-methods passed suite-MarketBilling"> (show)</a> <!-- show-methods passed suite-MarketBilling -->
+                    </span>
+                    <div class="method-list-content passed suite-MarketBilling">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="AddPlanwithoutTOUDefinition">AddPlanwithoutTOUDefinition</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="BAddMeter_MeterRegister">BAddMeter_MeterRegister</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestCustomers" class="method navigator-link" hash-for-method="Customer">Customer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="EditSecondService">EditSecondService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="EditThirdService">EditThirdService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="PlanwithDemandTOUdefinition_Network_and_Retail_Trf">PlanwithDemandTOUdefinition_Network_and_Retail_Trf</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddPlan" class="method navigator-link" hash-for-method="PlanwithTOUDefinition_Network_and_Retail_Trf">PlanwithTOUDefinition_Network_and_Retail_Trf</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestCustomers" class="method navigator-link" hash-for-method="SecondCustomer">SecondCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestAddService" class="method navigator-link" hash-for-method="SecondService">SecondService</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestCustomers" class="method navigator-link" hash-for-method="ThirdCustomer">ThirdCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-MarketBilling" title="TestCases.TestLogin" class="method navigator-link" hash-for-method="ValidLogin">ValidLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-MarketBilling -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-MarketBilling" class="panel MarketBilling">
+          <div class="suite-MarketBilling-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.TestAddPlan</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Add_ProRated_Rates">
+                  </a> <!-- Add_ProRated_Rates -->
+                  <span class="method-name">Add_ProRated_Rates</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class=&apos;dataTables_filter&apos;]/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+	at POM.Flow2_3AddTOUFileAndPlan$Plans.Add_ProRated_Rates(Flow2_3AddTOUFileAndPlan.java:490)
+	at TestCases.TestAddPlan.Add_ProRated_Rates(TestAddPlan.java:50)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="OtherPlan">
+                  </a> <!-- OtherPlan -->
+                  <span class="method-name">OtherPlan</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id=&apos;unit-type&apos;]/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
+	at POM.Flow2_3AddTOUFileAndPlan$Plans.OtherPlan(Flow2_3AddTOUFileAndPlan.java:456)
+	at TestCases.TestAddPlan.OtherPlan(TestAddPlan.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: (//*[@id=&apos;unit-type&apos;]/option)[2]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 31 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TouImport">
+                  </a> <!-- TouImport -->
+                  <span class="method-name">TouImport</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;alert alert-success&apos;]/strong (tried for 10 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at CommonMethods.WebDriverWaits.GetText(WebDriverWaits.java:65)
+	at POM.Flow2_3AddTOUFileAndPlan$TouImport.TOUImportFile(Flow2_3AddTOUFileAndPlan.java:61)
+	at TestCases.TestAddPlan.TouImport(TestAddPlan.java:14)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@class=&apos;alert alert-success&apos;]/strong
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:883)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:882)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 31 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-failed -->
+          <div class="suite-MarketBilling-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.TestBillRunWithNoCycle</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BillRunWithNoCycle">
+                  </a> <!-- BillRunWithNoCycle -->
+                  <span class="method-name">BillRunWithNoCycle</span>
+                  <div class="stack-trace">java.lang.Error: Unresolved compilation problem: 
+	The method AddMeter_MeterRegisterR() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
+
+	at POM.Flow4_BillRunWithNoCycle.BillRunWithNoCycle(Flow4_BillRunWithNoCycle.java:24)
+	at TestCases.TestBillRunWithNoCycle.BillRunWithNoCycle(TestBillRunWithNoCycle.java:14)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="BillrunMethod_NoCycle">
+                  </a> <!-- BillrunMethod_NoCycle -->
+                  <span class="method-name">BillrunMethod_NoCycle</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: element click intercepted: Element &lt;i class=&quot;icon-tasks&quot;&gt;&lt;/i&gt; is not clickable at point (401, 38). Other element would receive the click: &lt;div class=&quot;modal fade  in&quot; id=&quot;createTariffPopup&quot; role=&quot;dialog&quot; style=&quot;display: block;&quot; aria-hidden=&quot;false&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=107.0.5304.63)
+Build info: version: &apos;3.5.3&apos;, revision: &apos;a88d25fe6b&apos;, time: &apos;2017-08-29T12:42:44.417Z&apos;
+System info: host: &apos;DESKTOP-881C30Q&apos;, ip: &apos;192.168.1.25&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir4752_641801057}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:60127}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.63, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
+Session ID: 58ed140d5f16035c0d757092fba1eee5
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+	at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:44)
+	at POM.Flow4_BillRunWithNoCycle$Billrun.BillrunMethod_NoCycle(Flow4_BillRunWithNoCycle.java:54)
+	at TestCases.TestBillRunWithNoCycle.BillrunMethod_NoCycle(TestBillRunWithNoCycle.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-failed -->
+          <div class="suite-MarketBilling-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.TestAddService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddMeter_MeterRegisterC">
+                  </a> <!-- AddMeter_MeterRegisterC -->
+                  <span class="method-name">AddMeter_MeterRegisterC</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;element&quot; is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+	at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+	at POM.Flow6_7AddingServiceAndMeter$X_AddService.AddMeter_MeterRegisterC(Flow6_7AddingServiceAndMeter.java:382)
+	at TestCases.TestAddService.AddMeter_MeterRegisterC(TestAddService.java:69)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Service">
+                  </a> <!-- Service -->
+                  <span class="method-name">Service</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;element&quot; is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:673)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:669)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	at CommonMethods.WebDriverWaits.ClickOnWE(WebDriverWaits.java:52)
+	at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:454)
+	at POM.Flow6_7AddingServiceAndMeter$X_AddService.Service_MeterR(Flow6_7AddingServiceAndMeter.java:177)
+	at TestCases.TestAddService.Service(TestAddService.java:12)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-failed -->
+          <div class="suite-MarketBilling-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.TestAddPlan</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddPlanwithoutTOUDefinition">
+                  </a> <!-- AddPlanwithoutTOUDefinition -->
+                  <span class="method-name">AddPlanwithoutTOUDefinition</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PlanwithDemandTOUdefinition_Network_and_Retail_Trf">
+                  </a> <!-- PlanwithDemandTOUdefinition_Network_and_Retail_Trf -->
+                  <span class="method-name">PlanwithDemandTOUdefinition_Network_and_Retail_Trf</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PlanwithTOUDefinition_Network_and_Retail_Trf">
+                  </a> <!-- PlanwithTOUDefinition_Network_and_Retail_Trf -->
+                  <span class="method-name">PlanwithTOUDefinition_Network_and_Retail_Trf</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-passed -->
+          <div class="suite-MarketBilling-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.TestLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ValidLogin">
+                  </a> <!-- ValidLogin -->
+                  <span class="method-name">ValidLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-passed -->
+          <div class="suite-MarketBilling-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.TestCustomers</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Customer">
+                  </a> <!-- Customer -->
+                  <span class="method-name">Customer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SecondCustomer">
+                  </a> <!-- SecondCustomer -->
+                  <span class="method-name">SecondCustomer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ThirdCustomer">
+                  </a> <!-- ThirdCustomer -->
+                  <span class="method-name">ThirdCustomer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-passed -->
+          <div class="suite-MarketBilling-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.TestAddService</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BAddMeter_MeterRegister">
+                  </a> <!-- BAddMeter_MeterRegister -->
+                  <span class="method-name">BAddMeter_MeterRegister</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="EditSecondService">
+                  </a> <!-- EditSecondService -->
+                  <span class="method-name">EditSecondService</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="EditThirdService">
+                  </a> <!-- EditThirdService -->
+                  <span class="method-name">EditThirdService</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SecondService">
+                  </a> <!-- SecondService -->
+                  <span class="method-name">SecondService</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MarketBilling-class-passed -->
+        </div> <!-- panel MarketBilling -->
+        <div panel-name="test-xml-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\SQE Labs\Documents\MarketBillingFramework\MarketBillingFramework\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;MarketBilling&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;TestCases.TestLogin&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;ValidLogin&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.TestLogin --&gt;
+      &lt;class name=&quot;TestCases.TestAddPlan&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;TouImport&quot;/&gt;
+          &lt;include name=&quot;AddPlanwithoutTOUDefinition&quot;/&gt;
+          &lt;include name=&quot;PlanwithTOUDefinition_Network_and_Retail_Trf&quot;/&gt;
+          &lt;include name=&quot;PlanwithDemandTOUdefinition_Network_and_Retail_Trf&quot;/&gt;
+          &lt;include name=&quot;PlanwithDemandTOUdefinition_Network_and_Retail_Trf&quot;/&gt;
+          &lt;include name=&quot;OtherPlan&quot;/&gt;
+          &lt;include name=&quot;Add_ProRated_Rates&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.TestAddPlan --&gt;
+      &lt;class name=&quot;TestCases.TestBillRunWithNoCycle&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;BillRunWithNoCycle&quot;/&gt;
+          &lt;include name=&quot;BillrunMethod_NoCycle&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.TestBillRunWithNoCycle --&gt;
+      &lt;class name=&quot;TestCases.TestCustomers&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;Customer&quot;/&gt;
+          &lt;include name=&quot;SecondCustomer&quot;/&gt;
+          &lt;include name=&quot;ThirdCustomer&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.TestCustomers --&gt;
+      &lt;class name=&quot;TestCases.TestAddService&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;Service&quot;/&gt;
+          &lt;include name=&quot;SecondService&quot;/&gt;
+          &lt;include name=&quot;EditSecondService&quot;/&gt;
+          &lt;include name=&quot;BAddMeter_MeterRegister&quot;/&gt;
+          &lt;include name=&quot;ThirdService&quot;/&gt;
+          &lt;include name=&quot;EditThirdService&quot;/&gt;
+          &lt;include name=&quot;AddMeter_MeterRegisterC&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- TestCases.TestAddService --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- MarketBilling --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for MarketBilling</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (5 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for MarketBilling</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for MarketBilling</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_MarketBilling');
+function tableData_MarketBilling() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(18);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Service')
+data.setCell(0, 2, 'TestCases.TestAddService')
+data.setCell(0, 3, 115766);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'BAddMeter_MeterRegister')
+data.setCell(1, 2, 'TestCases.TestAddService')
+data.setCell(1, 3, 68163);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Customer')
+data.setCell(2, 2, 'TestCases.TestCustomers')
+data.setCell(2, 3, 55291);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'AddPlanwithoutTOUDefinition')
+data.setCell(3, 2, 'TestCases.TestAddPlan')
+data.setCell(3, 3, 45686);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'ThirdCustomer')
+data.setCell(4, 2, 'TestCases.TestCustomers')
+data.setCell(4, 3, 41272);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'SecondCustomer')
+data.setCell(5, 2, 'TestCases.TestCustomers')
+data.setCell(5, 3, 39532);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'PlanwithTOUDefinition_Network_and_Retail_Trf')
+data.setCell(6, 2, 'TestCases.TestAddPlan')
+data.setCell(6, 3, 37131);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'SecondService')
+data.setCell(7, 2, 'TestCases.TestAddService')
+data.setCell(7, 3, 29336);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'PlanwithDemandTOUdefinition_Network_and_Retail_Trf')
+data.setCell(8, 2, 'TestCases.TestAddPlan')
+data.setCell(8, 3, 25212);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'TouImport')
+data.setCell(9, 2, 'TestCases.TestAddPlan')
+data.setCell(9, 3, 21756);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'OtherPlan')
+data.setCell(10, 2, 'TestCases.TestAddPlan')
+data.setCell(10, 3, 20184);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'AddMeter_MeterRegisterC')
+data.setCell(11, 2, 'TestCases.TestAddService')
+data.setCell(11, 3, 12054);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'EditThirdService')
+data.setCell(12, 2, 'TestCases.TestAddService')
+data.setCell(12, 3, 11727);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'Add_ProRated_Rates')
+data.setCell(13, 2, 'TestCases.TestAddPlan')
+data.setCell(13, 3, 10339);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'EditSecondService')
+data.setCell(14, 2, 'TestCases.TestAddService')
+data.setCell(14, 3, 8908);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'ValidLogin')
+data.setCell(15, 2, 'TestCases.TestLogin')
+data.setCell(15, 3, 7039);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'BillrunMethod_NoCycle')
+data.setCell(16, 2, 'TestCases.TestBillRunWithNoCycle')
+data.setCell(16, 3, 1426);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'BillRunWithNoCycle')
+data.setCell(17, 2, 'TestCases.TestBillRunWithNoCycle')
+data.setCell(17, 3, 11);
+window.suiteTableData['MarketBilling']= { tableData: data, tableDiv: 'times-div-MarketBilling'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 9 minutes</span>
+              <div id="times-div-MarketBilling">
+              </div> <!-- times-div-MarketBilling -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for MarketBilling</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">17 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.TestBillRunWithNoCycle</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">SetProp</span>
+                <br/>
+                <span class="ignored-method-name">setExtent</span>
+                <br/>
+                <span class="ignored-method-name">endReport</span>
+                <br/>
+                <span class="ignored-method-name">ValidLogin</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.TestAddPlan</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">SetProp</span>
+                <br/>
+                <span class="ignored-method-name">setExtent</span>
+                <br/>
+                <span class="ignored-method-name">endReport</span>
+                <br/>
+                <span class="ignored-method-name">ValidLogin</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.TestCustomers</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">SetProp</span>
+                <br/>
+                <span class="ignored-method-name">setExtent</span>
+                <br/>
+                <span class="ignored-method-name">endReport</span>
+                <br/>
+                <span class="ignored-method-name">ValidLogin</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.TestAddService</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">SetProp</span>
+                <br/>
+                <span class="ignored-method-name">setExtent</span>
+                <br/>
+                <span class="ignored-method-name">endReport</span>
+                <br/>
+                <span class="ignored-method-name">AddThirdService</span>
+                <br/>
+                <span class="ignored-method-name">ValidLogin</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-MarketBilling" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestLogin</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">SetProp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">setExtent</span>
+                <span class="method-start">8994 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="test-method">
+                <span class="method-name">ValidLogin</span>
+                <span class="method-start">9376 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=ValidLogin status=SUCCESS method=TestLogin.ValidLogin()[pri:0, instance:TestCases.T...)</span>
+                <span class="method-start">16421 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestAddPlan</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TouImport</span>
+                <span class="method-start">16442 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=TouImport status=FAILURE method=TestAddPlan.TouImport()[pri:0, instance:TestCases.T...)</span>
+                <span class="method-start">38212 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">AddPlanwithoutTOUDefinition</span>
+                <span class="method-start">38515 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=AddPlanwithoutTOUDefinition status=SUCCESS method=TestAddPlan.AddPlanwithoutTOUDefi...)</span>
+                <span class="method-start">84204 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">PlanwithTOUDefinition_Network_and_Retail_Trf</span>
+                <span class="method-start">84206 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=PlanwithTOUDefinition_Network_and_Retail_Trf status=SUCCESS method=TestAddPlan.Plan...)</span>
+                <span class="method-start">121341 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">PlanwithDemandTOUdefinition_Network_and_Retail_Trf</span>
+                <span class="method-start">121345 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=PlanwithDemandTOUdefinition_Network_and_Retail_Trf status=SUCCESS method=TestAddPla...)</span>
+                <span class="method-start">146558 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">OtherPlan</span>
+                <span class="method-start">146560 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=OtherPlan status=FAILURE method=TestAddPlan.OtherPlan()[pri:4, instance:TestCases.T...)</span>
+                <span class="method-start">166748 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Add_ProRated_Rates</span>
+                <span class="method-start">167132 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=Add_ProRated_Rates status=FAILURE method=TestAddPlan.Add_ProRated_Rates()[pri:5, in...)</span>
+                <span class="method-start">177475 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestBillRunWithNoCycle</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">BillRunWithNoCycle</span>
+                <span class="method-start">177910 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=BillRunWithNoCycle status=FAILURE method=TestBillRunWithNoCycle.BillRunWithNoCycle(...)</span>
+                <span class="method-start">177925 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">BillrunMethod_NoCycle</span>
+                <span class="method-start">178399 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=BillrunMethod_NoCycle status=FAILURE method=TestBillRunWithNoCycle.BillrunMethod_No...)</span>
+                <span class="method-start">179829 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestCustomers</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Customer</span>
+                <span class="method-start">180323 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=Customer status=SUCCESS method=TestCustomers.Customer()[pri:1, instance:TestCases.T...)</span>
+                <span class="method-start">235616 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SecondCustomer</span>
+                <span class="method-start">235616 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=SecondCustomer status=SUCCESS method=TestCustomers.SecondCustomer()[pri:2, instance...)</span>
+                <span class="method-start">275150 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">ThirdCustomer</span>
+                <span class="method-start">275151 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=ThirdCustomer status=SUCCESS method=TestCustomers.ThirdCustomer()[pri:3, instance:T...)</span>
+                <span class="method-start">316425 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestAddService</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Service</span>
+                <span class="method-start">316426 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=Service status=FAILURE method=TestAddService.Service()[pri:1, instance:TestCases.Te...)</span>
+                <span class="method-start">432194 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">SecondService</span>
+                <span class="method-start">432563 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=SecondService status=SUCCESS method=TestAddService.SecondService()[pri:4, instance:...)</span>
+                <span class="method-start">461901 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">EditSecondService</span>
+                <span class="method-start">461902 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=EditSecondService status=SUCCESS method=TestAddService.EditSecondService()[pri:5, i...)</span>
+                <span class="method-start">470811 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">BAddMeter_MeterRegister</span>
+                <span class="method-start">470813 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=BAddMeter_MeterRegister status=SUCCESS method=TestAddService.BAddMeter_MeterRegiste...)</span>
+                <span class="method-start">538977 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">AddMeter_MeterRegisterC</span>
+                <span class="method-start">538980 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=AddMeter_MeterRegisterC status=FAILURE method=TestAddService.AddMeter_MeterRegister...)</span>
+                <span class="method-start">551038 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">EditThirdService</span>
+                <span class="method-start">551377 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=EditThirdService status=SUCCESS method=TestAddService.EditThirdService()[pri:7, ins...)</span>
+                <span class="method-start">563107 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.TestLogin</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">endReport</span>
+                <span class="method-start">563261 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
