@@ -2,7 +2,7 @@ package TestCases;
 
 import org.testng.annotations.Test;
 
-import POM.Flow2_3AddTOUFileAndPlan;
+import pageObjects.Flow2_3AddTOUFileAndPlan;
 
 public class TestAddPlan extends TestLogin{
 	

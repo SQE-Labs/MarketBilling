@@ -1,11 +1,10 @@
-package CommonMethods;
 
+package commonUtil;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 
-import POM.Flow6_7AddingServiceAndMeter;
 
 public class InternalMethods extends Flow6_7AddingServiceAndMeter {
 

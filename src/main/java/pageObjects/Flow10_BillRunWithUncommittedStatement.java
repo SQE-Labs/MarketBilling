@@ -1,4 +1,4 @@
-package POM;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -6,10 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+<<<<<<< HEAD:src/test/java/POM/Flow10_BillRunWithUncommittedStatement.java
 import CommonMethods.WebDriverWaits;
-import POM.Flow4_BillRunWithNoCycle.Billrun;
-import POM.Flow8_AllBillrunCycles.X_BillrunCycle;
+import pageObjects.Flow4_BillRunWithNoCycle.Billrun;
 import TestCases.TestLogin;
+=======
+import commonUtil.WebDriverWaits;
+import test.TestLogin;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow10_BillRunWithUncommittedStatement.java
 
 public class Flow10_BillRunWithUncommittedStatement extends TestLogin {
     public static By OK_Button =By.xpath("//*[contains(text(),'OK')]");

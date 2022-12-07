@@ -1,7 +1,7 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import POM.Flow5_AddCustomer;
+import pageObjects.Flow5_AddCustomer;
 
 public class TestCustomers extends TestLogin{
 

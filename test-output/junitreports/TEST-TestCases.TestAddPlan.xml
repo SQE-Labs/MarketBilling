@@ -11,11 +11,11 @@
   <system-out/>
   <testcase classname="TestCases.TestAddPlan" name="OtherPlan" time="18.392">
     <error message="Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id=&#039;unit-type&#039;]/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)" type="org.openqa.selenium.TimeoutException">
-      <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id='unit-type']/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)
+        <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@id='unit-type']/option)[2] (tried for 10 second(s) with 500 MILLISECONDS interval)
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
 at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
-at POM.Flow2_3AddTOUFileAndPlan$Plans.OtherPlan(Flow2_3AddTOUFileAndPlan.java:456)
+at pageObjects.Flow2_3AddTOUFileAndPlan$Plans.OtherPlan(Flow2_3AddTOUFileAndPlan.java:456)
 at TestCases.TestAddPlan.OtherPlan(TestAddPlan.java:43)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -69,7 +69,7 @@ System info: host: &#039;DESKTOP-881C30Q&#039;, ip: &#039;192.168.1.18&#039;, os
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities [{networkConnectionEnabled=false, chrome={chromedriverVersion=107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}), userDataDir=C:\Users\SQELAB~1\AppData\Local\Temp\scoped_dir8628_800842881}, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, platform=XP, proxy=Proxy(), goog:chromeOptions={debuggerAddress=localhost:55573}, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=107.0.5304.123, browserName=chrome, javascriptEnabled=true, platformName=XP, setWindowRect=true, webauthn:extension:largeBlob=true, webauthn:virtualAuthenticators=true}]
 Session ID: 387b6e927c6b7349d9319cf23bf6f570" type="org.openqa.selenium.TimeoutException">
-      <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class='dataTables_filter']/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
+        <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: .//*[@class='dataTables_filter']/label/input (tried for 10 second(s) with 500 MILLISECONDS interval)
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
 System info: host: 'DESKTOP-881C30Q', ip: '192.168.1.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -78,7 +78,7 @@ Session ID: 387b6e927c6b7349d9319cf23bf6f570
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
 at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
-at POM.Flow2_3AddTOUFileAndPlan$Plans.Add_ProRated_Rates(Flow2_3AddTOUFileAndPlan.java:490)
+at pageObjects.Flow2_3AddTOUFileAndPlan$Plans.Add_ProRated_Rates(Flow2_3AddTOUFileAndPlan.java:490)
 at TestCases.TestAddPlan.Add_ProRated_Rates(TestAddPlan.java:50)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)

@@ -11,7 +11,7 @@ public class TestBillRunWithNoCycle extends TestLogin{
 	public static void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		POM.Flow4_BillRunWithNoCycle.BillRunWithNoCycle();
+		pageObjects.Flow4_BillRunWithNoCycle.BillRunWithNoCycle();
 		
 	}
 	
@@ -19,7 +19,7 @@ public class TestBillRunWithNoCycle extends TestLogin{
 	public static void BillrunMethod_NoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		POM.Flow4_BillRunWithNoCycle.Billrun.BillrunMethod_NoCycle();
+		pageObjects.Flow4_BillRunWithNoCycle.Billrun.BillrunMethod_NoCycle();
 		
 	}
 	

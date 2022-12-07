@@ -1,7 +1,7 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import POM.Flow6_7AddingServiceAndMeter;
+import pageObjects.Flow6_7AddingServiceAndMeter;
 
 public class TestAddService extends TestLogin{
 
@@ -9,7 +9,7 @@ public class TestAddService extends TestLogin{
 	public static void Service() throws InterruptedException {
 		extentTest = extent.startTest(" First Service ");
 		extentTest.setDescription(" Verify that User is able to add Service. ");
-		Flow6_7AddingServiceAndMeter.X_AddService.Service_MeterR();
+			Flow6_7AddingServiceAndMeter.X_AddService.Service_MeterR();
 	}
 	
 //	@Test(priority = 2)

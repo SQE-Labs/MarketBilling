@@ -1,4 +1,4 @@
-package POM;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,11 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+<<<<<<< HEAD:src/test/java/POM/Flow8_AllBillrunCycles.java
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
-import POM.Flow4_BillRunWithNoCycle.Billrun;
+import pageObjects.Flow4_BillRunWithNoCycle.Billrun;
+=======
+import commonUtil.RandomStrings;
+import commonUtil.WebDriverWaits;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow8_AllBillrunCycles.java
 
-import POM.Flow6_7AddingServiceAndMeter.X_AddService;
+import pageObjects.Flow6_7AddingServiceAndMeter.X_AddService;
 
 public class Flow8_AllBillrunCycles extends Flow5_AddCustomer {
 	public static JavascriptExecutor jse = (JavascriptExecutor) driver;

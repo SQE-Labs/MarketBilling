@@ -3,12 +3,12 @@
 <testsuite hostname="DESKTOP-881C30Q" failures="0" tests="2" name="TestCases.TestAddService" time="176.049" errors="1" timestamp="2022-12-05T11:03:34 IST" skipped="0">
   <testcase classname="TestCases.TestAddService" name="Service" time="94.803">
     <error message="Expected condition failed: waiting for visibility of element located by By.xpath: //a[@id=&#039;addMeter&#039;]/i (tried for 10 second(s) with 500 MILLISECONDS interval)" type="org.openqa.selenium.TimeoutException">
-      <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@id='addMeter']/i (tried for 10 second(s) with 500 MILLISECONDS interval)
+        <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@id='addMeter']/i (tried for 10 second(s) with 500 MILLISECONDS interval)
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
 at CommonMethods.WebDriverWaits.ClickOn(WebDriverWaits.java:41)
-at POM.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:475)
-at POM.Flow6_7AddingServiceAndMeter$X_AddService.Service_MeterR(Flow6_7AddingServiceAndMeter.java:181)
+at pageObjects.Flow6_7AddingServiceAndMeter$Metering.AddMeter(Flow6_7AddingServiceAndMeter.java:475)
+at pageObjects.Flow6_7AddingServiceAndMeter$X_AddService.Service_MeterR(Flow6_7AddingServiceAndMeter.java:181)
 at TestCases.TestAddService.Service(TestAddService.java:12)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)

@@ -1,11 +1,15 @@
-package POM;
+package pageObjects;
 
 //import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
+<<<<<<< HEAD:src/test/java/POM/Flow6_7AddingServiceAndMeter.java
 import CommonMethods.WebDriverWaits;
+=======
+import commonUtil.WebDriverWaits;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow6_7AddingServiceAndMeter.java
 //import POM.Flow6_7AddingServiceAndMeter.AddService;
 //import POM.Flow5_AddCustomer.FirstCustomer;
 //import POM.Flow5_AddCustomer.SecondCustomer;
@@ -14,12 +18,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+<<<<<<< HEAD:src/test/java/POM/Flow6_7AddingServiceAndMeter.java
 import CommonMethods.InternalMethods;
 import CommonMethods.RandomStrings;
+=======
+import commonUtil.InternalMethods;
+import commonUtil.RandomStrings;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow6_7AddingServiceAndMeter.java
 //import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 
-public class Flow6_7AddingServiceAndMeter extends TestLogin {
+public class gitFlow6_7AddingServiceAndMeter extends TestLogin {
 
 	public static JavascriptExecutor jse = (JavascriptExecutor) driver;
 	public static Select select;

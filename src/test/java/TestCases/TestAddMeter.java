@@ -1,7 +1,7 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import POM.Flow6_7AddingServiceAndMeter;
+import pageObjects.Flow6_7AddingServiceAndMeter;
 
 public class TestAddMeter extends TestLogin{
 

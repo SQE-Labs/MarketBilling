@@ -1,4 +1,4 @@
-package POM;
+package pageObjects;
 //Cash Payment Method
 
 	import java.io.FileWriter;
@@ -22,11 +22,16 @@ import org.openqa.selenium.WebElement;
 
 import com.opencsv.CSVWriter;
 
+<<<<<<< HEAD:src/test/java/POM/Flow11Import_Transactions_Update_Download_And_EmailStatement.java
 import CommonMethods.RandomStrings;
 	import CommonMethods.WebDriverWaits;
-import POM.Flow2_3AddTOUFileAndPlan.TouImport;
+import pageObjects.Flow2_3AddTOUFileAndPlan.TouImport;
+=======
+import commonUtil.RandomStrings;
+	import commonUtil.WebDriverWaits;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow11Import_Transactions_Update_Download_And_EmailStatement.java
 //	import POM.Flow4_BillRunWithNoCycle.Billrun;
-import POM.Flow6_7AddingServiceAndMeter.X_AddService;
+import pageObjects.Flow6_7AddingServiceAndMeter.X_AddService;
 import TestCases.TestLogin;
 import junit.framework.Assert;
 

@@ -1,5 +1,13 @@
-package POM;
+package pageObjects;
 
+
+import commonUtil.RandomStrings;
+import commonUtil.WebDriverWaits;
+import pageObjects.Flow5_AddCustomer.FirstCustomer;
+import pageObjects.Flow5_AddCustomer.SecondCustomer;
+import pageObjects.Flow5_AddCustomer.ThirdCustomer;
+import pageObjects.Flow6_7AddingServiceAndMeter.X_AddService;
+import test.TestLogin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -10,11 +18,7 @@ import org.testng.asserts.SoftAssert;
 //import CommonMethods.InternalMethods;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
-import POM.Flow5_AddCustomer.FirstCustomer;
-import POM.Flow5_AddCustomer.SecondCustomer;
-import POM.Flow5_AddCustomer.ThirdCustomer;
 
-import POM.Flow6_7AddingServiceAndMeter.X_AddService;
 //import POM.Flow6_7AddingServiceAndMeter.Metering;
 import TestCases.TestLogin;
 

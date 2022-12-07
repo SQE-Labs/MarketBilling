@@ -1,4 +1,4 @@
-package CommonMethods;
+package commonUtil;
 
 public class RandomStrings {
     public static String RequiredString(int n)

@@ -13,7 +13,7 @@ public class Imports extends TestLogin{
 	public static void CustomerPrerequiste() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		POM.Flow11Import_Transactions_Update_Download_And_EmailStatement.CustomerPrerequiste();
+		pageObjects.Flow11Import_Transactions_Update_Download_And_EmailStatement.CustomerPrerequiste();
 		
 	}
 	
@@ -21,7 +21,7 @@ public class Imports extends TestLogin{
 	public static void MeterNumberImport() throws InterruptedException, IOException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		POM.Flow11Import_Transactions_Update_Download_And_EmailStatement.MeterNumberImport.MeterNumberImportFile();
+		pageObjects.Flow11Import_Transactions_Update_Download_And_EmailStatement.MeterNumberImport.MeterNumberImportFile();
 		
 	}
 	

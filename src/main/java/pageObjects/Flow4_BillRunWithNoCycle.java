@@ -1,11 +1,16 @@
-package POM;
+package pageObjects;
 //import java.util.List;
 
+<<<<<<< HEAD:src/test/java/POM/Flow4_BillRunWithNoCycle.java
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 //import org.testng.asserts.SoftAssert;
 
 import CommonMethods.WebDriverWaits;
+=======
+import commonUtil.WebDriverWaits;
+import test.TestLogin;
+>>>>>>> 87aa608 ( minor updates):src/main/java/pageObjects/Flow4_BillRunWithNoCycle.java
 
 //import org.openqa.selenium.By;
 

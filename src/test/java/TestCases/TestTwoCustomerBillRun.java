@@ -11,7 +11,7 @@ public class TestTwoCustomerBillRun extends TestLogin{
 	public static void Flow8_AllBillrunCycles() throws InterruptedException { 
 		extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-		POM.Flow8_AllBillrunCycles.X_BillrunCycle.SmallBillRunWithTwoCustomer(); 
+		pageObjects.Flow8_AllBillrunCycles.X_BillrunCycle.SmallBillRunWithTwoCustomer();
 		
 	}
 	

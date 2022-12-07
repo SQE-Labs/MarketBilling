@@ -11,7 +11,7 @@ public class TestLargeBillRun extends TestLogin{
 	public static void Flow8_AllBillrunCycles() throws InterruptedException { 
 		extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-		POM.Flow8_AllBillrunCycles.X_BillrunCycle.LargeBillRun(); 
+		pageObjects.Flow8_AllBillrunCycles.X_BillrunCycle.LargeBillRun();
 		
 	}
 	

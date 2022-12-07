@@ -1,4 +1,4 @@
-package POM;
+package pageObjects;
 //import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,11 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
-import BrowsersBase.DataInterface;
-import CommonMethods.RandomStrings;
-import CommonMethods.WebDriverWaits;
 
-import POM.Flow6_7AddingServiceAndMeter.X_AddService;
+import commonUtil.DataInterface;
+import commonUtil.RandomStrings;
+import commonUtil.WebDriverWaits;
+
+import pageObjects.Flow6_7AddingServiceAndMeter.X_AddService;
 import TestCases.TestLogin;
 //import junit.framework.Assert;
 

@@ -1,4 +1,5 @@
-package ExtentReport;
+
+package commonUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,8 +17,6 @@ import org.testng.annotations.BeforeSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
-import BrowsersBase.BrowsersInvoked;
 
 public class ExtentReportClass extends BrowsersInvoked {
 

@@ -12,7 +12,7 @@ public class TestBillRunWithUncommittedStatement extends TestLogin{
 	public static void BillRunPrerequiste() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run Prerequiste ");
 		extentTest.setDescription(" Verify that User is able to complete the prerequiste for bill run WitUncommitted Statement ");
-		POM.Flow10_BillRunWithUncommittedStatement.BillRunPrerequiste();
+		pageObjects.Flow10_BillRunWithUncommittedStatement.BillRunPrerequiste();
 		
 	}
 	
@@ -20,7 +20,7 @@ public class TestBillRunWithUncommittedStatement extends TestLogin{
 	public static void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
-		POM.Flow10_BillRunWithUncommittedStatement.BillRunWithUncommittedStatement();
+		pageObjects.Flow10_BillRunWithUncommittedStatement.BillRunWithUncommittedStatement();
 		
 	}
 	

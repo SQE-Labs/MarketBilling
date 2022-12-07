@@ -7,12 +7,12 @@
 	The method BAddMeter_MeterRegister() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
 	The method AddMeter_MeterRegisterC() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
 " type="java.lang.Error">
-      <![CDATA[java.lang.Error: Unresolved compilation problems: 
+        <![CDATA[java.lang.Error: Unresolved compilation problems:
 The method AddMeter_MeterRegisterR() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
 The method BAddMeter_MeterRegister() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
 The method AddMeter_MeterRegisterC() is undefined for the type Flow6_7AddingServiceAndMeter.X_AddService
 
-at POM.Flow9_Auto_Due_Date.AutoDueDate(Flow9_Auto_Due_Date.java:29)
+at pageObjects.Flow9_Auto_Due_Date.AutoDueDate(Flow9_Auto_Due_Date.java:29)
 at TestCases.TestAutoDueDate.AutoDueDate(TestAutoDueDate.java:21)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)

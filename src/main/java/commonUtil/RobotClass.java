@@ -1,4 +1,5 @@
-package CommonMethods;
+
+package commonUtil;
 
 import java.awt.AWTException;
 import java.awt.Robot;
