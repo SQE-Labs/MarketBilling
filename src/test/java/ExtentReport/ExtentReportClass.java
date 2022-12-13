@@ -29,10 +29,22 @@ public class ExtentReportClass extends BrowsersInvoked {
 	}
 	@BeforeClass
 	public void login() throws InterruptedException, IOException {
-		Flow1Login.ValidLogin();
+		try{
+			Flow1Login.ValidLogin();
+		}catch(Exception e){
+
+		}
 	}
 	@AfterClass
 	public void logout() throws InterruptedException, IOException {
+//		try{
+//			LandingPage.clickUserDropdown();
+//			LandingPage.clickLogout();
+//			driver.close();
+//		}catch(Exception e){
+//
+//		}
+
 	}
 	@AfterSuite
 	public void endReport() {

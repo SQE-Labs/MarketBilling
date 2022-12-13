@@ -7,10 +7,18 @@ import java.util.Date;
 public class DateAndTime {
 	public static String date1;
 
-	public static void DateTimeGenerator() {
+	public static String DateTimeGenerator() {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		Date date = new Date();
 		date1 = dateFormat.format(date);
 		System.out.println(date1);
+		return date1;
+	}
+	public static String DateGenerator() {
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Date date = new Date();
+		date1 = dateFormat.format(date);
+		System.out.println(date1);
+		return date1;
 	}
 }

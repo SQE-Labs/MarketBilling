@@ -1,10 +1,11 @@
 package TestCases;
 
+import ExtentReport.ExtentReportClass;
 import org.testng.annotations.Test;
 
 //import POM.Flow2_3AddTOUFileAndPlan; //
 
-public class TestTwoCustomerBillRun extends TestLogin{
+public class TestTwoCustomerBillRun extends ExtentReportClass {
 	
 	
 	@Test(priority = 1) 

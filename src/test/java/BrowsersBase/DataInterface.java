@@ -10,4 +10,6 @@ public interface DataInterface {
 	public static String Username = "TestReport+213@sqelabs.com";
 	//public static String Username = "testreport+101@sqelabs.com";
 	public static String Password = "Test@1234";
+	public static String csvImportFile="/TestData/Electricity - Meter Import Template.csv";
+
 }
