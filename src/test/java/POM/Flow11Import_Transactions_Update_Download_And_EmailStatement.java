@@ -1,6 +1,7 @@
 package POM;
 //Cash Payment Method
 
+import CommonMethods.DateAndTime;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import POM.Flow2_3AddTOUFileAndPlan.TouImport;
@@ -18,14 +19,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-	public class Flow11Import_Transactions_Update_Download_And_EmailStatement extends TestLogin {
+import static TestCases.Imports.serviceId;
+
+public class Flow11Import_Transactions_Update_Download_And_EmailStatement extends TestLogin {
 		public static JavascriptExecutor jse = (JavascriptExecutor) driver;
 		
-		public static void CustomerPrerequiste() throws InterruptedException {
+		public static String CustomerPrerequiste() throws InterruptedException {
 			Thread.sleep(2000);
 			Flow5_AddCustomer.FirstCustomer.FirstResidentialCustomer();
-			Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
-			
+		return 	Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
+
 		}
 		
 		
@@ -38,12 +41,13 @@ import java.util.List;
 			public static void MeterNumberImportFile() throws IOException, InterruptedException {
 				WebDriverWaits.ClickOn(Flow2_3AddTOUFileAndPlan.TouImport.AdminIcon);
 				WebDriverWaits.ClickOn(MeterNumbersIcon);
+				System.out.println("Service id generated is "+serviceId);
 				CSVFileOverwrite();
 				Thread.sleep(2000);
 				WebElement BrowseFile = driver.findElement(By.xpath("//input[@id='attFile']"));
 				BrowseFile.sendKeys(System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv");
 				Thread.sleep(2000);
-				WebDriverWaits.SendKeys(TouImport.DescriptionField, "Meter Numbers");
+				WebDriverWaits.SendKeys(TouImport.DescriptionField, "Meter Numbers " +serviceId);
 				WebDriverWaits.ClickOn(TouImport.UploadFileButton);
 				jse.executeScript("window.scrollBy(0,400)", "");
 				WebDriverWaits.ClickOn(TouImport.ImportDataIcon);
@@ -76,17 +80,16 @@ import java.util.List;
 		 public static void CSVFileOverwrite() throws IOException {
 
 		        List<String[]> csvData = createCsvDataSpecial();
-		        try (CSVWriter writer = new CSVWriter(new FileWriter(System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv"))) {
+		        try (CSVWriter writer = new CSVWriter(new FileWriter(System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv"), CSVWriter.DEFAULT_SEPARATOR, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END))  {
 		            writer.writeAll(csvData);
 		        }
 		    }
 
 		    public static List<String[]> createCsvDataSpecial() {
 
-		    	System.out.println("ServiceIDLater3");
-		    	
+
 		        String[] header = {"*Service ID", "*Meter Serial Number", "*Status", "*Consumption Type", "*Configuration", "Multiplier", "Constant", "Hazard", "Location", "Additional Site Info", "Meter Point ID", "Next Scheduled Read Date", "Manufacturer", "Model", "Meter Read Type", "Route", "Walk Order", "*Meter Installation Type", "*Date Connected", "Date Removed"};
-		        String[] record1 = {Flow6_7AddingServiceAndMeter.ServiceIDLater3, "Z013434", "Current", "Cumulative", "Flat", "", "", "", "", "", "", "", "", "", "", "", "", "BASIC", "08-12-2022"};
+		        String[] record1 = {serviceId, "Z013430", "Current", "Cumulative", "POS", "", "", "", "", "", "", "", "", "", "", "", "", "BASIC", DateAndTime.DateGenerator(),""};
 		        List<String[]> list = new ArrayList<>();
 		        list.add(header);
 		        list.add(record1);

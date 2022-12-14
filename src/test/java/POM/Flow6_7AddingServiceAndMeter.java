@@ -313,7 +313,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 		}
 
 		// Methods to add Commercial Service
-		public static void AddThirdService() throws InterruptedException {
+		public static String AddThirdService() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 			Thread.sleep(2000);
 		      driver.navigate().refresh();
@@ -398,7 +398,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 			softAssert.assertAll();
 			System.out.println("The Third  Service for Commercial customer has been created successfully");
 			jse.executeScript("window.scrollBy(0,-1000)", "");
-
+return  ServiceIDLater3;
 		}
 			// Methods to Edit Commercial Service
 		public static void EditThirdService() throws InterruptedException {

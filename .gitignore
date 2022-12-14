@@ -7,3 +7,6 @@ ExtentReports
 target
 test-output
 /test-output
+.idea
+MarketBilling.iml
+.DS_Store

@@ -13,4 +13,5 @@ public class LandingPage {
 	public static void clickLogout() {
 		WebDriverWaits.ClickOn(logout);
 	}
+
 }
