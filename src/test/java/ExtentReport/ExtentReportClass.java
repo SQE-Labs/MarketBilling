@@ -37,13 +37,13 @@ public class ExtentReportClass extends BrowsersInvoked {
 	}
 	@AfterClass
 	public void logout() throws InterruptedException, IOException {
-//		try{
-//			LandingPage.clickUserDropdown();
-//			LandingPage.clickLogout();
-//			driver.close();
-//		}catch(Exception e){
-//
-//		}
+		try{
+			//LandingPage.clickUserDropdown();
+			//LandingPage.clickLogout();
+			driver.quit();
+		}catch(Exception e){
+
+		}
 
 	}
 	@AfterSuite

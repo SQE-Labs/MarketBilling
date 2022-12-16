@@ -7,13 +7,17 @@ import CommonMethods.WebDriverWaits;
 import POM.Flow2_3AddTOUFileAndPlan.TouImport;
 import POM.Flow6_7AddingServiceAndMeter.X_AddService;
 import TestCases.TestLogin;
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvException;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,14 +42,16 @@ public class Flow11Import_Transactions_Update_Download_And_EmailStatement extend
 			
 			public static By MeterNumbersIcon = By.xpath("//p[text()='Meter Numbers']");
 
-			public static void MeterNumberImportFile() throws IOException, InterruptedException {
+			public static void MeterNumberImportFile() throws IOException, InterruptedException, CsvException {
+				String filePath = System.getProperty("user.dir") + "/TestData/format.csv";
 				WebDriverWaits.ClickOn(Flow2_3AddTOUFileAndPlan.TouImport.AdminIcon);
 				WebDriverWaits.ClickOn(MeterNumbersIcon);
+				serviceId= "8354427260";
 				System.out.println("Service id generated is "+serviceId);
-				CSVFileOverwrite();
+				csvFileReplace(filePath,serviceId,1,0);
 				Thread.sleep(2000);
 				WebElement BrowseFile = driver.findElement(By.xpath("//input[@id='attFile']"));
-				BrowseFile.sendKeys(System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv");
+				BrowseFile.sendKeys(filePath);
 				Thread.sleep(2000);
 				WebDriverWaits.SendKeys(TouImport.DescriptionField, "Meter Numbers " +serviceId);
 				WebDriverWaits.ClickOn(TouImport.UploadFileButton);
@@ -76,11 +82,30 @@ public class Flow11Import_Transactions_Update_Download_And_EmailStatement extend
 //		            System.out.println("---------------");
 //		        }
 //		    }
-		 
+			 public static void csvFileReplace(String fileToUpdate, String replace, int row, int col) throws IOException, CsvException {
+
+				 File inputFile = new File(fileToUpdate);
+
+// Read existing file
+				 CSVReader reader = new CSVReader(new FileReader(inputFile));
+				 List<String[]> csvBody = reader.readAll();
+// get CSV row column  and replace with by using row and column
+				 csvBody.get(row)[col] = replace;
+				// csvBody.get(row)[19] = DateAndTime.DateGenerator();
+
+				 reader.close();
+
+// Write to CSV file which is open
+				 CSVWriter writer = new CSVWriter(new FileWriter(inputFile), CSVWriter.DEFAULT_SEPARATOR, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+				 writer.writeAll(csvBody);
+				 writer.flush();
+				 writer.close();
+			 }
+
 		 public static void CSVFileOverwrite() throws IOException {
 
 		        List<String[]> csvData = createCsvDataSpecial();
-		        try (CSVWriter writer = new CSVWriter(new FileWriter(System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv"), CSVWriter.DEFAULT_SEPARATOR, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END))  {
+		        try (CSVWriter writer = new CSVWriter(new FileWriter(System.getProperty("user.dir") + "/TestData/format.csv"), CSVWriter.DEFAULT_SEPARATOR, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END))  {
 		            writer.writeAll(csvData);
 		        }
 		    }
