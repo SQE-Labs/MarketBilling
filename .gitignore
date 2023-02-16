@@ -11,3 +11,4 @@ MarketBilling.iml
 .DS_Store
 ~/.npm/
 node_modules
+/node_modules/
