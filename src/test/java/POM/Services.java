@@ -31,7 +31,9 @@ public class Services {
     public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
     public static By Market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
     public static By NMI_Field = By.xpath("//*[@id=\"NMI\"]");
-    public static By Service_Plan_Dropdown = By.xpath("//*[@id=\"planNo\"]");
+    public static By Service_Plan_Dropdown = By.xpath("//*[@class='chosen-container chosen-container-multi']");
+    public static By Service_Plan_Elec = By.xpath("//*[@id='planNo_chosen']/div/ul/li[1]");
+
     public static By Move_In_Date_Datepicker = By.xpath("//*[@id=\"proposedDate\"]");
     public static By SelectCurrentDate = By.xpath("//*[@class=\"active day\"]");
     public static By Select_Use_Structured_Address_Togglebutton = By.xpath("//*[@class=\"switch-label\"]");
@@ -77,10 +79,11 @@ public class Services {
         WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-        WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
-        select = new Select(Option2);
-        select.selectByVisibleText("Electricity Template Plan");
-        Thread.sleep(1000);
+//        WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
+//        select = new Select(Option2);
+//        select.selectByVisibleText("Electricity Template Plan");
+      Thread.sleep(2000);
+        WebDriverWaits.ClickOn(Service_Plan_Elec);
        // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         //WebDriverWaits.ClickOn(SelectCurrentDate);

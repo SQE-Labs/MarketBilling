@@ -1,10 +1,7 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.AddSitePlans;
-import POM.Customer;
-import POM.Flow6_7AddingServiceAndMeter;
-import POM.Metering;
+import POM.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -22,14 +19,18 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
         Customer.searchCustomer(CustomerID01R);
-        Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
+     //   Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
+        Services.M_AddService(CustomerID01R);
+
     }
 
     @Test(priority = 2)
     public void EditResidentialService() throws InterruptedException {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.EditService();
+      //  Flow6_7AddingServiceAndMeter.X_AddService.EditService();
+        Services.EditService();
+
     }
 
     @Test(priority = 3)
@@ -39,6 +40,8 @@ public class TestAddService extends BaseTest {
         Metering metering = new Metering();
         metering.AddMeter();
         metering.createRegister();
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
 
     }
 
@@ -47,11 +50,19 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
         Customer.searchCustomer(CustomerID02B);
-        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
-        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
-        Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
+//        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
+//        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
+//        Metering metering = new Metering();
+//        metering.AddMeter();
+//        metering.createRegister();
+
+        Services.M_AddService(CustomerID02B);
+        Services.EditService();
+        String   meterId =Metering.AddMeter();
+        String    registerId =Metering.createRegister();
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
+
     }
 
 
@@ -60,11 +71,18 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.searchCustomer(CustomerID03C);
-        Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
-        Flow6_7AddingServiceAndMeter.X_AddService.EditThirdService();
-        Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
+       // Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
+        //Flow6_7AddingServiceAndMeter.X_AddService.EditThirdService();
+        Services.M_AddService(CustomerID03C);
+        Services.EditService();
+      String   meterId =Metering.AddMeter();
+     String    registerId =Metering.createRegister();
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
+
+//        Metering metering = new Metering();
+//        metering.AddMeter();
+//        metering.createRegister();
 
     }
     @Test(priority = 6)

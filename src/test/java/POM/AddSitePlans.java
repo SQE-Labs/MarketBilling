@@ -34,6 +34,7 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.scrollIntoView(sitePlans);
         WebDriverWaits.ClickOn(sitePlans);
         WebDriverWaits.ClickOn(addPlanBtn);
+        //TO_DO
         WebDriverWaits.SendKeys(planSelected, "Market_PlanrBli");
         WebDriverWaits.ClickOn(groupPlans);
         WebDriverWaits.SendKeys(startDate, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));

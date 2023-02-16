@@ -1,0 +1,265 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.19.3
+2 info using node@v18.13.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 0ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:/Users/caelius_consulting/Documents/GitHub/MarketBillingFramework/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:/Users/caelius_consulting/Documents/GitHub/MarketBillingFramework/~/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 0ms
+17 timing config:load:setEnvs Completed in 0ms
+18 timing config:load Completed in 6ms
+19 timing npm:load:configload Completed in 6ms
+20 timing npm:load:mkdirpcache Completed in 1ms
+21 timing npm:load:mkdirplogs Completed in 0ms
+22 verbose title npm install mvn
+23 verbose argv "install" "mvn"
+24 timing npm:load:setTitle Completed in 5ms
+25 timing config:load:flatten Completed in 1ms
+26 timing npm:load:display Completed in 2ms
+27 verbose logfile logs-max:10 dir:/Users/caelius_consulting/Documents/GitHub/MarketBillingFramework/~/.npm/_logs
+28 verbose logfile /Users/caelius_consulting/Documents/GitHub/MarketBillingFramework/~/.npm/_logs/2023-02-01T06_44_31_023Z-debug-0.log
+29 timing npm:load:logFile Completed in 2ms
+30 timing npm:load:timers Completed in 0ms
+31 timing npm:load:configScope Completed in 0ms
+32 timing npm:load Completed in 16ms
+33 timing arborist:ctor Completed in 0ms
+34 silly logfile done cleaning log files
+35 timing idealTree:init Completed in 8ms
+36 timing idealTree:userRequests Completed in 1ms
+37 silly idealTree buildDeps
+38 silly fetch manifest mvn@*
+39 timing arborist:ctor Completed in 0ms
+40 http fetch GET 200 https://registry.npmjs.org/mvn 570ms (cache miss)
+41 silly placeDep ROOT mvn@3.5.0 OK for:  want: *
+42 silly fetch manifest extract-zip@^1.5.0
+43 http fetch GET 200 https://registry.npmjs.org/extract-zip 81ms (cache miss)
+44 timing idealTree:#root Completed in 659ms
+45 silly placeDep ROOT extract-zip@1.7.0 OK for: mvn@3.5.0 want: ^1.5.0
+46 silly fetch manifest concat-stream@^1.6.2
+47 silly fetch manifest debug@^2.6.9
+48 silly fetch manifest mkdirp@^0.5.4
+49 silly fetch manifest yauzl@^2.10.0
+50 http fetch GET 200 https://registry.npmjs.org/concat-stream 86ms (cache miss)
+51 http fetch GET 200 https://registry.npmjs.org/mkdirp 102ms (cache miss)
+52 http fetch GET 200 https://registry.npmjs.org/yauzl 106ms (cache miss)
+53 http fetch GET 200 https://registry.npmjs.org/debug 210ms (cache miss)
+54 timing idealTree:node_modules/mvn Completed in 214ms
+55 silly placeDep ROOT concat-stream@1.6.2 OK for: extract-zip@1.7.0 want: ^1.6.2
+56 silly placeDep ROOT debug@2.6.9 OK for: extract-zip@1.7.0 want: ^2.6.9
+57 silly placeDep ROOT mkdirp@0.5.6 OK for: extract-zip@1.7.0 want: ^0.5.4
+58 silly placeDep ROOT yauzl@2.10.0 OK for: extract-zip@1.7.0 want: ^2.10.0
+59 silly fetch manifest buffer-from@^1.0.0
+60 silly fetch manifest inherits@^2.0.3
+61 silly fetch manifest readable-stream@^2.2.2
+62 silly fetch manifest typedarray@^0.0.6
+63 silly fetch manifest ms@2.0.0
+64 silly fetch manifest minimist@^1.2.6
+65 silly fetch manifest fd-slicer@~1.1.0
+66 silly fetch manifest buffer-crc32@~0.2.3
+67 http fetch GET 200 https://registry.npmjs.org/inherits 47ms (cache miss)
+68 http fetch GET 200 https://registry.npmjs.org/readable-stream 62ms (cache miss)
+69 http fetch GET 200 https://registry.npmjs.org/buffer-from 75ms (cache miss)
+70 http fetch GET 200 https://registry.npmjs.org/typedarray 79ms (cache miss)
+71 http fetch GET 200 https://registry.npmjs.org/minimist 122ms (cache miss)
+72 http fetch GET 200 https://registry.npmjs.org/buffer-crc32 132ms (cache miss)
+73 http fetch GET 200 https://registry.npmjs.org/ms 188ms (cache miss)
+74 http fetch GET 200 https://registry.npmjs.org/fd-slicer 213ms (cache miss)
+75 timing idealTree:node_modules/extract-zip Completed in 223ms
+76 silly placeDep ROOT buffer-from@1.1.2 OK for: concat-stream@1.6.2 want: ^1.0.0
+77 silly placeDep ROOT inherits@2.0.4 OK for: concat-stream@1.6.2 want: ^2.0.3
+78 silly placeDep ROOT readable-stream@2.3.7 OK for: concat-stream@1.6.2 want: ^2.2.2
+79 silly placeDep ROOT typedarray@0.0.6 OK for: concat-stream@1.6.2 want: ^0.0.6
+80 silly fetch manifest core-util-is@~1.0.0
+81 silly fetch manifest isarray@~1.0.0
+82 silly fetch manifest process-nextick-args@~2.0.0
+83 silly fetch manifest safe-buffer@~5.1.1
+84 silly fetch manifest string_decoder@~1.1.1
+85 silly fetch manifest util-deprecate@~1.0.1
+86 http fetch GET 200 https://registry.npmjs.org/process-nextick-args 40ms (cache miss)
+87 http fetch GET 200 https://registry.npmjs.org/core-util-is 72ms (cache miss)
+88 http fetch GET 200 https://registry.npmjs.org/util-deprecate 85ms (cache miss)
+89 http fetch GET 200 https://registry.npmjs.org/string_decoder 86ms (cache miss)
+90 http fetch GET 200 https://registry.npmjs.org/isarray 88ms (cache miss)
+91 http fetch GET 200 https://registry.npmjs.org/safe-buffer 87ms (cache miss)
+92 timing idealTree:node_modules/concat-stream Completed in 93ms
+93 timing idealTree:node_modules/buffer-from Completed in 0ms
+94 silly placeDep ROOT ms@2.0.0 OK for: debug@2.6.9 want: 2.0.0
+95 timing idealTree:node_modules/debug Completed in 0ms
+96 timing idealTree:node_modules/inherits Completed in 0ms
+97 silly placeDep ROOT minimist@1.2.7 OK for: mkdirp@0.5.6 want: ^1.2.6
+98 timing idealTree:node_modules/mkdirp Completed in 0ms
+99 timing idealTree:node_modules/minimist Completed in 0ms
+100 timing idealTree:node_modules/ms Completed in 0ms
+101 silly placeDep ROOT core-util-is@1.0.3 OK for: readable-stream@2.3.7 want: ~1.0.0
+102 silly placeDep ROOT isarray@1.0.0 OK for: readable-stream@2.3.7 want: ~1.0.0
+103 silly placeDep ROOT process-nextick-args@2.0.1 OK for: readable-stream@2.3.7 want: ~2.0.0
+104 silly placeDep ROOT safe-buffer@5.1.2 OK for: readable-stream@2.3.7 want: ~5.1.1
+105 silly placeDep ROOT string_decoder@1.1.1 OK for: readable-stream@2.3.7 want: ~1.1.1
+106 silly placeDep ROOT util-deprecate@1.0.2 OK for: readable-stream@2.3.7 want: ~1.0.1
+107 timing idealTree:node_modules/readable-stream Completed in 4ms
+108 timing idealTree:node_modules/core-util-is Completed in 0ms
+109 timing idealTree:node_modules/isarray Completed in 0ms
+110 timing idealTree:node_modules/process-nextick-args Completed in 0ms
+111 timing idealTree:node_modules/safe-buffer Completed in 0ms
+112 timing idealTree:node_modules/string_decoder Completed in 0ms
+113 timing idealTree:node_modules/typedarray Completed in 0ms
+114 timing idealTree:node_modules/util-deprecate Completed in 0ms
+115 silly placeDep ROOT buffer-crc32@0.2.13 OK for: yauzl@2.10.0 want: ~0.2.3
+116 silly placeDep ROOT fd-slicer@1.1.0 OK for: yauzl@2.10.0 want: ~1.1.0
+117 silly fetch manifest pend@~1.2.0
+118 http fetch GET 200 https://registry.npmjs.org/pend 65ms (cache miss)
+119 timing idealTree:node_modules/yauzl Completed in 67ms
+120 timing idealTree:node_modules/buffer-crc32 Completed in 0ms
+121 silly placeDep ROOT pend@1.2.0 OK for: fd-slicer@1.1.0 want: ~1.2.0
+122 timing idealTree:node_modules/fd-slicer Completed in 1ms
+123 timing idealTree:node_modules/pend Completed in 0ms
+124 timing idealTree:buildDeps Completed in 1262ms
+125 timing idealTree:fixDepFlags Completed in 1ms
+126 timing idealTree Completed in 1273ms
+127 timing reify:loadTrees Completed in 1273ms
+128 timing reify:diffTrees Completed in 1ms
+129 silly reify moves {}
+130 timing reify:retireShallow Completed in 0ms
+131 timing reify:createSparse Completed in 3ms
+132 timing reify:loadBundles Completed in 0ms
+133 silly audit bulk request {
+133 silly audit   'allure-commandline': [ '2.20.1' ],
+133 silly audit   maven: [ '5.0.0' ],
+133 silly audit   mvn: [ '3.5.0' ],
+133 silly audit   'extract-zip': [ '1.7.0' ],
+133 silly audit   'concat-stream': [ '1.6.2' ],
+133 silly audit   debug: [ '2.6.9' ],
+133 silly audit   mkdirp: [ '0.5.6' ],
+133 silly audit   yauzl: [ '2.10.0' ],
+133 silly audit   'buffer-from': [ '1.1.2' ],
+133 silly audit   inherits: [ '2.0.4' ],
+133 silly audit   'readable-stream': [ '2.3.7' ],
+133 silly audit   typedarray: [ '0.0.6' ],
+133 silly audit   ms: [ '2.0.0' ],
+133 silly audit   minimist: [ '1.2.7' ],
+133 silly audit   'core-util-is': [ '1.0.3' ],
+133 silly audit   isarray: [ '1.0.0' ],
+133 silly audit   'process-nextick-args': [ '2.0.1' ],
+133 silly audit   'safe-buffer': [ '5.1.2' ],
+133 silly audit   string_decoder: [ '1.1.1' ],
+133 silly audit   'util-deprecate': [ '1.0.2' ],
+133 silly audit   'buffer-crc32': [ '0.2.13' ],
+133 silly audit   'fd-slicer': [ '1.1.0' ],
+133 silly audit   pend: [ '1.2.0' ]
+133 silly audit }
+134 silly tarball no local data for pend@https://registry.npmjs.org/pend/-/pend-1.2.0.tgz. Extracting by manifest.
+135 silly tarball no local data for string_decoder@https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz. Extracting by manifest.
+136 silly tarball no local data for buffer-crc32@https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.13.tgz. Extracting by manifest.
+137 silly tarball no local data for fd-slicer@https://registry.npmjs.org/fd-slicer/-/fd-slicer-1.1.0.tgz. Extracting by manifest.
+138 silly tarball no local data for safe-buffer@https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz. Extracting by manifest.
+139 silly tarball no local data for process-nextick-args@https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz. Extracting by manifest.
+140 silly tarball no local data for isarray@https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz. Extracting by manifest.
+141 silly tarball no local data for core-util-is@https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz. Extracting by manifest.
+142 silly tarball no local data for minimist@https://registry.npmjs.org/minimist/-/minimist-1.2.7.tgz. Extracting by manifest.
+143 silly tarball no local data for util-deprecate@https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz. Extracting by manifest.
+144 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.0.0.tgz. Extracting by manifest.
+145 silly tarball no local data for readable-stream@https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz. Extracting by manifest.
+146 silly tarball no local data for typedarray@https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz. Extracting by manifest.
+147 silly tarball no local data for yauzl@https://registry.npmjs.org/yauzl/-/yauzl-2.10.0.tgz. Extracting by manifest.
+148 silly tarball no local data for debug@https://registry.npmjs.org/debug/-/debug-2.6.9.tgz. Extracting by manifest.
+149 silly tarball no local data for buffer-from@https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz. Extracting by manifest.
+150 silly tarball no local data for inherits@https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz. Extracting by manifest.
+151 silly tarball no local data for concat-stream@https://registry.npmjs.org/concat-stream/-/concat-stream-1.6.2.tgz. Extracting by manifest.
+152 silly tarball no local data for extract-zip@https://registry.npmjs.org/extract-zip/-/extract-zip-1.7.0.tgz. Extracting by manifest.
+153 silly tarball no local data for mvn@https://registry.npmjs.org/mvn/-/mvn-3.5.0.tgz. Extracting by manifest.
+154 silly tarball no local data for mkdirp@https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.6.tgz. Extracting by manifest.
+155 http fetch GET 200 https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz 50ms (cache miss)
+156 timing reifyNode:node_modules/process-nextick-args Completed in 63ms
+157 http fetch GET 200 https://registry.npmjs.org/string_decoder/-/string_decoder-1.1.1.tgz 58ms (cache miss)
+158 timing reifyNode:node_modules/string_decoder Completed in 68ms
+159 http fetch GET 200 https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz 72ms (cache miss)
+160 timing reifyNode:node_modules/isarray Completed in 85ms
+161 http fetch GET 200 https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz 74ms (cache miss)
+162 timing reifyNode:node_modules/safe-buffer Completed in 85ms
+163 http fetch GET 200 https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.13.tgz 85ms (cache miss)
+164 timing reifyNode:node_modules/buffer-crc32 Completed in 96ms
+165 http fetch GET 200 https://registry.npmjs.org/debug/-/debug-2.6.9.tgz 78ms (cache miss)
+166 http fetch GET 200 https://registry.npmjs.org/pend/-/pend-1.2.0.tgz 88ms (cache miss)
+167 timing reifyNode:node_modules/pend Completed in 97ms
+168 timing reifyNode:node_modules/debug Completed in 97ms
+169 http fetch GET 200 https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz 98ms (cache miss)
+170 timing reifyNode:node_modules/buffer-from Completed in 117ms
+171 http fetch GET 200 https://registry.npmjs.org/fd-slicer/-/fd-slicer-1.1.0.tgz 107ms (cache miss)
+172 timing reifyNode:node_modules/fd-slicer Completed in 118ms
+173 http fetch GET 200 https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz 104ms (cache miss)
+174 timing reifyNode:node_modules/inherits Completed in 124ms
+175 http fetch GET 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 119ms (cache miss)
+176 timing reifyNode:node_modules/util-deprecate Completed in 133ms
+177 http fetch GET 200 https://registry.npmjs.org/concat-stream/-/concat-stream-1.6.2.tgz 123ms (cache miss)
+178 timing reifyNode:node_modules/concat-stream Completed in 143ms
+179 http fetch GET 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz 134ms (cache miss)
+180 timing reifyNode:node_modules/core-util-is Completed in 147ms
+181 http fetch GET 200 https://registry.npmjs.org/extract-zip/-/extract-zip-1.7.0.tgz 129ms (cache miss)
+182 timing reifyNode:node_modules/extract-zip Completed in 149ms
+183 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.0.0.tgz 147ms (cache miss)
+184 timing reifyNode:node_modules/ms Completed in 162ms
+185 http fetch GET 200 https://registry.npmjs.org/yauzl/-/yauzl-2.10.0.tgz 145ms (cache miss)
+186 timing reifyNode:node_modules/yauzl Completed in 163ms
+187 http fetch GET 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.6.tgz 162ms (cache miss)
+188 timing reifyNode:node_modules/mkdirp Completed in 184ms
+189 http fetch GET 200 https://registry.npmjs.org/minimist/-/minimist-1.2.7.tgz 177ms (cache miss)
+190 timing reifyNode:node_modules/minimist Completed in 191ms
+191 http fetch GET 200 https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz 195ms (cache miss)
+192 timing reifyNode:node_modules/typedarray Completed in 213ms
+193 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 360ms
+194 timing auditReport:getReport Completed in 362ms
+195 silly audit report {}
+196 timing auditReport:init Completed in 0ms
+197 timing reify:audit Completed in 363ms
+198 http fetch GET 200 https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz 377ms (cache miss)
+199 timing reifyNode:node_modules/readable-stream Completed in 392ms
+200 http fetch GET 200 https://registry.npmjs.org/mvn/-/mvn-3.5.0.tgz 3819ms (cache miss)
+201 warn deprecated mvn@3.5.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+202 timing reifyNode:node_modules/mvn Completed in 3840ms
+203 timing reify:unpack Completed in 3841ms
+204 timing reify:unretire Completed in 0ms
+205 timing build:queue Completed in 1ms
+206 timing build:link:node_modules/extract-zip Completed in 2ms
+207 timing build:link:node_modules/mkdirp Completed in 2ms
+208 timing build:link:node_modules/mvn Completed in 1ms
+209 timing build:link Completed in 2ms
+210 timing build:deps Completed in 3ms
+211 timing build Completed in 3ms
+212 timing reify:build Completed in 4ms
+213 timing reify:trash Completed in 0ms
+214 timing reify:save Completed in 6ms
+215 timing reify Completed in 5138ms
+216 silly ADD node_modules/pend
+217 silly ADD node_modules/fd-slicer
+218 silly ADD node_modules/buffer-crc32
+219 silly ADD node_modules/util-deprecate
+220 silly ADD node_modules/string_decoder
+221 silly ADD node_modules/safe-buffer
+222 silly ADD node_modules/process-nextick-args
+223 silly ADD node_modules/isarray
+224 silly ADD node_modules/core-util-is
+225 silly ADD node_modules/minimist
+226 silly ADD node_modules/ms
+227 silly ADD node_modules/typedarray
+228 silly ADD node_modules/readable-stream
+229 silly ADD node_modules/inherits
+230 silly ADD node_modules/buffer-from
+231 silly ADD node_modules/yauzl
+232 silly ADD node_modules/mkdirp
+233 silly ADD node_modules/debug
+234 silly ADD node_modules/concat-stream
+235 silly ADD node_modules/extract-zip
+236 silly ADD node_modules/mvn
+237 timing command:install Completed in 5141ms
+238 verbose exit 0
+239 timing npm Completed in 5186ms
+240 info ok

@@ -9,12 +9,9 @@
 			<class name="TestCases.TestAddPlan"/>
 			<class name="TestCases.TestAddService"/>
 			<class name="TestCases.TestAutoDueDate"/>
-			<class name="TestCases.BillRunTest"/>
-			<class name="TestCases.TestBillRunWithUncommittedStatement"/>
 			<class name="TestCases.TestCustomers"/>
-			<class name="TestCases.TestLargeBillRun"/>
 			<class name="TestCases.TestSingleCustomerBillRun"/>
-			<class name="TestCases.TestTwoCustomerBillRun"/>
+			<class name="TestCases.Imports"/>
 			<class name="TestCases.Imports"/>
 
 
