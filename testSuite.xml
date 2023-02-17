@@ -5,7 +5,6 @@
 		<classes>
 
 			<class name="TestCases.TestLogin"/>
-			<class name="TestCases.TestAddMeter"/>
 			<class name="TestCases.TestAddPlan"/>
 			<class name="TestCases.TestAddService"/>
 			<class name="TestCases.TestAutoDueDate"/>
