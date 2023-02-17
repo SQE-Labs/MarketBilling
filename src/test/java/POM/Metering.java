@@ -122,11 +122,11 @@ public class Metering {
         WebDriverWaits.ClickOn(DateConnectedDatepicker);
         WebDriverWaits.ClickOn(SelectTodayDateConnected_Datepicker);
         WebDriverWaits.ClickOn(CreateRegister_Button);
+        Thread.sleep(2000);
         // Validate Successfully created meter register.
         String ActualSucessMsg = WebDriverWaits.GetText(CustomerSuccessMeterRegister);
         String ExpectedSucessMsg1 = "Successfully created meter register.";
         softAssert.assertEquals(ExpectedSucessMsg1, ActualSucessMsg);
-        Thread.sleep(3000);
         System.out.println("register Id created ----- "+registerId);
         return registerId;
     }

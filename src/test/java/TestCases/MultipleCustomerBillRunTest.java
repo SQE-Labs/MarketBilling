@@ -1,10 +1,7 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.BillRun;
-import POM.Customer;
-import POM.Metering;
-import POM.Services;
+import POM.*;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -16,19 +13,21 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
+	@Test(priority = 0,enabled = true)
+	public  void BillRunWithNoCycle() throws InterruptedException {
+		extentTest = extent.startTest(" Bill Run With No Cycle ");
+		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
+		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
+		String serviceId=Services.M_AddService(customerId);
+		Services.EditService();
+		String 	meterId =Metering.AddMeter();
+		String 	registerId =Metering.createRegister();
+		Metering.addMeterReads("Initial","150","200","300");
+		Metering.addMeterReads("Actual Read","200","400","650");
+		BillRun.BillrunMethod_NoCycle();
+	}
 
 	@Test(priority = 1,enabled = true)
-	public  void TestLargeBillRun() throws InterruptedException {
-		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
-		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
-		List<String> customerList = new ArrayList<String>();
-		customerList.add(CustomerID01R);
-		customerList.add(CustomerID02B);
-		customerList.add(CustomerID03C);
-		String billRunCycleName=BillRun.createBillCycle(customerList);
-		BillRun.runBillCycle(billRunCycleName);
-	}
-	@Test(priority = 2,enabled = true)
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
@@ -44,12 +43,25 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
+	@Test(priority = 2,enabled = true)
+	public  void TestLargeBillRun() throws InterruptedException {
+		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
+		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
+		List<String> customerList = new ArrayList<String>();
+		customerList.add(CustomerID01R);
+		customerList.add(CustomerID02B);
+		customerList.add(CustomerID03C);
+		String billRunCycleName=BillRun.createBillCycle(customerList);
+		BillRun.runBillCycle(billRunCycleName);
+	}
 	@Test(priority = 3,enabled = true)
 	public  void TwoCustomerBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
-		 customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService(customerId);
+		//Login.loginWithGroupName("Testing1228");
+
+		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
+		 String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
@@ -96,20 +108,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rebill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
-		String customerId2="40975";
+		//String customerId2="40975";
 		BillRun.statementRebill(customerId2);
 	}
-	@Test(priority = 8,enabled = true)
-	public  void BillRunWithNoCycle() throws InterruptedException {
-		extentTest = extent.startTest(" Bill Run With No Cycle ");
-		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService(customerId);
-		Services.EditService();
-		String 	meterId =Metering.AddMeter();
-		String 	registerId =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
-		BillRun.BillrunMethod_NoCycle();
-	}
+
 }

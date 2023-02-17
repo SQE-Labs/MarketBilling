@@ -56,6 +56,7 @@ public class BaseTest extends BrowsersInvoked {
 			System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
 		}
 		extent.endTest(extentTest);
+		extent.flush();
 	}
 
 	public static String getScreenshot(WebDriver driver, String screenshotName) {
