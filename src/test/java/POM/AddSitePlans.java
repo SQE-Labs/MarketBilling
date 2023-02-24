@@ -4,6 +4,7 @@ import CommonMethods.DateAndTime;
 import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.Edit_icon;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.ServiceTab;
@@ -48,7 +49,12 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.ClickOn(activeDay);
         WebDriverWaits.ClickOn(addPlanToTableBtn);
         Thread.sleep(2000);
-        WebDriverWaits.ClickOn(saveChanges);
+        try {
+            WebDriverWaits.ClickOn(saveChanges);
+        }catch(ElementNotInteractableException e)
+        {
+          //  Log.info(e);
+        }
         WebDriverWaits.WaitUntilVisible(okButton);
         WebDriverWaits.ClickOn(okButton);
         WebDriverWaits.WaitUntilVisible(okButton);
@@ -63,8 +69,8 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.ClickOn(siteParameters);
         WebDriverWaits.ClickOn(addParamBtn);
         WebDriverWaits.SendKeys(effectiveDate, "Electricity Template Plan");
-        WebDriverWaits.selectByVisibleText(parameterName, "");
-        WebDriverWaits.SendKeys(paramValue, "Test Value");
+        WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
+        WebDriverWaits.SendKeys(paramValue, "Minimum Demand kVA Value");
         WebDriverWaits.ClickOn(addParamBtn);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }

@@ -146,7 +146,7 @@ public class BillRun extends TestLogin {
         System.out.println("Successfully asserted the popup text while bill run with uncomitted statement.");
         Thread.sleep(4000);
         WebDriverWaits.ClickOn(OK_Button);
-        Thread.sleep(10000);
+        Thread.sleep(1000);
 
     }
 

@@ -18,7 +18,7 @@ public class TestAddService extends BaseTest {
     public void ResidentialService() throws InterruptedException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
-        Customer.searchCustomer(CustomerID01R);
+      //  Customer.searchCustomer(CustomerID01R);
         //   Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
         Services.M_AddService(CustomerID01R);
 

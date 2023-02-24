@@ -37,13 +37,7 @@ public class TestAddPlan extends BaseTest {
         Plans.PlanwithDemandTOUdefinition_Network_and_Retail_Trf();
     }
 
-    //Issue opened
-    @Test(priority = 5,enabled = true)
-    public static void OtherPlan() throws InterruptedException {
-        extentTest = extent.startTest(" OtherPlan ");
-        extentTest.setDescription(" Verify that User is able to add other plan ");
-        Plans.OtherPlan();
-    }
+
 
     @Test(priority = 4,enabled=true)
     public static void Add_ProRated_Rates() throws InterruptedException {

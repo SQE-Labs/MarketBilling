@@ -13,7 +13,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
-	@Test(priority = 0,enabled = true)
+	@Test(priority = 1,enabled = true)
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
@@ -27,7 +27,19 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.BillrunMethod_NoCycle();
 	}
 
-	@Test(priority = 1,enabled = true)
+
+	@Test(priority = 2,enabled = true)
+	public  void TestLargeBillRun() throws InterruptedException {
+		extentTest = extent.startTest(" Large Cycle Bill run with 3 customers ");
+		extentTest.setDescription(" Verify that User is able to run the large bill run with 3 customers ");
+		List<String> customerList = new ArrayList<String>();
+		customerList.add(CustomerID01R);
+		customerList.add(CustomerID02B);
+		customerList.add(CustomerID03C);
+		String billRunCycleName=BillRun.createBillCycle(customerList);
+		BillRun.runBillCycle(billRunCycleName);
+	}
+	@Test(priority = 3,enabled = true)
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
@@ -42,17 +54,6 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.SmallBillRunWithSingleCustomer(billRunCycle);
 		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
-	}
-	@Test(priority = 2,enabled = true)
-	public  void TestLargeBillRun() throws InterruptedException {
-		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
-		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
-		List<String> customerList = new ArrayList<String>();
-		customerList.add(CustomerID01R);
-		customerList.add(CustomerID02B);
-		customerList.add(CustomerID03C);
-		String billRunCycleName=BillRun.createBillCycle(customerList);
-		BillRun.runBillCycle(billRunCycleName);
 	}
 	@Test(priority = 3,enabled = true)
 	public  void TwoCustomerBillRun() throws InterruptedException {

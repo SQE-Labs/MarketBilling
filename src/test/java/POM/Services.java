@@ -61,8 +61,8 @@ public class Services {
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(SearchField);
         Thread.sleep(4000);
-        String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
-        WebDriverWaits.SendKeys(SearchField, ThirdRecID);
+       // String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
+        WebDriverWaits.SendKeys(SearchField, customerId);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(OverviewTab);
