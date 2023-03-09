@@ -64,6 +64,12 @@ public class Customer {
 
     public static By settingsTab = By.xpath("//a[text()=' Settings']");
 
+    public static By communications = By.xpath("(//*[contains(text(),'Communications')])[1]");
+
+    public static Communications clickCommunications(){
+        WebDriverWaits.ClickOn(communications);
+        return new Communications();
+    }
 
     public static String createCustomer(String type, String category, String email) throws InterruptedException {
         driver.get(DataInterface.URL);

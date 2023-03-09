@@ -18,7 +18,13 @@ public class GroupEdit  extends TestLogin {
 
    // public static By save = By.className("btn btn-primary");
     public static By save = By.xpath("//button[text()='Save']");
+    public static By editGroup = By.xpath("(//*[@class='icon-group'])[1]");
+    public static By checkBoxCorrespondence = By.id("flag_enableCorrespondenceLetter");
 
+    public static By correspondenceToggle = By.xpath("//*[@id='franchisee']/div[10]/div[2]/div[9]/div/label/span[1]");
+
+    public static By saveChanges = By.xpath("//*[@class='btn btn-mini btn-primary']");
+    public static By saveConfirmation = By.xpath("//*[@class='btn btn-primary']");
         public  static  void selectPrimaryInvoiceTemplate(String invoiceName) {
         WebDriverWaits.scrollIntoView(primary_front_id);
         WebDriverWaits.selectByVisibleText(primary_front_id,invoiceName);
@@ -41,9 +47,32 @@ public class GroupEdit  extends TestLogin {
     public  static  void validateSuccessTxt() {
         WebDriverWaits.scrollIntoView(alertSuccess);
         String actual =WebDriverWaits.GetText(alertSuccess);
-
         softAssert.assertEquals(actual,"Success! Changes have been updated successfully.\n");
-
-
     }
+
+    public  static  void validateSuccessText(String expected) {
+        WebDriverWaits.scrollIntoView(alertSuccess);
+        String actual =WebDriverWaits.GetText(alertSuccess);
+        softAssert.assertEquals(actual,expected);
+        softAssert.assertAll();
+    }
+
+    public static void navigateToEditGroup(){
+        WebDriverWaits.ClickOn(editGroup);
+    }
+
+    public static void enableCorrepondenceToggle(){
+        WebDriverWaits.scrollIntoView(checkBoxCorrespondence);
+        WebDriverWaits.selectCheckBox(checkBoxCorrespondence);
+    }
+    public static void clickSaveChanges(){
+        WebDriverWaits.scrollIntoView(saveChanges);
+        WebDriverWaits.ClickOn(saveChanges);
+    }
+
+    public static void clickSaveConfirmation(){
+        WebDriverWaits.ClickOn(saveConfirmation);
+    }
+
+
 }

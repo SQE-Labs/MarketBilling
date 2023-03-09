@@ -14,6 +14,11 @@ public class Admin  extends TestLogin {
     public static By groupEditBtn = By.xpath("//p[text()='Edit Group']");
     public static By billRun = By.xpath("//span[text()='Bill Run']");
     public static By plans = By.xpath("//span[text()='Plans']");
+    public static By searchIcon = By.xpath("//*[@class='glyphicon glyphicon-search']");
+    public static By customerId = By.xpath("//*[@id=\"tbl-customer\"]/tbody/tr[1]/td[1]/a");
+
+
+
 
     public static void navigateToInvoiceSetup(){
         WebDriverWaits.ClickOn(AdminIcon);
@@ -30,9 +35,24 @@ public class Admin  extends TestLogin {
         WebDriverWaits.ClickOn(billRun);
 
     }
-    public static void navigateToPlans(){
+    public static void navigateToPlans() {
         WebDriverWaits.ClickOn(AdminIcon);
         WebDriverWaits.ClickOn(plans);
 
     }
+    public static void navigateToAdmin(){
+            WebDriverWaits.ClickOn(AdminIcon);
+        }
+
+        public static void clickSearchIcon(){
+        WebDriverWaits.ClickOn(searchIcon);
+        }
+
+    public static Customer clickRecentCustomerId(){
+        WebDriverWaits.ClickOn(customerId);
+        return  new Customer();
+    }
+
+
+
 }
