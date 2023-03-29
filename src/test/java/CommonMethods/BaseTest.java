@@ -25,7 +25,7 @@ public class BaseTest extends BrowsersInvoked {
 
 	@BeforeSuite
 	public void setExtent() throws InterruptedException, IOException {
-		extent = new ExtentReports(System.getProperty("user.dir") + "/test-output/ExtentReportResult.html", true);
+		extent = new ExtentReports(System.getProperty("user.dir") + "/ExtentReports/ExtentReportResult.html", true);
 		extent.addSystemInfo("Environment", "QA");
 		extent.loadConfig(new File(System.getProperty("user.dir") + "/extent-config.xml"));
 	}
