@@ -1,10 +1,7 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.BillRun;
-import POM.Customer;
-import POM.Metering;
-import POM.Services;
+import POM.*;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -23,7 +20,9 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
+        Login.ValidLogin();
+
+        customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
          serviceId=Services.M_AddService(customerId);
          Services.EditService();
          meterId =Metering.AddMeter();

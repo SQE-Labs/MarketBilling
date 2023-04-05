@@ -41,6 +41,8 @@ public class BillRun extends TestLogin {
     public static By BillRunCycles_Subtab = By.xpath("//*[contains(text(),'Bill Run Cycles')]");
     public static By AddBillRunCycleButton_CreateNew = By.xpath("//*[@id='addBtn']");
     public static By CycleName_Field = By.xpath("//*[@id='cyclename']");
+    public static By cycleType = By.xpath("//*[@id='cycletype']");
+
     public static By CustomerListFilter = By.xpath("//*[@placeholder='Customer List Filter']");
     public static By CustomerListFilterOpn = By.xpath("(//select[@multiple='multiple'])[1]");
     public static By ArrowRight = By.xpath("(//*[@class='glyphicon glyphicon-arrow-right'])[3]");
@@ -196,7 +198,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_IssueDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_IssueDate_Datepicker);
-        if (!(DataInterface.autoDueDateEnabled)) {
+        if (DataInterface.autoDueDateEnabled) {
             WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
             WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
         }
@@ -360,6 +362,8 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(CycleName_Field);
         String billRunCycleName = RandomStrings.RequiredCharacters(6);
         WebDriverWaits.SendKeysWithClear(CycleName_Field, billRunCycleName);
+        WebDriverWaits.selectByVisibleText(cycleType, "Manual");
+
         System.out.println("Bill run cyccle create with name ---" + billRunCycleName);
         for (String customerId : customerIdList) {
             BillRun.filterCustomerId(customerId);
