@@ -28,6 +28,8 @@ public class AddSitePlans extends TestLogin {
     public static By saveServiceParamsBtn = By.id("saveServiceParamsBtn");
     public static By saveChanges = By.cssSelector("button#saveChangesBtn");
     public static By addParamBtn = By.id("ad");
+    public static By addBtn = By.id("addParamBtn");
+
     public static By effectiveDate = By.id("effectiveDate");
     public static By parameterName = By.id("parameterName");
     public static By paramValue = By.id("paramValue");
@@ -62,16 +64,18 @@ public class AddSitePlans extends TestLogin {
 
     }
 
-    public static void addSiteParameters() {
+    public static void addSiteParameters() throws InterruptedException {
         WebDriverWaits.ClickOn(ServiceTab);
         WebDriverWaits.ClickOn(Edit_icon);
         jse.executeScript("window.scrollBy(0,1000)", "");
         WebDriverWaits.ClickOn(siteParameters);
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(addParamBtn);
-        WebDriverWaits.SendKeys(effectiveDate, "Electricity Template Plan");
+        WebDriverWaits.SendKeys(effectiveDate, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
+        WebDriverWaits.ClickOn(activeDay);
         WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
-        WebDriverWaits.SendKeys(paramValue, "Minimum Demand kVA Value");
-        WebDriverWaits.ClickOn(addParamBtn);
+        WebDriverWaits.SendKeys(paramValue, "10");
+        WebDriverWaits.ClickOn(addBtn);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }
 }
