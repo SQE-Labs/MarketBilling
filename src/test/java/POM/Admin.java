@@ -1,5 +1,6 @@
 package POM;
 
+import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 import org.openqa.selenium.By;
 
@@ -9,4 +10,8 @@ public class Admin  extends TestLogin {
     public static By btnbrowseFile = By.id("btnbrowseFile");
     public static By attDesc = By.id("attDesc");
 
+
+    public static void clickAdmin(){
+        WebDriverWaits.ClickOn(AdminIcon);
+    }
 }

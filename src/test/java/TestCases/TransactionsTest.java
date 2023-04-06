@@ -6,6 +6,8 @@ import POM.ManageServiceNumber;
 import POM.Transactions;
 import org.testng.annotations.Test;
 
+import static TestCases.TestLogin.ValidLogin;
+
 public class TransactionsTest  extends BaseTest {
     @Test(priority = 1)
     public  void cashPayment() throws InterruptedException {
@@ -24,5 +26,4 @@ public class TransactionsTest  extends BaseTest {
         Transactions.addPaymentDetails("Payment","Credit Card","12199.06");
 
     }
-
 }

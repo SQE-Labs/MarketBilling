@@ -16,11 +16,10 @@ public class TestSingleCustomerBillRun extends BaseTest {
     String registerId;
     String billCycleName;
 
-    @Test(priority = 1,enabled = true)
+    @Test(priority = 24,enabled = true)
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-        Login.ValidLogin();
 
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
          serviceId=Services.M_AddService(customerId);
@@ -33,7 +32,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
 
     }
 
-    @Test(priority = 2,enabled = true)
+    @Test(priority = 25,enabled = true)
     public  void SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
@@ -43,7 +42,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         BillRun.runBillCycle(billCycleName);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 26)
 
     public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Rollback for single customer ");
@@ -51,7 +50,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         //String customerId ="40930";
         BillRun.Rollback_SmallBillRunWithSingleCustomer(customerId);
     }
-    @Test(priority = 4)
+    @Test(priority = 27)
 
     public  void rebill_and_Reuse() throws InterruptedException {
         extentTest = extent.startTest(" Rebill and Reuse Statement ");

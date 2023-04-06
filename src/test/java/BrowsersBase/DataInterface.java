@@ -11,5 +11,6 @@ public interface DataInterface {
 	//public static String Username = "testreport+101@sqelabs.com";
 	public static String Password = "Test@1234";
 	public static boolean autoDueDateEnabled = false;
+	public  static  boolean groupName=false;
 
 }

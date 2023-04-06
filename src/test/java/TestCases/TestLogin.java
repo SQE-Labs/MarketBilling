@@ -1,5 +1,6 @@
 package TestCases;
 
+import BrowsersBase.DataInterface;
 import CommonMethods.BaseTest;
 import POM.Login;
 import org.testng.annotations.Test;
@@ -12,6 +13,12 @@ public class TestLogin extends BaseTest {
 	public static void ValidLogin() {
 		extentTest = extent.startTest(" ValidLogin ");
 		extentTest.setDescription(" Verify that User is able to login successfully. ");
-		Login.loginWithGroupName("Testing1228");
-	}
+		//Login.ValidLogin();
+		if (DataInterface.groupName){
+			Login.loginWithGroupName("Testing1228");
+
+		}
+		else
+			Login.ValidLogin();
+}
 }
