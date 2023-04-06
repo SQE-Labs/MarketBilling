@@ -44,8 +44,6 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
-
-
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
