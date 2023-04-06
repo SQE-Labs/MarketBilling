@@ -121,6 +121,9 @@ public class TestAddService extends BaseTest {
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
+        Login.ValidLogin();
+        Customer.searchAndNavigateToRecentCustomer();
+
         AddSitePlans.addSiteParameters();
 
     }
