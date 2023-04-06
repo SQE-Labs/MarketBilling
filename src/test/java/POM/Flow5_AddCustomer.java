@@ -181,7 +181,7 @@ public class Flow5_AddCustomer extends TestLogin {
             driver.navigate().to(DataInterface.AdminURL);
             Thread.sleep(8000);
             WebDriverWaits.ClickOn(X_AddService.SearchIcon);
-            Thread.sleep(4000);
+            Thread.sleep(6000);
             CustomerID01R = WebDriverWaits.GetText(X_AddService.selectBusinessCustomer_Record1);
 
         }

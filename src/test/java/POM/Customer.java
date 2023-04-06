@@ -83,6 +83,7 @@ public class Customer {
         addAccountManagement(category);
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(SaveCustomerButton);
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(SaveOnlyButton);
         Thread.sleep(2000);
         String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);

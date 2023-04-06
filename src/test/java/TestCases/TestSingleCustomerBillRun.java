@@ -19,6 +19,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     @Test(priority = 24,enabled = true)
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
+        //Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
 
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
@@ -55,7 +56,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void rebill_and_Reuse() throws InterruptedException {
         extentTest = extent.startTest(" Rebill and Reuse Statement ");
         extentTest.setDescription(" Verify that User is able to run rebill and reuse and Statement");
-        BillRun.rebillSingleCustomer(  billCycleName);
+        BillRun.rebillSingleCustomer(billCycleName);
     }
 
 }

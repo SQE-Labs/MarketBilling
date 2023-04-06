@@ -44,7 +44,6 @@ public class TestAddPlan extends BaseTest {
     @Test(priority = 6,enabled=true)
     public static void Add_ProRated_Rates() throws InterruptedException {
         extentTest = extent.startTest(" Add_ProRated_Rates ");
-        Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to add ProRated Rates ");
     //    Plans.Add_ProRated_Rates();
     }

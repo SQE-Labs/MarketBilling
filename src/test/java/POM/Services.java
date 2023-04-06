@@ -87,7 +87,7 @@ public class Services {
 //        WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
 //        select = new Select(Option2);
 //        select.selectByVisibleText("Electricity Template Plan");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
         WebDriverWaits.ClickOn(Service_Plan_Elec);
        // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));

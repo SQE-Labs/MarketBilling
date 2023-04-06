@@ -16,8 +16,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	@Test(priority = 1,enabled = true)
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
-		//ValidLogin();
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
+		ValidLogin();
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
@@ -44,6 +44,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
+
+
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
