@@ -132,6 +132,7 @@ public class Customer {
     }
 
     public static void addBusinessDetails() throws InterruptedException {
+        WebDriverWaits.scrollIntoView(CompanyNameField);
         WebDriverWaits.ClickOn(Flow5_AddCustomer.FirstCustomer.CompanyNameField);
         WebDriverWaits.SendKeys(Flow5_AddCustomer.FirstCustomer.CompanyNameField, "FranklinCovey");
         jse.executeScript("window.scrollBy(0,400)", "");

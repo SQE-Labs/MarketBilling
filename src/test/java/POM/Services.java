@@ -25,8 +25,8 @@ public class Services {
     public static By selectBusinessCustomer_Record1 = By.xpath("(//td[@class='sorting_1']/a)[1]"); // Just temporary
     // due to issue
     public static By selectCommercialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[1]");
-    public static By OverviewTab = By.xpath("//*[@class=\"icon-eye-open\"]"); // //*[contains(text(),'Overview')]
-
+    public static By OverviewTab = By.xpath("//*[@class='icon-eye-open']"); // //*[contains(text(),'Overview')]
+    //*[@class='icon-eye-open']//*[@class='icon-eye-open']
     // Add Service for Residential/Business/Commercial customer
     public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
     public static By Market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
@@ -46,7 +46,7 @@ public class Services {
     public static By AddButton = By.xpath("//*[@id=\"submitBttn\"]");
 
     // Edit Residential/Business/Commercial customer service
-    public static By ServiceTab = By.xpath("//*[@class=\"icon-power-off\"]");
+    public static By ServiceTab = By.xpath("//*[@class='icon-power-off']");
     public static By Search_FieldOnPage = By.xpath("//*[@class=\"dataTables_filter\"]");
     public static By Edit_icon = By.xpath("//*[@class=\"btn btn-primary toolt\"]");
     public static By Service_Status_Dropdown = By.xpath("//*[@id=\"serviceStatus\"]");
@@ -55,16 +55,20 @@ public class Services {
     public static By SaveChanges_Button = By.xpath("//*[@class=\"btn btn-primary iseditable\"]");
     public static By OkButton = By.xpath("//*[contains(text(),'OK')]");
     public static By CustomerSuccessEditMsg = By.xpath("//div[@class='alert alert-success']/center");
+    public static  By dropDown = By.xpath("//button[@class='btn btn-default dropdown-toggle']");
 
+    public static By customer = By.xpath("//a[text()='Customer']");
     public static String M_AddService(String customerId ) throws InterruptedException {
-        WebDriverWaits.ClickOn(SearchIcon);
-        Thread.sleep(1000);
-        WebDriverWaits.ClickOn(SearchField);
-        Thread.sleep(4000);
+//        WebDriverWaits.ClickOn(SearchIcon);
+//        Thread.sleep(1000);
+//        WebDriverWaits.ClickOn(SearchField);
+//        Thread.sleep(4000);
        // String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
+        WebDriverWaits.ClickOn(dropDown);
+        WebDriverWaits.ClickOn(customer);
         WebDriverWaits.SendKeysWithClear(SearchField, customerId);
         WebDriverWaits.ClickOn(SearchIcon);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebDriverWaits.ClickOn(OverviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);

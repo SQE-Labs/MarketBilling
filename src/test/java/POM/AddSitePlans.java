@@ -57,10 +57,10 @@ public class AddSitePlans extends TestLogin {
         {
           //  Log.info(e);
         }
-        WebDriverWaits.WaitUntilVisible(okButton);
-        WebDriverWaits.ClickOn(okButton);
-        WebDriverWaits.WaitUntilVisible(okButton);
-        WebDriverWaits.ClickOn(okButton);
+//        WebDriverWaits.WaitUntilVisible(okButton);
+//        WebDriverWaits.ClickOn(okButton);
+//        WebDriverWaits.WaitUntilVisible(okButton);
+//        WebDriverWaits.ClickOn(okButton);
 
     }
 

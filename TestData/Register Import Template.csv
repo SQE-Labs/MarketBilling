@@ -1,2 +1,6 @@
 *Service ID, *Meter Serial Number, *Register ID, *Network Tariff Code, *Unit Of Measure, *Time Of Day, *Multiplier, *Dial Format, *Suffix, *Controlled Load, *Status, *Consumption Type, *Demand1, *Demand2, *Date Connected, Date Removed 
+<<<<<<< HEAD
 6173841469,TestMeter693,1,NA,KWH,ALLDAY,1,5,11,No,Current,Cumulative,0,0,30/03/2023,
+=======
+0573673243,TestMeter243,1,NA,KWH,ALLDAY,1,5,11,No,Current,Cumulative,0,0,06/04/2023,
+>>>>>>> 0fa25757d6c7c9415d06601c45dd9f3fad1359cd

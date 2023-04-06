@@ -1,2 +1,6 @@
 *Service ID,*Meter Serial Number,*Status,*Consumption Type,*Configuration,Multiplier,Constant,Hazard,Location,Additional Site Info,Meter Point ID,Next Scheduled Read Date,Manufacturer,Model,Meter Read Type,Route,Walk Order,*Meter Installation Type,*Date Connected,Date Removed
+<<<<<<< HEAD
 6173841469,TestMeter693,Current,Cumulative,POS,,,,,,,,,,,,,BASIC,30/03/2023,
+=======
+0573673243,TestMeter243,Current,Cumulative,POS,,,,,,,,,,,,,BASIC,06/04/2023,
+>>>>>>> 0fa25757d6c7c9415d06601c45dd9f3fad1359cd

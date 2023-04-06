@@ -56,8 +56,10 @@ public class BaseTest extends BrowsersInvoked {
 			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
 			System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
 		}
+		//extent.endTest(extentTest);
+
 		extent.endTest(extentTest);
-		extent.flush();
+
 	}
 
 	public static String getScreenshot(WebDriver driver, String screenshotName) {

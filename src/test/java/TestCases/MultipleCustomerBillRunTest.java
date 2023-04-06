@@ -16,6 +16,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	@Test(priority = 1,enabled = true)
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
+		//ValidLogin();
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);

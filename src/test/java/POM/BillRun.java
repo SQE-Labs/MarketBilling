@@ -390,7 +390,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_IssueDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_IssueDate_Datepicker);
-        if (!(DataInterface.autoDueDateEnabled)) {
+        if (DataInterface.autoDueDateEnabled) {
             WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
             WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
 
@@ -423,7 +423,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_IssueDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_IssueDate_Datepicker);
-        if (!(DataInterface.autoDueDateEnabled)) {
+        if (DataInterface.autoDueDateEnabled) {
             WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
             WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
 

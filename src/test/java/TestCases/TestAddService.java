@@ -14,9 +14,10 @@ public class TestAddService extends BaseTest {
         driver.navigate().refresh();
     }
 
-    @Test(priority = 1,enabled = true)
+    @Test(priority = 10,enabled = true)
     public void ResidentialService() throws InterruptedException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
+        //Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
       //  Customer.searchCustomer(CustomerID01R);
         //   Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
@@ -24,7 +25,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 2,enabled = true)
+    @Test(priority = 11,enabled = true)
     public void EditResidentialService() throws InterruptedException {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
@@ -33,7 +34,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 3,enabled = true)
+    @Test(priority = 12,enabled = true)
     public void AddMeter_MeterRegisterR() throws InterruptedException {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
@@ -45,7 +46,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 4,enabled = true)
+    @Test(priority = 13,enabled = true)
     public void SecondBusinessService() throws InterruptedException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
@@ -66,7 +67,7 @@ public class TestAddService extends BaseTest {
     }
 
 
-    @Test(priority = 5,enabled = true)
+    @Test(priority = 14,enabled = true)
     public void AddCommercialService() throws InterruptedException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
@@ -74,7 +75,7 @@ public class TestAddService extends BaseTest {
         Services.M_AddService(CustomerID03C);
         Services.EditService();
     }
-    @Test(priority = 6)
+    @Test(priority = 15)
     public void Metering() throws InterruptedException {
         extentTest = extent.startTest("Add  Meter  for Service ");
         extentTest.setDescription(" Verify that User is able to add Meter. ");
@@ -83,7 +84,7 @@ public class TestAddService extends BaseTest {
         Metering.AddMeter();
     }
 
-    @Test(priority = 7)
+    @Test(priority = 16)
     public void MeterRegister() throws InterruptedException {
         extentTest = extent.startTest(" Meter Register  for Service");
         extentTest.setDescription(" Verify that User is able to register meter ");
@@ -91,14 +92,14 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 8)
+    @Test(priority = 17)
     public void MeterReadsInitial() throws InterruptedException {
         extentTest = extent.startTest(" Meter Reads Initial ");
         extentTest.setDescription(" Verify that User is able to add  Meter Reads ");
         Metering.addMeterReads("Initial", "150", "200", "300");
     }
 
-    @Test(priority = 9)
+    @Test(priority = 18)
     public void MeterReadsConsumption() throws InterruptedException {
         extentTest = extent.startTest(" Meter Reads Consumption Data  ");
         extentTest.setDescription(" Verify that User is able to add  Meter Reads consumption data ");
@@ -106,7 +107,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 10)
+    @Test(priority = 19)
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
@@ -116,7 +117,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 11)
+    @Test(priority = 20)
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");

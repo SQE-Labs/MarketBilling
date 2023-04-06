@@ -1,2 +1,6 @@
 *Service ID,*Meter Number,*Date of Read,*Meter Read,*Period,*Read Type [I-Initial / A-Actual / C - Consumption / E-Estimate],Notes,Is Read Rollover? [Yes/No],Unit? [GAC-Cubic meter (m3)/GAB-Cubic feet (ft3)/GAA-British thermal unit (btu)/GAD-Kilowatt hour (kWh)/GAE-Mega joules (MJ)/GAF-Therms (th)],Datastream,Special Type
+<<<<<<< HEAD
 6173841469,TestMeter693,30/03/2023,250,P,C,notes,,,12,
+=======
+0573673243,TestMeter243,06/04/2023,250,P,C,notes,,,12,
+>>>>>>> 0fa25757d6c7c9415d06601c45dd9f3fad1359cd

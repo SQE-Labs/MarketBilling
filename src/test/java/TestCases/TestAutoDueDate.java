@@ -9,9 +9,10 @@ import java.util.List;
 
 public class TestAutoDueDate extends BaseTest {
 
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 21,enabled = true)
 	public  void BillRun_after_EnableDueDate_CalendarDays() throws InterruptedException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_CalendarDays");
+		//Login.ValidLogin();
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
 		Login.ValidLogin();
 		AdminGroup.M_EnableDueDate("Calendar days");
@@ -26,10 +27,12 @@ public class TestAutoDueDate extends BaseTest {
 		customerList.add(customerId);
 		String billRunCycle=BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycle);
+		Admin.clickAdmin();
 	}
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 22,enabled = true)
 	public  void BillRun_after_EnableDueDate_BusinessDays() throws InterruptedException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_BusinessDays");
+
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
@@ -44,9 +47,10 @@ public class TestAutoDueDate extends BaseTest {
 		customerList.add(customerId);
 		String billRunCycle=BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycle);
+		Admin.clickAdmin();
 
 	}
-	@Test(priority = 3)
+	@Test(priority = 23)
 	public  void BillRun_after_EnableDueDate_EndOfMonth() throws InterruptedException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_EndOfMonth");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");

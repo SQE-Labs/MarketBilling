@@ -20,7 +20,7 @@ public class Plans extends BaseTest {
 	public static SoftAssert softAssert = new SoftAssert();
 	static Select select ;
 
-		public static By PlanTab = By.xpath("//*[@class='icon-lightbulb']");
+		public static By PlanTab = By.xpath("//*[@class='icon-th-list']");
 		public static By CreateNewPlan = By.xpath("//*[@id='addBtn']");
 		public static By UsageTypeDropdown = By.xpath("//*[@id='usageTypes']");
 		public static By NameField = By.xpath("//*[@id='name']");
@@ -467,6 +467,7 @@ public class Plans extends BaseTest {
 //			WebDriverWaits.ClickOn(PlanSearchField);
 //			WebDriverWaits.SendKeys(PlanSearchField, RandomName1); // search tou network plan
 //			WebDriverWaits.ClickOn(EditPlan);
+			Thread.sleep(3000);
 			WebDriverWaits.ClickOn(ProrataPlanRecord_Edit);
 			jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 			Thread.sleep(3000);
