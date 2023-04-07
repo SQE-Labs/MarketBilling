@@ -17,7 +17,7 @@ public class TestAddService extends BaseTest {
     @Test(priority = 10,enabled = true)
     public void ResidentialService() throws InterruptedException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
-        Login.ValidLogin();
+       // Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
       //  Customer.searchCustomer(CustomerID01R);
         //   Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
@@ -111,8 +111,8 @@ public class TestAddService extends BaseTest {
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
-        //Login.loginWithGroupName("Testing1228");
-        //Customer.searchAndNavigateToRecentCustomer();
+        //Login.ValidLogin();
+        Customer.searchAndNavigateToRecentCustomer();
         AddSitePlans.addSitePlan();
 
     }
@@ -121,8 +121,7 @@ public class TestAddService extends BaseTest {
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
-        Login.ValidLogin();
-        Customer.searchAndNavigateToRecentCustomer();
+
 
         AddSitePlans.addSiteParameters();
 
