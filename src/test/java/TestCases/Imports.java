@@ -14,7 +14,7 @@ public class Imports extends BaseTest {
     String serviceId;
     String customerId;
     String billCycleName;
-    @Test(priority = 28)
+    @Test(priority = 38)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");
         //Login.ValidLogin();
@@ -26,7 +26,7 @@ public class Imports extends BaseTest {
 
 	}
 
-    @Test(priority = 29,enabled = true)
+    @Test(priority = 39,enabled = true)
     public void Import_Meter_Number() throws Exception {
         extentTest = extent.startTest(" Meter Number import ");
         extentTest.setDescription(" Verify that User is able to run meter number import");
@@ -40,9 +40,9 @@ public class Imports extends BaseTest {
         MeterImport.meterNumberImport(meterImport_FilePath);
     }
 
-    @Test(priority = 30,enabled = true)
+    @Test(priority = 40,enabled = true)
     public void Import_Meter_Register() throws Exception {
-        extentTest = extent.startTest(" Meter Register Import ");
+        extentTest = extent.startTest(" Import_Meter_Register ");
         extentTest.setDescription(" Verify that User is able to run meter register using Import");
         String path = System.getProperty("user.dir") + "/TestData/Register Import Template.csv";
         String prodate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
@@ -53,9 +53,9 @@ public class Imports extends BaseTest {
         MeterImport.meterRegisterImport(path);
 
     }
-    @Test(priority = 31,enabled = true)
+    @Test(priority = 41,enabled = true)
     public void Import_Meter_Reads_Initial() throws Exception {
-        extentTest = extent.startTest(" Meter Reads Import ");
+        extentTest = extent.startTest(" Import_Meter_Reads_Initial ");
         extentTest.setDescription(" Verify that User is able to   Import Meter reads");
         String path = System.getProperty("user.dir") + "/TestData/Meter Read Import Template - Manual.csv";
         String readDate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
@@ -65,9 +65,9 @@ public class Imports extends BaseTest {
         MeterImport.meterReadsImport(path);
 
     }
-    @Test(priority = 32,enabled = true)
+    @Test(priority = 42,enabled = true)
     public void Import_Meter_Reads_Consumption() throws Exception {
-        extentTest = extent.startTest(" Meter Reads Import ");
+        extentTest = extent.startTest(" Import_Meter_Reads_Consumption ");
         extentTest.setDescription(" Verify that User is able to   Import Meter reads");
         String path = System.getProperty("user.dir") + "/TestData/Meter Read Import Template - Manual.csv";
         String readDate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");

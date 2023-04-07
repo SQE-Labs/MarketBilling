@@ -34,8 +34,7 @@ public class BaseTest extends BrowsersInvoked {
 
 	@AfterSuite
 	public void endReport() {
-		extent.flush();
-		extent.close();
+		//extent.close();
 	}
 
 	@AfterMethod
@@ -59,6 +58,7 @@ public class BaseTest extends BrowsersInvoked {
 		//extent.endTest(extentTest);
 
 		extent.endTest(extentTest);
+		extent.flush();
 
 	}
 

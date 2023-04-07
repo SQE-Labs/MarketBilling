@@ -392,11 +392,11 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_IssueDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_IssueDate_Datepicker);
-        if (DataInterface.autoDueDateEnabled) {
-            WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
-            WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
-
-        }
+//        if (DataInterface.autoDueDateEnabled) {
+//            WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
+//            WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
+//
+//        }
         WebDriverWaits.ClickOn(BillRunCycle_Dropdown);
         Thread.sleep(2000);
         WebElement BillRunCycOption = WebDriverWaits.WaitUntilVisibleWE(BillRunCycleOption);
@@ -425,11 +425,11 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_IssueDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_IssueDate_Datepicker);
-        if (DataInterface.autoDueDateEnabled) {
-            WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
-            WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
-
-        }
+//        if (DataInterface.autoDueDateEnabled) {
+//            WebDriverWaits.ClickOn(BillRun_DueDate_Datepicker);
+//            WebDriverWaits.ClickOn(Select_BillRun_DueDate_Datepicker);
+//
+//        }
         WebDriverWaits.ClickOn(BillRunCycle_Dropdown);
         //WebDriverWaits.ClickOn(BillRunCycle_DropdownOpn);
         Thread.sleep(2000);

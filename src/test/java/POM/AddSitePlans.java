@@ -50,17 +50,16 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.SendKeys(endDate, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         WebDriverWaits.ClickOn(activeDay);
         WebDriverWaits.ClickOn(addPlanToTableBtn);
+        Thread.sleep(4000);
+        WebDriverWaits.WaitUntilVisible(saveChanges);
+
+        WebDriverWaits.ClickOn(saveChanges);
         Thread.sleep(2000);
-        try {
-            WebDriverWaits.ClickOn(saveChanges);
-        }catch(ElementNotInteractableException e)
-        {
-          //  Log.info(e);
-        }
-//        WebDriverWaits.WaitUntilVisible(okButton);
-//        WebDriverWaits.ClickOn(okButton);
-//        WebDriverWaits.WaitUntilVisible(okButton);
-//        WebDriverWaits.ClickOn(okButton);
+
+        WebDriverWaits.WaitUntilVisible(okButton);
+        WebDriverWaits.ClickOn(okButton);
+        WebDriverWaits.WaitUntilVisible(okButton);
+        WebDriverWaits.ClickOn(okButton);
 
     }
 

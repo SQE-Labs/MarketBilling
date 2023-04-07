@@ -13,11 +13,10 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 28,enabled = true)
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		ValidLogin();
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
@@ -29,7 +28,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	}
 
 
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 29,enabled = true)
 	public  void TestLargeBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 3 customers ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 3 customers ");
@@ -40,7 +39,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String billRunCycleName=BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
 	}
-	@Test(priority = 3,enabled = true)
+	@Test(priority = 30,enabled = true)
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
@@ -56,12 +55,11 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
-	@Test(priority = 3,enabled = true)
+	@Test(priority = 31,enabled = true)
 	public  void TwoCustomerBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
 		//Login.loginWithGroupName("Testing1228");
-
 		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		 String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
@@ -84,15 +82,15 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.runBillCycleForRollBack(billRunCycle);
 
 	}
-	@Test(priority = 4,enabled = true)
+	@Test(priority = 32,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_RollBack ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback();
 	}
-	@Test(priority = 5,enabled = true)
+	@Test(priority =33,enabled = true)
 	public  void TwoCustomer_ReBill() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_ReBill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
@@ -100,15 +98,15 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.runBillCycle(billRunCycle);
 
 	}
-	@Test(priority = 6,enabled = true)
+	@Test(priority = 34,enabled = true)
 	public  void TwoCustomer_FullStatementRollBack() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_FullStatementRollBack ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback_in_statementTab(customerId2);
 	}
-	@Test(priority = 7,enabled = true)
+	@Test(priority = 35,enabled = true)
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rebill ");
+		extentTest = extent.startTest(" TwoCustomer_RebillStatement ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
 		//String customerId2="40975";
 		BillRun.statementRebill(customerId2);

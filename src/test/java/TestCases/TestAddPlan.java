@@ -12,7 +12,6 @@ public class TestAddPlan extends BaseTest {
     @Test(priority = 2,enabled = true)
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
-        //Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to do TouImport");
         TouImport.TOUImportFile();
 
@@ -45,6 +44,6 @@ public class TestAddPlan extends BaseTest {
     public static void Add_ProRated_Rates() throws InterruptedException {
         extentTest = extent.startTest(" Add_ProRated_Rates ");
         extentTest.setDescription(" Verify that User is able to add ProRated Rates ");
-    //    Plans.Add_ProRated_Rates();
+        Plans.Add_ProRated_Rates();
     }
 }
