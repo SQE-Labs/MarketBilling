@@ -17,11 +17,11 @@ public class TestAddService extends BaseTest {
     @Test(priority = 10,enabled = true)
     public void ResidentialService() throws InterruptedException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
-        Login.ValidLogin();
+        //Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
-      //  Customer.searchCustomer(CustomerID01R);
-        //   Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
-        Services.M_AddService(CustomerID01R);
+       Customer.searchCustomer(CustomerID01R);
+           Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
+           Services.M_AddService(CustomerID01R);
 
     }
 
@@ -29,7 +29,7 @@ public class TestAddService extends BaseTest {
     public void EditResidentialService() throws InterruptedException {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
-        //  Flow6_7AddingServiceAndMeter.X_AddService.EditService();
+        Flow6_7AddingServiceAndMeter.X_AddService.EditService();
         Services.EditService();
 
     }
@@ -38,6 +38,7 @@ public class TestAddService extends BaseTest {
     public void AddMeter_MeterRegisterR() throws InterruptedException {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
+
         Metering metering = new Metering();
         metering.AddMeter();
         metering.createRegister();
@@ -50,12 +51,12 @@ public class TestAddService extends BaseTest {
     public void SecondBusinessService() throws InterruptedException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
-        Customer.searchCustomer(CustomerID02B);
-//        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
-//        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
-//        Metering metering = new Metering();
-//        metering.AddMeter();
-//        metering.createRegister();
+      //  Customer.searchCustomer(CustomerID02B);
+        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
+        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
+        Metering metering = new Metering();
+        metering.AddMeter();
+        metering.createRegister();
 
         Services.M_AddService(CustomerID02B);
         Services.EditService();
@@ -74,6 +75,7 @@ public class TestAddService extends BaseTest {
         Customer.searchCustomer(CustomerID03C);
         Services.M_AddService(CustomerID03C);
         Services.EditService();
+
     }
     @Test(priority = 15)
     public void Metering() throws InterruptedException {
@@ -111,8 +113,8 @@ public class TestAddService extends BaseTest {
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
-        //Login.loginWithGroupName("Testing1228");
-        //Customer.searchAndNavigateToRecentCustomer();
+        Login.loginWithGroupName("Testing1228");
+        Customer.searchAndNavigateToRecentCustomer();
         AddSitePlans.addSitePlan();
 
     }
@@ -121,9 +123,8 @@ public class TestAddService extends BaseTest {
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
-        Login.ValidLogin();
+        //Login.ValidLogin();
         Customer.searchAndNavigateToRecentCustomer();
-
         AddSitePlans.addSiteParameters();
 
     }

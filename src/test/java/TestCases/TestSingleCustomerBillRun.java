@@ -19,7 +19,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     @Test(priority = 24,enabled = true)
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
-        //Login.ValidLogin();
+        Login.ValidLogin();
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
 
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");

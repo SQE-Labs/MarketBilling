@@ -2,6 +2,7 @@ package TestCases;
 
 import CommonMethods.BaseTest;
 import POM.Customer;
+import POM.Login;
 import POM.ManageServiceNumber;
 import POM.Transactions;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class TransactionsTest  extends BaseTest {
     public  void cashPayment() throws InterruptedException {
         extentTest = extent.startTest(" Transaction for payment type Cash ");
         extentTest.setDescription(" Verify that User is able to pay usinhg Card pay method");
+        //Login.ValidLogin();
         Customer.searchAndNavigateToRecentCustomer();
         ManageServiceNumber.clickTxnTab();
         Transactions.addPaymentDetails("Payment","Cash","1201");
@@ -24,6 +26,5 @@ public class TransactionsTest  extends BaseTest {
         Customer.searchAndNavigateToRecentCustomer();
         ManageServiceNumber.clickTxnTab();
         Transactions.addPaymentDetails("Payment","Credit Card","12199.06");
-
     }
 }

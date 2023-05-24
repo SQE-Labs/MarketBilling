@@ -17,7 +17,7 @@ public class Imports extends BaseTest {
     @Test(priority = 28)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");
-        //Login.ValidLogin();
+         Login.ValidLogin();
 		 customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
 		 serviceId= Services.M_AddService(customerId);
 		 Services.EditService();

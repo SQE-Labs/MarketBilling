@@ -86,13 +86,13 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	}
 	@Test(priority = 4,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_RollBack ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback();
 	}
 	@Test(priority = 5,enabled = true)
 	public  void TwoCustomer_ReBill() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_ReBill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
@@ -102,13 +102,13 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	}
 	@Test(priority = 6,enabled = true)
 	public  void TwoCustomer_FullStatementRollBack() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
+		extentTest = extent.startTest(" TwoCustomer_FullStatementRollBack ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback_in_statementTab(customerId2);
 	}
 	@Test(priority = 7,enabled = true)
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rebill ");
+		extentTest = extent.startTest(" TwoCustomer_RebillStatement ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
 		//String customerId2="40975";
 		BillRun.statementRebill(customerId2);

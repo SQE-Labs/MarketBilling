@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
@@ -32,9 +33,13 @@ public class BaseTest extends BrowsersInvoked {
 	}
 
 
+	@AfterTest
+	public void endTest() {
+		extent.flush();
+	}
 	@AfterSuite
 	public void endReport() {
-		extent.flush();
+
 		extent.close();
 	}
 
@@ -56,10 +61,8 @@ public class BaseTest extends BrowsersInvoked {
 			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
 			System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
 		}
-		//extent.endTest(extentTest);
-
 		extent.endTest(extentTest);
-
+		extent.flush();
 	}
 
 	public static String getScreenshot(WebDriver driver, String screenshotName) {
