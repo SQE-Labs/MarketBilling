@@ -54,6 +54,8 @@ public class AddSitePlans extends TestLogin {
         try {
             WebDriverWaits.ClickOn(saveChanges);
         }catch(ElementNotInteractableException e)
+
+
         {
           //  Log.info(e);
         }
