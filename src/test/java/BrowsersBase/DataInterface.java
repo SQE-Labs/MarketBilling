@@ -7,9 +7,9 @@ public interface DataInterface {
 	public static String BaseURL = "https://markettest.utilibill.com.au";
 	public static String AdminURL = BaseURL + "/marketbilling/SrvAdministration";
 	public static String browserMain = "Chrome";
-	public static String Username = "testreport+413@sqelabs.com";
+	public static String Username = "testreport+226@sqelabs.com";
 	//public static String Username = "testreport+101@sqelabs.com";
-	public static String Password = "Test@1234";
+	public static String Password = "test@1234";
 	public static boolean autoDueDateEnabled = true;
 	public  static  boolean groupName=false;
 }
