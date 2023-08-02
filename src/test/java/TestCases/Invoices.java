@@ -5,14 +5,16 @@ import CommonMethods.RandomStrings;
 import POM.Admin;
 import POM.GroupEdit;
 import POM.Invoice;
+import POM.Login;
 import org.testng.annotations.Test;
 
 public class Invoices extends BaseTest {
     String invoiceName;
-    @Test(priority = 1)
+    @Test(priority = 8)
     public  void createInvoice_template() throws InterruptedException {
         extentTest = extent.startTest("create Invoice Template ");
         extentTest.setDescription(" Verify that User is able to create Invoice Template. ");
+        Login.loginWithGroupName("Testing1228");
         Admin.navigateToInvoiceSetup();
         Invoice.clickCreateNewInvoice();
         invoiceName="Invoice"+ RandomStrings.RequiredDigits(3);
@@ -25,7 +27,7 @@ public class Invoices extends BaseTest {
         Invoice.clickSaveTemplate();
 
     }
-    @Test(priority = 1)
+    @Test(priority = 9)
     public  void editInvoice_template() throws InterruptedException {
         extentTest = extent.startTest("edit Invoice Template ");
         extentTest.setDescription(" Verify that User is able to edit Invoice Template. ");
@@ -41,12 +43,12 @@ public class Invoices extends BaseTest {
         Invoice.clickSaveTemplate();
 
     }
-    @Test(priority = 3)
+    @Test(priority = 10)
     public void invoice_Settings() throws Exception {
         extentTest = extent.startTest("Invoice Settings ");
         extentTest.setDescription(" Verify that User is able to edit Invoice settings in Group Edit ");
 
-        invoiceName="Invoice041";
+        invoiceName="Invoice961";
         Admin.navigateToGroupEdit();
         GroupEdit.selectPrimaryInvoiceTemplate(invoiceName);
         GroupEdit.selectSecondaryInvoiceTemplate(invoiceName);

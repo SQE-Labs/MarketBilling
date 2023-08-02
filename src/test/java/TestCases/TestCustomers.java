@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TestCustomers extends BaseTest {
 
-	@Test(priority = 1)
+	@Test(priority = 11,enabled = true)
 	public  void ResidentialCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Residential Customer ");
 		extentTest.setDescription(" Verify that User is able to add Residential customer. ");
@@ -15,14 +15,14 @@ public class TestCustomers extends BaseTest {
 		Flow5_AddCustomer.FirstCustomer.FirstResidentialCustomer();
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 12,enabled = true)
 	public  void BusinessCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Business Customer ");
 		extentTest.setDescription(" Verify that User is able to add Business SecondCustomer. ");
 	   Flow5_AddCustomer.SecondCustomer.SecondBusinessCustomer();
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 13,enabled = true)
 	public  void CommercialCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Commercial Customer ");
 		extentTest.setDescription(" Verify that User is able to add  Commercial ThirdCustomer. ");

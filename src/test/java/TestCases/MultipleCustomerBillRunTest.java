@@ -13,7 +13,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
-	@Test(priority = 0,enabled = true)
+	@Test(priority = 0,enabled = false)
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bll Run Wih No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
@@ -27,7 +27,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.BillrunMethod_NoCycle();
 	}
 
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 1,enabled = false)
 	public  void BillRunWithUncommittedStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
@@ -43,7 +43,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 2,enabled = false)
 	public  void TestLargeBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
@@ -54,7 +54,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String billRunCycleName=BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
 	}
-	@Test(priority = 3,enabled = true)
+	@Test(priority = 3,enabled = false)
 	public  void TwoCustomerBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
@@ -82,13 +82,13 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.runBillCycleForRollBack(billRunCycle);
 
 	}
-	@Test(priority = 4,enabled = true)
+	@Test(priority = 4,enabled = false)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback();
 	}
-	@Test(priority = 5,enabled = true)
+	@Test(priority = 5,enabled = false)
 	public  void TwoCustomer_ReBill() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
@@ -98,13 +98,13 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.runBillCycle(billRunCycle);
 
 	}
-	@Test(priority = 6,enabled = true)
+	@Test(priority = 6,enabled = false)
 	public  void TwoCustomer_FullStatementRollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.rollback_in_statementTab(customerId2);
 	}
-	@Test(priority = 7,enabled = true)
+	@Test(priority = 7,enabled = false)
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rebill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");

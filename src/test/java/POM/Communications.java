@@ -5,12 +5,11 @@ import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
 
 public class Communications {
+
     public static SoftAssert softAssert = new SoftAssert();
     //C:\Users\Itsqe\Downloads\LetterSample.pdf
-    // public static By newCorrespondence = By.xpath("//*[@class='btn btn-large btn-primary']");
-    public static By newCorrespondence = By.xpath("//button[@class='btn btn-large btn-primary']");
-
-
+    public static By newCorrespondence = By.xpath("//*[@class='btn btn-large btn-primary']");
+   // public static By newCorrespondence = By.xpath("//button[@class='btn btn-large btn-primary']");
 
     public static By correspondenceType = By.id("corrTypeSelect");
 

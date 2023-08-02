@@ -9,7 +9,7 @@ public class Templates extends BaseTest {
 
     public static SoftAssert softAssert = new SoftAssert();
 
-    public static By template = By.xpath("(//*[@class='quick-button-small'])[15]");
+    public static By template = By.xpath("(//*[@class='quick-button-small'])[16]");
 
     public static By messageType = By.id("email_message_type");
 
@@ -37,6 +37,7 @@ public class Templates extends BaseTest {
     public static By crossValidate = By.xpath("(//*[@class='close'])[2]");
 
     public static By crossPreview = By.xpath("(//*[@class='close'])[1]");
+    public static By email = By.xpath("//*[@id='myTab']/li[1]/a");
 
     //*[@id="corr_attachment_letter"]/td[1]
     public void navigateToTemplate() {
@@ -45,6 +46,10 @@ public class Templates extends BaseTest {
 
     public void clickSaveButton() {
         WebDriverWaits.ClickOn(save);
+    }
+
+    public void clickEmail() {
+        WebDriverWaits.ClickOn(email);
     }
 
     public void clickPreviewButton() {

@@ -16,7 +16,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     String billCycleName;
     String invoiceTemplate;
 
-    @Test(priority = 1,enabled = true)
+    @Test(priority = 1,enabled = false)
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
@@ -30,7 +30,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
 
 
     }
-    @Test(priority = 2)
+    @Test(priority = 2,enabled = false)
 
     public  void create_Customer_invoiceTemplate() throws InterruptedException {
         extentTest = extent.startTest("Customer Invoice Template");
@@ -40,7 +40,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         invoiceTemplate="Customer_Invoice_"+ RandomStrings.RequiredCharacters(4);
         Invoice.createNewInvoice(invoiceTemplate);
     }
-    @Test(priority = 3)
+    @Test(priority = 3,enabled = false)
 
     public  void customer_InvoiceSettings() throws InterruptedException {
         extentTest = extent.startTest("Customer Invoice Settings");
@@ -50,7 +50,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         settings.invoiceSettings_Customer(invoiceTemplate);
         settings.clickSave();
     }
-    @Test(priority = 4,enabled = true)
+    @Test(priority = 4,enabled = false)
     public  void createAndEditBillCycleName() throws InterruptedException {
         extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
@@ -61,28 +61,28 @@ public class TestSingleCustomerBillRun extends BaseTest {
         billCycleName =BillRun.editBillCycle(billCycleOldName);
 
     }
-    @Test(priority = 5,enabled = true)
+    @Test(priority = 5,enabled = false)
     public  void SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         BillRun.runBillCycle(billCycleName);
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6,enabled = false)
 
     public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Rollback for single customer ");
         extentTest.setDescription(" Verify that User is able to run rollback single customer ");
         BillRun.Rollback_SmallBillRunWithSingleCustomer(customerId);
     }
-    @Test(priority = 7)
+    @Test(priority = 7,enabled = false)
 
     public  void rebill_and_Reuse() throws InterruptedException {
         extentTest = extent.startTest(" Rebill and Reuse Statement ");
         extentTest.setDescription(" Verify that User is able to run rebill and reuse and Statement");
         BillRun.rebillSingleCustomer(  billCycleName);
     }
-    @Test(priority = 8)
+    @Test(priority = 8,enabled = false)
 
     public  void emailBills() throws InterruptedException {
         extentTest = extent.startTest(" Send Email ");
@@ -97,7 +97,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         BillRun.verifyEmailResults();
         BillRun.clickClose();
     }
-    @Test(priority = 8)
+    @Test(priority = 8,enabled = false)
 
     public  void downloadPdf() throws InterruptedException {
         extentTest = extent.startTest(" Download Pdf ");

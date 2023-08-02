@@ -1,10 +1,7 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.AddSitePlans;
-import POM.Customer;
-import POM.Flow6_7AddingServiceAndMeter;
-import POM.Metering;
+import POM.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -17,22 +14,23 @@ public class TestAddService extends BaseTest {
         driver.navigate().refresh();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 14,enabled = true)
     public void AddResidentialService() throws InterruptedException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
+        Login.loginWithGroupName("Testing1228");
         Customer.searchCustomer(CustomerID01R);
         Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 15,enabled = true)
     public void EditResidentialService() throws InterruptedException {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
         Flow6_7AddingServiceAndMeter.X_AddService.EditService();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 16,enabled = true)
     public void AddMeter_MeterRegisterR() throws InterruptedException {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
@@ -45,7 +43,7 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 4)
+    @Test(priority = 17,enabled = true)
     public void AddBusinessService() throws InterruptedException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
@@ -61,7 +59,7 @@ public class TestAddService extends BaseTest {
     }
 
 
-    @Test(priority = 5)
+    @Test(priority = 18,enabled = true)
     public void AddCommercialService() throws InterruptedException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
@@ -73,7 +71,7 @@ public class TestAddService extends BaseTest {
      //   metering.createRegister();
 
     }
-    @Test(priority = 6)
+    @Test(priority = 19,enabled = true)
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
@@ -81,12 +79,11 @@ public class TestAddService extends BaseTest {
 
     }
 
-    @Test(priority = 7)
+    @Test(priority = 20,enabled = true)
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
         AddSitePlans.addSiteParameters();
 
     }
-
 }

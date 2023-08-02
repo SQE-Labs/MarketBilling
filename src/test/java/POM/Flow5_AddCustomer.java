@@ -73,7 +73,6 @@ public class Flow5_AddCustomer extends TestLogin {
         public static By Save_button_on_popup = By.xpath("//*[@id='save']");
         public static By Closepopup_icon = By.xpath("//*[@class='close']");
 
-
         // Methods
         public static void FirstResidentialCustomer() throws InterruptedException {
             SoftAssert softAssert = new SoftAssert();

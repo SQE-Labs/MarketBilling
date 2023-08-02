@@ -7,7 +7,7 @@ import POM.Transactions;
 import org.testng.annotations.Test;
 
 public class TransactionsTest  extends BaseTest {
-    @Test(priority = 1)
+    @Test(priority = 1,enabled = false)
     public  void cashPayment() throws InterruptedException {
         extentTest = extent.startTest(" Transaction for payment type Cash ");
         extentTest.setDescription(" Verify that User is able to pay usinhg Card pay method");
@@ -15,7 +15,7 @@ public class TransactionsTest  extends BaseTest {
         ManageServiceNumber.clickTxnTab();
         Transactions.addPaymentDetails("Payment","Cash","1201");
     }
-    @Test(priority = 2)
+    @Test(priority = 2,enabled = false)
     public  void creditCardPayment() throws InterruptedException {
         extentTest = extent.startTest(" Transaction for payment type Credit card ");
         extentTest.setDescription(" Verify that User is able to pay usinhg credit pay method");

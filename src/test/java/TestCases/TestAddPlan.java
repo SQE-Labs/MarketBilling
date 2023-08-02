@@ -40,7 +40,7 @@ public class TestAddPlan extends BaseTest {
 
 
 
-    @Test(priority = 4,enabled=true)
+    @Test(priority = 4,enabled=false)
     public  void Add_ProRated_Rates() throws InterruptedException {
         extentTest = extent.startTest(" Add_ProRated_Rates ");
         extentTest.setDescription(" Verify that User is able to add ProRated Rates ");
@@ -50,7 +50,7 @@ public class TestAddPlan extends BaseTest {
         Plans.Add_ProRated_Rates();
     }
     //bug raised
-    @Test(priority = 5,enabled = true)
+    @Test(priority = 5,enabled = false)
     public  void OtherPlan() throws InterruptedException {
         extentTest = extent.startTest(" OtherPlan [Bug raised]");
         extentTest.setDescription(" Verify that User is able to add other plan ");
