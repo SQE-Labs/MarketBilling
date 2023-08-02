@@ -25,12 +25,12 @@ public class TestAddMeter extends BaseTest {
 //		registerId =	Metering.createRegister();
 //
 //	}
-//	@Test(priority = 3)
-//	public  void MeterReadsInitial() throws InterruptedException {
-//		extentTest = extent.startTest(" Meter Reads Initial ");
-//		extentTest.setDescription(" Verify that User is able to add  Meter Reads ");
-//		Metering.addMeterReads("Initial","150","200","300");
-//	}
+	@Test(priority = 3)
+	public  void MeterReadsInitial() throws InterruptedException {
+		extentTest = extent.startTest(" Meter Reads Initial ");
+		extentTest.setDescription(" Verify that User is able to add  Meter Reads ");
+		Metering.addMeterReads("Initial","150","200","300");
+	}
 //	@Test(priority = 4)
 //	public  void MeterReadsConsumption() throws InterruptedException {
 //		extentTest = extent.startTest(" Meter Reads Consumption Data  ");
