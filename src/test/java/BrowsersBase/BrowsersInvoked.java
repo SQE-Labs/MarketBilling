@@ -21,19 +21,19 @@ public class BrowsersInvoked {
 		switch (FinalBrowser) {
 		case "CHROME": {
 			ChromeOptions chromeOptions = new ChromeOptions();
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(chromeOptions);
 			break;
 		}
 		case "FIREFOX": {
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver(firefoxOptions);
 			break;
 		}
 		case "EDGE": {
 			EdgeOptions edgeOptions = new EdgeOptions();
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(edgeOptions);
 			break;
 		}
