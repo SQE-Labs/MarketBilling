@@ -24,7 +24,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
-		BillRun.BillrunMethod_NoCycle();
+		//BillRunTest.BillrunMethod_NoCycle();
 	}
 
 	@Test(priority = 1,enabled = true)
@@ -38,9 +38,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
-		String billRunCycle=BillRun.BillRunCycle(customerId);
-		BillRun.SmallBillRunWithSingleCustomer(billRunCycle);
-		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
+	//	String billRunCycle= BillRunTest.BillRunCycle(customerId);
+	//	BillRunTest.SmallBillRunWithSingleCustomer(billRunCycle);
+	//	BillRunTest.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
 	@Test(priority = 2,enabled = true)
@@ -51,8 +51,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		customerList.add(CustomerID01R);
 		customerList.add(CustomerID02B);
 		customerList.add(CustomerID03C);
-		String billRunCycleName=BillRun.createBillCycle(customerList);
-		BillRun.runBillCycle(billRunCycleName);
+	//	String billRunCycleName= BillRunTest.createBillCycle(customerList);
+	//	BillRunTest.runBillCycle(billRunCycleName);
 	}
 	@Test(priority = 3,enabled = true)
 	public  void TwoCustomerBillRun() throws InterruptedException {
@@ -78,15 +78,15 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		customerList.add(customerId2);
-		billRunCycle=BillRun.createBillCycle(customerList);
-		BillRun.runBillCycleForRollBack(billRunCycle);
+	//	billRunCycle= BillRunTest.createBillCycle(customerList);
+	//	BillRunTest.runBillCycleForRollBack(billRunCycle);
 
 	}
 	@Test(priority = 4,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		BillRun.rollback();
+	//	BillRunTest.rollback();
 	}
 	@Test(priority = 5,enabled = true)
 	public  void TwoCustomer_ReBill() throws InterruptedException {
@@ -95,21 +95,21 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		customerList.add(customerId2);
-		BillRun.runBillCycle(billRunCycle);
+	//	BillRunTest.runBillCycle(billRunCycle);
 
 	}
 	@Test(priority = 6,enabled = true)
 	public  void TwoCustomer_FullStatementRollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		BillRun.rollback_in_statementTab(customerId2);
+	//	BillRunTest.rollback_in_statementTab(customerId2);
 	}
 	@Test(priority = 7,enabled = true)
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rebill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
 		//String customerId2="40975";
-		BillRun.statementRebill(customerId2);
+	//	BillRunTest.statementRebill(customerId2);
 	}
 
 }

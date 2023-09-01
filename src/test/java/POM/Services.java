@@ -9,7 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 import static BrowsersBase.BrowsersInvoked.driver;
+import static POM.GroupEdit.softAssert;
 
 public class Services {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -146,4 +150,103 @@ public class Services {
         jse.executeScript("window.scrollBy(0,300)", "");
     }
 
+     //===========UPDATED NEW CODES==========
+
+    // =========Creating Service for the customer=============
+
+  //  public static By OverviewTab = By.xpath("//a[text()=' Overview']");
+    public static By RetailElectricity = By.xpath("(//i[@class='icon-minus'])[2]");
+    public static By MarketType = By.xpath("//select[@id='marketTypeSel']");
+    public static By GenerateNMI = By.xpath("//button[@id='generateNMIButton']");
+    public static By SelectService = By.xpath("//ul[@class='chosen-choices']");
+    public static By Search = By.xpath("//li[@class='search-field']");
+    public static By MoveSearch = By.xpath("//input[@id='proposedDate']");
+    public static By MoveInDate = By.xpath("//td[@class='active day']");
+    public static By CityNames = By.xpath("//*[@id=\"locality\"]");
+    public static By PostCode = By.xpath("//*[@id=\"postCode\"]");
+    public static By SelectState = By.xpath("//*[@id=\"state\"]");
+   public static By MoveinSearch = By.xpath("//label[text()='Move-In Date']");
+    public static By ServiceSuccMsg=By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
+
+    public void ClickOnOverviewTab() {
+        WebDriverWaits.ClickOn(OverviewTab);
     }
+
+    public void ClickRetailElectricity() {
+        WebDriverWaits.ClickOn(RetailElectricity);
+    }
+
+
+    public void SelectMarketType() {
+        WebDriverWaits.selectByVisibleText(MarketType, "Off Market");
+    }
+
+    public void ClickOnGenerateNMI() {
+        WebDriverWaits.ClickOn(GenerateNMI);
+
+    }
+
+    public void SelectServicePlan() throws AWTException {
+
+        WebDriverWaits.ClickOn(SelectService);
+    }
+
+    public void ServicePlan() throws AWTException {
+        WebDriverWaits.ClickOn(Search);
+        // Actions as= new Actions(driver);
+        // as.moveToElement(driver.findElement(By.xpath("//ul[@class='Electricity
+        // Template Plan']"))).perform();
+        WebDriverWaits.WaitUntilVisible(Search);
+        Robot rb = new Robot();
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public void MoveInDate() {
+        WebDriverWaits.ClickOn(MoveinSearch);
+        WebDriverWaits.ClickOn(MoveSearch);
+
+    }
+
+    public void SelectProposeDate() {
+        WebDriverWaits.ClickOn(MoveInDate);
+    }
+
+    public void EnterCityNmae(String CityName) {
+        WebDriverWaits.WaitUntilVisibleWE(CityNames);
+        WebDriverWaits.SendKeysWithClear(CityNames,  CityName);
+    }
+
+    public void EnterPostCode(String PostalCode) {
+        WebDriverWaits.SendKeysWithClear(PostCode, PostalCode);
+    }
+
+    public void SelectState(String selectState) {
+
+        WebDriverWaits.selectByVisibleText(SelectState,  selectState);
+    }
+
+    public void ClickOnAddButton() {
+        WebDriverWaits.ClickOn(AddButton);
+    }
+
+    public void CreateService(String CityName, String PostalCode, String selectState) throws AWTException, InterruptedException {
+         ClickOnOverviewTab();
+        ClickRetailElectricity();
+         SelectMarketType();
+        ClickOnGenerateNMI();
+        SelectServicePlan();
+        ServicePlan();
+        MoveInDate();
+        SelectProposeDate();
+        EnterCityNmae(CityName);
+       EnterPostCode(PostalCode);
+        SelectState(selectState);
+        ClickOnAddButton();
+        String Expectedmsg="The Service has been created successfully.";
+        softAssert.assertEquals(Expectedmsg, ServiceSuccMsg);
+    }
+
+
+
+}

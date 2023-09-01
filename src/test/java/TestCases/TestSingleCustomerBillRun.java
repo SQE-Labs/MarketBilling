@@ -57,8 +57,8 @@ public class TestSingleCustomerBillRun extends BaseTest {
         //String customerId="40893";
         List<String > customer= new ArrayList<String>();
         customer.add(customerId);
-        String billCycleOldName =BillRun.createBillCycle(customer);
-        billCycleName =BillRun.editBillCycle(billCycleOldName);
+        String billCycleOldName = BillRun.createBillCycle(customer);
+        billCycleName = BillRun.editBillCycle(billCycleOldName);
 
     }
     @Test(priority = 5,enabled = true)

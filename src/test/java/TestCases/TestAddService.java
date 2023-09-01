@@ -1,12 +1,13 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.AddSitePlans;
-import POM.Customer;
-import POM.Flow6_7AddingServiceAndMeter;
-import POM.Metering;
+import POM.*;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+
+import java.awt.*;
 
 import static POM.Flow5_AddCustomer.*;
 
@@ -88,5 +89,10 @@ public class TestAddService extends BaseTest {
         AddSitePlans.addSiteParameters();
 
     }
+
+
+
+
+
 
 }
