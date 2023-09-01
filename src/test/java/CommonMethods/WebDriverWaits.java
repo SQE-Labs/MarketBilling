@@ -20,9 +20,10 @@ import java.util.concurrent.TimeUnit;
 
 //Todo
 public class WebDriverWaits extends BrowsersInvoked {
-	static WebDriverWait wait = new WebDriverWait(driver,10);
-	static WebDriverWait wait20 = new WebDriverWait(driver, 10);
-	static WebDriverWait wait5mins = new WebDriverWait(driver, 10);
+	static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	static WebDriverWait wait20 = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+	static WebDriverWait wait5mins = new WebDriverWait(driver,Duration.ofSeconds(10));
 
 	public static void WaitUntilPresent(By element) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(element));
@@ -55,7 +56,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void ClickOn(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
