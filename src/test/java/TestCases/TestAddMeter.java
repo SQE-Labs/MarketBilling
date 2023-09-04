@@ -4,9 +4,13 @@ import CommonMethods.BaseTest;
 import POM.Customer;
 import POM.Metering;
 import POM.Services;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class TestAddMeter extends BaseTest {
+
+
 	String 	registerId;
 	@Test(priority = 1)
 	public  void Metering() throws InterruptedException {
@@ -36,4 +40,10 @@ public class TestAddMeter extends BaseTest {
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 	}
+
+
+
+
+
+
 }

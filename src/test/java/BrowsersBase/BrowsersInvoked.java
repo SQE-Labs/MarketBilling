@@ -21,7 +21,13 @@ public class BrowsersInvoked {
 		switch (FinalBrowser) {
 		case "CHROME": {
 			ChromeOptions chromeOptions = new ChromeOptions();
+
+		//	WebDriverManager.chromedriver().setup();
+
+		//	chromeOptions.addArguments("--remote-allow-origins=*");
+
 			//WebDriverManager.chromedriver().setup();
+
 			driver = new ChromeDriver(chromeOptions);
 			break;
 		}

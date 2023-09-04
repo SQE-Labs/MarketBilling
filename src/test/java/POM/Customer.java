@@ -10,10 +10,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import static BrowsersBase.BrowsersInvoked.driver;
+import static POM.Flow5_AddCustomer.CustomerID01R;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchField;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon;
+import static POM.GroupEdit.softAssert;
 
 public class Customer {
+
+   public static String CustomerFirstName = "Erin" + RandomStrings.RequiredCharacters(2);
+    public static String CustomersurName = "Gar" + RandomStrings.RequiredCharacters(2);
     public static final String SUCCESS_MESG = "Successfully saved customer.";
     public static String RandomName1;
     public static String RandomName2;
@@ -65,6 +70,29 @@ public class Customer {
     public static By settingsTab = By.xpath("//a[text()=' Settings']");
 
     public static By communications = By.xpath("(//*[contains(text(),'Communications')])[1]");
+
+    //=======NEW UPDATED CODES=========
+    // ========Creating Customer=======
+    public static By CustomerTab = By.xpath("//span[text()='Customers']");
+    public static By CustomerType = By.xpath("//select[@id='custTypeEl']");
+    public static By CatagoryType = By.xpath("//select[@id='category']");
+    public static By CompanyType = By.xpath("//input[@id='company']");
+    public static By AbnType = By.xpath("//input[@id='abn']");
+    public static By TitleType = By.xpath("//select[@id='sal']");
+    public static By FirstName = By.xpath("//input[@id='firstName']");
+    public static By SurName = By.xpath("//input[@id='surname']");
+    public static By PhoneNumber = By.xpath("//input[@id='contact_phone']");
+    public static By ContactEmail = By.xpath("//input[@id='contact_email']");
+    public static By Address1 = By.xpath("//input[@id='hAddress']");
+    public static By CityName = By.xpath("//input[@id='hSuburb']");
+    public static By CountryName = By.xpath("//select[@id='hCountryList']");
+    public static By StateName = By.xpath("//select[@id='hState']");
+    public static By PostalCode = By.xpath("//input[@name='pcode']");
+    public static By SaveButton = By.xpath("//a[text()=' Save Customer']");
+  //  public static By SaveOnlyButton = By.xpath("//button[text()='Save Only']");
+    public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
+    private static String CustomerID01R;
+
 
     public static Communications clickCommunications(){
         WebDriverWaits.ClickOn(communications);
@@ -193,11 +221,12 @@ public class Customer {
         WebDriverWaits.ClickOn(SearchIcon);
         return  customerId;
     }
-    public static void searchCustomer(String customerID) throws InterruptedException {
+    public static void searchCustomer(String CustomerID01R) throws InterruptedException {
+
         LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(SearchIcon);
         WebDriverWaits.ClickOn(SearchField);
-        WebDriverWaits.SendKeys(SearchField, customerID);
+        WebDriverWaits.SendKeys(SearchField,CustomerID01R);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
     }
@@ -210,5 +239,107 @@ public class Customer {
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(settingsTab);
         return new Settings();
+    }
+
+    //========NEW UPDATED CODES============
+
+    public void ClickOnCustomerTab() {
+        WebDriverWaits.ClickOn(CustomerTab);
+    }
+
+    public void SelectCustomerType() {
+        WebDriverWaits.selectByVisibleText(CustomerType, "Owner");
+    }
+
+    public void SelectCatagoryType() {
+        WebDriverWaits.WaitUntilVisible(CatagoryType);
+        WebDriverWaits.selectByVisibleText(CatagoryType, "Business");
+    }
+
+    public void EnterAbnNumber(String ABNType) {
+        WebDriverWaits.scrollIntoView(AbnType);
+        WebDriverWaits.SendKeysWithClear(AbnType,ABNType);
+    }
+
+    public void SelectTitleType() {
+        WebDriverWaits.WaitUntilVisible(TitleType);
+        WebDriverWaits.selectByVisibleText(TitleType, "Mr.");
+    }
+
+    public void EnterCompanyType(String CompanyTypeField) {
+        WebDriverWaits.scrollIntoView(CompanyType);
+        WebDriverWaits.SendKeysWithClear(CompanyType, CompanyTypeField);
+    }
+
+    public void EnterFirstName(String FirstNameField) {
+        WebDriverWaits.scrollIntoView(FirstName);
+        WebDriverWaits.SendKeysWithClear(FirstName, FirstNameField);
+    }
+
+    public void EnterSurName(String SurNameField) {
+        WebDriverWaits.SendKeysWithClear(SurName, SurNameField);
+    }
+
+    public void EnterPhoneNumber(String phn) {
+        WebDriverWaits.WaitUntilVisible(PhoneNumber);
+        WebDriverWaits.SendKeysWithClear(PhoneNumber, phn);
+    }
+
+    public void EnterContactEmail(String ContactEmailTypeField) {
+        WebDriverWaits.SendKeysWithClear(ContactEmail, ContactEmailTypeField);
+    }
+
+    public void EnterAddress1(String Address1Type) {
+        WebDriverWaits.SendKeysWithClear(Address1, Address1Type );
+    }
+
+    public void EnterCityName(String CityNameField) {
+        WebDriverWaits.SendKeysWithClear(CityName, CityNameField);
+    }
+
+    public void EnterCountryName(String CountryNameField) {
+        WebDriverWaits.selectByVisibleText(CountryName, CountryNameField);
+    }
+
+    public void EnterStateName(String StateNameField) {
+        WebDriverWaits.selectByVisibleText(StateName,  StateNameField);
+    }
+
+    public void EnterPostalCode(String PostalCodeField) {
+        WebDriverWaits.SendKeysWithClear(PostalCode, PostalCodeField);
+    }
+
+    public void ClickOnSaveCustomerButton() {
+        WebDriverWaits.scrollIntoView(SaveButton);
+        WebDriverWaits.ClickOn(SaveButton);
+    }
+
+    public void ClickOnSaveOnlyButton() {
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+    }
+
+
+
+    public void CreateCustomer(String ABNType, String phn, String Address1Type, String CityNameField, String CountryNameField, String StateNameField, String PostalCodeField){
+
+        ClickOnCustomerTab();
+        SelectCustomerType();
+        SelectCatagoryType();
+        EnterCompanyType(CustomerFirstName);
+        EnterAbnNumber(ABNType );
+        SelectTitleType();
+        EnterFirstName(CustomerFirstName);
+        EnterSurName(CustomersurName);
+        EnterPhoneNumber( phn);
+        EnterContactEmail(CustomerFirstName + "@yopmail.com");
+        EnterAddress1( Address1Type);
+        EnterCityName( CityNameField);
+        EnterCountryName(CountryNameField);
+        EnterStateName(StateNameField );
+        EnterPostalCode( PostalCodeField);
+        ClickOnSaveCustomerButton();
+        ClickOnSaveOnlyButton();
+        String Expectedmsg="Successfully saved customer.";
+        softAssert.assertEquals(Expectedmsg, ActualMsg1);
     }
 }

@@ -19,7 +19,7 @@ public class TransactionsTest  extends BaseTest {
     @Test(priority = 2,enabled = true)
     public  void bankAccountPayment() throws InterruptedException {
         extentTest = extent.startTest(" Transaction for payment type Credit card ");
-        extentTest.setDescription(" Verify that User is able to pay usinhg credit pay method");
+        extentTest.setDescription(" Verify that User is able to pay using credit pay method");
         Customer.searchAndNavigateToRecentCustomer();
         ManageServiceNumber.clickTxnTab();
         Transactions.addPaymentDetails("Payment","Bank Account","12199.06");

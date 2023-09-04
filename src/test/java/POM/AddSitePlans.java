@@ -30,9 +30,13 @@ public class AddSitePlans extends TestLogin {
     public static By effectiveDate = By.id("effectiveDate");
     public static By parameterName = By.id("parameterName");
     public static By paramValue = By.id("paramValue");
+    public static By Sitedate=By.xpath("//input[@id='effectiveDate']");
+    public static By Today=By.xpath("(//th[text()='Today'])[1]");
+
+    public static By AddButt=By.id("addParamBtn");
 
 
-    public static void addSitePlan() throws InterruptedException {
+/*    public static void addSitePlan() throws InterruptedException {
         WebDriverWaits.ClickOn(ServiceTab);
         WebDriverWaits.ClickOn(Edit_icon);
         WebDriverWaits.scrollIntoView(sitePlans);
@@ -44,8 +48,8 @@ public class AddSitePlans extends TestLogin {
         // WebDriverWaits.ClickOn(groupPlans);
         WebDriverWaits.SendKeys(startDate, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         WebDriverWaits.ClickOn(activeDay);
-        WebDriverWaits.SendKeys(endDate, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
-        WebDriverWaits.ClickOn(activeDay);
+        WebDriverWaits.SendKeys(endDate, "15/09/2023");
+     //   WebDriverWaits.ClickOn(activeDay);
         WebDriverWaits.ClickOn(addPlanToTableBtn);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(saveChanges);
@@ -54,7 +58,7 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.WaitUntilVisible(okButton);
         WebDriverWaits.ClickOn(okButton);
 
-    }
+    }   */
 
     public static void addSiteParameters() {
         WebDriverWaits.ClickOn(ServiceTab);
@@ -62,10 +66,12 @@ public class AddSitePlans extends TestLogin {
         jse.executeScript("window.scrollBy(0,1000)", "");
         WebDriverWaits.ClickOn(siteParameters);
         WebDriverWaits.ClickOn(addParamBtn);
-        WebDriverWaits.SendKeys(effectiveDate, "Electricity Template Plan");
-        WebDriverWaits.selectByVisibleText(parameterName, "");
-        WebDriverWaits.SendKeys(paramValue, "Test Value");
-        WebDriverWaits.ClickOn(addParamBtn);
+        WebDriverWaits.ClickOn(Sitedate);
+        WebDriverWaits.ClickOn(Today);
+        WebDriverWaits.ClickOn(parameterName);
+        WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
+        WebDriverWaits.SendKeys(paramValue, "10.158");
+        WebDriverWaits.ClickOn(AddButt);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }
 }

@@ -18,7 +18,7 @@ public class Plans extends BaseTest {
 	public static SoftAssert softAssert = new SoftAssert();
 	static Select select ;
 
-		public static By PlanTab = By.xpath("//*[@class='icon-lightbulb']");
+		public static By PlanTab = By.xpath("//span[text()='Plans']");
 		public static By CreateNewPlan = By.xpath("//*[@id='addBtn']");
 		public static By UsageTypeDropdown = By.xpath("//*[@id='usageTypes']");
 		public static By NameField = By.xpath("//*[@id='name']");
@@ -163,9 +163,9 @@ public class Plans extends BaseTest {
 			WebDriverWaits.ClickOn(PlanTab);
 			WebDriverWaits.ClickOn(CreateNewPlan);
 			WebDriverWaits.ClickOn(UsageTypeDropdown);
-			WebElement UsageOption = WebDriverWaits.WaitUntilVisibleWE(UsageTypeDropdown);
-			select = new Select(UsageOption);
-			select.selectByVisibleText("Retail Electricity");
+		//	WebElement UsageOption = WebDriverWaits.WaitUntilVisibleWE(UsageTypeDropdown);
+		//	select = new Select(UsageOption);
+			WebDriverWaits.selectByVisibleText(UsageTypeDropdown,"Retail Electricity");
 			// select.selectByIndex(2);
 			WebDriverWaits.ClickOn(NameField);
 			String RandomName2 = "MktPlan_NetworkRate" + RandomStrings.RequiredCharacters(4);
