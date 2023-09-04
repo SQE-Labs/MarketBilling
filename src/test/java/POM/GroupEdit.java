@@ -18,7 +18,7 @@ public class GroupEdit  extends TestLogin {
 
    // public static By save = By.className("btn btn-primary");
     public static By save = By.xpath("//button[text()='Save']");
-    public static By editGroup = By.xpath("(//*[@class='icon-group'])[1]");
+    public static By editGroup = By.xpath("(//*[@class='fa fa-group'])[2]");
     public static By checkBoxCorrespondence = By.id("flag_enableCorrespondenceLetter");
 
     public static By correspondenceToggle = By.xpath("//*[@id='franchisee']/div[10]/div[2]/div[9]/div/label/span[1]");

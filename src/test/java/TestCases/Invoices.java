@@ -5,6 +5,7 @@ import CommonMethods.RandomStrings;
 import POM.Admin;
 import POM.GroupEdit;
 import POM.Invoice;
+import POM.Login;
 import org.testng.annotations.Test;
 
 public class Invoices extends BaseTest {
@@ -13,6 +14,7 @@ public class Invoices extends BaseTest {
     public  void createInvoice_template() throws InterruptedException {
         extentTest = extent.startTest("create Invoice Template ");
         extentTest.setDescription(" Verify that User is able to create Invoice Template. ");
+       // Login.loginWithGroupName("Testing1228");
         Admin.navigateToInvoiceSetup();
         Invoice.clickCreateNewInvoice();
         invoiceName="Invoice"+ RandomStrings.RequiredDigits(3);
