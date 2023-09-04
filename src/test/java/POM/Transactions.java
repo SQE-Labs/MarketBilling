@@ -29,6 +29,7 @@ public class Transactions  extends TestLogin {
         WebDriverWaits.ClickOn(activeDate);
         WebDriverWaits.ClickOn(allowDupes);
         WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
+        WebDriverWaits.scrollIntoView(makePayment);
         WebDriverWaits.ClickOn(makePayment);
         try {
             WebDriverWaits.ClickOn(ok);
