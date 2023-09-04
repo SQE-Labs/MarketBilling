@@ -14,10 +14,9 @@ public class CorrespondenceSetup extends TestLogin {
 
     public static String RandomName1;
 
-    public static By correspondence = By.xpath("(//*[@class='col-lg-4 col-md-4 col-xs-4'])[35]");
+    public static By correspondence = By.xpath("//i[@class='fa fa-newspaper-o']");
     public static By createCorrespondence = By.xpath("(//*[@class='btn btn-primary'])[1]");
-    public static By letterName = By.id("correspondence_name");
-
+    public static By letterName = By.xpath("//input[@id='correspondence_name']");
     public static By letterType = By.id("correspondence_type");
 
     public static By saveCorrespondence = By.id("saveCorrespondence");
@@ -37,7 +36,7 @@ public class CorrespondenceSetup extends TestLogin {
     public static By uploadIcon = By.id("btnbrowseFile");
     public static By tmpAttFile = By.id("tmpAttFile");
 
-    public static By deleteAttachments = By.xpath("//*[@id='importHistoryTable']/tbody/tr[1]/td[7]/a");
+    public static By deleteAttachments = By.xpath("//*[@id='importHistoryTable']/tbody/tr[3]/td[7]/a");
 
     public static By description = By.id("attDesc");
 
@@ -47,9 +46,13 @@ public class CorrespondenceSetup extends TestLogin {
 
     public static By searchBox = By.xpath("//*[@id=\"DataTables_Table_0_filter\"]/label/input");
 
-    public static By validateDelete = By.xpath("(//*[@class='dataTables_empty'])[2]");
+    public static By validateDelete = By.xpath("//*[@class='dataTables_empty']");
 
-    public static By validateDeleteImport = By.xpath("//*[@class='dataTables_empty']");
+    public static By validateDeleteImport = By.xpath("//*[@id='importHistoryTable_info']");
+
+    public  static By backToCorrepondenceList = By.xpath("//*[@id=\"correspondenceContent\"]/div[1]/a");
+
+
 
 
 
@@ -67,6 +70,7 @@ public class CorrespondenceSetup extends TestLogin {
 
 
     public static void selectLetterType(String letterText) {
+        WebDriverWaits.WaitUntilVisible(letterType);
         WebDriverWaits.selectByVisibleText(letterType, letterText);
     }
 
@@ -157,6 +161,12 @@ public class CorrespondenceSetup extends TestLogin {
         softAssert.assertEquals(actual,expected);
         softAssert.assertAll();
     }
+
+    public static void clickBackToCorrepondenceList() {
+        WebDriverWaits.scrollIntoView(backToCorrepondenceList);
+        WebDriverWaits.ClickOn(backToCorrepondenceList);
+    }
+
 
     public  static  void validateDeleteCorrespondence(String expected) throws InterruptedException {
         String actual =WebDriverWaits.GetText(validateDelete);

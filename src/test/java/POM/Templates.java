@@ -9,7 +9,7 @@ public class Templates extends BaseTest {
 
     public static SoftAssert softAssert = new SoftAssert();
 
-    public static By template = By.xpath("(//*[@class='quick-button-small'])[15]");
+    public static By template = By.xpath("//i[@class='fa fa-pencil-square-o']");
 
     public static By messageType = By.id("email_message_type");
 
@@ -23,24 +23,23 @@ public class Templates extends BaseTest {
 
     public static By attachCorrespondenceLetter = By.xpath("//*[@id='corr_attachment_letter']/td[2]/div/button/span[1]");
 
-    public static By emailMessage = By.xpath("//*[@id='email_rem_message-wysiwyg-iframe']");
+    public static By emailMessage = By.xpath("//*[@id=\"email_rem_message\"]");
 
     public static By successMessage = By.xpath("(//*[@class='message'])[2]");
-
-    public static By demoFileAttachments = By.xpath("(//*[@class='message'])[2]");
-
-    public static By demoFttachCorrespondenceLetter = By.xpath("(//*[@class='message'])[2]");
 
     public static By preview = By.xpath("//button/span[text()='Preview' ]");
 
     public static By validate = By.xpath("//button/span[text()='Validate' ]");
+
     public static By crossValidate = By.xpath("(//*[@class='close'])[2]");
 
     public static By crossPreview = By.xpath("(//*[@class='close'])[1]");
 
-    //*[@id="corr_attachment_letter"]/td[1]
+    public static By emailOption = By.xpath("//*[@id=\"myTab\"]/li[1]/a");
+
     public void navigateToTemplate() {
         WebDriverWaits.ClickOn(template);
+        WebDriverWaits.ClickOn(emailOption);
     }
 
     public void clickSaveButton() {
@@ -72,14 +71,13 @@ public class Templates extends BaseTest {
     }
 
     public void enterEmailMessage(String emailMessageText) throws InterruptedException {
-        //WebDriverWaits.SwitchToFrameId("email_rem_message-wysiwyg-iframe");
-Thread.sleep(1000);
+        Thread.sleep(1000);
         WebDriverWaits.SendKeys(emailMessage, emailMessageText);
     }
 
     public void enterSubject(String subjectText) {
         WebDriverWaits.SendKeys(emailSubject, subjectText);
-        WebDriverWaits.scrollIntoView(attachCorrespondenceLetter);
+        WebDriverWaits.scrollIntoView(validate);
     }
 
     public void selectAttachLetter(String selectLetterText) throws InterruptedException {

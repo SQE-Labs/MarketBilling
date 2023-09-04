@@ -10,7 +10,7 @@ public class Admin  extends TestLogin {
     public static By btnbrowseFile = By.id("btnbrowseFile");
     public static By attDesc = By.id("attDesc");
 
-    public static By invoiceSetupBtn = By.xpath("//p[text()='Invoice Set-up']");
+    public static By invoiceSetupBtn = By.xpath("//p[text()='Invoice Setup']");
     public static By groupEditBtn = By.xpath("//p[text()='Edit Group']");
     public static By billRun = By.xpath("//span[text()='Bill Run']");
     public static By plans = By.xpath("//span[text()='Plans']");
