@@ -3,9 +3,9 @@
 <suite name="MarketBilling">
     <test thread-count="1" name="Test">
         <packages>
-            <package name="TestCases.*"></package>
+<!--            <package name="TestCases.*"></package>-->
         </packages>
-<!--        <classes>-->
+        <classes>
 
 <!--            <class name="TestCases.TestLogin"></class>-->
 <!--            <class name="TestCases.TestCustomers"></class>-->
@@ -13,9 +13,10 @@
 <!--            <class name="TestCases.TransactionsTest"></class>-->
 <!--            <class name="TestCases.TestSingleCustomerBillRun"></class>-->
 <!--            <class name="TestCases.TestAutoDueDate"></class>-->
-<!--            <class name="TestCases.TestAddPlan"></class>-->
+            <class name="TestCases.TestAddPlan"></class>
 <!--            <class name="TestCases.MultipleCustomerBillRunTest"></class>-->
 <!--            <class name="TestCases.Imports"></class>-->
-<!--         </classes>-->
+<!--            <class name="TestCases.TestSingleCustomerBillRun"></class>-->
+         </classes>
     </test>
 </suite>

@@ -85,7 +85,6 @@ public class TestNewBillRun extends BaseTest {
         public void CreateMeterReads() throws AWTException, InterruptedException {
             extentTest = extent.startTest("Create meter Reads");
             extentTest.setDescription("Verify that user is able to Create Meter Register or Not");
-
              meter.CreateMeterReads();
         }
 

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import static BrowsersBase.BrowsersInvoked.driver;
+import static POM.Flow5_AddCustomer.CustomerID01R;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchField;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon;
 import static POM.GroupEdit.softAssert;
@@ -90,6 +91,7 @@ public class Customer {
     public static By SaveButton = By.xpath("//a[text()=' Save Customer']");
   //  public static By SaveOnlyButton = By.xpath("//button[text()='Save Only']");
     public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
+    private static String CustomerID01R;
 
 
     public static Communications clickCommunications(){
@@ -219,11 +221,12 @@ public class Customer {
         WebDriverWaits.ClickOn(SearchIcon);
         return  customerId;
     }
-    public static void searchCustomer(String customerID) throws InterruptedException {
+    public static void searchCustomer(String CustomerID01R) throws InterruptedException {
+
         LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(SearchIcon);
         WebDriverWaits.ClickOn(SearchField);
-        WebDriverWaits.SendKeys(SearchField, customerID);
+        WebDriverWaits.SendKeys(SearchField,CustomerID01R);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
     }

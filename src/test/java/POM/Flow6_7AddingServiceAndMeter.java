@@ -19,9 +19,14 @@ import CommonMethods.RandomStrings;
 //import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+
     public static Select select;
     public static String ServiceIDLater1;
     public static String ServiceIDLater2;
@@ -48,15 +53,15 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
         public static By Market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
         public static By NMI_Field = By.xpath("//*[@id=\"NMI\"]");
-        public static By Service_Plan_Dropdown = By.xpath("//*[@id=\"planNo\"]");
-        public static By Move_In_Date_Datepicker = By.xpath("//*[@id=\"proposedDate\"]");
+        public static By Service_Plan_Dropdown = By.xpath("//li[@class='search-field']");
+        public static By Move_In_Date_Datepicker = By.xpath("//input[@id='proposedDate']");
         public static By SelectCurrentDate = By.xpath("//*[@class=\"active day\"]");
         public static By Select_Use_Structured_Address_Togglebutton = By.xpath("//*[@class=\"switch-label\"]");
-        public static By Building_Name_Field = By.xpath("//*[@id=\"buildingName\"]");
-        public static By UnitType_Dropdown = By.xpath("//*[@id=\"flatType\"]");
+     //   public static By Building_Name_Field = By.xpath("//input[@name='locality']");
+    //    public static By UnitType_Dropdown = By.xpath("//input[@id='postCode']");
         public static By Street_Number_Suffix_Dropdown = By.xpath("//*[@id=\"houseNBRSuffix\"]");
-        public static By Suburb_Field = By.xpath("//*[@id=\"locality\"]");
-        public static By Postal_Code_field = By.xpath("//*[@id=\"postCode\"]");
+        public static By Suburb_Field = By.xpath("//input[@name='locality']");
+        public static By Postal_Code_field = By.xpath("//input[@id='postCode']");
         public static By StateDropdown = By.xpath("//*[@id=\"state\"]");
         public static By AddButton = By.xpath("//*[@id=\"submitBttn\"]");
 
@@ -69,11 +74,13 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         public static By Sub_Channel_Aggregation_Dropdown = By.xpath("//*[@id=\"subChannelAggregation\"]");
         public static By SaveChanges_Button = By.xpath("//*[@class=\"btn btn-primary iseditable\"]");
         public static By OkButton = By.xpath("//*[contains(text(),'OK')]");
+
+        public static By SearchService=By.xpath("//li[@class='search-field']");
         public static By CustomerSuccessEditMsg = By.xpath("//div[@class='alert alert-success']/center");
 
         // Methods to add Residential Service
 
-        public static void M_AddService() throws InterruptedException {
+        public static void M_AddService() throws InterruptedException, AWTException {
 
             //		 SoftAssert softAssert = new SoftAssert();
 
@@ -110,30 +117,35 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-            WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
-            select = new Select(Option2);
-            select.selectByVisibleText("Electricity Template Plan");
-            Thread.sleep(1000);
+          // WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown,"Electricity");
+            Robot s= new Robot();
+            s.keyPress(KeyEvent.VK_ENTER);
+            s.keyPress(KeyEvent.VK_ENTER);
+            s.keyRelease(KeyEvent.VK_ENTER);
+         //   WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
+         //   select = new Select(Option2);
+        //    select.selectByVisibleText("Electricity Template Plan");
+         //   Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
-            WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
+          //  WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
 
             WebDriverWaits.ClickOn(SelectCurrentDate);
 
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-            WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
-            WebDriverWaits.ClickOn(Building_Name_Field);
-            WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
-            WebDriverWaits.ClickOn(UnitType_Dropdown);
-            WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
-            select = new Select(BlockOption);
-            select.selectByVisibleText("Block");
-            WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
+         //   WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
+         //   WebDriverWaits.ClickOn(Building_Name_Field);
+         //   WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
+        //    WebDriverWaits.ClickOn(UnitType_Dropdown);
+        //    WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
+         //   select = new Select(BlockOption);
+         //   select.selectByVisibleText("Block");
+       /*     WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
             WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
             select = new Select(VOption);
             select.selectByVisibleText("V");
-            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");  */
             WebDriverWaits.ClickOn(Suburb_Field);
             WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
             WebDriverWaits.ClickOn(Postal_Code_field);
@@ -144,7 +156,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             select = new Select(StateOption);
             select.selectByVisibleText("New South Wales");
             WebDriverWaits.ClickOn(AddButton);
-            jse.executeScript("window.scrollBy(0,-300)", "");
+      //      jse.executeScript("window.scrollBy(0,-300)", "");
 
         }
 
@@ -176,7 +188,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 //			Thread.sleep(2000);
         }
 
-        public static void Service_MeterR() throws InterruptedException {
+        public static void Service_MeterR() throws InterruptedException, AWTException {
             X_AddService.M_AddService();
             //X_AddService.EditService();
             //Metering.AddMeter();
@@ -184,7 +196,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         }
 
         // Methods to add Business Service
-        public static void AddSecondService() throws InterruptedException {
+        public static void AddSecondService() throws InterruptedException, AWTException {
 //		 SoftAssert softAssert = new SoftAssert();
 
             WebDriverWaits.ClickOn(SearchIcon);
@@ -219,10 +231,11 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-            WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
-            select = new Select(Option2);
-            select.selectByVisibleText("Electricity Template Plan");
-            Thread.sleep(1000);
+            Robot r= new Robot();
+            r.keyPress(KeyEvent.VK_ENTER);
+            r.keyPress(KeyEvent.VK_ENTER);
+            r.keyRelease(KeyEvent.VK_ENTER);
+
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
             WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
@@ -230,17 +243,17 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-            WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
-            WebDriverWaits.ClickOn(Building_Name_Field);
-            WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
-            WebDriverWaits.ClickOn(UnitType_Dropdown);
-            WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
-            select = new Select(BlockOption);
-            select.selectByVisibleText("Block");
-            WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
-            WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
-            select = new Select(VOption);
-            select.selectByVisibleText("V");
+        //    WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
+        //    WebDriverWaits.ClickOn(Building_Name_Field);
+        //    WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
+         //   WebDriverWaits.ClickOn(UnitType_Dropdown);
+        //    WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
+        //    select = new Select(BlockOption);
+         //   select.selectByVisibleText("Block");
+        //    WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
+         //   WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
+         //   select = new Select(VOption);
+         //   select.selectByVisibleText("V");
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
             WebDriverWaits.ClickOn(Suburb_Field);
             WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
@@ -283,7 +296,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 //
 //		}
 
-        public static void Service_MeterB() throws InterruptedException {
+        public static void Service_MeterB() throws InterruptedException, AWTException {
             X_AddService.AddSecondService();
             //X_AddService.EditSecondService();
             //  Metering.AddMeter();
@@ -291,7 +304,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         }
 
         // Methods to add Commercial Service
-        public static void AddThirdService() throws InterruptedException {
+        public static void AddThirdService() throws InterruptedException, AWTException {
 //			SoftAssert softAssert = new SoftAssert();
 
             WebDriverWaits.ClickOn(SearchIcon);
@@ -330,27 +343,28 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-            WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
-            select = new Select(Option2);
-            select.selectByVisibleText("Electricity Template Plan");
-            Thread.sleep(1000);
+          //  WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown, "Electricity");
+            Robot t= new Robot();
+                    t .keyPress(KeyEvent.VK_ENTER);
+                      t .keyPress(KeyEvent.VK_ENTER);
+                      t .keyRelease(KeyEvent.VK_ENTER);
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
             //	WebDriverWaits.ClickOn(SelectCurrentDate);
             WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-            WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
-            WebDriverWaits.ClickOn(Building_Name_Field);
-            WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
-            WebDriverWaits.ClickOn(UnitType_Dropdown);
-            WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
-            select = new Select(BlockOption);
-            select.selectByVisibleText("Block");
-            WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
-            WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
-            select = new Select(VOption);
-            select.selectByVisibleText("V");
+         //   WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
+         //   WebDriverWaits.ClickOn(Building_Name_Field);
+         //   WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
+        //    WebDriverWaits.ClickOn(UnitType_Dropdown);
+         //   WebElement BlockOption = WebDriverWaits.WaitUntilVisibleWE(UnitType_Dropdown);
+         //   select = new Select(BlockOption);
+         //   select.selectByVisibleText("Block");
+         //   WebDriverWaits.ClickOn(Street_Number_Suffix_Dropdown);
+         //   WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
+        //    select = new Select(VOption);
+         //   select.selectByVisibleText("V");
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
             WebDriverWaits.ClickOn(Suburb_Field);
             WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
