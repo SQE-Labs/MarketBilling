@@ -2,6 +2,7 @@ package TestCases;
 
 import CommonMethods.BaseTest;
 import POM.Flow5_AddCustomer;
+import POM.Login;
 import org.testng.annotations.Test;
 
 public class TestCustomers extends BaseTest {
@@ -10,6 +11,7 @@ public class TestCustomers extends BaseTest {
 	public  void ResidentialCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Residential Customer ");
 		extentTest.setDescription(" Verify that User is able to add Residential customer. ");
+		//Login.ValidLogin();
 		Flow5_AddCustomer.FirstCustomer.FirstResidentialCustomer();
 	}
 

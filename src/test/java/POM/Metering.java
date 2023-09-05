@@ -61,22 +61,24 @@ public class Metering {
 
     public static String AddMeter() throws InterruptedException {
 
-        jse.executeScript("window.scrollBy(0,1000)", "");
+//        jse.executeScript("window.scrollBy(0,1000)", "");
         System.out.println("I am clicking add meter button");
+        WebDriverWaits.scrollIntoView(AddMeterIcon);
         WebDriverWaits.ClickOn(AddMeterIcon);
         System.out.println("I am on add meter page");
         WebDriverWaits.ClickOn(MeterSerialNumber_Field);
-        String RandomNumber1 = "Meter" + RandomStrings.RequiredDigits(5);
+        String RandomNumber1 = "Meter" + RandomStrings.RequiredDigits(3);
         WebDriverWaits.SendKeys(MeterSerialNumber_Field, RandomNumber1);
         WebDriverWaits.ClickOn(ConfigurationType_Dropdown);
         WebDriverWaits.ClickOn(ConfigurationType_Opn);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(Select_LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(DateConnected_Datepicker);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(Select_DateConnected_Datepicker);
+         WebDriverWaits.scrollIntoView(CreateMeter_Button);
         WebDriverWaits.ClickOn(CreateMeter_Button);
         Thread.sleep(4000);
         String ExpectedMsg = "Successfully registered meter";
@@ -86,16 +88,18 @@ public class Metering {
     }
 
     public static String createRegister() throws InterruptedException {
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+       //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+         WebDriverWaits.scrollIntoView(MeterEdit_icon);
         WebDriverWaits.ClickOn(MeterEdit_icon);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+     //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(AddMeterRegister_Icon);
 
         //Create register
         WebDriverWaits.ClickOn(RegisterID_Field);
         Thread.sleep(2000);
-        String registerId = "9234" + RandomStrings.RequiredDigits(6);
+        String registerId = "1215" + RandomStrings.RequiredDigits(3);
         WebDriverWaits.SendKeys(RegisterID_Field, registerId);
         WebDriverWaits.ClickOn(NetworkTariffCode_Field);
         WebDriverWaits.SendKeys(NetworkTariffCode_Field, "Na");
@@ -103,7 +107,8 @@ public class Metering {
         WebDriverWaits.SendKeys(UnitOfMeasure_Field, "KWH");
         WebDriverWaits.ClickOn(TimeofDay_Field);
         WebDriverWaits.SendKeys(TimeofDay_Field, "ALLDAY");
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(DialFormat_Field);
         WebDriverWaits.ClickOn(DialFormat_Field);
         WebDriverWaits.SendKeys(DialFormat_Field, "5");
         WebDriverWaits.ClickOn(Demand1_Field);
@@ -127,17 +132,19 @@ public class Metering {
     public static void  addMeterReads(String readType,String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
        Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterReads_Tab);
-        WebDriverWaits.ClickOn(ServiceName_Dropdown);
+
+     //   WebDriverWaits.ClickOn(ServiceName_Dropdown);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
         WebDriverWaits.ClickOn(MeterNumber_Dropdown);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(ViewMeterReads);
         WebDriverWaits.ClickOn(ViewMeterReads);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+ //       jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(AddMeterReads);
+  //      jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(AddMeterReads);
         Thread.sleep(1000);
 
@@ -161,7 +168,7 @@ public class Metering {
         WebDriverWaits.SendKeys(MeterReadShoulder_Field, shoulderValue);
         WebDriverWaits.ClickOn(Save_Button);
         Thread.sleep(2000);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+      //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
 
@@ -247,10 +254,10 @@ public class Metering {
         WebDriverWaits.selectByVisibleText(configurationType, "POS");
     }
 
-    public void SelectConsumptionType() {
+ /*   public void SelectConsumptionType() {
         WebDriverWaits.WaitUntilVisible(ConsumptionType);
         WebDriverWaits.selectByVisibleText(ConsumptionType, "Cumulative");
-    }
+    } */
 
     public void SelectLastTestDate() {
         WebDriverWaits.ClickOn(LastTest);
@@ -426,7 +433,7 @@ public class Metering {
         ClickOnManageIcon();
         ClickOnPlusIcon();
         EnterMeterNumber(Customer.CustomerFirstName);
-        SelectConsumptionType();
+    //    SelectConsumptionType();
         SelectConfigureType();
         SelectLastTestDate();
         SelectDateConnected();
@@ -452,10 +459,11 @@ public class Metering {
         ClickOnRegister();
         String SuccMeterRegister=" Successfully created meter register.";
         softAssert.assertEquals(SuccMeterRegister, SuccMeterReg );
-        //	BillRun.ClickOnSave();
+        	//BillRun.ClickOnSave();
     }
 
     public void CreateMeterReads() throws InterruptedException {
+        Thread.sleep(2000);
          ClickOnMeterReadTab();
         // BillRun.ClickOnMeterReads();
        ClickOnMeterRead();

@@ -40,7 +40,7 @@ public class TestNewBillRun extends BaseTest {
             extentTest.setDescription(" Verify that User is able to Create Customer or not ");
             Customer cust =new Customer();
 
-            Login.loginWithGroupName("Test Utilities");
+          //  Login.loginWithGroupName("Test Utilities");
             cust.CreateCustomer("12345678958","456789145", "24 Railway Street","Woondul", "Australia", "NSW","4357");
             System.out.println("Texts match. Assertion passed.");
         }
@@ -95,9 +95,6 @@ public class TestNewBillRun extends BaseTest {
             extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
 
              bill.CreateBillRunCycle();
-
-
-
         }
 
         @Test(priority = 6,enabled = true)

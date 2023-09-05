@@ -720,6 +720,15 @@ public class BillRun extends TestLogin {
      * WebDriverWaits.ClickOn(StartActiveDate); }
      */
 
+
+    public void SendBillRun(String SelectBillRunCycleField) throws AWTException {
+        WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCycleField);
+        Robot s = new Robot();
+        s.keyPress(KeyEvent.VK_ENTER);
+        s.keyPress(KeyEvent.VK_ENTER);
+        s.keyRelease(KeyEvent.VK_ENTER);
+    }
+
     public void ClickOnToggle() {
         WebDriverWaits.WaitUntilVisibleWE20(Toggle);
         WebDriverWaits.ClickOn(Toggle);
@@ -729,12 +738,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(BillRunCycleSelect);
     }
 
-    public void SendBillRun(String SelectBillRunCyclefield) throws AWTException {
-        WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCyclefield);
-        Robot s = new Robot();
-        s.keyPress(KeyEvent.VK_ENTER);
-        s.keyRelease(KeyEvent.VK_ENTER);
-    }
+
 
     public void ClickOnEndDate() {
 
@@ -887,6 +891,7 @@ public class BillRun extends TestLogin {
         ClickOnRunTheBillsButton();
         // BillRun.ClickOnStartDate();
          SelectBillRun();
+         Thread.sleep(1000);
          SendBillRun(Customer.CustomerFirstName);
         // BillRun.ClickOnStartDate();
         // BillRun.ClickOnDueDate();
