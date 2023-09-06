@@ -60,7 +60,7 @@ public class AddSitePlans extends TestLogin {
 
     }   */
 
-    public static void addSiteParameters() {
+    public static void addSiteParameters() throws InterruptedException {
         WebDriverWaits.ClickOn(ServiceTab);
         WebDriverWaits.ClickOn(Edit_icon);
         jse.executeScript("window.scrollBy(0,1000)", "");
@@ -72,6 +72,8 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
         WebDriverWaits.SendKeys(paramValue, "10.158");
         WebDriverWaits.ClickOn(AddButt);
+        Thread.sleep(1000);
+        WebDriverWaits.WaitUntilVisible(saveServiceParamsBtn);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }
 }

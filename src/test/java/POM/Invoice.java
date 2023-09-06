@@ -17,7 +17,7 @@ public class Invoice {
     public static By editBtn = By.className("icon-edit");
     public static By search = By.xpath("//label/input");
 
-    public static By tinymce = By.id("tinymce");
+    public static By tinymce = By.xpath("//body[@id='tinymce']");
 
     public static By saveSettings = By.id("save");
 
@@ -55,6 +55,7 @@ public class Invoice {
     public static void enterTemplateText(String txt) {
 
         driver.switchTo().frame(1);
+        WebDriverWaits.WaitUntilVisible(tinymce);
         WebDriverWaits.ClickOn(tinymce);
         WebDriverWaits.SendKeysWithClear(tinymce, txt);
         driver.switchTo().parentFrame();

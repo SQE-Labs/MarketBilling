@@ -641,6 +641,7 @@ public class BillRun extends TestLogin {
     public static By Download=By.xpath("(//button[text()='Download'])[1]");
 
     public static By BillRunCycleSucc=By.xpath(" //p/span[@id='resultMsg']");
+    public static By BillCycle=By.xpath("//select[@id='cycleno']");
 
 
     //============Creating BillRun Cycles For THe Customers===================
@@ -723,11 +724,14 @@ public class BillRun extends TestLogin {
 
     public void SendBillRun(String SelectBillRunCycleField) throws AWTException {
         WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCycleField);
-        Robot s = new Robot();
-        s.keyPress(KeyEvent.VK_ENTER);
-        s.keyPress(KeyEvent.VK_ENTER);
-        s.keyRelease(KeyEvent.VK_ENTER);
+       Robot s = new Robot();
+//       s.keyPress(KeyEvent.VK_DOWN);
+//       s.keyRelease(KeyEvent.VK_DOWN);
+//        s.keyPress(KeyEvent.VK_ENTER);
+//        s.keyRelease(KeyEvent.VK_ENTER);
+        WebDriverWaits.selectByVisibleText(BillCycle, SelectBillRunCycleField);
     }
+
 
     public void ClickOnToggle() {
         WebDriverWaits.WaitUntilVisibleWE20(Toggle);
@@ -891,10 +895,11 @@ public class BillRun extends TestLogin {
         ClickOnRunTheBillsButton();
         // BillRun.ClickOnStartDate();
          SelectBillRun();
-         Thread.sleep(1000);
+      //   Thread.sleep(1000);
          SendBillRun(Customer.CustomerFirstName);
         // BillRun.ClickOnStartDate();
         // BillRun.ClickOnDueDate();
+        Thread.sleep(2000);
          ClickOnToggle();
          ClickOnEndDate();
          ClickOnIssueDate();

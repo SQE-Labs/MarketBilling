@@ -73,6 +73,7 @@ public class Metering {
         WebDriverWaits.ClickOn(ConfigurationType_Opn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(2000);
+            WebDriverWaits.scrollIntoView(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(Select_LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(DateConnected_Datepicker);
@@ -90,6 +91,7 @@ public class Metering {
     public static String createRegister() throws InterruptedException {
        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
          WebDriverWaits.scrollIntoView(MeterEdit_icon);
+         Thread.sleep(1000);
         WebDriverWaits.ClickOn(MeterEdit_icon);
      //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
@@ -137,7 +139,7 @@ public class Metering {
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
         WebDriverWaits.ClickOn(MeterNumber_Dropdown);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(ViewMeterReads);

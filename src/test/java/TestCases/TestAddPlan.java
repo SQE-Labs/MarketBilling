@@ -13,7 +13,7 @@ public class TestAddPlan extends BaseTest {
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
         extentTest.setDescription(" Verify that User is able to do TouImport");
-        Login.loginWithGroupName("Test Utilities");
+        //Login.loginWithGroupName("Test Utilities");
         TouImport.TOUImportFile();
 
     }
@@ -22,6 +22,7 @@ public class TestAddPlan extends BaseTest {
     public  void AddPlanwithoutTOUDefinition() throws InterruptedException {
         extentTest = extent.startTest(" AddPlanwithoutTOUDefinition ");
         extentTest.setDescription(" Verify that User is able to add simple plan. ");
+
         Plans.AddPlanwithoutTOUDefinition();
     }
 

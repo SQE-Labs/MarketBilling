@@ -243,6 +243,7 @@ public class Services {
        EnterPostCode(PostalCode);
         SelectState(selectState);
         ClickOnAddButton();
+        Thread.sleep(2000);
         String Expectedmsg="The Service has been created successfully.";
         softAssert.assertEquals(Expectedmsg, ServiceSuccMsg);
     }
