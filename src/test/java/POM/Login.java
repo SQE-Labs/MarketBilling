@@ -9,7 +9,7 @@ public class Login {
 	public static By UsernameField = By.xpath("//input[@name='j_username']");
 	public static By PasswordField = By.xpath("//input[@name='predigpass']");
 	public static By LoginButton = By.xpath("//button[@value='Log In']");
-	public static By groupLogiin = By.id("submitrequest");
+	public static By groupLogiin = By.xpath("//button[text()='Login']");
 	public static By selectGroup = By.id("newGroup");
 
 
@@ -24,7 +24,7 @@ public class Login {
 		WebDriverWaits.SendKeys(PasswordField, DataInterface.Password);
 		WebDriverWaits.ClickOn(LoginButton);
 
-	//	WebDriverWaits.selectByVisibleText(selectGroup,groupName);
+	//	WebDriverWaits.selectByVisibleText(selectGroup,"Markettest8887");
 	//	WebDriverWaits.ClickOn(groupLogiin);
 
 	}

@@ -52,6 +52,7 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
         Customer.searchCustomer(CustomerID02B);
+
         Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
         Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
         Metering metering = new Metering();

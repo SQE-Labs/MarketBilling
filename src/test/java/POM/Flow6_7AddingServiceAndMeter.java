@@ -3,6 +3,7 @@ package POM;
 
 import CommonMethods.DateAndTime;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import CommonMethods.WebDriverWaits;
@@ -47,9 +48,11 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         public static By selectBusinessCustomer_Record1 = By.xpath("(//td[@class='sorting_1']/a)[1]"); // Just temporary
         // due to issue
         public static By selectCommercialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[3]");
-        public static By OverviewTab = By.xpath("//*[@class=\"icon-eye-open\"]"); // //*[contains(text(),'Overview')]
+        public static By OverviewTab = By.xpath("//a[text()=' Overview']"); // //*[contains(text(),'Overview')]
 
         // Add Service for Residential/Business/Commercial customer
+
+
         public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
         public static By Market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
         public static By NMI_Field = By.xpath("//*[@id=\"NMI\"]");
@@ -77,6 +80,12 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
         public static By SearchService=By.xpath("//li[@class='search-field']");
         public static By CustomerSuccessEditMsg = By.xpath("//div[@class='alert alert-success']/center");
+
+        public static By DropDown=By.xpath("//li[text()='Electricity Template Plan']");
+
+       //  WebElement ele=  By.xpath("//li[text()='Electricity Template Plan'] ");
+
+
 
         // Methods to add Residential Service
 
@@ -114,23 +123,25 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
             System.out.println("SERVICE ID -------- " + ServiceIDLater1);
 
-            Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-          // WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown,"Electricity");
-            Robot s= new Robot();
-            s.keyPress(KeyEvent.VK_ENTER);
-            s.keyPress(KeyEvent.VK_ENTER);
-            s.keyRelease(KeyEvent.VK_ENTER);
-         //   WebElement Option2 = WebDriverWaits.WaitUntilVisibleWE(Service_Plan_Dropdown);
-         //   select = new Select(Option2);
-        //    select.selectByVisibleText("Electricity Template Plan");
-         //   Thread.sleep(1000);
-
+       //     Thread.sleep(2000);
+       //    WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown,"Electricity");
+        //    Thread.sleep(2000);
+        //    Robot s= new Robot();
+        //    s.keyPress(KeyEvent.VK_ENTER);
+         //   s.keyPress(KeyEvent.VK_ENTER);
+        //    s.keyRelease(KeyEvent.VK_ENTER);
+        //    WebDriverWaits.selectByIndex(DropDown,0);
+            Actions as=new Actions(driver);
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            Thread.sleep(2000);
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
-          //  WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
 
+         //   WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
             WebDriverWaits.ClickOn(SelectCurrentDate);
+
+
 
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
@@ -231,15 +242,14 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
-            Robot r= new Robot();
-            r.keyPress(KeyEvent.VK_ENTER);
-            r.keyPress(KeyEvent.VK_ENTER);
-            r.keyRelease(KeyEvent.VK_ENTER);
+            Actions as=new Actions(driver);
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            Thread.sleep(2000);
 
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
-            WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
-//			WebDriverWaits.ClickOn(SelectCurrentDate);
+         //   WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
+			WebDriverWaits.ClickOn(SelectCurrentDate);
 
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
@@ -344,14 +354,13 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
           //  WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown, "Electricity");
-            Robot t= new Robot();
-                    t .keyPress(KeyEvent.VK_ENTER);
-                      t .keyPress(KeyEvent.VK_ENTER);
-                      t .keyRelease(KeyEvent.VK_ENTER);
+            Actions as=new Actions(driver);
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            Thread.sleep(2000);
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
-            //	WebDriverWaits.ClickOn(SelectCurrentDate);
-            WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
+            	WebDriverWaits.ClickOn(SelectCurrentDate);
+         //   WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
          //   WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);

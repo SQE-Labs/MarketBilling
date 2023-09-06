@@ -66,6 +66,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 		//System.out.println("Clicked On " + element);
 	}
 
+
 	public static void SendKeys(By element, String value) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		WebElement ele = driver.findElement(element);
@@ -151,6 +152,8 @@ public class WebDriverWaits extends BrowsersInvoked {
 		Select dropdown = new Select(ele);
 		dropdown.selectByVisibleText(text);
 	}
+
+
 	public static void selectByIndex(By element, int index) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		WebElement ele = driver.findElement(element);

@@ -6,6 +6,7 @@ import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
@@ -191,15 +192,14 @@ public class Services {
         WebDriverWaits.ClickOn(SelectService);
     }
 
-    public void ServicePlan() throws AWTException {
+    public void ServicePlan() throws AWTException, InterruptedException {
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(Search);
         // Actions as= new Actions(driver);
         // as.moveToElement(driver.findElement(By.xpath("//ul[@class='Electricity
         // Template Plan']"))).perform();
-        WebDriverWaits.WaitUntilVisible(Search);
-        Robot rb = new Robot();
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
+        Actions as=new Actions(driver);
+        as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
     }
 
     public void MoveInDate() {
@@ -243,6 +243,7 @@ public class Services {
        EnterPostCode(PostalCode);
         SelectState(selectState);
         ClickOnAddButton();
+        Thread.sleep(2000);
         String Expectedmsg="The Service has been created successfully.";
         softAssert.assertEquals(Expectedmsg, ServiceSuccMsg);
     }
