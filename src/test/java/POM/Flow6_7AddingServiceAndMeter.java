@@ -290,6 +290,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             select.selectByVisibleText("Connected");
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
             WebDriverWaits.ClickOn(SaveChanges_Button);
+            WebDriverWaits.WaitUntilVisible(OkButton);
             WebDriverWaits.ClickOn(OkButton);
             //Assert:  Successfully saved service details.
 //			String ActualMsg = WebDriverWaits.GetText(CustomerSuccessEditMsg);

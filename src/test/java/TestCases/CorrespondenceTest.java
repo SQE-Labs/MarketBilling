@@ -21,7 +21,7 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondence() {
         extentTest = extent.startTest(" Enable Correspondence ");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-        Login.loginWithGroupName("Testing1228");
+       // Login.loginWithGroupName("Testing1228");
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
         groupEdit.enableCorrepondenceToggle();

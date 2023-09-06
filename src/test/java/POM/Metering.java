@@ -73,6 +73,7 @@ public class Metering {
         WebDriverWaits.ClickOn(ConfigurationType_Opn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(2000);
+        WebDriverWaits.scrollIntoView(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(Select_LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(DateConnected_Datepicker);
@@ -137,23 +138,19 @@ public class Metering {
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
         WebDriverWaits.ClickOn(MeterNumber_Dropdown);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(ViewMeterReads);
         WebDriverWaits.ClickOn(ViewMeterReads);
- //       jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(AddMeterReads);
-  //      jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(AddMeterReads);
         Thread.sleep(1000);
-
         WebDriverWaits.ClickOn(MeterNo_Dropdown);
         WebDriverWaits.ClickOn(MeterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_Dropdown);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
-
         WebDriverWaits.selectByVisibleText(ReadType_Dropdown,readType);
         // WebElement ReadTypeOption2 = WebDriverWaits.WaitUntilVisibleWE(ReadType_Dropdown);
         // select = new Select(ReadTypeOption2);

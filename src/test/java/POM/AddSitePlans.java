@@ -72,6 +72,7 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
         WebDriverWaits.SendKeys(paramValue, "10.158");
         WebDriverWaits.ClickOn(AddButt);
+        WebDriverWaits.WaitUntilVisible(saveServiceParamsBtn);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }
 }
