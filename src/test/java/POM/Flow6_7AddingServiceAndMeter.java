@@ -105,6 +105,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
 
             WebDriverWaits.ClickOn(SearchIcon);
+            WebDriverWaits.WaitUntilVisible(OverviewTab);
             WebDriverWaits.ClickOn(OverviewTab);
             WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
             Thread.sleep(2000);

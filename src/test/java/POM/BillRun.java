@@ -564,16 +564,20 @@ public class BillRun extends TestLogin {
     // =============Craeting BillRun Cycles for the customer==============
 
     public static By BillRunCyclesTab = By.xpath("//p[text()='Bill Run Cycles']");
-    public static By CreateNew = By.xpath("//a[text()=' Create new ']");
+    public static By CreateNew = By.xpath("//a[@id='addBtn']");
     public static By CycleName = By.xpath("//input[@id='cyclename']");
     public static By AutomatedToggle = By.xpath("(//span[@class='switch-label'])[1]");
     public static By LaunchAutomate = By.xpath("//select[@id='automated_billing_schedule']");
     public static By BillPeriodEnd = By.xpath("//select[@id='bill_period_end_day']");
     public static By PaymentTermDay = By.xpath("//input[@name='payment_term_days']");
-    public static By CustomerFilter = By.xpath("//input[@class='filter form-control']");
+    public static By ClickOnDownArrow = By.xpath("//i[@class='icon-chevron-down']");
+    public static By ClickOnSelect=By.xpath("//select[@name='filter-category']");
+    public static By PassName=By.xpath("//input[@name='text_contains']");
+    public static By FilterButton=By.xpath("//button[text()='Filter']");
     public static By ArrowMark = By.xpath("//button[@class='btn move btn-default']");
     public static By SaveCycle = By.xpath("//button[text()='Save']");
-    public static By PerticularCustomer = By.xpath("(//option[@class='0'])[4]");
+    public static By PerticularCustomer = By.xpath("//*[@id=\"bootstrap-duallistbox-nonselected-list_custnos\"]/option");
+
 
     // =============Creating BillRun For the Customer=============
 
@@ -652,15 +656,17 @@ public class BillRun extends TestLogin {
     }
 
     public void ClickOnAdminTab(){
+        WebDriverWaits.WaitUntilVisible(ClickOnAdminTab);
         WebDriverWaits.ClickOn(ClickOnAdminTab);
     }
 
-    public void ClickOnCreateNewButton() {
+    public void ClickOnCreateNewButton() throws InterruptedException {
+        WebDriverWaits.WaitUntilVisible(CreateNew);
         WebDriverWaits.ClickOn(CreateNew);
     }
 
     public void CycleName(String CycleNamefield) {
-        WebDriverWaits.WaitUntilVisibleWE20(CycleName);
+        WebDriverWaits.WaitUntilVisible(CycleName);
         WebDriverWaits.SendKeysWithClear(CycleName, CycleNamefield);
     }
 
@@ -680,11 +686,15 @@ public class BillRun extends TestLogin {
         WebDriverWaits.SendKeysWithClear(PaymentTermDay, "1");
     }
 
-    public void CustomerFilter(String CustomerFilterfield) {
-        WebDriverWaits.scrollIntoView(CustomerFilter);
-        WebDriverWaits.WaitUntilVisible(CustomerFilter);
-        WebDriverWaits.SendKeysWithClear(CustomerFilter, CustomerFilterfield);
-        WebDriverWaits.ClickOn(CustomerFilter);
+    public void CustomerFilter(String CustomerFirstName ) {
+        WebDriverWaits.scrollIntoView(ClickOnDownArrow);
+        WebDriverWaits.WaitUntilVisible(ClickOnDownArrow);
+        WebDriverWaits.ClickOn(ClickOnDownArrow);
+        WebDriverWaits.ClickOn(ClickOnSelect);
+        WebDriverWaits.selectByVisibleText(ClickOnSelect,"Customer name");
+        WebDriverWaits.ClickOn(PassName);
+        WebDriverWaits.SendKeysWithClear(PassName,CustomerFirstName);
+        WebDriverWaits.ClickOn(FilterButton);
     }
 
     public void ClickOnArrow() {
@@ -699,6 +709,7 @@ public class BillRun extends TestLogin {
     }
 
     public void ClickOnPerticularCustomer() {
+        WebDriverWaits.WaitUntilVisible(PerticularCustomer);
         WebDriverWaits.ClickOn(PerticularCustomer);
         WebDriverWaits.ClickOn(PerticularCustomer);
     }
@@ -724,12 +735,13 @@ public class BillRun extends TestLogin {
 
     public void SendBillRun(String SelectBillRunCycleField) throws AWTException {
         WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCycleField);
-       Robot s = new Robot();
-//       s.keyPress(KeyEvent.VK_DOWN);
-//       s.keyRelease(KeyEvent.VK_DOWN);
-//        s.keyPress(KeyEvent.VK_ENTER);
-//        s.keyRelease(KeyEvent.VK_ENTER);
-        WebDriverWaits.selectByVisibleText(BillCycle, SelectBillRunCycleField);
+
+      //  WebDriverWaits.selectByVisibleText(BillCycle, SelectBillRunCycleField);
+        Robot s = new Robot();
+       s.keyPress(KeyEvent.VK_DOWN);
+       s.keyRelease(KeyEvent.VK_DOWN);
+        s.keyPress(KeyEvent.VK_ENTER);
+        s.keyRelease(KeyEvent.VK_ENTER);
     }
 
 
@@ -747,13 +759,13 @@ public class BillRun extends TestLogin {
     public void ClickOnEndDate() {
 
         WebDriverWaits.WaitUntilVisible(EndDate);
-        WebDriverWaits.SendKeysWithClear(EndDate, "09/23/2023");
+        WebDriverWaits.SendKeysWithClear(EndDate, "07/10/2023");
 
     }
 
     public void ClickOnIssueDate() {
         WebDriverWaits.WaitUntilVisible(ClickIssueDate);
-        WebDriverWaits.SendKeysWithClear(ClickIssueDate, "09/24/2023");
+        WebDriverWaits.SendKeysWithClear(ClickIssueDate, "08/10/2023");
     }
 
     public void ClickOnRunBillButton() {
@@ -867,7 +879,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.selectCheckBox(CustomerCheckbox);
     }
 
-    public void CreateBillRunCycle(){
+    public void CreateBillRunCycle() throws InterruptedException {
         // Login.loginWithGroupName("Test Utilities");
       ClickOnAdminTab();
        ClickOnBillRunCyclesTab();
@@ -876,7 +888,7 @@ public class BillRun extends TestLogin {
         OnAutomatedToggle();
          LaunchAutomatedBilling();
          BillPeriod();
-       PaymentTerm();
+         PaymentTerm();
          CustomerFilter(Customer.CustomerFirstName);
          ClickOnPerticularCustomer();
          ClickOnArrow();
