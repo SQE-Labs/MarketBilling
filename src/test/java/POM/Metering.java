@@ -251,15 +251,16 @@ public class Metering {
         WebDriverWaits.SendKeysWithClear(MeterNumber, MeterNumberText);
     }
 
-    public void SelectConfigureType() {
+    public void SelectConfigureType() throws InterruptedException {
         WebDriverWaits.WaitUntilVisible(configurationType);
+        Thread.sleep(1000);
         WebDriverWaits.selectByVisibleText(configurationType, "POS");
     }
 
- /*   public void SelectConsumptionType() {
+    public void SelectConsumptionType() {
         WebDriverWaits.WaitUntilVisible(ConsumptionType);
         WebDriverWaits.selectByVisibleText(ConsumptionType, "Cumulative");
-    } */
+    }
 
     public void SelectLastTestDate() {
         WebDriverWaits.ClickOn(LastTest);
@@ -363,14 +364,19 @@ public class Metering {
     }
 
     public void ClickOnMeterRead() {
+        WebDriverWaits.WaitUntilVisible(MeterRead);
         WebDriverWaits.ClickOn(MeterRead);
     }
 
     public void ClickOnAddRead() {
+        WebDriverWaits.WaitUntilVisible(AddRead);
         WebDriverWaits.ClickOn(AddRead);
     }
 
-    public void EnterReadType() {
+    public void EnterReadType() throws InterruptedException {
+        WebDriverWaits.WaitUntilVisible(ReadType);
+        Thread.sleep(1000);
+        WebDriverWaits.ClickOn(ReadType);
         WebDriverWaits.selectByVisibleText(ReadType, "Initial");
     }
 
@@ -430,7 +436,7 @@ public class Metering {
         WebDriverWaits.ClickOn(SaveInitial);
     }
 
-    public void CreateMeter(){
+    public void CreateMeter() throws InterruptedException {
         ClickOnServicesTab();
         ClickOnManageIcon();
         ClickOnPlusIcon();
@@ -468,6 +474,7 @@ public class Metering {
         Thread.sleep(2000);
          ClickOnMeterReadTab();
         // BillRun.ClickOnMeterReads();
+        Thread.sleep(1000);
        ClickOnMeterRead();
          ClickOnAddRead();
          EnterReadType();
