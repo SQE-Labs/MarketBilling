@@ -93,8 +93,8 @@ public class Services {
        // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         //WebDriverWaits.ClickOn(SelectCurrentDate);
-        WebDriverWaits.scrollIntoView(Select_Use_Structured_Address_Togglebutton);
-        WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
+       // WebDriverWaits.scrollIntoView(Select_Use_Structured_Address_Togglebutton);
+      //  WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
         WebDriverWaits.ClickOn(Building_Name_Field);
         WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
         WebDriverWaits.ClickOn(UnitType_Dropdown);
@@ -199,7 +199,7 @@ public class Services {
         // as.moveToElement(driver.findElement(By.xpath("//ul[@class='Electricity
         // Template Plan']"))).perform();
         Actions as=new Actions(driver);
-        as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+        as.moveToElement(driver.findElement(By.xpath("//li[text()='Ausgrid - SME Anytime + Controlled Load 2']"))).click().build().perform();
     }
 
     public void MoveInDate() {

@@ -8,6 +8,7 @@ import TestCases.TestLogin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
@@ -564,7 +565,7 @@ public class BillRun extends TestLogin {
     // =============Craeting BillRun Cycles for the customer==============
 
     public static By BillRunCyclesTab = By.xpath("//p[text()='Bill Run Cycles']");
-    public static By CreateNew = By.xpath("//a[@id='addBtn']");
+    public static By CreateNew = By.xpath("//a[text()=' Create new ']");
     public static By CycleName = By.xpath("//input[@id='cyclename']");
     public static By AutomatedToggle = By.xpath("(//span[@class='switch-label'])[1]");
     public static By LaunchAutomate = By.xpath("//select[@id='automated_billing_schedule']");
@@ -576,7 +577,7 @@ public class BillRun extends TestLogin {
     public static By FilterButton=By.xpath("//button[text()='Filter']");
     public static By ArrowMark = By.xpath("//button[@class='btn move btn-default']");
     public static By SaveCycle = By.xpath("//button[text()='Save']");
-    public static By PerticularCustomer = By.xpath("//*[@id=\"bootstrap-duallistbox-nonselected-list_custnos\"]/option");
+    public static By PerticularCustomer = By.xpath("(//option[@class='0'])[29]");
 
 
     // =============Creating BillRun For the Customer=============
@@ -589,7 +590,7 @@ public class BillRun extends TestLogin {
      * static By NextMark=By.xpath("(//th[@class='next'])[1]"); public static By
      * Clickk=By.xpath("//td[text()='11']");
      */
-    public static By Toggle = By.xpath("//span[@class='switch-label']");
+    public static By Toggle = By.xpath("//span[@class='switch-handle']");
     public static By BillRunCycleSelect = By.xpath("(//span[@class='filter-option pull-left'])[2]");
     public static By SelectBillRunCycle = By.xpath("(//input[@class='input-block-level form-control'])[2]");
     public static By EndDate = By.xpath("//input[@id='cycleEnd']");
@@ -646,6 +647,7 @@ public class BillRun extends TestLogin {
 
     public static By BillRunCycleSucc=By.xpath(" //p/span[@id='resultMsg']");
     public static By BillCycle=By.xpath("//select[@id='cycleno']");
+    public static By FirstValue=By.xpath("//*[@id=\"logContent\"]/div/div/div[2]/div[2]/div/div/ul/li[1]/a");
 
 
     //============Creating BillRun Cycles For THe Customers===================
@@ -661,7 +663,7 @@ public class BillRun extends TestLogin {
     }
 
     public void ClickOnCreateNewButton() throws InterruptedException {
-        WebDriverWaits.WaitUntilVisible(CreateNew);
+        WebDriverWaits.Waituntilvisible(CreateNew);
         WebDriverWaits.ClickOn(CreateNew);
     }
 
@@ -671,6 +673,7 @@ public class BillRun extends TestLogin {
     }
 
     public void OnAutomatedToggle() {
+
         WebDriverWaits.ClickOn(AutomatedToggle);
     }
 
@@ -711,19 +714,20 @@ public class BillRun extends TestLogin {
     public void ClickOnPerticularCustomer() {
         WebDriverWaits.WaitUntilVisible(PerticularCustomer);
         WebDriverWaits.ClickOn(PerticularCustomer);
-        WebDriverWaits.ClickOn(PerticularCustomer);
+       // WebDriverWaits.ClickOn(PerticularCustomer);
     }
 
 //============Creating BillRun for the Customer==============
 
     public void ClickOnBillRunTab() {
-        WebDriverWaits.WaitUntilVisible(BillRunTab);
+        WebDriverWaits.Waituntilvisible(BillRunTab);
+       // WebDriverWaits.fluentWait_Clickable(BillRunTab);
         WebDriverWaits.ClickOn(BillRunTab);
 
     }
 
     public void ClickOnRunTheBillsButton() {
-
+       WebDriverWaits.Waituntilvisible(RunTheBill);
         WebDriverWaits.ClickOn(RunTheBill);
     }
 
@@ -733,32 +737,27 @@ public class BillRun extends TestLogin {
      */
 
 
-    public void SendBillRun(String SelectBillRunCycleField) throws AWTException {
+    public void SendBillRun(String SelectBillRunCycleField) throws AWTException, InterruptedException {
         WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCycleField);
-
-      //  WebDriverWaits.selectByVisibleText(BillCycle, SelectBillRunCycleField);
-        Robot s = new Robot();
-       s.keyPress(KeyEvent.VK_DOWN);
-       s.keyRelease(KeyEvent.VK_DOWN);
-        s.keyPress(KeyEvent.VK_ENTER);
-        s.keyRelease(KeyEvent.VK_ENTER);
+        Actions s= new Actions(driver);
+        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
     }
 
 
     public void ClickOnToggle() {
-        WebDriverWaits.WaitUntilVisibleWE20(Toggle);
+        WebDriverWaits.Waituntilvisible(Toggle);
         WebDriverWaits.ClickOn(Toggle);
     }
 
     public void SelectBillRun() throws AWTException {
+        WebDriverWaits.Waituntilvisible(BillRunCycleSelect);
         WebDriverWaits.ClickOn(BillRunCycleSelect);
     }
 
 
 
     public void ClickOnEndDate() {
-
-        WebDriverWaits.WaitUntilVisible(EndDate);
+        WebDriverWaits.Waituntilvisible(EndDate);
         WebDriverWaits.SendKeysWithClear(EndDate, "07/10/2023");
 
     }
@@ -812,8 +811,8 @@ public class BillRun extends TestLogin {
     //==============Commiting BillRun ====================================
 
     public void ClickOnDetailsIcon() throws InterruptedException {
-        WebDriverWaits.WaitUntilVisible(DetailsIcon);
-        WebDriverWaits.ClickOn(DetailsIcon);
+        WebDriverWaits.Waituntilvisible(DetailsIcon);
+        WebDriverWaits. ClickOn(DetailsIcon);
     }
 
     public void ClearingException() {
@@ -869,7 +868,10 @@ public class BillRun extends TestLogin {
     public void ClickDownloadButton() throws AWTException, InterruptedException {
 
         WebDriverWaits.ClickOn (DownloadButton);
+        WebDriverWaits.WaitUntilSelect(Zip
+        );
         WebDriverWaits.selectByVisibleText(Zip, "Separate pdf per customer (zip)");
+        WebDriverWaits.Waituntilvisible(Download);
         WebDriverWaits.ClickOn (Download);
 
     }
@@ -900,19 +902,15 @@ public class BillRun extends TestLogin {
     }
 
     public void BillRun() throws AWTException, InterruptedException {
-        //String CustomerFirstName="";
-        // Login.loginWithGroupName("Test Utilities");
-       ClickOnBillRunTab();
-        // Thread.sleep(1000);
-        ClickOnRunTheBillsButton();
-        // BillRun.ClickOnStartDate();
-         SelectBillRun();
-      //   Thread.sleep(1000);
-         SendBillRun(Customer.CustomerFirstName);
-        // BillRun.ClickOnStartDate();
-        // BillRun.ClickOnDueDate();
         Thread.sleep(2000);
-         ClickOnToggle();
+        ClickOnBillRunTab();
+        ClickOnRunTheBillsButton();
+         SelectBillRun();
+         SendBillRun(Customer.CustomerFirstName);
+         // Clicking 2 times in toggle button because of Toggle issue.
+        ClickOnToggle();
+        Thread.sleep(1000);
+        ClickOnToggle();
          ClickOnEndDate();
          ClickOnIssueDate();
          ClickOnRunBillButton();
@@ -920,7 +918,7 @@ public class BillRun extends TestLogin {
         Thread.sleep(2000);
        BillRunCycle(Customer.CustomerFirstName);
          ReloadButton();
-        ClickOnDateFrom();
+    //    ClickOnDateFrom();
 
         // Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Showing
         // 1 to 1 of 1 entries')]")).getText(), expectedBillRunSuccessText) ;
@@ -928,6 +926,11 @@ public class BillRun extends TestLogin {
     }
 
     public void CommitBillRun() throws InterruptedException {
+        ClickOnBillRunTab();
+        ReloadButton();
+        ClickOnDateFrom();
+      //  ClickOnSearchBox(Customer.CustomerFirstName);
+      //  ClickOnDetailsIcon();
         CommitButton();
         ClickOnOkcommit();
         ClickOnCommitOkButton();
@@ -945,7 +948,6 @@ public class BillRun extends TestLogin {
 
     public void DownloadZip() throws InterruptedException, AWTException {
          ClickOnBillRunTab();
-         ReloadButton();
          ClickOnSearchBox(Customer.CustomerFirstName);
          ClickOnDetailsIcon();
          CustomerCheckbox();

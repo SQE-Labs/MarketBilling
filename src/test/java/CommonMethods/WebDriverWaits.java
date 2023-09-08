@@ -1,13 +1,8 @@
 package CommonMethods;
 
 import BrowsersBase.BrowsersInvoked;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -15,7 +10,6 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 
 //Todo
@@ -31,6 +25,16 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void WaitUntilVisible(By element) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+	}
+
+	public static void Waituntilvisible(By element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		}
+		catch (ElementClickInterceptedException e){
+
+		}
 	}
 
 	public static void WaitUntilVisible5mins(By element) {
@@ -65,6 +69,18 @@ public class WebDriverWaits extends BrowsersInvoked {
 		ele.click();
 		//System.out.println("Clicked On " + element);
 	}
+
+	public static void fluentWait_Clickable(By element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (ElementNotInteractableException e){
+
+		}
+
+	}
+
 
 
 	public static void SendKeys(By element, String value) {
@@ -153,6 +169,17 @@ public class WebDriverWaits extends BrowsersInvoked {
 		dropdown.selectByVisibleText(text);
 	}
 
+	public static void WaitUntilSelect(By element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+			wait.until(ExpectedConditions.elementToBeSelected(element));
+			WebElement ele = driver.findElement(element);
+		}catch(TimeoutException e) {
+
+		}
+	}
 
 	public static void selectByIndex(By element, int index) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));

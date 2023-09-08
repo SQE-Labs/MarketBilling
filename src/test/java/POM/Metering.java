@@ -209,10 +209,10 @@ public class Metering {
 
     public static By MeterReadTab = By.xpath("//a[text()=' Meter Reads']");
     public static By SelectMeter = By.xpath("//select[@id='meterNo']");
-    public static By MeterReads = By.xpath("//a[text()='Meter Reads']");
+ //   public static By MeterReadTab = By.xpath("//a[text()='Meter Reads']");
     public static By Service = By.xpath("//select[@id='nmis']");
     public static By k = By.xpath("(//option[text()='KarlieVf'])[1]");
-    public static By MeterRead = By.xpath("//a[text()='Meter Reads']");
+    public static By MeterRead = By.xpath("//a[@id='viewMeterReads']");
     public static By AddRead = By.xpath("//a[text()=' Add Read']");
     public static By ReadType = By.xpath("//select[@id='rreadType']");
     public static By ReadDate = By.xpath("//input[@id='rreadDate']");
@@ -281,10 +281,9 @@ public class Metering {
     // ===========Creating Meter Register================
 
     public void ClickONManages() {
-        // JavascriptExecutor js =(JavascriptExecutor) driver;
-        WebDriverWaits.WaitUntilVisible(RegisterManage);
+        //WebDriverWaits.WaitUntilVisible5mins(RegisterManage);
         WebDriverWaits.scrollIntoView(RegisterManage);
-        // WebDriverWaits.WaitUntilVisibleWE20(RegisterManage);
+        WebDriverWaits.Waituntilvisible(RegisterManage);
         WebDriverWaits.ClickOn(RegisterManage);
     }
 
@@ -364,19 +363,19 @@ public class Metering {
     }
 
     public void ClickOnMeterRead() {
-        WebDriverWaits.WaitUntilVisible(MeterRead);
+        WebDriverWaits.scrollIntoView(MeterRead);
         WebDriverWaits.ClickOn(MeterRead);
     }
 
-    public void ClickOnAddRead() {
-        WebDriverWaits.WaitUntilVisible(AddRead);
+    public void ClickOnAddRead() throws InterruptedException {
+        WebDriverWaits.Waituntilvisible(AddRead);
         WebDriverWaits.ClickOn(AddRead);
     }
 
     public void EnterReadType() throws InterruptedException {
-        WebDriverWaits.WaitUntilVisible(ReadType);
-        Thread.sleep(1000);
-        WebDriverWaits.ClickOn(ReadType);
+//        WebDriverWaits.WaitUntilVisible(ReadType);
+//        WebDriverWaits.ClickOn(ReadType);
+        WebDriverWaits.WaitUntilSelect(ReadType);
         WebDriverWaits.selectByVisibleText(ReadType, "Initial");
     }
 
@@ -409,6 +408,7 @@ public class Metering {
     }
 
     public void EnterReadTypeActual() {
+        WebDriverWaits.WaitUntilSelect(ReadTypeActual);
         WebDriverWaits.selectByVisibleText(ReadTypeActual, "Actual Read");
     }
 
@@ -452,7 +452,8 @@ public class Metering {
         //   softAssert.assertEquals(SuccMeterRegister, SuccMeterReg );
     }
 
-    public void CreateMeterRegister(){
+    public void CreateMeterRegister() throws InterruptedException {
+        Thread.sleep(1000);
          ClickONManages();
          ClickOnplus();
         ClickOnMeterRegister(Customer.CustomerFirstName);
@@ -473,9 +474,8 @@ public class Metering {
     public void CreateMeterReads() throws InterruptedException {
         Thread.sleep(2000);
          ClickOnMeterReadTab();
-        // BillRun.ClickOnMeterReads();
-        Thread.sleep(1000);
-       ClickOnMeterRead();
+         Thread.sleep(2000);
+         ClickOnMeterRead();
          ClickOnAddRead();
          EnterReadType();
         EnterReadDate();

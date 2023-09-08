@@ -141,8 +141,9 @@ public class CorrespondenceTest extends BaseTest {
         Communications comm = customer.clickCommunications();
         comm.clickNewCorrespondence();
         comm.selectCorrespondenceType("Welcome Pack");
-        comm.clickSendEmail();
+
         comm.validateID();
+        comm.clickSendEmail();
         comm.validateService();
 
         // Commented because of bug

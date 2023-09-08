@@ -74,7 +74,7 @@ public class TestNewBillRun extends BaseTest {
         }
 
         @ Test(priority = 3, enabled = true, description = "Creating MeterRegister for the customer")
-        public void CreateMeterRegister() {
+        public void CreateMeterRegister() throws InterruptedException {
             extentTest = extent.startTest(" Create MeterRegister ");
             extentTest.setDescription(" Verify that User is able to Create MeterRegister or not ");
 

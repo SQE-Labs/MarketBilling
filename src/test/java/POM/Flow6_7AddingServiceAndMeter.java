@@ -82,6 +82,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         public static By CustomerSuccessEditMsg = By.xpath("//div[@class='alert alert-success']/center");
 
         public static By DropDown=By.xpath("//li[text()='Electricity Template Plan']");
+        public static By Customerno=By.xpath("(//td[@class='sorting_1'])[1]");
 
        //  WebElement ele=  By.xpath("//li[text()='Electricity Template Plan'] ");
 
@@ -102,9 +103,9 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
             //		WebDriverWaits.SendKeys(SearchField, CustomerID01R);
             WebDriverWaits.SendKeysWithClear(SearchField, ThirdRecID);
-
-
+            WebDriverWaits.WaitUntilVisible(SearchIcon);
             WebDriverWaits.ClickOn(SearchIcon);
+          //  WebDriverWaits.ClickOn(Customerno);
             WebDriverWaits.WaitUntilVisible(OverviewTab);
             WebDriverWaits.ClickOn(OverviewTab);
             WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
@@ -221,7 +222,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.ClickOn(SearchIcon);
             Thread.sleep(2000);
             InternalMethods.SwitchToCustomerpage();
-            // WebDriverWaits.ClickOn(OverviewTab);
+            WebDriverWaits.ClickOn(OverviewTab);
             Thread.sleep(2000);
 
             WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
