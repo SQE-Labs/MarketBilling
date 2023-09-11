@@ -73,23 +73,23 @@ public class Customer {
 
     //=======NEW UPDATED CODES=========
     // ========Creating Customer=======
-    public static By CustomerTab = By.xpath("//span[text()='Customers']");
-    public static By CustomerType = By.xpath("//select[@id='custTypeEl']");
-    public static By CatagoryType = By.xpath("//select[@id='category']");
-    public static By CompanyType = By.xpath("//input[@id='company']");
-    public static By AbnType = By.xpath("//input[@id='abn']");
-    public static By TitleType = By.xpath("//select[@id='sal']");
-    public static By FirstName = By.xpath("//input[@id='firstName']");
-    public static By SurName = By.xpath("//input[@id='surname']");
-    public static By PhoneNumber = By.xpath("//input[@id='contact_phone']");
-    public static By ContactEmail = By.xpath("//input[@id='contact_email']");
-    public static By Address1 = By.xpath("//input[@id='hAddress']");
-    public static By CityName = By.xpath("//input[@id='hSuburb']");
-    public static By CountryName = By.xpath("//select[@id='hCountryList']");
-    public static By StateName = By.xpath("//select[@id='hState']");
-    public static By PostalCode = By.xpath("//input[@name='pcode']");
-    public static By SaveButton = By.xpath("//a[text()=' Save Customer']");
-  //  public static By SaveOnlyButton = By.xpath("//button[text()='Save Only']");
+    public static By customerTab = By.xpath("//span[text()='Customers']");
+    public static By customerType = By.xpath("//select[@id='custTypeEl']");
+    public static By catagoryType = By.xpath("//select[@id='category']");
+    public static By companyType = By.xpath("//input[@id='company']");
+    public static By abnType = By.xpath("//input[@id='abn']");
+    public static By titleType = By.xpath("//select[@id='sal']");
+    public static By firstName = By.xpath("//input[@id='firstName']");
+    public static By surName = By.xpath("//input[@id='surname']");
+    public static By phoneNumber = By.xpath("//input[@id='contact_phone']");
+    public static By contactEmail = By.xpath("//input[@id='contact_email']");
+    public static By address1 = By.xpath("//input[@id='hAddress']");
+    public static By cityName = By.xpath("//input[@id='hSuburb']");
+    public static By countryName = By.xpath("//select[@id='hCountryList']");
+    public static By stateName = By.xpath("//select[@id='hState']");
+    public static By postalCode = By.xpath("//input[@name='pcode']");
+    public static By saveButton = By.xpath("//a[text()=' Save Customer']");
+    public static By saveOnlyButton = By.xpath("//button[text()='Save Only']");
     public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
     private static String CustomerID01R;
 
@@ -243,103 +243,103 @@ public class Customer {
 
     //========NEW UPDATED CODES============
 
-    public void ClickOnCustomerTab() {
-        WebDriverWaits.ClickOn(CustomerTab);
+    public void clickOnCustomerTab() {
+        WebDriverWaits.ClickOn(customerTab);
     }
 
-    public void SelectCustomerType() {
-        WebDriverWaits.selectByVisibleText(CustomerType, "Owner");
+    public void selectCustomerType() {
+        WebDriverWaits.selectByVisibleText(customerType, "Owner");
     }
 
-    public void SelectCatagoryType() {
-        WebDriverWaits.WaitUntilVisible(CatagoryType);
-        WebDriverWaits.selectByVisibleText(CatagoryType, "Business");
+    public void selectCatagoryType() {
+        WebDriverWaits.WaitUntilVisible(catagoryType);
+        WebDriverWaits.selectByVisibleText(catagoryType, "Business");
     }
 
-    public void EnterAbnNumber(String ABNType) {
-        WebDriverWaits.scrollIntoView(AbnType);
-        WebDriverWaits.SendKeysWithClear(AbnType,ABNType);
+    public void enterAbnNumber(String ABNType) {
+        WebDriverWaits.scrollIntoView(abnType);
+        WebDriverWaits.SendKeysWithClear(abnType,ABNType);
     }
 
-    public void SelectTitleType() {
-        WebDriverWaits.WaitUntilVisible(TitleType);
-        WebDriverWaits.selectByVisibleText(TitleType, "Mr.");
+    public void selectTitleType() {
+        WebDriverWaits.WaitUntilVisible(titleType);
+        WebDriverWaits.selectByVisibleText(titleType, "Mr.");
     }
 
-    public void EnterCompanyType(String CompanyTypeField) {
-        WebDriverWaits.scrollIntoView(CompanyType);
-        WebDriverWaits.SendKeysWithClear(CompanyType, CompanyTypeField);
+    public void enterCompanyType(String CompanyTypeField) {
+        WebDriverWaits.scrollIntoView(companyType);
+        WebDriverWaits.SendKeysWithClear(companyType, CompanyTypeField);
     }
 
-    public void EnterFirstName(String FirstNameField) {
-        WebDriverWaits.scrollIntoView(FirstName);
-        WebDriverWaits.SendKeysWithClear(FirstName, FirstNameField);
+    public void enterFirstName(String FirstNameField) {
+        WebDriverWaits.scrollIntoView(firstName);
+        WebDriverWaits.SendKeysWithClear(firstName, FirstNameField);
     }
 
-    public void EnterSurName(String SurNameField) {
-        WebDriverWaits.SendKeysWithClear(SurName, SurNameField);
+    public void enterSurName(String SurNameField) {
+        WebDriverWaits.SendKeysWithClear(surName, SurNameField);
     }
 
-    public void EnterPhoneNumber(String phn) {
-        WebDriverWaits.WaitUntilVisible(PhoneNumber);
-        WebDriverWaits.SendKeysWithClear(PhoneNumber, phn);
+    public void enterPhoneNumber(String phn) {
+        WebDriverWaits.WaitUntilVisible(phoneNumber);
+        WebDriverWaits.SendKeysWithClear(phoneNumber, phn);
     }
 
-    public void EnterContactEmail(String ContactEmailTypeField) {
-        WebDriverWaits.SendKeysWithClear(ContactEmail, ContactEmailTypeField);
+    public void enterContactEmail(String ContactEmailTypeField) {
+        WebDriverWaits.SendKeysWithClear(contactEmail, ContactEmailTypeField);
     }
 
-    public void EnterAddress1(String Address1Type) {
-        WebDriverWaits.SendKeysWithClear(Address1, Address1Type );
+    public void enterAddress1(String Address1Type) {
+        WebDriverWaits.SendKeysWithClear(address1, Address1Type );
     }
 
-    public void EnterCityName(String CityNameField) {
-        WebDriverWaits.SendKeysWithClear(CityName, CityNameField);
+    public void enterCityName(String CityNameField) {
+        WebDriverWaits.SendKeysWithClear(cityName, CityNameField);
     }
 
-    public void EnterCountryName(String CountryNameField) {
-        WebDriverWaits.selectByVisibleText(CountryName, CountryNameField);
+    public void enterCountryName(String CountryNameField) {
+        WebDriverWaits.selectByVisibleText(countryName, CountryNameField);
     }
 
-    public void EnterStateName(String StateNameField) {
-        WebDriverWaits.selectByVisibleText(StateName,  StateNameField);
+    public void enterStateName(String StateNameField) {
+        WebDriverWaits.selectByVisibleText(stateName,  StateNameField);
     }
 
-    public void EnterPostalCode(String PostalCodeField) {
-        WebDriverWaits.SendKeysWithClear(PostalCode, PostalCodeField);
+    public void enterPostalCode(String PostalCodeField) {
+        WebDriverWaits.SendKeysWithClear(postalCode, PostalCodeField);
     }
 
-    public void ClickOnSaveCustomerButton() {
-        WebDriverWaits.scrollIntoView(SaveButton);
-        WebDriverWaits.ClickOn(SaveButton);
+    public void clickOnSaveCustomerButton() {
+        WebDriverWaits.scrollIntoView(saveButton);
+        WebDriverWaits.ClickOn(saveButton);
     }
 
-    public void ClickOnSaveOnlyButton() {
-        WebDriverWaits.ClickOn(SaveOnlyButton);
+    public void clickOnSaveOnlyButton() {
+        WebDriverWaits.ClickOn(saveOnlyButton);
     }
 
+    public void createCustomer(String ABNType, String phn, String Address1Type, String CityNameField, String CountryNameField, String StateNameField, String PostalCodeField){
 
-
-    public void CreateCustomer(String ABNType, String phn, String Address1Type, String CityNameField, String CountryNameField, String StateNameField, String PostalCodeField){
-
-        ClickOnCustomerTab();
-        SelectCustomerType();
-        SelectCatagoryType();
-        EnterCompanyType(CustomerFirstName);
-        EnterAbnNumber(ABNType );
-        SelectTitleType();
-        EnterFirstName(CustomerFirstName);
-        EnterSurName(CustomersurName);
-        EnterPhoneNumber( phn);
-        EnterContactEmail(CustomerFirstName + "@yopmail.com");
-        EnterAddress1( Address1Type);
-        EnterCityName( CityNameField);
-        EnterCountryName(CountryNameField);
-        EnterStateName(StateNameField );
-        EnterPostalCode( PostalCodeField);
-        ClickOnSaveCustomerButton();
-        ClickOnSaveOnlyButton();
+        clickOnCustomerTab();
+        selectCustomerType();
+        selectCatagoryType();
+        enterCompanyType(CustomerFirstName);
+        enterAbnNumber(ABNType );
+        selectTitleType();
+        enterFirstName(CustomerFirstName);
+        enterSurName(CustomersurName);
+        enterPhoneNumber( phn);
+        enterContactEmail(CustomerFirstName + "@yopmail.com");
+        enterAddress1( Address1Type);
+        enterCityName( CityNameField);
+        enterCountryName(CountryNameField);
+        enterStateName(StateNameField );
+        enterPostalCode( PostalCodeField);
+        clickOnSaveCustomerButton();
+        clickOnSaveOnlyButton();
         String Expectedmsg="Successfully saved customer.";
         softAssert.assertEquals(Expectedmsg, ActualMsg1);
     }
+
+
 }

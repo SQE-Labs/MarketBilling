@@ -176,184 +176,184 @@ public class Metering {
 
     // ==========Creating Meter============
 
-    public static By ServicesTab = By.xpath("//a[text()=' Services']");
-    public static By MeteringPlusIcon = By.xpath("(//i[@class='icon-plus'])[4]");
-    public static By MeterNumber = By.xpath("//input[@id='meterNo']");
-    public static By ManageIcon = By.xpath("//i[@class='icon-edit']");
+    public static By servicesTab = By.xpath("//a[text()=' Services']");
+    public static By meteringPlusIcon = By.xpath("(//i[@class='icon-plus'])[4]");
+    public static By meterNumber = By.xpath("//input[@id='meterNo']");
+    public static By manageIcon = By.xpath("//i[@class='icon-edit']");
     public static By configurationType = By.xpath("//select[@id='configurationType']");
-    public static By LastTest = By.xpath("//input[@id='maintenanceDate']");
-    public static By ActiveDate = By.xpath("//td[@class='active day']");
-    public static By DateConnected = By.xpath("//input[@id='datecon']");
-    public static By ActiveDateConnected = By.xpath("//td[@class='active day']");
-    public static By CreateMeter = By.xpath("//button[text()='Create Meter']");
+    public static By lastTest = By.xpath("//input[@id='maintenanceDate']");
+    public static By activeDate = By.xpath("//td[@class='active day']");
+    public static By dateConnected = By.xpath("//input[@id='datecon']");
+    public static By activeDateConnected = By.xpath("//td[@class='active day']");
+    public static By createMeter = By.xpath("//button[text()='Create Meter']");
     // public static By MeterManage=By.xpath("//i[@class='icon-edit']");
 //	public static By MeterRegister=By.xpath("(//i[@class='icon-plus'])[1]");
 
     // ==========Creating MeterRegister=========
-    public static By RegisterManage = By.xpath("//button[@title='Manage']");
-    public static By Plusicon = By.xpath("(//i[@class='icon-plus'])[1]");
-    public static By Register = By.xpath("//input[@id='registerNo']");
-    public static By NetworkTariffCode = By.xpath("//input[@id='networkTariffCode']");
+    public static By registerManage = By.xpath("//button[@title='Manage']");
+    public static By plusicon = By.xpath("(//i[@class='icon-plus'])[1]");
+    public static By register = By.xpath("//input[@id='registerNo']");
+    public static By networkTariffCode = By.xpath("//input[@id='networkTariffCode']");
     public static By unitOfMeasure = By.xpath("//input[@id='unitOfMeasure']");
     public static By timeOfDay = By.xpath("//input[@id='timeOfDay']");
     public static By dialFormat = By.xpath("//input[@id='dialFormat']");
     public static By demand1 = By.xpath("//input[@id='demand1']");
     public static By demand2 = By.xpath("//input[@id='demand2']");
-    public static By NMISuffix = By.xpath("//input[@id='nmiSuffix']");
+    public static By nMISuffix = By.xpath("//input[@id='nmiSuffix']");
     public static By datecon = By.xpath("//input[@id='datecon']");
-    public static By ActiveDateConnect = By.xpath("//td[@class='active day']");
-    public static By RegisterButton = By.xpath("//button[text()='Create Register']");
-    public static By Save = By.xpath("//button[text()='x']");
+    public static By activeDateConnect = By.xpath("//td[@class='active day']");
+    public static By registerButton = By.xpath("//button[text()='Create Register']");
+    public static By save = By.xpath("//button[text()='x']");
 
     // =========Creating Meter Reads===========
 
-    public static By MeterReadTab = By.xpath("//a[text()=' Meter Reads']");
-    public static By SelectMeter = By.xpath("//select[@id='meterNo']");
+    public static By meterReadTab = By.xpath("//a[text()=' Meter Reads']");
+    public static By selectMeter = By.xpath("//select[@id='meterNo']");
  //   public static By MeterReadTab = By.xpath("//a[text()='Meter Reads']");
-    public static By Service = By.xpath("//select[@id='nmis']");
+    public static By service = By.xpath("//select[@id='nmis']");
     public static By k = By.xpath("(//option[text()='KarlieVf'])[1]");
-    public static By MeterRead = By.xpath("//a[@id='viewMeterReads']");
-    public static By AddRead = By.xpath("//a[text()=' Add Read']");
-    public static By ReadType = By.xpath("//select[@id='rreadType']");
-    public static By ReadDate = By.xpath("//input[@id='rreadDate']");
-    public static By ActiveDay = By.xpath("//td[@class='active day']");
-    public static By MeterReadPeak = By.xpath("//input[@id='modalReadingP']");
-    public static By MeterReadOffPeak = By.xpath("//input[@id='modalReadingO']");
-    public static By MeterReadShoulder = By.xpath("//input[@id='modalReadingS']");
-    public static By SaveInitial = By.xpath("(//button[text()='Save'])[2]");
-    public static By MeterNum = By.xpath("//select[@id='rmeterno']");
-    public static By ReadTypeActual = By.xpath("//select[@id='rreadType']");
-    public static By ReadDateActual = By.xpath("//input[@id='rreadDate']");
-    public static By ActiveDayActual = By.xpath("//td[@class='active day']");
-    public static By MeterReadPeakActual = By.xpath("//input[@id='modalReadingP']");
-    public static By MeterReadOffPeakActual = By.xpath("//input[@id='modalReadingO']");
-    public static By MeterReadShoulderActual = By.xpath("//input[@id='modalReadingS']");
-    public static By SaveActual = By.xpath("(//button[text()='Save'])[2]");
-    public static By ConsumptionType=By.xpath("//select[@id='consumptionType']");
-    public static By SuccMeterReg=By.xpath("(//center/p)[1]");
+    public static By meterRead = By.xpath("//a[@id='viewMeterReads']");
+    public static By addRead = By.xpath("//a[text()=' Add Read']");
+    public static By readType = By.xpath("//select[@id='rreadType']");
+    public static By readDate = By.xpath("//input[@id='rreadDate']");
+    public static By activeDay = By.xpath("//td[@class='active day']");
+    public static By meterReadPeak = By.xpath("//input[@id='modalReadingP']");
+    public static By meterReadOffPeak = By.xpath("//input[@id='modalReadingO']");
+    public static By meterReadShoulder = By.xpath("//input[@id='modalReadingS']");
+    public static By saveInitial = By.xpath("(//button[text()='Save'])[2]");
+    public static By meterNum = By.xpath("//select[@id='rmeterno']");
+    public static By readTypeActual = By.xpath("//select[@id='rreadType']");
+    public static By readDateActual = By.xpath("//input[@id='rreadDate']");
+    public static By activeDayActual = By.xpath("//td[@class='active day']");
+    public static By meterReadPeakActual = By.xpath("//input[@id='modalReadingP']");
+    public static By meterReadOffPeakActual = By.xpath("//input[@id='modalReadingO']");
+    public static By meterReadShoulderActual = By.xpath("//input[@id='modalReadingS']");
+    public static By saveActual = By.xpath("(//button[text()='Save'])[2]");
+    public static By consumptionType=By.xpath("//select[@id='consumptionType']");
+    public static By succMeterReg=By.xpath("(//center/p)[1]");
 
-    public void ClickOnServicesTab() {
-        WebDriverWaits.ClickOn(ServicesTab);
+    public void clickOnServicesTab() {
+        WebDriverWaits.ClickOn(servicesTab);
     }
 
-    public void ClickOnPlusIcon() {
-        WebDriverWaits.scrollIntoView(MeteringPlusIcon);
-        WebDriverWaits.ClickOn(MeteringPlusIcon);
+    public void clickOnPlusIcon() {
+        WebDriverWaits.scrollIntoView(meteringPlusIcon);
+        WebDriverWaits.ClickOn(meteringPlusIcon);
     }
 
-    public void ClickOnManageIcon() {
-        WebDriverWaits.WaitUntilVisibleWE20(ManageIcon);
-        WebDriverWaits.ClickOn(ManageIcon);
+    public void clickOnManageIcon() {
+        WebDriverWaits.WaitUntilVisibleWE20(manageIcon);
+        WebDriverWaits.ClickOn(manageIcon);
 
     }
 
-    public void EnterMeterNumber(String MeterNumberText) {
-        WebDriverWaits.SendKeysWithClear(MeterNumber, MeterNumberText);
+    public void enterMeterNumber(String MeterNumberText) {
+        WebDriverWaits.SendKeysWithClear(meterNumber, MeterNumberText);
     }
 
-    public void SelectConfigureType() throws InterruptedException {
+    public void selectConfigureType() throws InterruptedException {
         WebDriverWaits.WaitUntilVisible(configurationType);
         Thread.sleep(1000);
         WebDriverWaits.selectByVisibleText(configurationType, "POS");
     }
 
-    public void SelectConsumptionType() {
-        WebDriverWaits.WaitUntilVisible(ConsumptionType);
-        WebDriverWaits.selectByVisibleText(ConsumptionType, "Cumulative");
+    public void selectConsumptionType() {
+        WebDriverWaits.WaitUntilVisible(consumptionType);
+        WebDriverWaits.selectByVisibleText(consumptionType, "Cumulative");
     }
 
-    public void SelectLastTestDate() {
-        WebDriverWaits.ClickOn(LastTest);
-        WebDriverWaits.ClickOn(ActiveDate);
+    public void selectLastTestDate() {
+        WebDriverWaits.ClickOn(lastTest);
+        WebDriverWaits.ClickOn(activeDate);
     }
 
-    public void SelectDateConnected() {
-        WebDriverWaits.ClickOn(DateConnected);
-        WebDriverWaits.ClickOn(ActiveDateConnected);
+    public void selectDateConnected() {
+        WebDriverWaits.ClickOn(dateConnected);
+        WebDriverWaits.ClickOn(activeDateConnected);
     }
 
-    public void ClickOnCreateMeter() {
-        WebDriverWaits.scrollIntoView(CreateMeter);
-        WebDriverWaits.ClickOn(CreateMeter);
+    public void clickOnCreateMeter() {
+        WebDriverWaits.scrollIntoView(createMeter);
+        WebDriverWaits.ClickOn(createMeter);
     }
 
 
     // ===========Creating Meter Register================
 
-    public void ClickONManages() {
-        //WebDriverWaits.WaitUntilVisible5mins(RegisterManage);
-        WebDriverWaits.scrollIntoView(RegisterManage);
-        WebDriverWaits.Waituntilvisible(RegisterManage);
-        WebDriverWaits.ClickOn(RegisterManage);
+    public void clickONManages() {
+        WebDriverWaits.Waituntilvisible(registerManage);
+        WebDriverWaits.scrollIntoView(registerManage);
+        WebDriverWaits.Waituntilvisible(registerManage);
+        WebDriverWaits.ClickOn(registerManage);
     }
 
-    public void ClickOnplus() {
-        WebDriverWaits.scrollIntoView(Plusicon);
-        WebDriverWaits.ClickOn(Plusicon);
+    public void clickOnplus() {
+        WebDriverWaits.scrollIntoView(plusicon);
+        WebDriverWaits.ClickOn(plusicon);
     }
 
-    public void ClickOnMeterRegister(String RegisterField) {
-        WebDriverWaits.SendKeysWithClear(Register, RegisterField);
+    public void clickOnMeterRegister(String RegisterField) {
+        WebDriverWaits.SendKeysWithClear(register, RegisterField);
     }
 
-    public void ClickOnNetworkTariffCode() {
-        WebDriverWaits.SendKeysWithClear(NetworkTariffCode, "NA");
+    public void clickOnNetworkTariffCode() {
+        WebDriverWaits.SendKeysWithClear(networkTariffCode, "NA");
     }
 
-    public void ClickOnUnitOfMeasure() {
+    public void clickOnUnitOfMeasure() {
         WebDriverWaits.SendKeysWithClear(unitOfMeasure, "KWH");
     }
 
-    public void ClickOntimeOfDay() {
+    public void clickOntimeOfDay() {
         WebDriverWaits.SendKeysWithClear(timeOfDay, "ALLDAY");
     }
 
-    public void ClickOndialFormat() {
+    public void clickOndialFormat() {
         WebDriverWaits.SendKeysWithClear(dialFormat, "5");
     }
 
-    public void ClickOndemand1() {
+    public void clickOndemand1() {
         WebDriverWaits.SendKeysWithClear(demand1, "0");
     }
 
-    public void ClickOndemand2() {
+    public void clickOndemand2() {
         WebDriverWaits.SendKeysWithClear(demand2, "0");
     }
 
-    public void ClickOnNmi() {
-        WebDriverWaits.SendKeysWithClear(NMISuffix, "17");
+    public void clickOnNmi() {
+        WebDriverWaits.SendKeysWithClear(nMISuffix, "17");
     }
 
-    public void CliKOnDate() {
+    public void cliKOnDate() {
         WebDriverWaits.ClickOn(datecon);
-        WebDriverWaits.ClickOn(ActiveDateConnect);
+        WebDriverWaits.ClickOn(activeDateConnect);
     }
 
-    public void ClickOnRegister() {
-        WebDriverWaits.ClickOn(RegisterButton);
+    public void clickOnRegister() {
+        WebDriverWaits.ClickOn(registerButton);
     }
 
-    public void ClickOnSave() {
-        WebDriverWaits.WaitUntilVisible(Save);
-        WebDriverWaits.scrollIntoView(Save);
-        WebDriverWaits.ClickOn(Save);
+    public void clickOnSave() {
+        WebDriverWaits.WaitUntilVisible(save);
+        WebDriverWaits.scrollIntoView(save);
+        WebDriverWaits.ClickOn(save);
     }
 
     // =========Creating Meter Reads===========
 
-    public void ClickOnMeterReadTab() {
-        WebDriverWaits.WaitUntilVisible(MeterReadTab);
-        WebDriverWaits.ClickOn(MeterReadTab);
+    public void clickOnMeterReadTab() {
+        WebDriverWaits.Waituntilvisible(meterReadTab);
+        WebDriverWaits.ClickOn(meterReadTab);
     }
 
-    public void Service(String Servicefield) {
-        WebDriverWaits.selectByVisibleText(Service, Servicefield);
+    public void service(String Servicefield) {
+        WebDriverWaits.selectByVisibleText(service, Servicefield);
     }
 
-    public void ClickOnMeterReads() throws AWTException {
-        WebDriverWaits.WaitUntilVisible(SelectMeter);
-        WebDriverWaits.ClickOn(SelectMeter);
-        WebDriverWaits.selectByIndex(SelectMeter, 0);
+    public void clickOnMeterReads() throws AWTException {
+        WebDriverWaits.WaitUntilVisible(selectMeter);
+        WebDriverWaits.ClickOn(selectMeter);
+        WebDriverWaits.selectByIndex(selectMeter, 0);
         // WebDriverWaits.selectByVisibleText(SelectMeter,"SelectMeterfiled");
         Robot rb = new Robot();
         rb.keyPress(KeyEvent.VK_DOWN);
@@ -362,135 +362,136 @@ public class Metering {
         rb.keyRelease(KeyEvent.VK_ENTER);
     }
 
-    public void ClickOnMeterRead() {
-        WebDriverWaits.scrollIntoView(MeterRead);
-        WebDriverWaits.ClickOn(MeterRead);
+    public void clickOnMeterRead() {
+        WebDriverWaits.scrollIntoView(meterRead);
+        WebDriverWaits.ClickOn(meterRead);
     }
 
-    public void ClickOnAddRead() throws InterruptedException {
-        WebDriverWaits.Waituntilvisible(AddRead);
-        WebDriverWaits.ClickOn(AddRead);
+    public void clickOnAddRead() throws InterruptedException {
+        WebDriverWaits.Waituntilvisible(addRead);
+        WebDriverWaits.ClickOn(addRead);
     }
 
-    public void EnterReadType() throws InterruptedException {
+    public void enterReadType() throws InterruptedException {
 //        WebDriverWaits.WaitUntilVisible(ReadType);
 //        WebDriverWaits.ClickOn(ReadType);
-        WebDriverWaits.WaitUntilSelect(ReadType);
-        WebDriverWaits.selectByVisibleText(ReadType, "Initial");
+        WebDriverWaits.WaitUntilSelect(readType);
+        WebDriverWaits.selectByVisibleText(readType, "Initial");
     }
 
-    public void EnterReadDate() {
-        WebDriverWaits.ClickOn(ReadDate);
-        WebDriverWaits.ClickOn(ActiveDay);
+    public void enterReadDate() {
+        WebDriverWaits.ClickOn(readDate);
+        WebDriverWaits.ClickOn(activeDay);
     }
 
-    public void MeterReadPeak() {
-        WebDriverWaits.SendKeysWithClear(MeterReadPeak, "150");
+    public void meterReadPeak() {
+        WebDriverWaits.SendKeysWithClear(meterReadPeak, "150");
     }
 
-    public void MeterReadOffPeak() {
-        WebDriverWaits.SendKeysWithClear(MeterReadOffPeak, "200");
+    public void meterReadOffPeak() {
+        WebDriverWaits.SendKeysWithClear(meterReadOffPeak, "200");
     }
 
-    public void MeterReadShoulder() {
-        WebDriverWaits.SendKeysWithClear(MeterReadShoulder, "300");
+    public void meterReadShoulder() {
+        WebDriverWaits.SendKeysWithClear(meterReadShoulder, "300");
     }
 
-    public void ClickOnSaveInitial() throws InterruptedException {
-        WebDriverWaits.scrollIntoView(SaveInitial);
-        WebDriverWaits.WaitUntilVisibleWE(SaveInitial);
-        WebDriverWaits.scrollIntoView(SaveInitial);
-        WebDriverWaits.ClickOn(SaveInitial);
+    public void clickOnSaveInitial() throws InterruptedException {
+        WebDriverWaits.scrollIntoView(saveInitial);
+        WebDriverWaits.WaitUntilVisibleWE(saveInitial);
+        WebDriverWaits.scrollIntoView(saveInitial);
+        WebDriverWaits.ClickOn(saveInitial);
     }
 
-    public void SelectMeter(String MeterNumfield) {
-        WebDriverWaits.selectByVisibleText(MeterNum, MeterNumfield);
+    public void selectMeter(String MeterNumfield) {
+        WebDriverWaits.selectByVisibleText(meterNum, MeterNumfield);
     }
 
-    public void EnterReadTypeActual() {
-        WebDriverWaits.WaitUntilSelect(ReadTypeActual);
-        WebDriverWaits.selectByVisibleText(ReadTypeActual, "Actual Read");
+    public void enterReadTypeActual() {
+        WebDriverWaits.WaitUntilSelect(readTypeActual);
+        WebDriverWaits.selectByVisibleText(readTypeActual, "Actual Read");
     }
 
-    public void EnterReadDateActual() {
-        WebDriverWaits.ClickOn(ReadDateActual);
-        WebDriverWaits.ClickOn(ActiveDayActual);
+    public void enterReadDateActual() {
+        WebDriverWaits.ClickOn(readDateActual);
+        WebDriverWaits.ClickOn(activeDayActual);
     }
 
-    public void MeterReadPeakActual() {
-        WebDriverWaits.SendKeysWithClear(MeterReadPeakActual, "200");
+    public void meterReadPeakActual() {
+        WebDriverWaits.SendKeysWithClear(meterReadPeakActual, "200");
     }
 
-    public void MeterReadOffPeakActual() {
-        WebDriverWaits.SendKeysWithClear(MeterReadOffPeakActual, "400");
+    public void meterReadOffPeakActual() {
+        WebDriverWaits.SendKeysWithClear(meterReadOffPeakActual, "400");
     }
 
-    public void MeterReadShoulderActual() {
-        WebDriverWaits.SendKeysWithClear(MeterReadShoulderActual, "600");
+    public void meterReadShoulderActual() {
+        WebDriverWaits.SendKeysWithClear(meterReadShoulderActual, "600");
     }
 
-    public void ClickOnSaveActual() throws InterruptedException {
-        WebDriverWaits.scrollIntoView(SaveActual);
-        WebDriverWaits.WaitUntilVisibleWE(SaveActual);
-        WebDriverWaits.scrollIntoView(SaveInitial);
-        WebDriverWaits.ClickOn(SaveInitial);
+    public void clickOnSaveActual() throws InterruptedException {
+        WebDriverWaits.scrollIntoView(saveActual);
+        WebDriverWaits.WaitUntilVisibleWE(saveActual);
+        WebDriverWaits.scrollIntoView(saveInitial);
+        WebDriverWaits.ClickOn(saveInitial);
     }
 
-    public void CreateMeter() throws InterruptedException {
-        ClickOnServicesTab();
-        ClickOnManageIcon();
-        ClickOnPlusIcon();
-        EnterMeterNumber(Customer.CustomerFirstName);
+    public void createMeter() throws InterruptedException {
+        clickOnServicesTab();
+        clickOnManageIcon();
+        clickOnPlusIcon();
+        enterMeterNumber(Customer.CustomerFirstName);
     //    SelectConsumptionType();
-        SelectConfigureType();
-        SelectLastTestDate();
-        SelectDateConnected();
-        ClickOnCreateMeter();
+        selectConfigureType();
+        selectLastTestDate();
+        selectDateConnected();
+        clickOnCreateMeter();
      //   String SuccMeterRegister=" Successfully created meter register.";
      //
         //
         //   softAssert.assertEquals(SuccMeterRegister, SuccMeterReg );
     }
 
-    public void CreateMeterRegister() throws InterruptedException {
-        Thread.sleep(1000);
-         ClickONManages();
-         ClickOnplus();
-        ClickOnMeterRegister(Customer.CustomerFirstName);
-         ClickOnNetworkTariffCode();
-         ClickOnUnitOfMeasure();
-         ClickOntimeOfDay();
-         ClickOndialFormat();
-         ClickOndemand1();
-         ClickOndemand2();
-         ClickOnNmi();
-         CliKOnDate();
-        ClickOnRegister();
+    public void createMeterRegister() throws InterruptedException {
+        Thread.sleep(2000);
+         clickONManages();
+         clickOnplus();
+        clickOnMeterRegister(Customer.CustomerFirstName);
+         clickOnNetworkTariffCode();
+         clickOnUnitOfMeasure();
+         clickOntimeOfDay();
+         clickOndialFormat();
+         clickOndemand1();
+         clickOndemand2();
+         clickOnNmi();
+         cliKOnDate();
+        clickOnRegister();
         String SuccMeterRegister=" Successfully created meter register.";
-        softAssert.assertEquals(SuccMeterRegister, SuccMeterReg );
+        softAssert.assertEquals(SuccMeterRegister, succMeterReg );
         	//BillRun.ClickOnSave();
     }
 
-    public void CreateMeterReads() throws InterruptedException {
+    public void createMeterReads() throws InterruptedException {
         Thread.sleep(2000);
-         ClickOnMeterReadTab();
+         clickOnMeterReadTab();
          Thread.sleep(2000);
-         ClickOnMeterRead();
-         ClickOnAddRead();
-         EnterReadType();
-        EnterReadDate();
-         MeterReadPeak();
-       MeterReadOffPeak();
-         MeterReadShoulder();
-         ClickOnSaveInitial();
-         ClickOnAddRead();
-         SelectMeter(Customer.CustomerFirstName);
-         EnterReadTypeActual();
-         EnterReadDateActual();
-         MeterReadPeakActual();
-        MeterReadOffPeakActual();
-        MeterReadShoulderActual();
-         ClickOnSaveActual();
+         clickOnMeterRead();
+         clickOnAddRead();
+         enterReadType();
+        enterReadDate();
+         meterReadPeak();
+       meterReadOffPeak();
+         meterReadShoulder();
+         clickOnSaveInitial();
+         Thread.sleep(1000);
+        clickOnAddRead();
+         selectMeter(Customer.CustomerFirstName);
+         enterReadTypeActual();
+         enterReadDateActual();
+         meterReadPeakActual();
+        meterReadOffPeakActual();
+        meterReadShoulderActual();
+         clickOnSaveActual();
     }
 
 }

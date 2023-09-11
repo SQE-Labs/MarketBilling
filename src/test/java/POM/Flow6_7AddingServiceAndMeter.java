@@ -39,7 +39,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
     public static class X_AddService {
         // Search Field
         public static By SearchField = By.xpath("//*[@id=\"search_input\"]");
-        public static By SearchIcon = By.xpath("//*[@class=\"glyphicon glyphicon-search\"]");
+        public static By SearchIcon = By.xpath("//button[@id='btn_search']");
 
         // Select the Residential/Business/Commercial customer created in add customer
         public static By TwosearchResults = By.xpath("//*[@class='icon-edit ']");
@@ -82,7 +82,9 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         public static By CustomerSuccessEditMsg = By.xpath("//div[@class='alert alert-success']/center");
 
         public static By DropDown=By.xpath("//li[text()='Electricity Template Plan']");
-        public static By Customerno=By.xpath("(//td[@class='sorting_1'])[1]");
+        public static By Customerno=By.xpath("(//a[@class='btn btn-info'])[1]");
+        public static By ComboDropDown=By.xpath("//button[@class='btn btn-default dropdown-toggle']");
+        public static By CustomerDropDown=By.xpath("//a[text()='Customer']");
 
        //  WebElement ele=  By.xpath("//li[text()='Electricity Template Plan'] ");
 
@@ -92,22 +94,38 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
         public static void M_AddService() throws InterruptedException, AWTException {
 
-            //		 SoftAssert softAssert = new SoftAssert();
+//            		 SoftAssert softAssert = new SoftAssert();
+//           WebDriverWaits.ClickOn(ComboDropDown);
+//           WebDriverWaits.Waituntilvisible(CustomerDropDown);
+//           WebDriverWaits.ClickOn(CustomerDropDown);
+//            WebDriverWaits.ClickOn(SearchIcon);
+//
+//            WebDriverWaits.ClickOn(SearchField);
+//            String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
+//            //		WebDriverWaits.SendKeys(SearchField, CustomerID01R);
+//            WebDriverWaits.SendKeysWithClear(SearchField, ThirdRecID);
+//            WebDriverWaits.Waituntilvisible(SearchIcon);
+//            WebDriverWaits.ClickOn(SearchIcon);
+//         //   WebDriverWaits.ClickOn(Customerno);
+//            WebDriverWaits.Waituntilvisible(OverviewTab);
+//            WebDriverWaits.ClickOn(OverviewTab);
+//            WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
+//            Thread.sleep(2000);
+
 
             WebDriverWaits.ClickOn(SearchIcon);
             Thread.sleep(1000);
             WebDriverWaits.ClickOn(SearchField);
 
-            Thread.sleep(4000);
+            String SecondRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
+          //  WebDriverWaits.SendKeys(SearchField, SecondRecID);
 
-            String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
-            //		WebDriverWaits.SendKeys(SearchField, CustomerID01R);
-            WebDriverWaits.SendKeysWithClear(SearchField, ThirdRecID);
-            WebDriverWaits.WaitUntilVisible(SearchIcon);
             WebDriverWaits.ClickOn(SearchIcon);
-          //  WebDriverWaits.ClickOn(Customerno);
-            WebDriverWaits.WaitUntilVisible(OverviewTab);
+            Thread.sleep(2000);
+            InternalMethods.SwitchToCustomerpage();
             WebDriverWaits.ClickOn(OverviewTab);
+            Thread.sleep(2000);
+
             WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
             Thread.sleep(2000);
 
@@ -324,7 +342,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.ClickOn(SearchField);
             //WebDriverWaits.ClickOn(TwosearchResults);
             String FirstRecID = WebDriverWaits.GetText(selectCommercialCustomer_Record);
-            WebDriverWaits.SendKeys(SearchField, FirstRecID);
+           WebDriverWaits.SendKeys(SearchField, FirstRecID);
 
             // WebDriverWaits.ClickOn(selectCommercialCustomer_Record);
             WebDriverWaits.ClickOn(SearchIcon);
