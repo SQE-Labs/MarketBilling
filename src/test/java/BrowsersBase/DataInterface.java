@@ -27,9 +27,9 @@ public interface DataInterface {
 	public static boolean autoDueDateEnabled = true;
 
 
-public static String URL = "https://futurexenergyuat.utilibill.com.au/futurexenergy/";
-public static String Username = "sqetest";
-public static String Password = "Sqe123!@#";
+      public static String URL = "https://futurexenergyuat.utilibill.com.au/futurexenergy/";
+     public static String Username = "sqetest";
+     public static String Password = "Sqe123!@#";
 	public static String BaseURL = "https://futurexenergyuat.utilibill.com.au";
 	public static String AdminURL = BaseURL + "/futurexenergy/";
 

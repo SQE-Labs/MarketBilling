@@ -15,7 +15,7 @@
 <!--            <class name="TestCases.TransactionsTest"></class>-->
 <!--            <class name="TestCases.Invoices"></class>-->
 <!--            <class name="TestCases.CorrespondenceTest"></class>-->
-        <class name="TestCases.TestNewBillRun"></class>
+              <class name="TestCases.TestNewBillRun"></class>
 
 
 <!--         <class name="TestCases.TestSingleCustomerBillRun"></class>&ndash;&gt;-->
