@@ -234,6 +234,13 @@ public class WebDriverWaits extends BrowsersInvoked {
 		driver.switchTo().frame(id);
 		Thread.sleep(2000);
 	}
+
+	public static void SwitchToParentFrame() throws InterruptedException {
+		driver.switchTo().parentFrame();
+		Thread.sleep(2000);
+	}
+
+
 	public static void uploadFileUsingRobot(String filepath) throws AWTException {
 				// creating object of Robot class
 		Robot rb = new Robot();
