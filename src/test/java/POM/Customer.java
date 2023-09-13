@@ -17,9 +17,9 @@ import static POM.GroupEdit.softAssert;
 
 public class Customer {
 
-   public static String CustomerFirstName = "Brydon" + RandomStrings.RequiredCharacters(2);
-    public static String CustomersurName = "Carse" +
-            "" + RandomStrings.RequiredCharacters(2);
+   public static String CustomerFirstName = "Caerry" + RandomStrings.RequiredCharacters(2);
+    public static String CustomersurName = "Carse"
+            + RandomStrings.RequiredCharacters(2);
     public static final String SUCCESS_MESG = "Successfully saved customer.";
     public static String RandomName1;
     public static String RandomName2;

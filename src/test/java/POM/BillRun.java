@@ -688,11 +688,13 @@ public class BillRun extends TestLogin {
 
     public void clickOnBillRunCyclesTab() {
         WebDriverWaits.scrollIntoView(billRunCyclesTab);
+        WebDriverWaits.Waituntilvisible(billRunCyclesTab);
         WebDriverWaits.ClickOn(billRunCyclesTab);
     }
 
-    public void clickOnAdminTab() {
+    public void clickOnAdminTab() throws InterruptedException {
         WebDriverWaits.Waituntilvisible(clickOnAdminTab);
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(clickOnAdminTab);
     }
 
@@ -826,7 +828,7 @@ public class BillRun extends TestLogin {
     }
 
     public void billRunCycle(String BillRunCustomerfield) throws AWTException {
-
+        WebDriverWaits.Waituntilvisible(billSelect);
         WebDriverWaits.ClickOn(billSelect);
         WebDriverWaits.SendKeysWithClear(billRunCustomer, BillRunCustomerfield);
         Robot s = new Robot();
@@ -898,6 +900,7 @@ public class BillRun extends TestLogin {
 
     public void clickONDetailsIcon() {
         WebDriverWaits.Waituntilvisible(detailsIcon);
+       driver.navigate().refresh();
        WebDriverWaits.ClickOn(detailsIcon);
     }
 
@@ -990,12 +993,11 @@ public class BillRun extends TestLogin {
     public void billRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
         clickOnBillRunTab();
-        Thread.sleep(1000
-        );
+        Thread.sleep(1000);
         clickOnRunTheBillsButton();
         selectBillRun();
         sendBillRun(Customer.CustomerFirstName);
-        // Clicking 2 times in toggle button because of Toggle issue.
+        // Clicking 3 times in toggle button because of Toggle issue.
         clickOnToggle();
         clickOnToggle();
         Thread.sleep(1000);
@@ -1025,11 +1027,9 @@ public class BillRun extends TestLogin {
     }
 
     public void rollBack() throws InterruptedException {
-        Thread.sleep(3000);
-        clickOnBillRunTab();
-        Thread.sleep(1000);
+       Thread.sleep(3000);
         reloadButton();
-        clickOnDateFrom();
+        clickONDetailsIcon();
         customerCheckbox();
         clickOnRollBackButton();
         enterReason();
@@ -1038,7 +1038,6 @@ public class BillRun extends TestLogin {
 
     public void downloadZip() throws InterruptedException, AWTException {
 //        clickOnBillRunTab();
-
 //        clickOnDateFrom();
 //        reloadButton();
 //        clickOnSearchBox(Customer.CustomerFirstName);
@@ -1049,17 +1048,20 @@ public class BillRun extends TestLogin {
     }
 
     public void editBillRunCycles() throws InterruptedException {
+        Thread.sleep(2000
+        );
         clickOnAdminTab();
         clickOnBillRunCyclesTab();
         Thread.sleep(2000);
         sendValueInSearchBox(Customer.CustomerFirstName);
         EditCycle();
-
         paymentTerm1();
         //   customerFilter(Customer.CustomerFirstName);
         //   clickOnPerticularCustomer();
         //   clickOnArrow();
         clickOnSaveCycle();
+        String Expectedsuccmsg = "Successfully updated .";
+        softAssert.assertEquals(Expectedsuccmsg, BillRunCycleSucc);
     }
 
     public void commitBillRun() throws InterruptedException {
@@ -1088,6 +1090,7 @@ public class BillRun extends TestLogin {
         Thread.sleep(2000);
         clickOnBillRunTab();
         clickOnRunTheBillsButton();
+        Thread.sleep(1000);
         selectBillRun();
         sendBillRun(Customer.CustomerFirstName);
         // Clicking 2 times in toggle button because of Toggle issue.

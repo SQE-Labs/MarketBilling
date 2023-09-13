@@ -13,7 +13,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
-	@Test(priority = 0,enabled = true)
+	@Test(priority = 0,enabled = true)  // cannot automate because this depricated
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");

@@ -24,15 +24,18 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 	public static void WaitUntilVisible(By element) {
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 
 	public static void Waituntilvisible(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		}
 		catch (ElementClickInterceptedException e){
+			WebElement ele = driver.findElement(element);
+			ele.click();
 
 		}
 	}
@@ -75,12 +78,10 @@ public class WebDriverWaits extends BrowsersInvoked {
 			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
-		} catch (ElementNotInteractableException e){
+		} catch (ElementNotInteractableException e) {
 
 		}
-
 	}
-
 
 
 	public static void SendKeys(By element, String value) {
