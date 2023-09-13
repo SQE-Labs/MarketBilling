@@ -29,7 +29,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void Waituntilvisible(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		}
 		catch (ElementClickInterceptedException e){
@@ -217,7 +217,8 @@ public class WebDriverWaits extends BrowsersInvoked {
 		System.out.print(driver.getCurrentUrl());
 		Thread.sleep(3000);
 	}
-	public static void SwitchToNewTab() throws InterruptedException {
+	public static void
+	SwitchToNewTab() throws InterruptedException {
 		String originalHandle = driver.getWindowHandle();
 		Set<String> tabs = driver.getWindowHandles();
 

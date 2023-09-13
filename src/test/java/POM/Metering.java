@@ -176,7 +176,7 @@ public class Metering {
     public static By meteringPlusIcon = By.xpath("(//i[@class='icon-plus'])[4]");
     public static By meterNumber = By.xpath("//input[@id='meterNo']");
     public static By manageIcon = By.xpath("//i[@class='icon-edit']");
-    public static By configurationType = By.xpath("//select[@id='configurationType']");
+    public static By configurationType = By.xpath("//option[text()='POS']");
     public static By lastTest = By.xpath("//input[@id='maintenanceDate']");
     public static By activeDate = By.xpath("//td[@class='active day']");
     public static By dateConnected = By.xpath("//input[@id='datecon']");
@@ -227,6 +227,7 @@ public class Metering {
     public static By saveActual = By.xpath("(//button[text()='Save'])[2]");
     public static By consumptionType=By.xpath("//select[@id='consumptionType']");
     public static By succMeterReg=By.xpath("(//center/p)[1]");
+    public static By ConfType=By.xpath("//select[@id='configurationType']");
 
     public void clickOnServicesTab() {
         WebDriverWaits.ClickOn(servicesTab);
@@ -248,9 +249,9 @@ public class Metering {
     }
 
     public void selectConfigureType() throws InterruptedException {
-        WebDriverWaits.WaitUntilVisible(configurationType);
-        Thread.sleep(1000);
-        WebDriverWaits.selectByVisibleText(configurationType, "POS");
+        WebDriverWaits.ClickOn(ConfType);
+        WebDriverWaits.Waituntilvisible(configurationType);
+        WebDriverWaits.ClickOn(configurationType);
     }
 
     public void selectConsumptionType() {
@@ -277,7 +278,6 @@ public class Metering {
     // ===========Creating Meter Register================
 
     public void clickONManages() {
-        WebDriverWaits.Waituntilvisible(registerManage);
         WebDriverWaits.scrollIntoView(registerManage);
         WebDriverWaits.Waituntilvisible(registerManage);
         WebDriverWaits.ClickOn(registerManage);
@@ -466,6 +466,7 @@ public class Metering {
         softAssert.assertEquals(SuccMeterRegister, succMeterReg );
         	//BillRun.ClickOnSave();
     }
+
 
     public void createMeterReads() throws InterruptedException {
         Thread.sleep(2000);

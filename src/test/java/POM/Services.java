@@ -1,6 +1,7 @@
 package POM;
 
 import CommonMethods.DateAndTime;
+import CommonMethods.InternalMethods;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
@@ -20,8 +21,8 @@ public class Services {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
     public static Select select;
     // Search Field
-    public static By SearchField = By.xpath("//*[@id=\"search_input\"]");
-    public static By SearchIcon = By.xpath("//*[@class=\"glyphicon glyphicon-search\"]");
+    public static By SearchField = By.xpath("(//*[@id=\"search_input\"])[1]");
+    public static By SearchIcon = By.xpath("//button[@id='btn_search']");
 
     // Select the Residential/Business/Commercial customer created in add customer
     public static By TwosearchResults = By.xpath("//*[@class='icon-edit ']");
@@ -67,9 +68,10 @@ public class Services {
         WebDriverWaits.ClickOn(SearchField);
         Thread.sleep(4000);
         String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
-        WebDriverWaits.SendKeys(SearchField, ThirdRecID);
+       WebDriverWaits.SendKeys(SearchField, ThirdRecID);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
+        InternalMethods.SwitchToCustomerpage();
         WebDriverWaits.ClickOn(OverviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);
