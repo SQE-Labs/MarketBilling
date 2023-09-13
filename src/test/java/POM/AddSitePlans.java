@@ -24,7 +24,7 @@ public class AddSitePlans extends TestLogin {
     public static By startDate = By.id("startDate");
     public static By endDate = By.id("endDate");
     public static By addPlanToTableBtn = By.cssSelector("button#addPlanToTableBtn");
-    public static By saveServiceParamsBtn = By.id("saveServiceParamsBtn");
+    public static By saveServiceParamsBtn = By.xpath("(//button[text()='Save'])[4]");
     public static By saveChanges = By.cssSelector("button#saveChangesBtn");
     public static By addParamBtn = By.id("ad");
     public static By effectiveDate = By.id("effectiveDate");
@@ -33,7 +33,7 @@ public class AddSitePlans extends TestLogin {
     public static By Sitedate=By.xpath("//input[@id='effectiveDate']");
     public static By Today=By.xpath("(//th[text()='Today'])[1]");
 
-    public static By AddButt=By.id("addParamBtn");
+    public static By AddButt=By.xpath("//button[@id='addParamBtn']");
 
 
 /*    public static void addSitePlan() throws InterruptedException {
@@ -60,7 +60,7 @@ public class AddSitePlans extends TestLogin {
 
     }   */
 
-    public static void addSiteParameters() {
+    public static void addSiteParameters() throws InterruptedException {
         WebDriverWaits.ClickOn(ServiceTab);
         WebDriverWaits.ClickOn(Edit_icon);
         jse.executeScript("window.scrollBy(0,1000)", "");
@@ -71,7 +71,9 @@ public class AddSitePlans extends TestLogin {
         WebDriverWaits.ClickOn(parameterName);
         WebDriverWaits.selectByVisibleText(parameterName, "Minimum Demand kVA");
         WebDriverWaits.SendKeys(paramValue, "10.158");
+        WebDriverWaits.WaitUntilVisible(paramValue);
         WebDriverWaits.ClickOn(AddButt);
+        Thread.sleep(1000);
         WebDriverWaits.WaitUntilVisible(saveServiceParamsBtn);
         WebDriverWaits.ClickOn(saveServiceParamsBtn);
     }

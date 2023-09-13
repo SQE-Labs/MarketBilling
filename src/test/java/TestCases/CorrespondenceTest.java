@@ -21,7 +21,7 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondence() {
         extentTest = extent.startTest(" Enable Correspondence ");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-       // Login.loginWithGroupName("Testing1228");
+      //  Login.loginWithGroupName("Testing1228");
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
         groupEdit.enableCorrepondenceToggle();
@@ -84,7 +84,9 @@ public class CorrespondenceTest extends BaseTest {
         correspondence.clickUploadIcon();
         Thread.sleep(4000);
         fileName = "LetterSample.pdf";
-        String filepath = "C:\\Users\\Itsqe\\eclipse-workspace\\MarketBilling\\"+ fileName;
+//        String filepath = "C:\\Users\\Itsqe\\eclipse-workspace\\MarketBilling\\"+ fileName;
+//        WebDriverWaits.uploadFileUsingRobot(filepath);
+        String filepath = "C:\\Users\\DELL\\IdeaProjects\\MarketBilling\\"+ fileName;
         WebDriverWaits.uploadFileUsingRobot(filepath);
         Thread.sleep(2000);
         correspondence.enterDescription("DescriptionTest");
@@ -139,8 +141,9 @@ public class CorrespondenceTest extends BaseTest {
         Communications comm = customer.clickCommunications();
         comm.clickNewCorrespondence();
         comm.selectCorrespondenceType("Welcome Pack");
-        comm.clickSendEmail();
+
         comm.validateID();
+        comm.clickSendEmail();
         comm.validateService();
 
         // Commented because of bug

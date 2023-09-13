@@ -93,8 +93,8 @@ public class Services {
        // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         //WebDriverWaits.ClickOn(SelectCurrentDate);
-        WebDriverWaits.scrollIntoView(Select_Use_Structured_Address_Togglebutton);
-        WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
+       // WebDriverWaits.scrollIntoView(Select_Use_Structured_Address_Togglebutton);
+      //  WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
         WebDriverWaits.ClickOn(Building_Name_Field);
         WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
         WebDriverWaits.ClickOn(UnitType_Dropdown);
@@ -156,93 +156,95 @@ public class Services {
     // =========Creating Service for the customer=============
 
   //  public static By OverviewTab = By.xpath("//a[text()=' Overview']");
-    public static By RetailElectricity = By.xpath("(//i[@class='icon-minus'])[2]");
-    public static By MarketType = By.xpath("//select[@id='marketTypeSel']");
-    public static By GenerateNMI = By.xpath("//button[@id='generateNMIButton']");
-    public static By SelectService = By.xpath("//ul[@class='chosen-choices']");
-    public static By Search = By.xpath("//li[@class='search-field']");
-    public static By MoveSearch = By.xpath("//input[@id='proposedDate']");
-    public static By MoveInDate = By.xpath("//td[@class='active day']");
-    public static By CityNames = By.xpath("//*[@id=\"locality\"]");
-    public static By PostCode = By.xpath("//*[@id=\"postCode\"]");
-    public static By SelectState = By.xpath("//*[@id=\"state\"]");
-   public static By MoveinSearch = By.xpath("//label[text()='Move-In Date']");
+    public static By retailElectricity = By.xpath("(//i[@class='icon-minus'])[2]");
+    public static By marketType = By.xpath("//select[@id='marketTypeSel']");
+    public static By generateNMI = By.xpath("//button[@id='generateNMIButton']");
+    public static By selectService = By.xpath("//ul[@class='chosen-choices']");
+    public static By search = By.xpath("//li[@class='search-field']");
+    public static By moveSearch = By.xpath("//input[@id='proposedDate']");
+    public static By moveInDate = By.xpath("//td[@class='active day']");
+    public static By cityNames = By.xpath("//*[@id=\"locality\"]");
+    public static By postCode = By.xpath("//*[@id=\"postCode\"]");
+    public static By selectState1 = By.xpath("//*[@id=\"state\"]");
+   public static By moveinSearch = By.xpath("//label[text()='Move-In Date']");
     public static By ServiceSuccMsg=By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
-    public void ClickOnOverviewTab() {
+    public void clickOnOverviewTab() {
         WebDriverWaits.ClickOn(OverviewTab);
     }
 
-    public void ClickRetailElectricity() {
-        WebDriverWaits.ClickOn(RetailElectricity);
+    public void clickRetailElectricity() {
+        WebDriverWaits.ClickOn(retailElectricity);
     }
 
 
-    public void SelectMarketType() {
-        WebDriverWaits.selectByVisibleText(MarketType, "Off Market");
+    public void selectMarketType() {
+        WebDriverWaits.selectByVisibleText(marketType, "Off Market");
     }
 
-    public void ClickOnGenerateNMI() {
-        WebDriverWaits.ClickOn(GenerateNMI);
+    public void clickOnGenerateNMI() {
+        WebDriverWaits.ClickOn(generateNMI);
 
     }
 
-    public void SelectServicePlan() throws AWTException {
+    public void selectServicePlan() throws AWTException {
 
-        WebDriverWaits.ClickOn(SelectService);
+        WebDriverWaits.ClickOn(selectService);
     }
 
-    public void ServicePlan() throws AWTException, InterruptedException {
+    public void servicePlan() throws AWTException, InterruptedException {
         Thread.sleep(2000);
-        WebDriverWaits.ClickOn(Search);
+
+        WebDriverWaits.ClickOn(search);
         // Actions as= new Actions(driver);
         // as.moveToElement(driver.findElement(By.xpath("//ul[@class='Electricity
         // Template Plan']"))).perform();
         Actions as=new Actions(driver);
-        as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+        as.moveToElement(driver.findElement(By.xpath("//li[text()='Ausgrid - SME Anytime + Controlled Load 2']"))).click().build().perform();
     }
 
-    public void MoveInDate() {
-        WebDriverWaits.ClickOn(MoveinSearch);
-        WebDriverWaits.ClickOn(MoveSearch);
+    public void moveInDate() {
+        WebDriverWaits.ClickOn(moveinSearch);
+        WebDriverWaits.ClickOn(moveSearch);
 
     }
 
-    public void SelectProposeDate() {
-        WebDriverWaits.ClickOn(MoveInDate);
+    public void selectProposeDate() {
+        WebDriverWaits.ClickOn(moveInDate);
     }
 
-    public void EnterCityNmae(String CityName) {
-        WebDriverWaits.WaitUntilVisibleWE(CityNames);
-        WebDriverWaits.SendKeysWithClear(CityNames,  CityName);
+    public void enterCityNmae(String CityName) {
+        WebDriverWaits.WaitUntilVisibleWE(cityNames);
+        WebDriverWaits.SendKeysWithClear(cityNames,  CityName);
     }
 
-    public void EnterPostCode(String PostalCode) {
-        WebDriverWaits.SendKeysWithClear(PostCode, PostalCode);
+    public void enterPostCode(String PostalCode) {
+        WebDriverWaits.SendKeysWithClear(postCode, PostalCode);
     }
 
-    public void SelectState(String selectState) {
+    public void selectState(String selectState) {
 
-        WebDriverWaits.selectByVisibleText(SelectState,  selectState);
+        WebDriverWaits.selectByVisibleText(selectState1,  selectState);
     }
 
-    public void ClickOnAddButton() {
+    public void clickOnAddButton() {
         WebDriverWaits.ClickOn(AddButton);
     }
 
-    public void CreateService(String CityName, String PostalCode, String selectState) throws AWTException, InterruptedException {
-         ClickOnOverviewTab();
-        ClickRetailElectricity();
-         SelectMarketType();
-        ClickOnGenerateNMI();
-        SelectServicePlan();
-        ServicePlan();
-        MoveInDate();
-        SelectProposeDate();
-        EnterCityNmae(CityName);
-       EnterPostCode(PostalCode);
-        SelectState(selectState);
-        ClickOnAddButton();
+    public void createService(String CityName, String PostalCode, String selectState) throws AWTException, InterruptedException {
+         clickOnOverviewTab();
+        clickRetailElectricity();
+         selectMarketType();
+        clickOnGenerateNMI();
+        selectServicePlan();
+        servicePlan();
+        moveInDate();
+        selectProposeDate();
+        enterCityNmae(CityName);
+       enterPostCode(PostalCode);
+        selectState(selectState);
+        clickOnAddButton();
+        Thread.sleep(2000);
         String Expectedmsg="The Service has been created successfully.";
         softAssert.assertEquals(Expectedmsg, ServiceSuccMsg);
     }

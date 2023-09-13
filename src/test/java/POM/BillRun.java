@@ -8,6 +8,7 @@ import TestCases.TestLogin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
@@ -563,156 +564,173 @@ public class BillRun extends TestLogin {
 
     // =============Craeting BillRun Cycles for the customer==============
 
-    public static By BillRunCyclesTab = By.xpath("//p[text()='Bill Run Cycles']");
-    public static By CreateNew = By.xpath("//a[text()=' Create new ']");
-    public static By CycleName = By.xpath("//input[@id='cyclename']");
-    public static By AutomatedToggle = By.xpath("(//span[@class='switch-label'])[1]");
-    public static By LaunchAutomate = By.xpath("//select[@id='automated_billing_schedule']");
-    public static By BillPeriodEnd = By.xpath("//select[@id='bill_period_end_day']");
-    public static By PaymentTermDay = By.xpath("//input[@name='payment_term_days']");
-    public static By CustomerFilter = By.xpath("//input[@class='filter form-control']");
-    public static By ArrowMark = By.xpath("//button[@class='btn move btn-default']");
-    public static By SaveCycle = By.xpath("//button[text()='Save']");
-    public static By PerticularCustomer = By.xpath("(//option[@class='0'])[4]");
+    public static By billRunCyclesTab = By.xpath("//p[text()='Bill Run Cycles']");
+    public static By createNew = By.xpath("//a[text()=' Create new ']");
+    public static By cycleName = By.xpath("//input[@id='cyclename']");
+    public static By automatedToggle = By.xpath("(//span[@class='switch-label'])[1]");
+    public static By launchAutomate = By.xpath("//select[@id='automated_billing_schedule']");
+    public static By billPeriodEnd = By.xpath("//select[@id='bill_period_end_day']");
+    public static By paymentTermDay = By.xpath("//input[@name='payment_term_days']");
+    public static By clickOnDownArrow = By.xpath("//i[@class='icon-chevron-down']");
+    public static By clickOnSelect=By.xpath("//select[@name='filter-category']");
+    public static By passName=By.xpath("//input[@name='text_contains']");
+    public static By filterButton=By.xpath("//button[text()='Filter']");
+    public static By arrowMark = By.xpath("//button[@class='btn move btn-default']");
+    public static By saveCycle = By.xpath("//button[text()='Save']");
+    public static By perticularCustomer = By.xpath("(//option[@class='0'])[30]");
+
 
     // =============Creating BillRun For the Customer=============
 
-    public static By BillRunTab = By.xpath("//span[text()='Bill Run']");
-    public static By RunTheBill = By.xpath("//span[text()='Run the bills']");
+
+    public static By billRunTab = By.xpath("//span[text()='Bill Run']");
+    public static By runTheBill = By.xpath("//span[text()='Run the bills']");
     /*
      * public static By StartDate=By.xpath("//select[@id='cycleDate']"); public
      * static By StartActiveDate=By.xpath("//td[@class='active day']"); public
      * static By NextMark=By.xpath("(//th[@class='next'])[1]"); public static By
      * Clickk=By.xpath("//td[text()='11']");
      */
-    public static By Toggle = By.xpath("//span[@class='switch-label']");
-    public static By BillRunCycleSelect = By.xpath("(//span[@class='filter-option pull-left'])[2]");
-    public static By SelectBillRunCycle = By.xpath("(//input[@class='input-block-level form-control'])[2]");
-    public static By EndDate = By.xpath("//input[@id='cycleEnd']");
-    public static By Next = By.xpath("(//th[@class='next'])[1]");
-    public static By Date = By.xpath("//td[text()='22']");
+    public static By toggle = By.xpath("//span[@class='switch-handle']");
+    public static By billRunCycleSelect = By.xpath("(//span[@class='filter-option pull-left'])[2]");
+    public static By selectBillRunCycle = By.xpath("(//input[@class='input-block-level form-control'])[2]");
+    public static By endDate = By.xpath("//input[@id='cycleEnd']");
+    public static By next = By.xpath("(//th[@class='next'])[1]");
+    public static By date = By.xpath("//td[text()='22']");
     // public static By DateSelect=By.xpath("(//td[@class='day'])[23]");
-    public static By ClickIssueDate = By.xpath("//input[@id='issueDate']");
-    public static By IssueDate = By.xpath("//td[text()='23']");
-    public static By DueDate = By.xpath("//select[@id='dueDate'");
-    public static By RunBillButton = By.xpath("//button[text()='Run Bill']");
-    public static By ReloadButton = By.xpath("((//div[@class='box-header'])[1]|//span[text()='Reload'])[2]");
-    public static By BellIcon = By.xpath("(//div[@class='container'])[1]//li[@id='notifications-dropdown']");
-    public static By SearchBillBox = By.xpath("//input[@type='search']");
-    public static By FirstOne=By.xpath("(//li[@class='dropdown-item'])[1]");
-    public static By DateFrom=By.xpath("//input[@id='dateFrom']");
-    public static By ActiveDayDatepicker = By.xpath("(//th[text()='Today'])[1]");
-    public static By SelectStatus= By.xpath("//select[@id='billrunStatus']");
-    public static By BillRunCustomer=By.xpath("(//input[@class='input-block-level form-control'])[1]");
-    public static By BillSelect=By.xpath("(//span[@class='filter-option pull-left'])[1]");
-    public static By Select1=By.xpath("//th[text()='Tax']");
+    public static By clickIssueDate = By.xpath("//input[@id='issueDate']");
+    public static By issueDate = By.xpath("//td[text()='23']");
+    public static By dueDate = By.xpath("//select[@id='dueDate'");
+    public static By runBillButton = By.xpath("//button[text()='Run Bill']");
+    public static By reloadButton = By.xpath("((//div[@class='box-header'])[1]|//span[text()='Reload'])[2]");
+    public static By bellIcon = By.xpath("(//div[@class='container'])[1]//li[@id='notifications-dropdown']");
+    public static By searchBillBox = By.xpath("//input[@type='search']");
+    public static By firstOne=By.xpath("(//li[@class='dropdown-item'])[1]");
+    public static By dateFrom=By.xpath("//input[@id='dateFrom']");
+    public static By activeDayDatepicker = By.xpath("(//th[text()='Today'])[1]");
+    public static By selectStatus= By.xpath("//select[@id='billrunStatus']");
+    public static By billRunCustomer=By.xpath("(//input[@class='input-block-level form-control'])[1]");
+    public static By billSelect=By.xpath("(//span[@class='filter-option pull-left'])[1]");
+    public static By select1=By.xpath("//th[text()='Tax']");
 
-    public static By ClickOnAdminTab=By.xpath("//span[text()='Admin']");
+    public static By clickOnAdminTab=By.xpath("//span[text()='Admin']");
 
 
     // =============Committing  BillRun For the Customer=============
 
-    public static By DetailsIcon= By.xpath("//i[@class='icon-th-large']");
-    public static By ViewException=By.xpath("//a[text()='View Exceptions']");
-    public static By CheckBox=By.xpath("//input[@name='exceptionId']");
-    public static By ClearButton=By.xpath("//span[text()='Clear']");
-    public static By YesButton=By.xpath("//button[text()='Yes']");
-    public static By CommitStatement=By.xpath("(//div[@class='btn-group'])[1]");
-    public static By CommitButton=By.xpath("//button[text()='Commit Statement']");
-    public static By Countinuecommit=By.xpath("//button[text()='Continue commit']");
-    public static By CommitOkButton=By.xpath("//button[text()='Ok']");
-    public static By CustomerCheckbox=By.xpath("//input[@id='chkDelete_0']");
+    public static By detailsIcon= By.xpath("//a[@class='btn btn-primary']");
+    public static By DetailsIcon=By.xpath("(//i[@class='icon-list-alt'])[2]");
+    public static By viewException=By.xpath("//a[text()='View Exceptions']");
+    public static By checkBox=By.xpath("//input[@name='exceptionId']");
+    public static By clearButton=By.xpath("//span[text()='Clear']");
+    public static By yesButton=By.xpath("//button[text()='Yes']");
+    public static By commitStatement=By.xpath("(//div[@class='btn-group'])[1]");
+    public static By commitButton=By.xpath("//button[text()='Commit Statement']");
+    public static By countinuecommit=By.xpath("//button[text()='Continue commit']");
+    public static By commitOkButton=By.xpath("//button[text()='Ok']");
+    public static By customerCheckbox=By.xpath("//input[@id='chkDelete_0']");
 
     //input[@id='chkDelete_0']
     //===========RollBack Created BillRun==================
 
-    public static By RollBackDetailsIcon=By.xpath("//a[@class='btn btn-primary']");
-    public static By RollBackOkButton=By.xpath("//a[text()=' Rollback']");
-    public static By Reason=By.xpath("//textarea[@id='rollbackReason']");
-    public static By ReasonOk=By.xpath("//button[text()='OK']");
-    public static By Today=By.xpath("(//th[text()='Today'])[1]");
-    public static By CrossIcon=By.xpath("(//button[text()='×'])[2]");
+    public static By rollBackDetailsIcon=By.xpath("//a[@class='btn btn-primary']");
+    public static By rollBackOkButton=By.xpath("//a[text()=' Rollback']");
+    public static By reason=By.xpath("//textarea[@id='rollbackReason']");
+    public static By reasonOk=By.xpath("//button[text()='OK']");
+    public static By today=By.xpath("(//th[text()='Today'])[1]");
+    public static By crossIcon=By.xpath("(//button[text()='×'])[2]");
 
 
     //================Downloading ZIP file======================
 
-    public static By DownloadButton=By.xpath("//button[contains(text(),'Download PDF')]");
-    public static By Zip=By.xpath("//a[text()='  Separate pdf per customer (zip)']");
+    public static By downloadButton=By.xpath("//button[contains(text(),'Download PDF')]");
+    public static By zip=By.xpath("//a[text()='  Separate pdf per customer (zip)']");
     public static By Download=By.xpath("(//button[text()='Download'])[1]");
 
     public static By BillRunCycleSucc=By.xpath(" //p/span[@id='resultMsg']");
+    public static By billCycle=By.xpath("//select[@id='cycleno']");
+    public static By firstValue=By.xpath("//*[@id=\"logContent\"]/div/div/div[2]/div[2]/div/div/ul/li[1]/a");
 
 
     //============Creating BillRun Cycles For THe Customers===================
 
-    public void ClickOnBillRunCyclesTab() {
-        WebDriverWaits.scrollIntoView(BillRunCyclesTab);
-        WebDriverWaits.ClickOn(BillRunCyclesTab);
+    public void clickOnBillRunCyclesTab() {
+        WebDriverWaits.scrollIntoView(billRunCyclesTab);
+        WebDriverWaits.ClickOn(billRunCyclesTab);
     }
 
-    public void ClickOnAdminTab(){
-        WebDriverWaits.ClickOn(ClickOnAdminTab);
+    public void clickOnAdminTab(){
+        WebDriverWaits.Waituntilvisible(clickOnAdminTab);
+        WebDriverWaits.ClickOn(clickOnAdminTab);
     }
 
-    public void ClickOnCreateNewButton() {
-        WebDriverWaits.ClickOn(CreateNew);
+    public void clickOnCreateNewButton() throws InterruptedException {
+        WebDriverWaits.Waituntilvisible(createNew);
+        WebDriverWaits.ClickOn(createNew);
     }
 
-    public void CycleName(String CycleNamefield) {
-        WebDriverWaits.WaitUntilVisibleWE20(CycleName);
-        WebDriverWaits.SendKeysWithClear(CycleName, CycleNamefield);
+    public void cycleName(String CycleNamefield) {
+        WebDriverWaits.WaitUntilVisible(cycleName);
+        WebDriverWaits.SendKeysWithClear(cycleName, CycleNamefield);
     }
 
-    public void OnAutomatedToggle() {
-        WebDriverWaits.ClickOn(AutomatedToggle);
+    public void onAutomatedToggle() {
+
+        WebDriverWaits.ClickOn(automatedToggle);
     }
 
-    public void LaunchAutomatedBilling() {
-        WebDriverWaits.selectByVisibleText(LaunchAutomate, "Morning on 1st business day");
+    public void launchAutomatedBilling() {
+        WebDriverWaits.selectByVisibleText(launchAutomate, "Morning on 1st business day");
     }
 
-    public void BillPeriod() {
-        WebDriverWaits.selectByVisibleText(BillPeriodEnd, "End of the month");
+    public void billPeriod() {
+        WebDriverWaits.selectByVisibleText(billPeriodEnd, "End of the month");
     }
 
-    public void PaymentTerm() {
-        WebDriverWaits.SendKeysWithClear(PaymentTermDay, "1");
+    public void paymentTerm() {
+        WebDriverWaits.SendKeysWithClear(paymentTermDay, "1");
     }
 
-    public void CustomerFilter(String CustomerFilterfield) {
-        WebDriverWaits.scrollIntoView(CustomerFilter);
-        WebDriverWaits.WaitUntilVisible(CustomerFilter);
-        WebDriverWaits.SendKeysWithClear(CustomerFilter, CustomerFilterfield);
-        WebDriverWaits.ClickOn(CustomerFilter);
+    public void customerFilter(String CustomerFirstName ) {
+        WebDriverWaits.scrollIntoView(clickOnDownArrow);
+        WebDriverWaits.WaitUntilVisible(clickOnDownArrow);
+        WebDriverWaits.ClickOn(clickOnDownArrow);
+        WebDriverWaits.ClickOn(clickOnSelect);
+        WebDriverWaits.selectByVisibleText(clickOnSelect,"Customer name");
+        WebDriverWaits.ClickOn(passName);
+        WebDriverWaits.SendKeysWithClear(passName,CustomerFirstName);
+        WebDriverWaits.ClickOn(filterButton);
     }
 
-    public void ClickOnArrow() {
-        WebDriverWaits.WaitUntilVisible(ArrowMark);
-        WebDriverWaits.ClickOn(ArrowMark);
+    public void clickOnArrow() {
+        WebDriverWaits.WaitUntilVisible(arrowMark);
+        WebDriverWaits.ClickOn(arrowMark);
     }
 
-    public void ClickOnSaveCycle() {
-        WebDriverWaits.scrollIntoView(SaveCycle);
-        WebDriverWaits.ClickOn(SaveCycle);
+    public void clickOnSaveCycle() {
+        WebDriverWaits.scrollIntoView(saveCycle);
+        WebDriverWaits.ClickOn(saveCycle);
         //WebDriverWaits.ClickOn(Save);
     }
 
-    public void ClickOnPerticularCustomer() {
-        WebDriverWaits.ClickOn(PerticularCustomer);
-        WebDriverWaits.ClickOn(PerticularCustomer);
+    public void clickOnPerticularCustomer() {
+        WebDriverWaits.Waituntilvisible(perticularCustomer);
+        WebDriverWaits.ClickOn(perticularCustomer);
+       // WebDriverWaits.ClickOn(PerticularCustomer);
     }
 
 //============Creating BillRun for the Customer==============
 
-    public void ClickOnBillRunTab() {
-        WebDriverWaits.WaitUntilVisible(BillRunTab);
-        WebDriverWaits.ClickOn(BillRunTab);
+    public void clickOnBillRunTab() {
+        WebDriverWaits.Waituntilvisible(billRunTab);
+       // WebDriverWaits.fluentWait_Clickable(BillRunTab);
+        WebDriverWaits.ClickOn(billRunTab);
 
     }
 
-    public void ClickOnRunTheBillsButton() {
-
-        WebDriverWaits.ClickOn(RunTheBill);
+    public void clickOnRunTheBillsButton() {
+       WebDriverWaits.Waituntilvisible(runTheBill);
+        WebDriverWaits.ClickOn(runTheBill);
     }
 
     /*
@@ -721,73 +739,72 @@ public class BillRun extends TestLogin {
      */
 
 
-    public void SendBillRun(String SelectBillRunCycleField) throws AWTException {
-        WebDriverWaits.SendKeysWithClear(SelectBillRunCycle, SelectBillRunCycleField);
+    public void sendBillRun(String SelectBillRunCycleField) throws AWTException, InterruptedException {
+        WebDriverWaits.SendKeysWithClear(selectBillRunCycle, SelectBillRunCycleField);
+        Actions s= new Actions(driver);
+        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+    }
+
+
+    public void clickOnToggle() {
+        WebDriverWaits.Waituntilvisible(toggle);
+        WebDriverWaits.ClickOn(toggle);
+    }
+
+    public void selectBillRun() throws AWTException {
+        WebDriverWaits.Waituntilvisible(billRunCycleSelect);
+        WebDriverWaits.ClickOn(billRunCycleSelect);
+    }
+
+
+
+    public void clickOnEndDate() {
+        WebDriverWaits.Waituntilvisible(endDate);
+        WebDriverWaits.SendKeysWithClear(endDate, "07/10/2023");
+
+    }
+
+    public void clickOnIssueDate() {
+        WebDriverWaits.WaitUntilVisible(clickIssueDate);
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/10/2023");
+    }
+
+    public void clickOnRunBillButton() {
+        WebDriverWaits.ClickOn(runBillButton);
+        WebDriverWaits.WaitUntilVisible(searchBillBox);
+
+    }
+
+
+    public void clickOnDateFrom() {
+
+        WebDriverWaits.WaitUntilVisibleWE20(bellIcon);
+        WebDriverWaits.ClickOn (bellIcon);
+        WebDriverWaits.WaitUntilVisibleWE20(firstOne);
+        WebDriverWaits.ClickOn (firstOne);
+
+    }
+
+    public void billRunCycle(String BillRunCustomerfield) throws AWTException {
+
+        WebDriverWaits.ClickOn(billSelect);
+        WebDriverWaits.SendKeysWithClear(billRunCustomer, BillRunCustomerfield);
         Robot s = new Robot();
-        s.keyPress(KeyEvent.VK_ENTER);
         s.keyPress(KeyEvent.VK_ENTER);
         s.keyRelease(KeyEvent.VK_ENTER);
     }
 
-    public void ClickOnToggle() {
-        WebDriverWaits.WaitUntilVisibleWE20(Toggle);
-        WebDriverWaits.ClickOn(Toggle);
+    public void reloadButton() {
+        WebDriverWaits.WaitUntilVisibleWE20(dateFrom);
+        WebDriverWaits.ClickOn(dateFrom);
+        WebDriverWaits.ClickOn(activeDayDatepicker);
+        WebDriverWaits.WaitUntilVisibleWE20(reloadButton);
+        WebDriverWaits.ClickOn (reloadButton);
     }
 
-    public void SelectBillRun() throws AWTException {
-        WebDriverWaits.ClickOn(BillRunCycleSelect);
-    }
-
-
-
-    public void ClickOnEndDate() {
-
-        WebDriverWaits.WaitUntilVisible(EndDate);
-        WebDriverWaits.SendKeysWithClear(EndDate, "09/23/2023");
-
-    }
-
-    public void ClickOnIssueDate() {
-        WebDriverWaits.WaitUntilVisible(ClickIssueDate);
-        WebDriverWaits.SendKeysWithClear(ClickIssueDate, "09/24/2023");
-    }
-
-    public void ClickOnRunBillButton() {
-        WebDriverWaits.ClickOn(RunBillButton);
-        WebDriverWaits.WaitUntilVisible(SearchBillBox);
-
-    }
-
-
-    public void ClickOnDateFrom() {
-
-        WebDriverWaits.WaitUntilVisibleWE20(BellIcon);
-        WebDriverWaits.ClickOn (BellIcon);
-        WebDriverWaits.WaitUntilVisibleWE20(FirstOne);
-        WebDriverWaits.ClickOn (FirstOne);
-
-    }
-
-    public void BillRunCycle(String BillRunCustomerfield) throws AWTException {
-
-        WebDriverWaits.ClickOn(BillSelect);
-        WebDriverWaits.SendKeysWithClear(BillRunCustomer, BillRunCustomerfield);
-        Robot s = new Robot();
-        s.keyPress(KeyEvent.VK_ENTER);
-        s.keyRelease(KeyEvent.VK_ENTER);
-    }
-
-    public void ReloadButton() {
-        WebDriverWaits.WaitUntilVisibleWE20(DateFrom);
-        WebDriverWaits.ClickOn(DateFrom);
-        WebDriverWaits.ClickOn(ActiveDayDatepicker);
-        WebDriverWaits.WaitUntilVisibleWE20(ReloadButton);
-        WebDriverWaits.ClickOn (ReloadButton);
-    }
-
-    public void ClickOnSearchBox(String SearchBillBoxField) {
-        WebDriverWaits.WaitUntilVisible(SearchBillBox);
-        WebDriverWaits.SendKeysWithClear(SearchBillBox, SearchBillBoxField);
+    public void clickOnSearchBox(String SearchBillBoxField) {
+        WebDriverWaits.WaitUntilVisible(searchBillBox);
+        WebDriverWaits.SendKeysWithClear(searchBillBox, SearchBillBoxField);
 
     }
 
@@ -795,144 +812,153 @@ public class BillRun extends TestLogin {
 
     //==============Commiting BillRun ====================================
 
-    public void ClickOnDetailsIcon() throws InterruptedException {
-        WebDriverWaits.WaitUntilVisible(DetailsIcon);
-        WebDriverWaits.ClickOn(DetailsIcon);
+    public void clickOnDetailsIcon() throws InterruptedException {
+        WebDriverWaits.Waituntilvisible(detailsIcon);
+        WebDriverWaits. ClickOn(detailsIcon);
     }
 
-    public void ClearingException() {
-        WebDriverWaits.WaitUntilVisibleWE20(ViewException);
-        WebDriverWaits.ClickOn(ViewException);
-        WebDriverWaits.WaitUntilVisibleWE20(CheckBox);
-        WebDriverWaits.ClickOn(CheckBox);
-        WebDriverWaits.ClickOn(ClearButton);
-        WebDriverWaits.ClickOn(YesButton);
+    public void clearingException() {
+        WebDriverWaits.WaitUntilVisibleWE20(viewException);
+        WebDriverWaits.ClickOn(viewException);
+        WebDriverWaits.WaitUntilVisibleWE20(checkBox);
+        WebDriverWaits.ClickOn(checkBox);
+        WebDriverWaits.ClickOn(clearButton);
+        WebDriverWaits.ClickOn(yesButton);
     }
 
-    public void ClickOnCommitStatement(String SearchBillBoxField) throws InterruptedException {
+    public void clickOnCommitStatement(String SearchBillBoxField) throws InterruptedException {
         WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.selectCheckBox(CustomerCheckbox);
-        WebDriverWaits.WaitUntilVisibleWE20(CommitStatement);
-        WebDriverWaits.ClickOn(CommitStatement);
+        WebDriverWaits.selectCheckBox(customerCheckbox);
+        WebDriverWaits.WaitUntilVisibleWE20(commitStatement);
+        WebDriverWaits.ClickOn(commitStatement);
     }
 
-    public void ClickOnCommitOkButton() throws InterruptedException {
+    public void clickOnCommitOkButton() throws InterruptedException {
         WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.ClickOn(CommitOkButton);
+        WebDriverWaits.ClickOn(commitOkButton);
     }
 
-    public void ClickOnOkcommit() {
-        WebDriverWaits.ClickOn(Countinuecommit);
+    public void clickOnOkcommit() {
+        WebDriverWaits.ClickOn(countinuecommit);
     }
 
-    public void CommitButton() throws InterruptedException {
+    public void commitButton() throws InterruptedException {
         WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.WaitUntilVisibleWE20(CommitButton);
-        WebDriverWaits.ClickOn(CommitButton);
+        WebDriverWaits.WaitUntilVisibleWE20(commitButton);
+        WebDriverWaits.ClickOn(commitButton);
     }
 
 
-    public void ClickOnRollBackDetailsIcon() throws InterruptedException {
+    public void clickOnRollBackDetailsIcon() throws InterruptedException {
         WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.ClickOn(RollBackDetailsIcon);
+        WebDriverWaits.ClickOn(rollBackDetailsIcon);
+    }
+    public void clickONDetailsIcon(){
+        WebDriverWaits.ClickOn(detailsIcon);
     }
 
-    public void ClickOnRollBackButton() {
-        WebDriverWaits.ClickOn(RollBackOkButton);
+    public void clickOnRollBackButton() {
+        WebDriverWaits.ClickOn(rollBackOkButton);
     }
 
-    public void EnterReason() {
-        WebDriverWaits.ClickOn(Reason);
-        WebDriverWaits.SendKeysWithClear(Reason,"Testing");
-        WebDriverWaits.ClickOn(ReasonOk);
-        WebDriverWaits.ClickOn(CrossIcon);
+    public void enterReason() {
+        WebDriverWaits.ClickOn(reason);
+        WebDriverWaits.SendKeysWithClear(reason,"Testing");
+        WebDriverWaits.ClickOn(reasonOk);
+        WebDriverWaits.ClickOn(crossIcon);
+
     }
 
     //================Download Zip File===================
 
-    public void ClickDownloadButton() throws AWTException, InterruptedException {
+    public void clickDownloadButton() throws AWTException, InterruptedException {
 
-        WebDriverWaits.ClickOn (DownloadButton);
-        WebDriverWaits.selectByVisibleText(Zip, "Separate pdf per customer (zip)");
-        WebDriverWaits.ClickOn (Download);
+        WebDriverWaits.ClickOn (downloadButton);
+        WebDriverWaits.WaitUntilSelect(zip);
+        WebDriverWaits.ClickOn(zip);
+        WebDriverWaits.fluentWait_Clickable(download);
+        WebDriverWaits.ClickOn(download);
 
     }
 
-    public void CustomerCheckbox() throws InterruptedException {
+    public void  customerCheckbox() throws InterruptedException {
         WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.selectCheckBox(CustomerCheckbox);
+        WebDriverWaits.selectCheckBox( customerCheckbox);
     }
 
-    public void CreateBillRunCycle(){
+    public void createBillRunCycle() throws InterruptedException {
         // Login.loginWithGroupName("Test Utilities");
-      ClickOnAdminTab();
-       ClickOnBillRunCyclesTab();
-         ClickOnCreateNewButton();
-       CycleName(Customer.CustomerFirstName);
-        OnAutomatedToggle();
-         LaunchAutomatedBilling();
-         BillPeriod();
-       PaymentTerm();
-         CustomerFilter(Customer.CustomerFirstName);
-         ClickOnPerticularCustomer();
-         ClickOnArrow();
-         ClickOnSaveCycle();
+        clickOnAdminTab();
+        clickOnBillRunCyclesTab();
+       Thread.sleep(2000);
+        clickOnCreateNewButton();
+        cycleName(Customer.CustomerFirstName);
+        onAutomatedToggle();
+         launchAutomatedBilling();
+         billPeriod();
+         paymentTerm();
+        customerFilter(Customer.CustomerFirstName);
+        clickOnPerticularCustomer();
+         clickOnArrow();
+         clickOnSaveCycle();
         String Expectedsuccmsg="Successfully added new bill run cycle.";
         softAssert.assertEquals(Expectedsuccmsg, BillRunCycleSucc);
 
         //p/span[@id='resultMsg']
     }
 
-    public void BillRun() throws AWTException, InterruptedException {
-        //String CustomerFirstName="";
-        // Login.loginWithGroupName("Test Utilities");
-       ClickOnBillRunTab();
-        // Thread.sleep(1000);
-        ClickOnRunTheBillsButton();
-        // BillRun.ClickOnStartDate();
-         SelectBillRun();
-         Thread.sleep(1000);
-         SendBillRun(Customer.CustomerFirstName);
-        // BillRun.ClickOnStartDate();
-        // BillRun.ClickOnDueDate();
-         ClickOnToggle();
-         ClickOnEndDate();
-         ClickOnIssueDate();
-         ClickOnRunBillButton();
-         ClickOnSearchBox(Customer.CustomerFirstName);
+    public void billRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
-       BillRunCycle(Customer.CustomerFirstName);
-         ReloadButton();
-        ClickOnDateFrom();
+        clickOnBillRunTab();
+        clickOnRunTheBillsButton();
+         selectBillRun();
+         sendBillRun(Customer.CustomerFirstName);
+         // Clicking 2 times in toggle button because of Toggle issue.
+        clickOnToggle();
+        Thread.sleep(1000);
+        clickOnToggle();
+         clickOnEndDate();
+         clickOnIssueDate();
+         clickOnRunBillButton();
+         clickOnSearchBox(Customer.CustomerFirstName);
+        Thread.sleep(2000);
+       billRunCycle(Customer.CustomerFirstName);
+         reloadButton();
+    //    ClickOnDateFrom();
 
         // Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Showing
         // 1 to 1 of 1 entries')]")).getText(), expectedBillRunSuccessText) ;
         // System.out.println("Texts match. Assertion passed.");
     }
 
-    public void CommitBillRun() throws InterruptedException {
-        CommitButton();
-        ClickOnOkcommit();
-        ClickOnCommitOkButton();
+    public void commitBillRun() throws InterruptedException {
+        clickOnBillRunTab();
+        reloadButton();
+        clickOnDateFrom();
+      //  ClickOnSearchBox(Customer.CustomerFirstName);
+      //  ClickOnDetailsIcon();
+        commitButton();
+        clickOnOkcommit();
+        clickOnCommitOkButton();
     }
 
-    public void RollBack() throws InterruptedException {
-        ClickOnBillRunTab();
-         ReloadButton();
-         ClickOnDateFrom();
-         ClickOnDetailsIcon();
-         ClickOnRollBackDetailsIcon();
-        ClickOnRollBackButton();
-         EnterReason();
+    public void rollBack() throws InterruptedException {
+        clickOnBillRunTab();
+         reloadButton();
+         clickOnDateFrom();
+         //ClickOnDetailsIcon();
+        clickONDetailsIcon();
+        clickOnRollBackButton();
+         enterReason();
     }
 
-    public void DownloadZip() throws InterruptedException, AWTException {
-         ClickOnBillRunTab();
-         ReloadButton();
-         ClickOnSearchBox(Customer.CustomerFirstName);
-         ClickOnDetailsIcon();
-         CustomerCheckbox();
-         ClickDownloadButton();
+
+    public void downloadZip() throws InterruptedException, AWTException {
+         clickOnBillRunTab();
+         clickOnSearchBox(Customer.CustomerFirstName);
+         clickOnDetailsIcon();
+         customerCheckbox();
+         clickDownloadButton();
     }
 }
 

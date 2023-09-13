@@ -2,6 +2,7 @@ package BrowsersBase;
 
 public interface DataInterface {
 
+
 //    public static String URL = "https://futurexenergyuat.utilibill.com.au/futurexenergy/";
 //    public static String Username = "sqeTest";
 //    public static String Password = "Sqe123!@#";
@@ -18,5 +19,4 @@ public interface DataInterface {
     public static String AdminURL = BaseURL + "/marketbilling/SrvAdministration";
     public static String browserMain = "Chrome";
     public static boolean autoDueDateEnabled = true;
-
 }
