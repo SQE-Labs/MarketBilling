@@ -3,6 +3,7 @@ package CommonMethods;
 import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -10,6 +11,10 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+
+import static CommonMethods.BaseTest.extentTest;
+import static com.relevantcodes.extentreports.LogStatus.FAIL;
+import static com.relevantcodes.extentreports.LogStatus.PASS;
 
 
 //Todo
@@ -261,4 +266,5 @@ public class WebDriverWaits extends BrowsersInvoked {
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
 	}
+
 }
