@@ -21,7 +21,7 @@
             <!--            <class name="TestCases.TestAutoDueDate"></class>-->
             <!--            <class name="TestCases.MultipleCustomerBillRunTest"></class>-->
             <!--            <class name="TestCases.Imports"></class>-->
-            <class name="TestCases.PaymentTest"></class>
+            <class name="TestCases.PaymentViaCreditCardTest"></class>
 
 
         </classes>
