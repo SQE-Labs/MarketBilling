@@ -18,7 +18,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
 
-		Login.ValidLogin();
+		Login.loginWithGroupName("Markettest8887");
 
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);

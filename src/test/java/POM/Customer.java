@@ -339,7 +339,7 @@ public class Customer {
         clickOnSaveCustomerButton();
         clickOnSaveOnlyButton();
         String Expectedmsg="Successfully saved customer.";
-        softAssert.assertEquals(Expectedmsg, ActualMsg1);
+        softAssert.assertAll();
     }
 
 

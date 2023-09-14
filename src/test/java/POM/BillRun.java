@@ -93,6 +93,7 @@ public class BillRun extends TestLogin {
 
     public static By close = By.id("sendEmailResultClose");
     public static By download = By.id("submitSelected");
+    String Expectedsuccmsg = "Successfully updated .";
     static SoftAssert softAssert = new SoftAssert();
 
     public static void BillrunMethod_NoCycle() throws InterruptedException {
@@ -573,9 +574,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(close);
     }
 
-    // =============Craeting BillRun Cycles for the customer==============
+    // =============Creating BillRun Cycles for the customer==============
 
-    public static By billRunCyclesTab = By.xpath("//p[text()='Bill Run Cycles']");
+    public static By billRunCyclesTab = By.xpath("//a//p[text()='Bill Run Cycles']");
     public static By createNew = By.xpath("//a[text()=' Create new ']");
     public static By cycleName = By.xpath("//input[@id='cyclename']");
     public static By automatedToggle = By.xpath("(//span[@class='switch-label'])[1]");
@@ -627,7 +628,8 @@ public class BillRun extends TestLogin {
     public static By billSelect = By.xpath("(//span[@class='filter-option pull-left'])[1]");
     public static By select1 = By.xpath("//th[text()='Tax']");
 
-    public static By clickOnAdminTab = By.xpath("//span[text()='Admin']");
+    public static By  AdminTab = By.xpath("//span[text()='Admin']");
+
 
 
     // =============Committing  BillRun For the Customer=============
@@ -693,10 +695,15 @@ public class BillRun extends TestLogin {
     }
 
     public void clickOnAdminTab() throws InterruptedException {
-        WebDriverWaits.Waituntilvisible(clickOnAdminTab);
-        Thread.sleep(2000);
-        WebDriverWaits.ClickOn(clickOnAdminTab);
+
+        WebDriverWaits.Waituntilvisible( AdminTab);
+        WebDriverWaits.ClickOn( AdminTab);
     }
+    public void clickOnAdminTab1() throws InterruptedException {
+        WebDriverWaits.Waituntilvisible( AdminTab);
+        WebDriverWaits.ClickOn( AdminTab);
+    }
+
 
     public void clickOnCreateNewButton() throws InterruptedException {
         Thread.sleep(3000);
@@ -709,9 +716,8 @@ public class BillRun extends TestLogin {
         WebDriverWaits.SendKeysWithClear(cycleName, CycleNamefield);
     }
 
+
     public void onAutomatedToggle() {
-
-
         WebDriverWaits.ClickOn(automatedToggle);
     }
 
@@ -891,16 +897,10 @@ public class BillRun extends TestLogin {
         WebDriverWaits.WaitUntilVisibleWE20(commitButton);
         WebDriverWaits.ClickOn(commitButton);
     }
-
-
-    public void clickOnRollBackDetailsIcon() throws InterruptedException {
-        WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.ClickOn(rollBackDetailsIcon);
-    }
-
-    public void clickONDetailsIcon() {
+    public void clickONDetailsIcon() throws InterruptedException {
         WebDriverWaits.Waituntilvisible(detailsIcon);
-       driver.navigate().refresh();
+       //driver.navigate().refresh();
+      // WebDriverWaits.SwitchToNewTab();
        WebDriverWaits.ClickOn(detailsIcon);
     }
 
@@ -923,6 +923,15 @@ public class BillRun extends TestLogin {
 //        WebDriverWaits.ClickOn(crossIcon);
 
     }
+    public void clickCross() throws InterruptedException {
+        WebDriverWaits.ClickOn(crossMark);
+      //  WebDriverWaits.CloseOtherTabs();
+//        WebDriverWaits.ClickOn(reason);
+//        WebDriverWaits.SendKeysWithClear(reason, "Testing");
+//        WebDriverWaits.ClickOn(reasonOk);
+//        WebDriverWaits.ClickOn(crossIcon);
+
+    }
 
     //================Download Zip File===================
 
@@ -931,7 +940,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(downloadButton);
         WebDriverWaits.WaitUntilSelect(zip);
         WebDriverWaits.ClickOn(zip);
-        WebDriverWaits.fluentWait_Clickable(download);
+        WebDriverWaits.ClickOn(download);
         WebDriverWaits.ClickOn(download);
 
     }
@@ -972,6 +981,7 @@ public class BillRun extends TestLogin {
     public void createBillRunCycle() throws InterruptedException {
         // Login.loginWithGroupName("Test Utilities");
         clickOnAdminTab();
+        Thread.sleep(2000);
         clickOnBillRunCyclesTab();
         Thread.sleep(3000);
         clickOnCreateNewButton();
@@ -981,6 +991,7 @@ public class BillRun extends TestLogin {
         billPeriod();
         paymentTerm();
         customerFilter(Customer.CustomerFirstName);
+        Thread.sleep(1000);
         clickOnPerticularCustomer();
         clickOnArrow();
         clickOnSaveCycle();
@@ -993,7 +1004,7 @@ public class BillRun extends TestLogin {
     public void billRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
         clickOnBillRunTab();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         clickOnRunTheBillsButton();
         selectBillRun();
         sendBillRun(Customer.CustomerFirstName);
@@ -1028,11 +1039,15 @@ public class BillRun extends TestLogin {
 
     public void rollBack() throws InterruptedException {
        Thread.sleep(3000);
+        clickOnBillRunTab();
+        Thread.sleep(1000);
         reloadButton();
+        sendValueInSearchBox(Customer.CustomerFirstName);
         clickONDetailsIcon();
         customerCheckbox();
         clickOnRollBackButton();
-        enterReason();
+        clickCross();
+        //notificationIcon();
     }
 
 
@@ -1045,14 +1060,15 @@ public class BillRun extends TestLogin {
         clickONDetailsIcon();
         customerCheckbox();
         clickDownloadButton();
+
     }
 
+
     public void editBillRunCycles() throws InterruptedException {
-        Thread.sleep(2000
-        );
-        clickOnAdminTab();
+        Thread.sleep(4000);
+        clickOnAdminTab1();
         clickOnBillRunCyclesTab();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         sendValueInSearchBox(Customer.CustomerFirstName);
         EditCycle();
         paymentTerm1();
@@ -1060,7 +1076,7 @@ public class BillRun extends TestLogin {
         //   clickOnPerticularCustomer();
         //   clickOnArrow();
         clickOnSaveCycle();
-        String Expectedsuccmsg = "Successfully updated .";
+
         softAssert.assertEquals(Expectedsuccmsg, BillRunCycleSucc);
     }
 
@@ -1088,7 +1104,7 @@ public class BillRun extends TestLogin {
 
     public void reBillRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
-        clickOnBillRunTab();
+      //  clickOnBillRunTab();
         clickOnRunTheBillsButton();
         Thread.sleep(1000);
         selectBillRun();

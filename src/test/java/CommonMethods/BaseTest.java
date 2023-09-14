@@ -33,7 +33,7 @@ public class BaseTest extends BrowsersInvoked {
 
 	@AfterSuite
 	public void endReport() {
-		extent.flush();
+	//	extent.flush();
 		extent.close();
 	}
 
@@ -42,20 +42,23 @@ public class BaseTest extends BrowsersInvoked {
 
 		if (result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName());
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getThrowable());
+			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " +result.getThrowable().toString());
 			System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
-
 			String screenshotPath = getScreenshot(driver, result.getName());
 			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath));
-			// extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+//			extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+			extent.endTest(extentTest);
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
 			System.out.println("*** Test " + result.getMethod().getMethodName() + " skipped...");
+			extent.endTest(extentTest);
+
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
 			System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
+			extent.endTest(extentTest);
+
 		}
-		extent.endTest(extentTest);
 		extent.flush();
 	}
 
