@@ -17,6 +17,7 @@ public class Login {
 		WebDriverWaits.SendKeys(UsernameField, DataInterface.Username);
 		WebDriverWaits.SendKeys(PasswordField, DataInterface.Password);
 		WebDriverWaits.ClickOn(LoginButton);
+		//WebDriverWaits.ClickOn(By.id("submitrequest"));
 
 	}
 	public static void loginWithGroupName(String groupName) {
