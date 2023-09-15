@@ -166,6 +166,7 @@ public class Metering {
         WebDriverWaits.SendKeys(MeterReadShoulder_Field, shoulderValue);
         WebDriverWaits.ClickOn(Save_Button);
         Thread.sleep(2000);
+
       //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 

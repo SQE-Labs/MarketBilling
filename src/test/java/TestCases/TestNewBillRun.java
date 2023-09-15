@@ -105,6 +105,7 @@ public class TestNewBillRun extends BaseTest {
     public void reBill() throws AWTException, InterruptedException {
         extentTest = extent.startTest("Re BillRun   ");
         extentTest.setDescription("Verify that user is able to ReBill or Not");
+
         bill.reBillRun();
     }
 

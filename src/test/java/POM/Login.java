@@ -24,8 +24,8 @@ public class Login {
 		WebDriverWaits.SendKeys(PasswordField, DataInterface.Password);
 		WebDriverWaits.ClickOn(LoginButton);
 
-		WebDriverWaits.selectByVisibleText(selectGroup,"Markettest8887");
-		WebDriverWaits.ClickOn(groupLogiin);
+	//	WebDriverWaits.selectByVisibleText(selectGroup,"Markettest8887");
+	//	WebDriverWaits.ClickOn(groupLogiin);
 
 	}
 }

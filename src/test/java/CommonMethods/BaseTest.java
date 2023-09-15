@@ -62,6 +62,7 @@ public class BaseTest extends BrowsersInvoked {
 		extent.flush();
 	}
 
+
 	public static String getScreenshot(WebDriver driver, String screenshotName) {
 		Long l = Calendar.getInstance().getTimeInMillis();
 		String screenshotId = l.toString();
@@ -78,4 +79,5 @@ public class BaseTest extends BrowsersInvoked {
 		String ImagePath = "../ExtentReports/" + screenshotId + ".png";
 		return ImagePath;
 	}
+
 }

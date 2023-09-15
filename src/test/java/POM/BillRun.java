@@ -805,13 +805,13 @@ public class BillRun extends TestLogin {
 
     public void clickOnEndDate() {
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "07/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "15/10/2023");
 
     }
 
     public void clickOnIssueDate() {
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "15/10/2023");
     }
 
     public void clickOnRunBillButton() {
