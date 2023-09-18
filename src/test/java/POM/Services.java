@@ -134,7 +134,7 @@ public class Services {
         WebDriverWaits.SendKeys(SearchField, ThirdRecID);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
-        InternalMethods.SwitchToCustomerpage(2);
+        InternalMethods.SwitchToCustomerpage(4);//2
         WebDriverWaits.ClickOn(OverviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);
@@ -188,7 +188,6 @@ public class Services {
         return ServiceIDLater2;
     }
 
-
     public static String M_AddService2(String customerId ) throws InterruptedException {
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(1000);
@@ -198,7 +197,7 @@ public class Services {
         WebDriverWaits.SendKeys(SearchField, ThirdRecID);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
-        InternalMethods.SwitchToCustomerpage(3);
+        InternalMethods.SwitchToCustomerpage(6);//3
         WebDriverWaits.ClickOn(OverviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);
@@ -260,7 +259,7 @@ public class Services {
         WebDriverWaits.SendKeys(SearchField, ThirdRecID);
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(2000);
-        InternalMethods.SwitchToCustomerpage(4);
+        InternalMethods.SwitchToCustomerpage(8);//4
         WebDriverWaits.ClickOn(OverviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);

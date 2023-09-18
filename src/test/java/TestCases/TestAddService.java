@@ -22,7 +22,7 @@ public class TestAddService extends BaseTest {
     public void AddResidentialService() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
-      //  Login.loginWithGroupName("Test Utilities");
+     //  Login.loginWithGroupName("Test Utilities");
         Customer.searchCustomer(CustomerID01R);
         Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
     }

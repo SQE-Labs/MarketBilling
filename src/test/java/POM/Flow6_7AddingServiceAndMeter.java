@@ -55,7 +55,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 
         public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
         public static By Market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
-        public static By NMI_Field = By.xpath("//*[@id=\"NMI\"]");
+        public static By NMI_Field = By.xpath("//button[text()='Generate Virtual NMI']");
         public static By Service_Plan_Dropdown = By.xpath("//li[@class='search-field']");
         public static By Move_In_Date_Datepicker = By.xpath("//input[@id='proposedDate']");
         public static By SelectCurrentDate = By.xpath("//*[@class=\"active day\"]");
@@ -139,14 +139,14 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(2000);
 
             WebDriverWaits.ClickOn(NMI_Field);
-            ServiceIDLater1 = RandomStrings.RequiredDigits(10);
-            WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
+          //  ServiceIDLater1 = RandomStrings.RequiredDigits(10);
+          //  WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
             System.out.println("SERVICE ID -------- " + ServiceIDLater1);
 
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
        //     Thread.sleep(2000);
-       //    WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown,"Electricity");
+       //    WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown,"Ausgrid - SME Anytime");
         //    Thread.sleep(2000);
         //    Robot s= new Robot();
         //    s.keyPress(KeyEvent.VK_ENTER);
@@ -154,7 +154,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         //    s.keyRelease(KeyEvent.VK_ENTER);
         //    WebDriverWaits.selectByIndex(DropDown,0);
             Actions as=new Actions(driver);
-            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Ausgrid - SME Anytime']"))).click().build().perform();
             Thread.sleep(2000);
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
 
@@ -235,11 +235,11 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.ClickOn(SearchField);
 
             String SecondRecID = WebDriverWaits.GetText(selectBusinessCustomer_Record);
-            WebDriverWaits.SendKeys(SearchField, SecondRecID);
+          //  WebDriverWaits.SendKeys(SearchField, SecondRecID);
 
             WebDriverWaits.ClickOn(SearchIcon);
             Thread.sleep(2000);
-            InternalMethods.SwitchToCustomerpage();
+            InternalMethods.SwitchToCustomerpage(2);
             WebDriverWaits.ClickOn(OverviewTab);
             Thread.sleep(2000);
 
@@ -256,14 +256,14 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             Thread.sleep(2000);
 
             WebDriverWaits.ClickOn(NMI_Field);
-            ServiceIDLater2 = RandomStrings.RequiredDigits(10);
-            WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater2);
+          //  ServiceIDLater2 = RandomStrings.RequiredDigits(10);
+          //  WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater2);
 
             Thread.sleep(1000);
 
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
             Actions as=new Actions(driver);
-            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Ausgrid - SME Anytime']"))).click().build().perform();
             Thread.sleep(2000);
 
 
@@ -343,7 +343,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.ClickOn(SearchField);
             //WebDriverWaits.ClickOn(TwosearchResults);
             String FirstRecID = WebDriverWaits.GetText(selectCommercialCustomer_Record);
-           WebDriverWaits.SendKeys(SearchField, FirstRecID);
+          // WebDriverWaits.SendKeys(SearchField, FirstRecID);
 
             // WebDriverWaits.ClickOn(selectCommercialCustomer_Record);
             WebDriverWaits.ClickOn(SearchIcon);
@@ -354,6 +354,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 //			driver.switchTo().window((String) tabs.get(1));
 
             // WebDriverWaits.ClickOn(selectCommercialCustomer_Record);
+            InternalMethods.SwitchToCustomerpage(3);
             Thread.sleep(2000);
             WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
             Thread.sleep(2000);
@@ -376,7 +377,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
             WebDriverWaits.ClickOn(Service_Plan_Dropdown);
           //  WebDriverWaits.SendKeysWithClear(Service_Plan_Dropdown, "Electricity");
             Actions as=new Actions(driver);
-            as.moveToElement(driver.findElement(By.xpath("//li[text()='Electricity Template Plan']"))).click().build().perform();
+            as.moveToElement(driver.findElement(By.xpath("//li[text()='Ausgrid - SME Anytime']"))).click().build().perform();
             Thread.sleep(2000);
 
             WebDriverWaits.ClickOn(Move_In_Date_Datepicker);

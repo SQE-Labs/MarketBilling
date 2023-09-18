@@ -8,6 +8,8 @@ import static BrowsersBase.BrowsersInvoked.driver;
 
 public interface DataInterface {
 
+
+
     public static String URL = "https://futurexenergyuat.utilibill.com.au/futurexenergy/";
     public static String Username = "sqeTest";
     public static String Password = "Sqe123!@#";
