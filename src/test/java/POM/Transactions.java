@@ -3,6 +3,7 @@ package POM;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
+import org.apache.poi.ss.formula.atp.Switch;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -40,11 +41,7 @@ public class Transactions extends TestLogin {
     public static By invalidExpiryDateTxt = By.xpath("//div[@class='wpwl-hint wpwl-hint-expiryMonthError']");
     public static By invalidCvvTxt = By.xpath("//div[@class='wpwl-hint wpwl-hint-cvvError']");
     public static By transactionTypeText = By.xpath("//tbody/tr[1]//td[4]");
-    public static By requestTimeout = By.xpath("//*[@id=\"errTransactionAlert\"]/div/center/text()");
-
-
-    public static SoftAssert softAssert = new SoftAssert();
-    static String SUCCESS_PAY_CC = "Payment recevied";
+    public static By requestTimeout = By.xpath("//p[@class='errorTransMsg']");
 
 
 
@@ -89,11 +86,12 @@ public class Transactions extends TestLogin {
     }
 
     public static void enterExpiryDate(String expirtDateTxt){
+        WebDriverWaits.WaitUntilVisible(expiryDate);
         WebDriverWaits.SendKeys(expiryDate, expirtDateTxt);
     }
 
-    public static void enterCardNumber(String cardNumberTxt){
-        WebDriverWaits.WaitUntilVisible(creditCardNumber);
+    public static void enterCardNumber(String cardNumberTxt) throws InterruptedException {
+        WebDriverWaits.WaitUntilVisibleWE20(creditCardNumber);
         WebDriverWaits.SendKeys(creditCardNumber,cardNumberTxt);
     }
 
@@ -110,7 +108,7 @@ public class Transactions extends TestLogin {
         driver.manage().window().maximize();
     }
 
-    public static void clickPayNowBtn() throws InterruptedException {
+    public static void clickPayNowBtn() {
         WebDriverWaits.scrollIntoView(payNow);
         WebDriverWaits.ClickOn(payNow);
     }
@@ -118,26 +116,30 @@ public class Transactions extends TestLogin {
     public static void verify_CardNumberValidation_MSG(String expected) throws InterruptedException {
         String actual = WebDriverWaits.GetText(invalidCardNumberTxt);
         Assert.assertEquals(actual, expected);
+        switchToWindow();
     }
 
     public static void verify_ExpiryDateValidation_MSG(String expected) throws InterruptedException {
         String actual = WebDriverWaits.GetText(invalidExpiryDateTxt);
         Assert.assertEquals(actual, expected);
+        switchToWindow();
     }
 
     public static void verify_CvvValidation_MSG(String expected) throws InterruptedException {
         String actual = WebDriverWaits.GetText(invalidCvvTxt);
         Assert.assertEquals(actual, expected);
+        switchToWindow();
     }
     public static void verify_PaymentSuccess_MSG(String expected) throws InterruptedException {
         Thread.sleep(5000);
         String actual = WebDriverWaits.GetText(transactionTypeText);
         Assert.assertEquals(actual, expected);
+        switchToWindow();
     }
 
     public static void verify_TimeoutValidation_MSG(String expected) throws InterruptedException {
         switchToWindow();
-        Thread.sleep(400000);
+        WebDriverWaits.WaitUntilVisibleWE80(requestTimeout);
         WebDriverWaits.scrollIntoView(transaction);
         String actual = WebDriverWaits.GetText(requestTimeout);
         Assert.assertEquals(actual, expected);
@@ -206,6 +208,74 @@ public class Transactions extends TestLogin {
         clickSubmitBtn();
 
     }
+
+    public static void verify_AccountNumber_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountNumber) throws InterruptedException {
+        make_Payment(trxnType,payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        enterAccountNumber(accountNumber);
+
+    }
+
+    public static void verify_StateCode_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountType, String accountNumber,String state) throws InterruptedException {
+        make_Payment(trxnType,payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        selctAccountType(accountType);
+        enterAccountNumber(accountNumber);
+        enterStateDetails(state);
+    }
+
+    public static void verify_ZipCode_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountType, String accountNumber,String zipCode) throws InterruptedException {
+        make_Payment(trxnType,payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        selctAccountType(accountType);
+        enterAccountNumber(accountNumber);
+        enterZipCodeDetails(zipCode);
+    }
+
+    public static void verify_CityDetails_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountType, String accountNumber,String city) throws InterruptedException {
+        make_Payment(trxnType,payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        selctAccountType(accountType);
+        enterAccountNumber(accountNumber);
+        enterName();
+        enterAddressDetails();
+        enterCityDetails(city);
+    }
+
+    public static void verify_AddressDetails_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountType, String accountNumber) throws InterruptedException {
+        make_Payment(trxnType, payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        selctAccountType(accountType);
+        enterAccountNumber(accountNumber);
+        enterName();
+        enterAddressDetails();
+    }
+
+    public static void verify_RoutingNumber_Validation_MSG(String trxnType, String payMethod,String routingNumber, String accountType, String accountNumber) throws InterruptedException {
+        make_Payment(trxnType,payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+        enterRoutingNumber(routingNumber);
+        selctAccountType(accountType);
+        enterAccountNumber(accountNumber);
+
+    }
     public static void selectBillingAddress(String billingAddressTxt){
         WebDriverWaits.selectByVisibleText(billingAddress, "Australia");
     }
@@ -220,9 +290,7 @@ public class Transactions extends TestLogin {
         enterCvv(cVV);
         selectBillingAddress(billingAddress);
         clickPayNowBtn();
-//        softAssert.assertEquals(transactionTypeText, SUCCESS_PAY_CC);
-//        softAssert.assertAll();
-
+        switchToWindow();
     }
 
 
@@ -231,6 +299,7 @@ public class Transactions extends TestLogin {
         switchToWindow();
         maximizePage();
         switchToFrame();
+        Thread.sleep(3000);
         enterCardNumber(cardNumber);
         enterExpiryDate(expiryDate);
         Thread.sleep(2000);
@@ -278,7 +347,8 @@ public class Transactions extends TestLogin {
         enterCardNumber(cardNumber);
         enterExpiryDate(expiryDate);
         enterCvv(cVV);
-        clickPayNowBtn();
+        Thread.sleep(3000);
+       // clickPayNowBtn();
     }
 
     public static void payment_BlankCVV(String trxnType, String payMethod,String cardNumber , String expiryDate,String cVV) throws InterruptedException {
@@ -304,12 +374,17 @@ public class Transactions extends TestLogin {
         selectBillingAddress(billingAddress);
     }
 
-    public static void payment_Timeout(String trxnType, String payMethod,String cardNumber) throws InterruptedException {
+    public static void payment_Timeout_CC(String trxnType, String payMethod) throws InterruptedException {
         make_Payment(trxnType, payMethod);
         switchToWindow();
         maximizePage();
         switchToFrame();
-        enterCardNumber(cardNumber);
-        Thread.sleep(100000);
     }
+    public static void payment_Timeout_BA(String trxnType, String payMethod) throws InterruptedException {
+        make_Payment(trxnType, payMethod);
+        switchToWindow();
+        maximizePage();
+        switchToFrame();
+    }
+
 }
