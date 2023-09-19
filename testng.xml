@@ -12,7 +12,7 @@
                             <class name="TestCases.TestCustomers"></class>
                             <class name="TestCases.TestAddService"></class>
                             <class name="TestCases.TestAddMeter"></class>
-                            <class name="TestCases.TransactionsTest"></class>
+                            <class name="TestCases.PaymentViaCashTest"></class>
                             <class name="TestCases.Invoices"></class>
                             <class name="TestCases.CorrespondenceTest"></class>
                             <class name="TestCases.TestAddPlan"></class>
@@ -22,7 +22,13 @@
                             <class name="TestCases.MultipleCustomerBillRunTest"></class>
                             <class name="TestCases.Imports"></class>-->
 
-                            <class name="TestCases.PaymentViaCreditCardTest"></class>
+
+
+            <!-- https://dev01.utilitybilling.com/marketdev/   -->
+            <class name="TestCases.TokenTest"></class>
+            <class name="TestCases.PaymentViaCashTest"></class>
+            <class name="TestCases.PaymentViaCreditCardTest"></class>
+            <class name="TestCases.PaymentViaBankAccountTest"></class>
 
 
         </classes>

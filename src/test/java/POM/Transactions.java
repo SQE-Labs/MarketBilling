@@ -42,6 +42,10 @@ public class Transactions extends TestLogin {
     public static By invalidCvvTxt = By.xpath("//div[@class='wpwl-hint wpwl-hint-cvvError']");
     public static By transactionTypeText = By.xpath("//tbody/tr[1]//td[4]");
     public static By requestTimeout = By.xpath("//p[@class='errorTransMsg']");
+    public static By paymentTypeText = By.xpath("//tbody/tr[1]//td[5]");
+    public static By amountInformationText = By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By amountTxt = By.xpath("//tbody/tr[1]//td[6]");
+    public static By duplicateErrorText = By.xpath("(//p[@class='error'])[1]");
 
 
 
@@ -57,7 +61,6 @@ public class Transactions extends TestLogin {
         WebDriverWaits.ClickOn(makePayment);
         try {
             WebDriverWaits.ClickOn(ok);
-
         } catch (Exception e) {
 
         }
@@ -73,6 +76,59 @@ public class Transactions extends TestLogin {
         WebDriverWaits.ClickOn(transactionDate);
         WebDriverWaits.ClickOn(activeDate);
         WebDriverWaits.ClickOn(allowDupes);
+        WebDriverWaits.scrollIntoView(comments);
+        WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
+        WebDriverWaits.scrollIntoView(makePayment);
+        WebDriverWaits.ClickOn(makePayment);
+        WebDriverWaits.ClickOn(ok);
+
+    }
+
+    public static void make_Payment_Cash(String trxnType, String payMethod) throws InterruptedException {
+        WebDriverWaits.ClickOn(transactionTab);
+        WebDriverWaits.selectByVisibleText(transactionType, trxnType);
+        WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
+        String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
+       // WebDriverWaits.SendKeys(amount, RandomAmount);
+        WebDriverWaits.ClickOn(transactionDate);
+        WebDriverWaits.ClickOn(activeDate);
+        WebDriverWaits.ClickOn(allowDupes);
+        WebDriverWaits.scrollIntoView(comments);
+        WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
+        WebDriverWaits.scrollIntoView(makePayment);
+        WebDriverWaits.ClickOn(makePayment);
+       // WebDriverWaits.ClickOn(ok);
+
+    }
+
+    public static void make_Payment_Cash_Allowed(String trxnType, String payMethod,String amountText) throws InterruptedException {
+        WebDriverWaits.ClickOn(transactionTab);
+        WebDriverWaits.selectByVisibleText(transactionType, trxnType);
+        WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
+       // String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
+       // WebDriverWaits.SendKeys(amount, RandomAmount);
+        WebDriverWaits.SendKeys(amount,amountText);
+        WebDriverWaits.ClickOn(transactionDate);
+        WebDriverWaits.ClickOn(activeDate);
+        WebDriverWaits.ClickOn(allowDupes);
+        WebDriverWaits.scrollIntoView(comments);
+        WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
+        WebDriverWaits.scrollIntoView(makePayment);
+        WebDriverWaits.ClickOn(makePayment);
+        WebDriverWaits.ClickOn(ok);
+
+    }
+
+    public static void make_Payment_Cash_NotAllowed(String trxnType, String payMethod,String amountText) throws InterruptedException {
+        WebDriverWaits.ClickOn(transactionTab);
+        WebDriverWaits.selectByVisibleText(transactionType, trxnType);
+        WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
+       // String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
+        // WebDriverWaits.SendKeys(amount, RandomAmount);
+        WebDriverWaits.SendKeys(amount,amountText);
+        WebDriverWaits.ClickOn(transactionDate);
+        WebDriverWaits.ClickOn(activeDate);
+        //WebDriverWaits.ClickOn(allowDupes);
         WebDriverWaits.scrollIntoView(comments);
         WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
         WebDriverWaits.scrollIntoView(makePayment);
@@ -135,6 +191,33 @@ public class Transactions extends TestLogin {
         String actual = WebDriverWaits.GetText(transactionTypeText);
         Assert.assertEquals(actual, expected);
         switchToWindow();
+    }
+
+    public static void verify_CashPaySuccess_MSG(String expected) throws InterruptedException {
+        Thread.sleep(1000);
+        String actual = WebDriverWaits.GetText(paymentTypeText);
+        Assert.assertEquals(actual, expected);
+    }
+
+    public static void verify_Amount_Validation_MSG(String expected) throws InterruptedException {
+        Thread.sleep(1000);
+        String actual = WebDriverWaits.GetText(amountInformationText);
+        Assert.assertEquals(actual, expected);
+
+    }
+
+    public static void verify_Allow_DuplicateTXN(String expected) throws InterruptedException {
+        Thread.sleep(1000);
+        String actual = WebDriverWaits.GetText(amountTxt);
+        Assert.assertEquals(actual, expected);
+
+    }
+
+    public static void verify_NotAllowed_DuplicateTXN(String expected) throws InterruptedException {
+        Thread.sleep(1000);
+        String actual = WebDriverWaits.GetText(duplicateErrorText);
+        Assert.assertEquals(actual, expected);
+
     }
 
     public static void verify_TimeoutValidation_MSG(String expected) throws InterruptedException {

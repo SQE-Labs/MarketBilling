@@ -13,7 +13,7 @@ public class PaymentViaBankAccountTest extends BaseTest {
     public void valid_BankAccountDetails() throws InterruptedException {
         extentTest = extent.startTest("valid_BankAccountDetails");
         extentTest.setDescription("Verify payment status on entering valid bank account details");
-        Login.ValidLogin();
+        //Login.ValidLogin();
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.payment_ViaBankAccount("Payment","Bank Account","021000021","Personal Savings","1368513884","Victoria","CA","91001");
 

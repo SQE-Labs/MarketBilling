@@ -12,7 +12,7 @@ public class PaymentViaCreditCardTest extends BaseTest {
     public void valid_CreditCardDetails() throws InterruptedException {
         extentTest = extent.startTest("valid_CreditCardDetails");
         extentTest.setDescription("Verify payment status on entering valid credit card details");
-        Login.ValidLogin();
+       // Login.ValidLogin();
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.payment_ViaCreditCard("Payment", "Credit Card","4200000000000000","03/34","543","");
         Transactions.verify_PaymentSuccess_MSG("Payment received");
