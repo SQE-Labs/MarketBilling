@@ -13,8 +13,11 @@ public class TestAutoDueDate extends BaseTest {
 	public void BillRun_after_EnableDueDate_CalendarDays() throws InterruptedException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_CalendarDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
+		Login.ValidLogin();
 		AdminGroup.M_EnableDueDate("Calendar days");
+
 		String customerId = Customer.createCustomer("Tenant", "Residential", "business123@yopmail.com");
+
 		String serviceId = Services.M_AddService(customerId);
 		Services.EditService();
 		String meterId = Metering.AddMeter();

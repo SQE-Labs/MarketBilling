@@ -20,13 +20,14 @@
 <!--            future energy-->
                     <class name="TestCases.MultipleCustomerBillRunTest"></class>
             <!--    <class name="TestCases.TestNewBillRun"></class>-->
+            <!--            <class name="TestCases.TestAutoDueDate"></class>-->
+
 
 
             <!--            <class name="TestCases.TestSingleCustomerBillRun"></class>-->
-            <!--            <class name="TestCases.TestAutoDueDate"></class>-->
 <!--            <class name="TestCases.TestAddPlan"></class>&ndash;&gt;-->
             <!--            <class name="TestCases.Imports"></class>-->
-            <!--            <class name="TestCases.PaymentTest"></class>-->
+
 
         </classes>
 

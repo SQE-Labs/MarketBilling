@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import static BrowsersBase.BrowsersInvoked.driver;
-import static POM.Flow5_AddCustomer.CustomerID01R;
+import static POM.Flow5_AddCustomer.*;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchField;
 import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon;
 import static POM.GroupEdit.softAssert;
@@ -132,6 +132,106 @@ public class Customer {
         return customerId ;
 
     }
+
+    public static String createCustomer1(String type, String category, String email) throws InterruptedException {
+        driver.get(DataInterface.URL);
+        Thread.sleep(3000);
+        //Account Type
+        WebDriverWaits.ClickOn(CustomerIcontab);
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+        Select select = new Select(TenantOption);
+        select.selectByVisibleText(type);
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(ResidentialOption);
+        select.selectByVisibleText(category);
+        //Contact Details
+        if (category.equals("Business" )|| category.equals( "Commercial")) {
+            addBusinessDetails();
+        }
+        addContactDetails(email);
+        addAccountManagement(category);
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+        Thread.sleep(2000);
+        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
+        changeCustomerStatus();
+        String customerId=searchRecentCustomer();
+        System.out.println("CustomerId generated ------"+customerId);
+        return CustomerID01R ;
+
+    }
+
+    public static String createCustomer2(String type, String category, String email) throws InterruptedException {
+        driver.get(DataInterface.URL);
+        Thread.sleep(3000);
+        //Account Type
+        WebDriverWaits.ClickOn(CustomerIcontab);
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+        Select select = new Select(TenantOption);
+        select.selectByVisibleText(type);
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(ResidentialOption);
+        select.selectByVisibleText(category);
+        //Contact Details
+        if (category.equals("Business" )|| category.equals( "Commercial")) {
+            addBusinessDetails();
+        }
+        addContactDetails(email);
+        addAccountManagement(category);
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+        Thread.sleep(2000);
+        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
+        changeCustomerStatus();
+        String customerId=searchRecentCustomer();
+        System.out.println("CustomerId generated ------"+customerId);
+        return CustomerID02B ;
+
+    }
+
+    public static String createCustomer3(String type, String category, String email) throws InterruptedException {
+        driver.get(DataInterface.URL);
+        Thread.sleep(3000);
+        //Account Type
+        WebDriverWaits.ClickOn(CustomerIcontab);
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+        Select select = new Select(TenantOption);
+        select.selectByVisibleText(type);
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(ResidentialOption);
+        select.selectByVisibleText(category);
+        //Contact Details
+        if (category.equals("Business" )|| category.equals( "Commercial")) {
+            addBusinessDetails();
+        }
+        addContactDetails(email);
+        addAccountManagement(category);
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+        Thread.sleep(2000);
+        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
+        changeCustomerStatus();
+        String customerId=searchRecentCustomer();
+        System.out.println("CustomerId generated ------"+customerId);
+        return CustomerID03C ;
+
+    }
+
 
     public static void addContactDetails(String email) throws InterruptedException {
         WebDriverWaits.ClickOn(Address1field);

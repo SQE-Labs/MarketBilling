@@ -4,6 +4,7 @@ import CommonMethods.BaseTest;
 import POM.*;
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +14,12 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
 	public String billRunCycle;
-	@Test(priority = 0,enabled = true)  // cannot automate because this depricated
+	@Test(priority = 0,enabled = false)  // cannot automate because this depricated
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
 
-	//	Login.loginWithGroupName("Markettest8887");
+		Login.loginWithGroupName("Markettest8887");
 
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
 		String serviceId=Services.M_AddService(customerId);
@@ -27,45 +28,51 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
-		//BillRunTest.BillrunMethod_NoCycle();
+		BillRun.BillrunMethod_NoCycle();
 
 	}
 
 	@Test(priority = 1,enabled = true)
-	public  void BillRunWithUncommittedStatement() throws InterruptedException {
+	public  void BillRunWithUncommittedStatement() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
+		Login.loginWithGroupName("Markettest8887");
+
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService1(customerId);
+		String serviceId=Services.M_AddService(customerId);
 		Services.EditService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
-	//	String billRunCycle= BillRunTest.BillRunCycle(customerId);
-	//	BillRunTest.SmallBillRunWithSingleCustomer(billRunCycle);
-	//	BillRunTest.BillRunWithUncommittedStatement(billRunCycle,customerId);
+		String billRunCycle= BillRun.BillRunCycle(customerId);
+		BillRun.SmallBillRunWithSingleCustomer(billRunCycle);
+		BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
-	@Test(priority = 2,enabled = true)
+	@Test(priority = 2,enabled = false)
 	public  void TestLargeBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
+		String CustomerID01R = Customer.createCustomer1("Tenant", "Business", "business123@yopmail.com");
+		String CustomerID02B = Customer.createCustomer2("Tenant", "Business", "business123@yopmail.com");
+//		String CustomerID03C = Customer.createCustomer3("Tenant", "Business", "business123@yopmail.com");
+		Login.ValidLogin();
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(CustomerID01R);
 		customerList.add(CustomerID02B);
-		customerList.add(CustomerID03C);
-	//	String billRunCycleName= BillRunTest.createBillCycle(customerList);
-	//	BillRunTest.runBillCycle(billRunCycleName);
+	//	customerList.add(CustomerID03C);
+		String billRunCycleName= BillRun.createBillCycle(customerList);
+		BillRun.runBillCycle(billRunCycleName);
 	}
 	@Test(priority = 3,enabled = true)
 	public  void TwoCustomerBillRun() throws InterruptedException {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
-		//Login.loginWithGroupName("Testing1228");
+		Login.loginWithGroupName("Markettest8887");
 
 		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		 String serviceId=Services.M_AddService2(customerId);
+		 String serviceId=Services.M_AddService1(customerId);
 		Services.EditService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
@@ -82,15 +89,15 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		customerList.add(customerId2);
-	//	billRunCycle= BillRunTest.createBillCycle(customerList);
-	//	BillRunTest.runBillCycleForRollBack(billRunCycle);
+		billRunCycle= BillRun.createBillCycle(customerList);
+		BillRun.runBillCycleForRollBack(billRunCycle);
 
 	}
 	@Test(priority = 4,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-	//	BillRunTest.rollback();
+		BillRun.rollback();
 	}
 	@Test(priority = 5,enabled = true)
 	public  void TwoCustomer_ReBill() throws InterruptedException {
@@ -99,21 +106,21 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		customerList.add(customerId2);
-	//	BillRunTest.runBillCycle(billRunCycle);
+		BillRun.runBillCycle(billRunCycle);
 
 	}
 	@Test(priority = 6,enabled = true)
 	public  void TwoCustomer_FullStatementRollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-	//	BillRunTest.rollback_in_statementTab(customerId2);
+		BillRun.rollback_in_statementTab(customerId2);
 	}
 	@Test(priority = 7,enabled = true)
 	public  void TwoCustomer_RebillStatement() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rebill ");
 		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
-		//String customerId2="40975";
-	//	BillRunTest.statementRebill(customerId2);
+		String customerId2="40975";
+		BillRun.statementRebill(customerId2);
 	}
 
 }
