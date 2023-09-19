@@ -1087,6 +1087,7 @@ public class BillRun extends TestLogin {
     public void reBillRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
         clickOnBillRunTab();
+        Thread.sleep(1000);
         clickOnRunTheBillsButton();
         selectBillRun();
         sendBillRun(Customer.CustomerFirstName);

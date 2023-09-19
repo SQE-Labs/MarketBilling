@@ -25,11 +25,11 @@
 
 
             <!-- https://dev01.utilitybilling.com/marketdev/   -->
+
             <class name="TestCases.TokenTest"></class>
             <class name="TestCases.PaymentViaCashTest"></class>
             <class name="TestCases.PaymentViaCreditCardTest"></class>
             <class name="TestCases.PaymentViaBankAccountTest"></class>
-
 
         </classes>
 
