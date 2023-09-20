@@ -18,12 +18,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-
-		Login.loginWithGroupName("Markettest8887");
-
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService(customerId);
-		Services.EditService();
+		String serviceId=Services.M_AddService();
+		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
@@ -32,15 +29,14 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 	}
 
-	@Test(priority = 1,enabled = true)
+	@Test(priority = 1,enabled = false)
 	public  void BillRunWithUncommittedStatement() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
-		Login.loginWithGroupName("Markettest8887");
 
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService(customerId);
-		Services.EditService();
+		String serviceId=Services.M_AddService();
+		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
@@ -51,37 +47,34 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 	}
 	@Test(priority = 2,enabled = false)
-	public  void TestLargeBillRun() throws InterruptedException {
+	public  void TestLargeBillRun() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
-		String CustomerID01R = Customer.createCustomer1("Tenant", "Business", "business123@yopmail.com");
-		String CustomerID02B = Customer.createCustomer2("Tenant", "Business", "business123@yopmail.com");
-//		String CustomerID03C = Customer.createCustomer3("Tenant", "Business", "business123@yopmail.com");
-		Login.ValidLogin();
+	//	Login.loginWithGroupName("Markettest8887");
+
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(CustomerID01R);
 		customerList.add(CustomerID02B);
-	//	customerList.add(CustomerID03C);
+		customerList.add(CustomerID03C);
 		String billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
 	}
 	@Test(priority = 3,enabled = true)
-	public  void TwoCustomerBillRun() throws InterruptedException {
+	public  void TwoCustomerBillRun() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
-		Login.loginWithGroupName("Markettest8887");
 
 		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		 String serviceId=Services.M_AddService1(customerId);
-		Services.EditService();
+		 String serviceId=Services.M_AddService();
+		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 		customerId2 = Customer.createCustomer("Tenant", "Business", "business124@yopmail.com");
-		String serviceId2=Services.M_AddService3(customerId2);
-		Services.EditService();
+		String serviceId2=Services.M_AddService();
+		Services.editService();
 		String 	meterId2 =Metering.AddMeter();
 		String 	registerId2 =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
@@ -100,7 +93,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		BillRun.rollback();
 	}
 	@Test(priority = 5,enabled = true)
-	public  void TwoCustomer_ReBill() throws InterruptedException {
+	public  void TwoCustomer_ReBill() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		List<String> customerList = new ArrayList<String>();

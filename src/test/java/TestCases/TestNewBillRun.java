@@ -18,8 +18,6 @@ public class TestNewBillRun extends BaseTest {
     public void createCustomer() {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
-//        Login.loginWithGroupName("Test Utilities");
-        Login.ValidLogin();
         Customer cust = new Customer();
         cust.createCustomer("12345678958", "456789145", "24 Railway Street", "Woondul", "Australia", "NSW", "4357");
         System.out.println("Texts match. Assertion passed.");

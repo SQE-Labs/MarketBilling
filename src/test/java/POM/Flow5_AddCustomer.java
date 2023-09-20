@@ -1,6 +1,7 @@
 package POM;
 //import java.util.List;
 
+import TestCases.TestLogin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -11,8 +12,8 @@ import BrowsersBase.DataInterface;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 
-import POM.Flow6_7AddingServiceAndMeter.X_AddService;
-import TestCases.TestLogin;
+//import POM.Flow6_7AddingServiceAndMeter.X_AddService;
+//import TestCases.TestLogin;
 //import junit.framework.Assert;
 
 public class Flow5_AddCustomer extends TestLogin {
@@ -180,9 +181,9 @@ public class Flow5_AddCustomer extends TestLogin {
             WebDriverWaits.ClickOn(Closepopup_icon);
             driver.navigate().to(DataInterface.AdminURL);
             Thread.sleep(8000);
-            WebDriverWaits.ClickOn(X_AddService.SearchIcon);
+            WebDriverWaits.ClickOn(Services.SearchIcon);
             Thread.sleep(4000);
-            CustomerID01R = WebDriverWaits.GetText(X_AddService.selectBusinessCustomer_Record1);
+            CustomerID01R = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
 
         }
 
@@ -354,9 +355,9 @@ public class Flow5_AddCustomer extends TestLogin {
             WebDriverWaits.ClickOn(Closepopup_icon);
             driver.navigate().to(DataInterface.AdminURL);
             Thread.sleep(8000);
-            WebDriverWaits.ClickOn(X_AddService.SearchIcon);
+            WebDriverWaits.ClickOn(Services.SearchIcon);
             Thread.sleep(3000);
-            CustomerID02B = WebDriverWaits.GetText(X_AddService.selectBusinessCustomer_Record1);
+            CustomerID02B = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
 
         }
     }
@@ -519,9 +520,9 @@ public class Flow5_AddCustomer extends TestLogin {
 
             driver.navigate().to(DataInterface.AdminURL);
             Thread.sleep(8000);
-            WebDriverWaits.ClickOn(X_AddService.SearchIcon);
+            WebDriverWaits.ClickOn(Services.SearchIcon);
             Thread.sleep(3000);
-            CustomerID03C = WebDriverWaits.GetText(X_AddService.selectBusinessCustomer_Record1);
+            CustomerID03C = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
 
         }
     }

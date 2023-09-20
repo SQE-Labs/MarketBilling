@@ -22,16 +22,17 @@ public class TestAddService extends BaseTest {
     public void AddResidentialService() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
-     //  Login.loginWithGroupName("Test Utilities");
+       // Login.validLogin();
         Customer.searchCustomer(CustomerID01R);
-        Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
+        Services.M_AddService();
     }
 
     @Test(priority = 2)
     public void EditResidentialService() throws InterruptedException {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.EditService();
+       // Login.validLogin();
+        Services.editService();
     }
 
     @Test(priority = 3)
@@ -52,9 +53,8 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
         Customer.searchCustomer(CustomerID02B);
-
-        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
-        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
+        Services.M_AddService();
+        Services.editService();
         Metering metering = new Metering();
         metering.AddMeter();
         metering.createRegister();
@@ -69,18 +69,20 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.searchCustomer(CustomerID03C);
-        Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
-        Flow6_7AddingServiceAndMeter.X_AddService.EditThirdService();
-       // Metering metering = new Metering();
-     //   metering.AddMeter();
-     //   metering.createRegister();
+        Services.M_AddService();
+        Services.editService();
+        Metering metering = new Metering();
+        metering.AddMeter();
+        metering.createRegister();
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
 
     }
     @Test(priority = 6,enabled=false)
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
-   //     AddSitePlans.addSitePlan();
+      //  AddSitePlans.addSitePlan();
 
     }
 

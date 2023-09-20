@@ -11,8 +11,8 @@ import org.testng.asserts.SoftAssert;
 
 import static BrowsersBase.BrowsersInvoked.driver;
 import static POM.Flow5_AddCustomer.*;
-import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchField;
-import static POM.Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon;
+import static POM.Services.SearchField;
+import static POM.Services.SearchIcon;
 import static POM.GroupEdit.softAssert;
 
 public class Customer {
@@ -122,115 +122,21 @@ public class Customer {
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(SaveCustomerButton);
         WebDriverWaits.ClickOn(SaveOnlyButton);
+
+        //verify customer creation success message.
         Thread.sleep(2000);
         String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
-        changeCustomerStatus();
+        //changeCustomerStatus();
         String customerId=searchRecentCustomer();
         System.out.println("CustomerId generated ------"+customerId);
         return customerId ;
 
     }
 
-    public static String createCustomer1(String type, String category, String email) throws InterruptedException {
-        driver.get(DataInterface.URL);
-        Thread.sleep(3000);
-        //Account Type
-        WebDriverWaits.ClickOn(CustomerIcontab);
-        WebDriverWaits.ClickOn(CustomerTypedropdown);
-        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
-        Select select = new Select(TenantOption);
-        select.selectByVisibleText(type);
-        WebDriverWaits.ClickOn(Categorydropdown);
-        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
-        select = new Select(ResidentialOption);
-        select.selectByVisibleText(category);
-        //Contact Details
-        if (category.equals("Business" )|| category.equals( "Commercial")) {
-            addBusinessDetails();
-        }
-        addContactDetails(email);
-        addAccountManagement(category);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        WebDriverWaits.ClickOn(SaveCustomerButton);
-        WebDriverWaits.ClickOn(SaveOnlyButton);
-        Thread.sleep(2000);
-        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
-        changeCustomerStatus();
-        String customerId=searchRecentCustomer();
-        System.out.println("CustomerId generated ------"+customerId);
-        return CustomerID01R ;
 
-    }
 
-    public static String createCustomer2(String type, String category, String email) throws InterruptedException {
-        driver.get(DataInterface.URL);
-        Thread.sleep(3000);
-        //Account Type
-        WebDriverWaits.ClickOn(CustomerIcontab);
-        WebDriverWaits.ClickOn(CustomerTypedropdown);
-        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
-        Select select = new Select(TenantOption);
-        select.selectByVisibleText(type);
-        WebDriverWaits.ClickOn(Categorydropdown);
-        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
-        select = new Select(ResidentialOption);
-        select.selectByVisibleText(category);
-        //Contact Details
-        if (category.equals("Business" )|| category.equals( "Commercial")) {
-            addBusinessDetails();
-        }
-        addContactDetails(email);
-        addAccountManagement(category);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        WebDriverWaits.ClickOn(SaveCustomerButton);
-        WebDriverWaits.ClickOn(SaveOnlyButton);
-        Thread.sleep(2000);
-        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
-        changeCustomerStatus();
-        String customerId=searchRecentCustomer();
-        System.out.println("CustomerId generated ------"+customerId);
-        return CustomerID02B ;
-
-    }
-
-    public static String createCustomer3(String type, String category, String email) throws InterruptedException {
-        driver.get(DataInterface.URL);
-        Thread.sleep(3000);
-        //Account Type
-        WebDriverWaits.ClickOn(CustomerIcontab);
-        WebDriverWaits.ClickOn(CustomerTypedropdown);
-        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
-        Select select = new Select(TenantOption);
-        select.selectByVisibleText(type);
-        WebDriverWaits.ClickOn(Categorydropdown);
-        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
-        select = new Select(ResidentialOption);
-        select.selectByVisibleText(category);
-        //Contact Details
-        if (category.equals("Business" )|| category.equals( "Commercial")) {
-            addBusinessDetails();
-        }
-        addContactDetails(email);
-        addAccountManagement(category);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        WebDriverWaits.ClickOn(SaveCustomerButton);
-        WebDriverWaits.ClickOn(SaveOnlyButton);
-        Thread.sleep(2000);
-        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
-        changeCustomerStatus();
-        String customerId=searchRecentCustomer();
-        System.out.println("CustomerId generated ------"+customerId);
-        return CustomerID03C ;
-
-    }
 
 
     public static void addContactDetails(String email) throws InterruptedException {
@@ -441,6 +347,355 @@ public class Customer {
         String Expectedmsg="Successfully saved customer.";
         softAssert.assertAll();
     }
+    public static void FirstResidentialCustomer() throws InterruptedException {
+        SoftAssert softAssert = new SoftAssert();
+        driver.navigate().refresh();
+        Thread.sleep(3000);
+        WebDriverWaits.ClickOn(CustomerIcontab);
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement TenantOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+//					driver.findElement(CustomerTypedropdown);
+        Select select = new Select(TenantOption);
+        select.selectByVisibleText("Tenant");
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement ResidentialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(ResidentialOption);
+        select.selectByVisibleText("Residential");
+        WebDriverWaits.ClickOn(Address1field);
+        WebDriverWaits.SendKeys(Address1field, "Madirma R-Town");
+        WebDriverWaits.ClickOn(Cityfield);
+        WebDriverWaits.SendKeys(Cityfield, "Mills NY");
+        WebDriverWaits.ClickOn(Statedropdown);
+        WebElement WAOption = WebDriverWaits.WaitUntilVisibleWE(Statedropdown);
+        select = new Select(WAOption);
+        select.selectByVisibleText("WA");
+        WebDriverWaits.ClickOn(PostalCodefield);
+        WebDriverWaits.SendKeys(PostalCodefield, "1265");
+        jse.executeScript("window.scrollBy(0,500)", "");
+        WebDriverWaits.ClickOn(TitleDropdown);
+        WebElement DrOption = WebDriverWaits.WaitUntilVisibleWE(TitleDropdown);
+        select = new Select(DrOption);
+        select.selectByVisibleText("Dr.");
+
+        WebDriverWaits.ClickOn(GivenNameField);
+        RandomName1 = RandomStrings.RequiredCharacters(6);
+        WebDriverWaits.SendKeys(GivenNameField, RandomName1);
+        //WebDriverWaits.SendKeys(GivenNameField, "Babar");
+
+        WebDriverWaits.ClickOn(SurnameField);
+        RandomName2 = RandomStrings.RequiredCharacters(6);
+        Thread.sleep(2000);
+        WebDriverWaits.SendKeys(SurnameField, RandomName2);
+        //WebDriverWaits.SendKeys(SurnameField, "Asam");
+
+        WebDriverWaits.ClickOn(PhoneBHField);
+        String RandomNumber = "4" + RandomStrings.RequiredDigits(8);
+        WebDriverWaits.SendKeys(PhoneBHField, RandomNumber);
+
+        Thread.sleep(2000);
+
+        jse.executeScript("window.scrollBy(0,200)", "");
+
+        Thread.sleep(1000);
+
+        WebDriverWaits.ClickOn(EmailField);
+        WebDriverWaits.SendKeys(EmailField, "test_Resdnt2@yopmail.com");
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        Thread.sleep(1000);
+
+        WebDriverWaits.ClickOn(AccountManagementSection);
+
+        Thread.sleep(1000);
+
+        jse.executeScript("window.scrollBy(0,300)", "");
+
+        WebDriverWaits.ClickOn(ContractStartDate_Datepicker);
+        WebDriverWaits.ClickOn(CurrentDate);
+
+        WebDriverWaits.ClickOn(ContractTerm_Field);
+        WebDriverWaits.SendKeys(ContractTerm_Field, "10");
 
 
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+        Thread.sleep(2000);
+        String ActualMsg = WebDriverWaits.GetText(CustomerSuccessMsg);
+        String ExpectedMsg1 = "Successfully saved customer.";
+        softAssert.assertEquals(ExpectedMsg1, ActualMsg);
+        System.out.println("Successfully saved customer");
+
+        Thread.sleep(4000);
+
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(ChangeStatusButton);
+        WebDriverWaits.ClickOn(NewStatusDropdown);
+        WebElement ActiveOption = WebDriverWaits.WaitUntilVisibleWE(NewStatusDropdown);
+        select = new Select(ActiveOption);
+        select.selectByVisibleText("Active");
+
+        WebDriverWaits.ClickOn(ReasonforchangeField);
+        WebDriverWaits.SendKeys(ReasonforchangeField, "Only For testing Residential Type of Category");
+
+        WebDriverWaits.ClickOn(Save_button_on_popup);
+
+        String ExpectedMsg2 = "Status change successful.";
+        softAssert.assertEquals(ExpectedMsg2, "Status change successful.");
+        System.out.println("Status change successful.");
+
+        Thread.sleep(4000);
+
+        WebDriverWaits.ClickOn(Closepopup_icon);
+        driver.navigate().to(DataInterface.AdminURL);
+        Thread.sleep(8000);
+        WebDriverWaits.ClickOn(Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon);
+        Thread.sleep(4000);
+        CustomerID01R = WebDriverWaits.GetText(Flow6_7AddingServiceAndMeter.X_AddService.selectBusinessCustomer_Record1);
+
+    }
+
+    public static void SecondBusinessCustomer() throws InterruptedException {
+        SoftAssert softAssert = new SoftAssert();
+
+        WebDriverWaits.ClickOn(CustomerIcontab);
+
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement OtherOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+        Select select = new Select(OtherOption);
+        select.selectByVisibleText("Others");
+
+//				softAssert.assertTrue(TenantText.equals("Tenant"));
+        softAssert.assertAll();
+
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement BusinessOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(BusinessOption);
+        select.selectByVisibleText("Business");
+
+        WebDriverWaits.ClickOn(Address1field);
+        WebDriverWaits.SendKeys(Address1field, "Madirma B-Town");
+
+        WebDriverWaits.ClickOn(Cityfield);
+        WebDriverWaits.SendKeys(Cityfield, "Saint Augustine");
+
+        WebDriverWaits.ClickOn(Statedropdown);
+        WebElement TASOption = WebDriverWaits.WaitUntilVisibleWE(Statedropdown);
+        select = new Select(TASOption);
+        select.selectByVisibleText("TAS");
+
+        WebDriverWaits.ClickOn(PostalCodefield);
+        WebDriverWaits.SendKeys(PostalCodefield, "6541");
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        WebDriverWaits.ClickOn(FirstCustomer.CompanyNameField);
+        WebDriverWaits.SendKeys(FirstCustomer.CompanyNameField, "FranklinCovey");
+
+        WebDriverWaits.ClickOn(ABNField);
+        WebDriverWaits.SendKeys(ABNField, "32165485216");
+        Thread.sleep(2000);
+        jse.executeScript("window.scrollBy(0,650)", "");
+
+        WebDriverWaits.ClickOn(TitleDropdown);
+        WebElement DrOption = WebDriverWaits.WaitUntilVisibleWE(TitleDropdown);
+        select = new Select(DrOption);
+        select.selectByVisibleText("Dr.");
+
+        WebDriverWaits.ClickOn(GivenNameField);
+        RandomName3 = RandomStrings.RequiredCharacters(6);
+        WebDriverWaits.SendKeys(GivenNameField, RandomName3);
+        //WebDriverWaits.SendKeys(GivenNameField, "Moien");
+
+        WebDriverWaits.ClickOn(SurnameField);
+        RandomName4 = RandomStrings.RequiredCharacters(6);
+        WebDriverWaits.SendKeys(SurnameField, RandomName4);
+        //WebDriverWaits.SendKeys(SurnameField, "Alli");
+
+        WebDriverWaits.ClickOn(PhoneBHField);
+        String RandomNumber = "4" + RandomStrings.RequiredDigits(8);
+        WebDriverWaits.SendKeys(PhoneBHField, RandomNumber);
+
+        jse.executeScript("window.scrollBy(0,300)", "");
+
+        WebDriverWaits.ClickOn(EmailField);
+        WebDriverWaits.SendKeys(EmailField, "testBusiness@yopmail.com");
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        WebDriverWaits.ClickOn(AccountManagementSection);
+
+        jse.executeScript("window.scrollBy(0,300)", "");
+
+        WebDriverWaits.ClickOn(ContractStartDate_Datepicker);
+        WebDriverWaits.ClickOn(CurrentDate);
+
+        WebDriverWaits.ClickOn(ContractTerm_Field);
+        WebDriverWaits.SendKeys(ContractTerm_Field, "10");
+
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+
+        String ExpectedMsg2 = "Successfully saved customer";
+        softAssert.assertEquals(ExpectedMsg2, "Successfully saved customer");
+        System.out.println("Successfully saved customer");
+
+        Thread.sleep(4000);
+
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(ChangeStatusButton);
+
+        // popup assertion
+
+        WebDriverWaits.ClickOn(NewStatusDropdown);
+        Thread.sleep(3000);
+        WebElement ActiveOption = WebDriverWaits.WaitUntilVisibleWE(NewStatusDropdown);
+        select = new Select(ActiveOption);
+        select.selectByVisibleText("Active");
+
+        WebDriverWaits.ClickOn(ReasonforchangeField);
+        WebDriverWaits.SendKeys(ReasonforchangeField, "Only For testing Residential Type of Category");
+
+        WebDriverWaits.ClickOn(Save_button_on_popup);
+
+        String ExpectedMsg4 = "Status change successful.";
+        softAssert.assertEquals(ExpectedMsg4, "SStatus change successful.");
+        System.out.println("Status change successful.");
+
+        Thread.sleep(4000);
+
+        WebDriverWaits.ClickOn(Closepopup_icon);
+        driver.navigate().to(DataInterface.AdminURL);
+        Thread.sleep(8000);
+        WebDriverWaits.ClickOn(Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon);
+        Thread.sleep(3000);
+        CustomerID02B = WebDriverWaits.GetText(Flow6_7AddingServiceAndMeter.X_AddService.selectBusinessCustomer_Record1);
+
+    }
+    public static void ThirdCommercialCustomer() throws InterruptedException {
+        SoftAssert softAssert = new SoftAssert();
+
+        WebDriverWaits.ClickOn(CustomerIcontab);
+
+        WebDriverWaits.ClickOn(CustomerTypedropdown);
+        WebElement OtherOption = WebDriverWaits.WaitUntilVisibleWE(CustomerTypedropdown);
+        Select select = new Select(OtherOption);
+        select.selectByVisibleText("Others");
+
+//						softAssert.assertTrue(TenantText.equals("Tenant"));
+        softAssert.assertAll();
+
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebElement CommercialOption = WebDriverWaits.WaitUntilVisibleWE(Categorydropdown);
+        select = new Select(CommercialOption);
+        select.selectByVisibleText("Commercial");
+
+        WebDriverWaits.ClickOn(Address1field);
+        WebDriverWaits.SendKeys(Address1field, "Madirma B-Town");
+
+        WebDriverWaits.ClickOn(Cityfield);
+        WebDriverWaits.SendKeys(Cityfield, "Saint Augustine");
+
+        WebDriverWaits.ClickOn(Statedropdown);
+        WebElement TASOption = WebDriverWaits.WaitUntilVisibleWE(Statedropdown);
+        select = new Select(TASOption);
+        select.selectByVisibleText("QLD");
+
+        WebDriverWaits.ClickOn(PostalCodefield);
+        WebDriverWaits.SendKeys(PostalCodefield, "3546");
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        WebDriverWaits.ClickOn(FirstCustomer.CompanyNameField);
+        WebDriverWaits.SendKeys(FirstCustomer.CompanyNameField, "Testing Company SQE");
+
+        WebDriverWaits.ClickOn(ABNField);
+        WebDriverWaits.SendKeys(ABNField, "95623111254");
+        Thread.sleep(2000);
+        jse.executeScript("window.scrollBy(0,650)", "");
+
+        WebDriverWaits.ClickOn(TitleDropdown);
+        WebElement DrOption = WebDriverWaits.WaitUntilVisibleWE(TitleDropdown);
+        select = new Select(DrOption);
+        select.selectByVisibleText("Dr.");
+
+        WebDriverWaits.ClickOn(GivenNameField);
+        RandomName5 = RandomStrings.RequiredCharacters(6);
+        WebDriverWaits.SendKeys(GivenNameField, RandomName5);
+        //	WebDriverWaits.SendKeys(GivenNameField, "Siyon");
+
+        WebDriverWaits.ClickOn(SurnameField);
+        RandomName6 = RandomStrings.RequiredCharacters(6);
+        WebDriverWaits.SendKeys(SurnameField, RandomName6);
+        //WebDriverWaits.SendKeys(SurnameField, "mandis");
+
+        WebDriverWaits.ClickOn(PhoneBHField);
+        String RandomNumber = "4" + RandomStrings.RequiredDigits(8);
+        WebDriverWaits.SendKeys(PhoneBHField, RandomNumber);
+
+        jse.executeScript("window.scrollBy(0,300)", "");
+
+        WebDriverWaits.ClickOn(EmailField);
+        WebDriverWaits.SendKeys(EmailField, "testcommercial@yopmail.com");
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        // WebDriverWaits.ClickOn(AccountManagementSection);
+
+        jse.executeScript("window.scrollBy(0,400)", "");
+
+        Thread.sleep(1000);
+
+        WebDriverWaits.ClickOn(ContractStartDate_Datepicker);
+        WebDriverWaits.ClickOn(CurrentDate);
+
+        WebDriverWaits.ClickOn(ContractTerm_Field);
+        WebDriverWaits.SendKeys(ContractTerm_Field, "10");
+
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(SaveCustomerButton);
+        WebDriverWaits.ClickOn(SaveOnlyButton);
+
+        String ExpectedMsg5 = "Successfully saved customer";
+        softAssert.assertEquals(ExpectedMsg5, "Successfully saved customer");
+        System.out.println("Successfully saved customer");
+        Thread.sleep(4000);
+
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        WebDriverWaits.ClickOn(ChangeStatusButton);
+
+
+        WebDriverWaits.ClickOn(NewStatusDropdown);
+        WebElement ActiveOption = WebDriverWaits.WaitUntilVisibleWE(NewStatusDropdown);
+        select = new Select(ActiveOption);
+        select.selectByVisibleText("Active");
+
+        WebDriverWaits.ClickOn(ReasonforchangeField);
+        WebDriverWaits.SendKeys(ReasonforchangeField, "Only For testing Residential Type of Category");
+
+        WebDriverWaits.ClickOn(Save_button_on_popup);
+
+        String ExpectedMsg6 = "Status change successful.";
+        softAssert.assertEquals(ExpectedMsg6, "SStatus change successful.");
+        System.out.println("Status change successful.");
+
+        Thread.sleep(4000);
+
+        WebDriverWaits.ClickOn(Closepopup_icon);
+
+        driver.navigate().to(DataInterface.AdminURL);
+        Thread.sleep(8000);
+        WebDriverWaits.ClickOn(Flow6_7AddingServiceAndMeter.X_AddService.SearchIcon);
+        Thread.sleep(3000);
+        CustomerID03C = WebDriverWaits.GetText(Flow6_7AddingServiceAndMeter.X_AddService.selectBusinessCustomer_Record1);
+
+    }
 }

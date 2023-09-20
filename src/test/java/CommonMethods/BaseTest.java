@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -34,6 +35,12 @@ public class BaseTest extends BrowsersInvoked {
 	@AfterSuite
 	public void endReport() {
 	//	extent.flush();
+		extent.close();
+	}
+
+	@AfterClass
+	public void closeclass()
+	{
 		extent.close();
 	}
 

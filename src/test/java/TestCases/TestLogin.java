@@ -12,6 +12,6 @@ public class TestLogin extends BaseTest {
 	public static void ValidLogin() {
 		extentTest = extent.startTest(" ValidLogin ");
 		extentTest.setDescription(" Verify that User is able to login successfully. ");
-		Login.loginWithGroupName("Testing1228");
+		Login.validLogin();
 	}
 }

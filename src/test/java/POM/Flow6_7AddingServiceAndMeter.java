@@ -220,7 +220,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
         }
 
         public static void Service_MeterR() throws InterruptedException, AWTException {
-            X_AddService.M_AddService();
+         //   X_AddService.M_AddService();
             //X_AddService.EditService();
             //Metering.AddMeter();
             Thread.sleep(2000);
@@ -328,7 +328,7 @@ public class Flow6_7AddingServiceAndMeter extends TestLogin {
 //		}
 
         public static void Service_MeterB() throws InterruptedException, AWTException {
-            X_AddService.AddSecondService();
+      //      X_AddService.AddSecondService();
             //X_AddService.EditSecondService();
             //  Metering.AddMeter();
             Thread.sleep(2000);
