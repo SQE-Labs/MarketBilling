@@ -41,8 +41,8 @@ public class Flow5_AddCustomer extends TestLogin {
         public static By PostalCodefield = By.xpath("//*[@name='pcode']");
 
         // Company/Business Details
-        public static By CompanyNameField = By.xpath("//*[@id=\"company\"]");
-        public static By ABNField = By.xpath("//*[@id=\"abn\"]");
+        public static By CompanyNameField = By.xpath("//*[@id='category']");
+        public static By ABNField = By.xpath("//*[@id='abn']");
         // Contact Details
         public static By TitleDropdown = By.xpath("//*[@name='sal']");
         public static By GivenNameField = By.xpath("//*[@name='firstName']");

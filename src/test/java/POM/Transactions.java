@@ -3,10 +3,8 @@ package POM;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
-import org.apache.poi.ss.formula.atp.Switch;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 public class Transactions extends TestLogin {
 
@@ -19,9 +17,7 @@ public class Transactions extends TestLogin {
     public static By transactionDate = By.id("tranDate");
     public static By comments = By.id("comment");
     public static By makePayment = By.id("acms-submitBtn");
-    public static By viewHistory = By.id("historyRow");
     public static By ok = By.xpath("//*[contains(text(),'OK')]");
-    public static By cancel = By.xpath("//*[contains(text(),'Cancel')]");
     public static By allowDupes = By.name("allowDupes");
     public static By creditCardNumber = By.xpath("(//*[@name='card.number'])[1]");
     public static By expiryDate = By.xpath("//input[@class='wpwl-control wpwl-control-expiry']");
@@ -48,25 +44,6 @@ public class Transactions extends TestLogin {
     public static By duplicateErrorText = By.xpath("(//p[@class='error'])[1]");
 
 
-
-    public static void addPaymentDetails(String trxnType, String payMethod, String amt) throws InterruptedException {
-        WebDriverWaits.selectByVisibleText(transactionType, trxnType);
-        WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
-        WebDriverWaits.SendKeys(amount, amt);
-        WebDriverWaits.ClickOn(transactionDate);
-        WebDriverWaits.ClickOn(activeDate);
-        WebDriverWaits.ClickOn(allowDupes);
-        WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
-        WebDriverWaits.scrollIntoView(makePayment);
-        WebDriverWaits.ClickOn(makePayment);
-        try {
-            WebDriverWaits.ClickOn(ok);
-        } catch (Exception e) {
-
-        }
-
-    }
-
     public static void make_Payment(String trxnType, String payMethod) throws InterruptedException {
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
@@ -88,8 +65,6 @@ public class Transactions extends TestLogin {
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
-        String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
-       // WebDriverWaits.SendKeys(amount, RandomAmount);
         WebDriverWaits.ClickOn(transactionDate);
         WebDriverWaits.ClickOn(activeDate);
         WebDriverWaits.ClickOn(allowDupes);
@@ -97,7 +72,6 @@ public class Transactions extends TestLogin {
         WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
         WebDriverWaits.scrollIntoView(makePayment);
         WebDriverWaits.ClickOn(makePayment);
-       // WebDriverWaits.ClickOn(ok);
 
     }
 
@@ -105,8 +79,6 @@ public class Transactions extends TestLogin {
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
-       // String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
-       // WebDriverWaits.SendKeys(amount, RandomAmount);
         WebDriverWaits.SendKeys(amount,amountText);
         WebDriverWaits.ClickOn(transactionDate);
         WebDriverWaits.ClickOn(activeDate);
@@ -123,12 +95,9 @@ public class Transactions extends TestLogin {
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
-       // String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
-        // WebDriverWaits.SendKeys(amount, RandomAmount);
         WebDriverWaits.SendKeys(amount,amountText);
         WebDriverWaits.ClickOn(transactionDate);
         WebDriverWaits.ClickOn(activeDate);
-        //WebDriverWaits.ClickOn(allowDupes);
         WebDriverWaits.scrollIntoView(comments);
         WebDriverWaits.SendKeys(comments, trxnType + " " + payMethod);
         WebDriverWaits.scrollIntoView(makePayment);

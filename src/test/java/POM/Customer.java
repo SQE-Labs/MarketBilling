@@ -92,6 +92,7 @@ public class Customer {
     public static By saveButton = By.xpath("//a[text()=' Save Customer']");
     public static By saveOnlyButton = By.xpath("//button[text()='Save Only']");
     public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
+    public static By companyName = By.id("company");
     private static String CustomerID01R;
 
 
@@ -127,6 +128,7 @@ public class Customer {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(SUCCESS_MESG, ActualMsg);
         changeCustomerStatus();
+        Thread.sleep(2000);
         String customerId=searchRecentCustomer();
         System.out.println("CustomerId generated ------"+customerId);
         return customerId ;
@@ -144,6 +146,7 @@ public class Customer {
         select.selectByVisibleText("WA");
         WebDriverWaits.ClickOn(PostalCodefield);
         WebDriverWaits.SendKeys(PostalCodefield, "1265");
+        WebDriverWaits.SendKeys(companyName,"Traders");
         jse.executeScript("window.scrollBy(0,500)", "");
         WebDriverWaits.ClickOn(TitleDropdown);
         WebElement DrOption = WebDriverWaits.WaitUntilVisibleWE(TitleDropdown);
@@ -170,6 +173,7 @@ public class Customer {
     }
 
     public static void addBusinessDetails() throws InterruptedException {
+        Thread.sleep(5000);
         WebDriverWaits.ClickOn(Flow5_AddCustomer.FirstCustomer.CompanyNameField);
         WebDriverWaits.SendKeys(Flow5_AddCustomer.FirstCustomer.CompanyNameField, "FranklinCovey");
         jse.executeScript("window.scrollBy(0,400)", "");
@@ -208,7 +212,8 @@ public class Customer {
         WebDriverWaits.ClickOn(Closepopup_icon);
     }
     public static String searchRecentCustomer() throws InterruptedException {
-        driver.get(DataInterface.AdminURL);
+        driver.get(DataInterface.URL);
+     //   Login.ValidLogin();
         WebDriverWaits.ClickOn(SearchIcon);
         Thread.sleep(4000);
         return WebDriverWaits.GetText(Flow6_7AddingServiceAndMeter.X_AddService.selectBusinessCustomer_Record1);
@@ -220,8 +225,11 @@ public class Customer {
         String customerId=WebDriverWaits.GetText(Flow6_7AddingServiceAndMeter.X_AddService.selectBusinessCustomer_Record1);
         WebDriverWaits.SendKeys(SearchField,customerId);
         WebDriverWaits.ClickOn(SearchIcon);
+
         return  customerId;
     }
+
+
     public static void searchCustomer(String CustomerID01R) throws InterruptedException {
 
         LandingPage.navigateToHomePage();

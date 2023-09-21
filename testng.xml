@@ -8,7 +8,7 @@
         <!--        </packages>-->
         <classes>
 
-            <!--            <class name="TestCases.TestLogin"></class>
+                    <class name="TestCases.TestLogin"></class>
                             <class name="TestCases.TestCustomers"></class>
                             <class name="TestCases.TestAddService"></class>
                             <class name="TestCases.TestAddMeter"></class>
@@ -20,11 +20,7 @@
                             <class name="TestCases.TestSingleCustomerBillRun"></class>
                             <class name="TestCases.TestAutoDueDate"></class>
                             <class name="TestCases.MultipleCustomerBillRunTest"></class>
-                            <class name="TestCases.Imports"></class>-->
-
-
-
-            <!-- https://dev01.utilitybilling.com/marketdev/   -->
+                            <class name="TestCases.Imports"></class>
 
             <class name="TestCases.TokenTest"></class>
             <class name="TestCases.PaymentViaCashTest"></class>

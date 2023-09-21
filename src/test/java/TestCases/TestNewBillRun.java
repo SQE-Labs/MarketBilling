@@ -17,7 +17,6 @@ public class TestNewBillRun extends BaseTest {
     public void createCustomer() {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
-
         Customer cust = new Customer();
         Login.loginWithGroupName("Test Utilities");
         cust.createCustomer("12345678958", "456789145", "24 Railway Street", "Woondul", "Australia", "NSW", "4357");
