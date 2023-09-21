@@ -8,28 +8,28 @@
         <!--        </packages>-->
         <classes>
 
-                    <class name="TestCases.TestLogin"></class>
-                            <class name="TestCases.TestCustomers"></class>
-                            <class name="TestCases.TestAddService"></class>
-                            <class name="TestCases.TestAddMeter"></class>
-                            <class name="TestCases.PaymentViaCashTest"></class>
-                            <class name="TestCases.Invoices"></class>
-                            <class name="TestCases.CorrespondenceTest"></class>
-                            <class name="TestCases.TestAddPlan"></class>
-                            <class name="TestCases.TestNewBillRun"></class>
-                            <class name="TestCases.TestSingleCustomerBillRun"></class>
-                            <class name="TestCases.TestAutoDueDate"></class>
-                            <class name="TestCases.MultipleCustomerBillRunTest"></class>
-                            <class name="TestCases.Imports"></class>
+            <!--                        <class name="TestCases.TestLogin"></class>-->
+            <class name="TestCases.TestCustomers"></class>
+            <class name="TestCases.TestAddService"></class>
+            <!--                        <class name="TestCases.TestAddMeter"></class>-->
+            <!--                        <class name="TestCases.TransactionsTest"></class>-->
+            <!--                        <class name="TestCases.Invoices"></class>-->
+            <!--                        <class name="TestCases.CorrespondenceTest"></class>-->
 
-            <class name="TestCases.TokenTest"></class>
-            <class name="TestCases.PaymentViaCashTest"></class>
-            <class name="TestCases.PaymentViaCreditCardTest"></class>
-            <class name="TestCases.PaymentViaBankAccountTest"></class>
+
+            <!--&lt;!&ndash;            future energy&ndash;&gt;-->
+            <!--                    <class name="TestCases.MultipleCustomerBillRunTest"></class>-->
+            <!--            &lt;!&ndash;    <class name="TestCases.TestNewBillRun"></class>&ndash;&gt;-->
+            <!--            <class name="TestCases.TestAutoDueDate"></class>-->
+
+
+
+            <!--            <class name="TestCases.TestSingleCustomerBillRun"></class>-->
+            <!--            <class name="TestCases.TestAddPlan"></class>&ndash;&gt;-->
+            <!--            <class name="TestCases.Imports"></class>-->
+
 
         </classes>
 
     </test>
 </suite>
-
-

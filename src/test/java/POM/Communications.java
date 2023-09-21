@@ -25,56 +25,84 @@ public class Communications {
     public static By dateandTime = By.xpath("//tbody/tr[1]//td[7]");
 
     public static By addedBy = By.xpath("//tbody/tr[1]//td[8]");
+    public static By communicationsTab = By.xpath("//*[@id=\"content\"]/div[2]/div[1]/div/div/ul/li[13]/a");
+
     public static void clickNewCorrespondence() throws InterruptedException {
         WebDriverWaits.ClickOn(newCorrespondence);
     }
 
-    public void selectCorrespondenceType(String correspondenceTypeText) {
-        WebDriverWaits.selectByVisibleText(correspondenceType,correspondenceTypeText);
+    public static void clickCommunicationTab() throws InterruptedException {
+        WebDriverWaits.WaitUntilVisible(communicationsTab);
+        WebDriverWaits.ClickOn(communicationsTab);
     }
 
-    public void clickSendEmail() {
+
+    public static void enter_CorrespondenceDetails(String correspondenceTxt) throws InterruptedException {
+        clickCommunicationTab();
+        WebDriverWaits.ClickOn(newCorrespondence);
+        clickCommunicationTab();
+        clickNewCorrespondence();
+        selectCorrespondenceType(correspondenceTxt);
+        validateID();
+        clickSendEmail();
+        validateService();
+
+//        comm.validateStatus("Success");
+//        comm.validateEmail("residential123@yopmail.com");
+//        comm.validateType("Welcome Pack");
+//        comm.validateDateTime();
+//        comm.validateAddedBy("testreport+226@sqelabs.com");
+
+    }
+
+    public static void selectCorrespondenceType(String correspondenceTypeText) {
+        WebDriverWaits.selectByVisibleText(correspondenceType, correspondenceTypeText);
+    }
+
+    public static void clickSendEmail() {
         WebDriverWaits.ClickOn(sendEmailBtn);
     }
 
-    public void validateStatus(String statusText){
-        String actual =WebDriverWaits.GetText(status);
+    public void validateStatus(String statusText) {
+        String actual = WebDriverWaits.GetText(status);
         System.out.println(actual);
-        softAssert.assertEquals(actual,statusText);
+        softAssert.assertEquals(actual, statusText);
         softAssert.assertAll();
     }
 
-    public void validateEmail(String emailText){
-        String actual =WebDriverWaits.GetText(email);
+    public void validateEmail(String emailText) {
+        String actual = WebDriverWaits.GetText(email);
         System.out.println(actual);
-        softAssert.assertEquals(actual,emailText);
+        softAssert.assertEquals(actual, emailText);
         softAssert.assertAll();
 
     }
 
-    public void validateType(String typeText){
-        String actual =WebDriverWaits.GetText(type);
+    public void validateType(String typeText) {
+        String actual = WebDriverWaits.GetText(type);
         System.out.println(actual);
-        softAssert.assertEquals(actual,typeText);
+        softAssert.assertEquals(actual, typeText);
         softAssert.assertAll();
     }
 
-    public void validateDateTime(){
-        String actual =WebDriverWaits.GetText(dateandTime);
+    public void validateDateTime() {
+        String actual = WebDriverWaits.GetText(dateandTime);
         System.out.println(actual);
 
     }
-    public void validateID(){
-        String actual =WebDriverWaits.GetText(id);
-        System.out.println(actual);
-    }
-    public void validateService(){
-        String actual =WebDriverWaits.GetText(service);
+
+    public static void validateID() {
+        String actual = WebDriverWaits.GetText(id);
         System.out.println(actual);
     }
 
-    public void validateAddedBy(String addedByText){
-        String actual =WebDriverWaits.GetText(type);
-        softAssert.assertEquals(actual,addedByText);
+    public static void validateService() {
+        String actual = WebDriverWaits.GetText(service);
+        System.out.println(actual);
+    }
+
+    public void validateAddedBy(String addedByText) {
+        String actual = WebDriverWaits.GetText(type);
+        softAssert.assertEquals(actual, addedByText);
     }
 }

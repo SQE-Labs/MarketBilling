@@ -11,11 +11,13 @@ public class Templates extends BaseTest {
 
     public static By template = By.xpath("//i[@class='fa fa-pencil-square-o']");
 
-    public static By messageType = By.id("email_message_type");
+    public static By messageType = By.xpath("//*[@id=\"email_message_type\"]");
 
-    public static By emailFrom = By.id("email_rem_from");
+    public static By emailFrom = By.xpath("//*[@id=\"email_rem_from\"]");
 
-    public static By emailSubject = By.id("email_rem_subject");
+    public static By emailBcc = By.xpath("//*[@id=\"email_rem_bcc\"]");
+
+    public static By emailSubject = By.xpath("//*[@id=\"email_rem_subject\"]");
 
     public static By save = By.xpath("//button/span[text()='Save']");
 
@@ -62,39 +64,59 @@ public class Templates extends BaseTest {
         WebDriverWaits.ClickOn(crossPreview);
     }
 
-    public void selectMessageType(String mesgType) {
-        WebDriverWaits.selectByVisibleText(messageType,mesgType);
+    public static void selectMessageType(String mesgType) {
+        WebDriverWaits.WaitUntilVisible(messageType);
+        WebDriverWaits.selectByVisibleText(messageType, mesgType);
     }
 
-    public void selectEmailFrom(String emailText){
+    public static void enterEmailFrom(String emailText) {
         WebDriverWaits.SendKeys(emailFrom, emailText);
     }
 
-    public void enterEmailMessage(String emailMessageText) throws InterruptedException {
+    public static void enterEmailBcc(String emailText) {
+        WebDriverWaits.SendKeys(emailBcc, emailText);
+    }
+
+    public static void enterEmailMessage(String emailMessageText) throws InterruptedException {
         Thread.sleep(1000);
         WebDriverWaits.SendKeys(emailMessage, emailMessageText);
     }
 
-    public void enterSubject(String subjectText) {
+    public static void enterSubject(String subjectText) {
         WebDriverWaits.SendKeys(emailSubject, subjectText);
         WebDriverWaits.scrollIntoView(validate);
     }
 
     public void selectAttachLetter(String selectLetterText) throws InterruptedException {
         WebDriverWaits.ClickOn(attachCorrespondenceLetter);
-        WebDriverWaits.ClickOn(By.xpath("//ul/li/a/span[contains(text(),'"+selectLetterText+"')]"));
+        WebDriverWaits.ClickOn(By.xpath("//ul/li/a/span[contains(text(),'" + selectLetterText + "')]"));
     }
 
     public void selectFileAttachments(String selectValueText) {
         WebDriverWaits.ClickOn(fileAttachments);
-        WebDriverWaits.ClickOn(By.xpath("//ul/li/a/span[contains(text(),'"+selectValueText+"')]"));
+        WebDriverWaits.ClickOn(By.xpath("//ul/li/a/span[contains(text(),'" + selectValueText + "')]"));
 
     }
 
-    public  static  void validateSuccessTxt(String expected ) {
-        String actual =WebDriverWaits.GetText(successMessage);
-        softAssert.assertEquals(actual,expected);
+    public static void validateSuccessTxt(String expected) {
+        String actual = WebDriverWaits.GetText(successMessage);
+        softAssert.assertEquals(actual, expected);
         softAssert.assertAll();
+    }
+
+    public static void setup_WelcomePackEmail(String emailMessageTxt, String messageTypeTxt, String emailFromTxt, String emailBccTxt, String subjectTxt) throws InterruptedException {
+        selectMessageType(messageTypeTxt);
+        enterEmailFrom(emailFromTxt);
+        enterEmailBcc(emailBccTxt);
+        enterSubject(subjectTxt);
+        enterEmailMessage(emailMessageTxt);
+
+//        template.clickPreviewButton();
+//        template.clickCrossPreview();
+//        template.clickValidateButton();
+//        template.clickCrossValidate();
+//        template.clickSaveButton();
+//        template.validateSuccessTxt("Successfully saved message.");
     }
 
 }

@@ -14,9 +14,11 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_CalendarDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
 		AdminGroup.M_EnableDueDate("Calendar days");
+
 		String customerId = Customer.createCustomer("Tenant", "Residential", "business123@yopmail.com");
-		String serviceId = Services.M_AddService(customerId);
-		Services.EditService();
+
+		String serviceId = Services.M_AddService();
+		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");
@@ -33,8 +35,8 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId = Services.M_AddService(customerId);
-		Services.EditService();
+		String serviceId = Services.M_AddService();
+		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");
@@ -53,8 +55,8 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");
 		AdminGroup.M_EnableDueDate("End of month");
 		String customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
-		String serviceId = Services.M_AddService(customerId);
-		Services.EditService();
+		String serviceId = Services.M_AddService();
+		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");

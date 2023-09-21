@@ -5,9 +5,11 @@ import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 import org.openqa.selenium.By;
 
-import static POM.Flow6_7AddingServiceAndMeter.X_AddService.Edit_icon;
-import static POM.Flow6_7AddingServiceAndMeter.X_AddService.ServiceTab;
-import static POM.Flow6_7AddingServiceAndMeter.jse;
+//import static POM.Flow6_7AddingServiceAndMeter.X_AddService.Edit_icon;
+//import static POM.Flow6_7AddingServiceAndMeter.X_AddService.ServiceTab;
+//import static POM.Flow6_7AddingServiceAndMeter.jse;
+//import static POM.Services;
+//import static POM.
 
 public class AddSitePlans extends TestLogin {
 
@@ -28,10 +30,14 @@ public class AddSitePlans extends TestLogin {
     public static By saveChanges = By.cssSelector("button#saveChangesBtn");
     public static By addParamBtn = By.id("ad");
     public static By effectiveDate = By.id("effectiveDate");
+
+    public static By serviceTab = By.xpath("//*[@class=\"icon-power-off\"]");
     public static By parameterName = By.id("parameterName");
     public static By paramValue = By.id("paramValue");
     public static By Sitedate=By.xpath("//input[@id='effectiveDate']");
     public static By Today=By.xpath("(//th[text()='Today'])[1]");
+
+    public static By Edit_icon = By.xpath("//*[@class=\"btn btn-primary toolt\"]");
 
     public static By AddButt=By.xpath("//button[@id='addParamBtn']");
 
@@ -61,9 +67,9 @@ public class AddSitePlans extends TestLogin {
     }   */
 
     public static void addSiteParameters() throws InterruptedException {
-        WebDriverWaits.ClickOn(ServiceTab);
+        WebDriverWaits.ClickOn(serviceTab);
         WebDriverWaits.ClickOn(Edit_icon);
-        jse.executeScript("window.scrollBy(0,1000)", "");
+       WebDriverWaits.scrollIntoView(siteParameters);
         WebDriverWaits.ClickOn(siteParameters);
         WebDriverWaits.ClickOn(addParamBtn);
         WebDriverWaits.ClickOn(Sitedate);

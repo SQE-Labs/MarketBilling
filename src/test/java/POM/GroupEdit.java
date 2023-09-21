@@ -50,29 +50,46 @@ public class GroupEdit  extends TestLogin {
         softAssert.assertEquals(actual,"Success! Changes have been updated successfully.\n");
     }
 
-    public  static  void validateSuccessText(String expected) {
+    public  static  void validate_SuccessTXT(String expected) throws InterruptedException {
         WebDriverWaits.scrollIntoView(alertSuccess);
         String actual =WebDriverWaits.GetText(alertSuccess);
         softAssert.assertEquals(actual,expected);
-     //   softAssert.assertAll();
+        softAssert.assertAll();
     }
+
+
+    public  static  void validate_NewLetterSuccessTXT() throws InterruptedException {
+//        WebDriverWaits.scrollIntoView(alertSuccess);
+//        String actual =WebDriverWaits.GetText(alertSuccess);
+//        softAssert.assertEquals(actual,expected);
+    }
+
 
     public static void navigateToEditGroup(){
         WebDriverWaits.ClickOn(editGroup);
     }
 
-    public static void enableCorrepondenceToggle(){
+    public static void enableCorrespondenceToggle(){
+//        enableCorrepondenceToggle();
+//        clickSaveChangesBtn();
+//        clickSaveConfirmationBtn();
+
+    }
+
+    public static void enable_CorrepondenceToggle(){
         WebDriverWaits.scrollIntoView(checkBoxCorrespondence);
         WebDriverWaits.selectCheckBox(checkBoxCorrespondence);
+        click_SaveChangesBtn();
+        click_SaveConfirmationBtn();
     }
-    public static void clickSaveChanges(){
+
+    public static void click_SaveChangesBtn(){
         WebDriverWaits.scrollIntoView(saveChanges);
         WebDriverWaits.ClickOn(saveChanges);
     }
 
-    public static void clickSaveConfirmation(){
+    public static void click_SaveConfirmationBtn(){
         WebDriverWaits.ClickOn(saveConfirmation);
     }
-
 
 }

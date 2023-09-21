@@ -57,6 +57,7 @@ public class Metering {
     public static By MeterReadShoulder_Field = By.xpath("//*[@id='modalReadingS']");
     public static By Save_Button = By.xpath("(//button[contains(text(),'Save')])[2]");
     public static By CustomerSuccessMeterRegister = By.xpath("//div[@class='alert alert-success']/center");
+    public static By ConsumptiomType=By.xpath("//select[@id='consumptionType']");
     public static SoftAssert softAssert = new SoftAssert();
 
     public static String AddMeter() throws InterruptedException {
@@ -166,6 +167,7 @@ public class Metering {
         WebDriverWaits.SendKeys(MeterReadShoulder_Field, shoulderValue);
         WebDriverWaits.ClickOn(Save_Button);
         Thread.sleep(2000);
+
       //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 

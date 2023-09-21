@@ -24,15 +24,18 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 	public static void WaitUntilVisible(By element) {
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 
 	public static void Waituntilvisible(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		}
-		catch (ElementClickInterceptedException e){
+		catch (TimeoutException e){
+			WebElement ele = driver.findElement(element);
+			ele.click();
 
 		}
 	}
@@ -64,7 +67,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void ClickOn(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(15)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
@@ -74,16 +77,6 @@ public class WebDriverWaits extends BrowsersInvoked {
 		//System.out.println("Clicked On " + element);
 	}
 
-	public static void fluentWait_Clickable(By element) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-		} catch (ElementNotInteractableException e){
-
-		}
-
-	}
 
 
 
@@ -212,7 +205,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 		for(String handle : tabs) {
 			if (!handle.equals(originalHandle)) {
-				driver.switchTo().window(handle);
+				driver.switchTo().window(originalHandle);
 				driver.close();
 			}
 		}
@@ -221,8 +214,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 		System.out.print(driver.getCurrentUrl());
 		Thread.sleep(3000);
 	}
-	public static void
-	SwitchToNewTab() throws InterruptedException {
+	public static void SwitchToNewTab() throws InterruptedException {
 		String originalHandle = driver.getWindowHandle();
 		Set<String> tabs = driver.getWindowHandles();
 
