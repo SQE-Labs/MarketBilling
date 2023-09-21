@@ -2,14 +2,11 @@ package TestCases;
 
 import CommonMethods.BaseTest;
 import POM.*;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-
 import java.awt.*;
+import static POM.Customer.*;
 
-import static POM.Flow5_AddCustomer.*;
 
 public class TestAddService extends BaseTest {
 
@@ -19,7 +16,7 @@ public class TestAddService extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void AddResidentialService() throws InterruptedException, AWTException {
+    public void AddResidentialService( ) throws InterruptedException, AWTException {
         extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
        // Login.validLogin();
@@ -65,7 +62,7 @@ public class TestAddService extends BaseTest {
 
 
     @Test(priority = 5)
-    public void AddCommercialService() throws InterruptedException, AWTException {
+    public void AddCommercialService( ) throws InterruptedException, AWTException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.searchCustomer(CustomerID03C);

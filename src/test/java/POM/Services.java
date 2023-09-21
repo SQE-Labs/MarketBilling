@@ -23,8 +23,10 @@ public class Services {
     public static String  ServiceIDLater3;
     public static String ServiceIDLater1;
     // Search Field
-    public static By SearchField = By.xpath("(//*[@id=\"search_input\"])[1]");
-    public static By SearchIcon = By.xpath("//button[@id='btn_search']");
+    public static By searchField = By.xpath("(//*[@id=\"search_input\"])[1]");
+    public static By searchIcon = By.xpath("//button[@id='btn_search']");
+
+
 
     // Select the Residential/Business/Commercial customer created in add customer
     public static By TwosearchResults = By.xpath("//*[@class='icon-edit ']");
@@ -33,7 +35,7 @@ public class Services {
     public static By selectBusinessCustomer_Record1 = By.xpath("(//td[@class='sorting_1']/a)[1]"); // Just temporary
     // due to issue
     public static By selectCommercialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[1]");
-    public static By OverviewTab = By.xpath("//*[@class=\"icon-eye-open\"]"); // //*[contains(text(),'Overview')]
+    public static By overviewTab = By.xpath("//*[@class=\"icon-eye-open\"]"); // //*[contains(text(),'Overview')]
 
     // Add Service for Residential/Business/Commercial customer
     public static By RetailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
@@ -80,25 +82,26 @@ public class Services {
     public static By ServiceSuccMsg = By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
     public static String M_AddService() throws InterruptedException {
-        WebDriverWaits.ClickOn(SearchIcon);
+        WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(1000);
-        WebDriverWaits.ClickOn(SearchField);
+        WebDriverWaits.ClickOn(searchField);
         Thread.sleep(4000);
         String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
-        WebDriverWaits.SendKeys(SearchField, ThirdRecID);
-        WebDriverWaits.ClickOn(SearchIcon);
+        WebDriverWaits.SendKeys(searchField, ThirdRecID);
+        WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(2000);
         InternalMethods.SwitchToCustomerpage();
-        WebDriverWaits.ClickOn(OverviewTab);
+        WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(Market_Type_Field);
         WebElement Option = WebDriverWaits.WaitUntilVisibleWE(Market_Type_Field);
         select = new Select(Option);
         select.selectByVisibleText("Off Market");
-        Thread.sleep(4000);
-        jse.executeScript("window.scrollBy(0,300)", "");
-        Thread.sleep(2000);
+//        Thread.sleep(4000);
+//        jse.executeScript("window.scrollBy(0,300)", "");
+//        Thread.sleep(2000);
+        WebDriverWaits.scrollIntoView(NMI_Field);
         WebDriverWaits.ClickOn(NMI_Field);
         String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
         WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
@@ -110,7 +113,8 @@ public class Services {
         // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
 
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(Suburb_Field);
         WebDriverWaits.ClickOn(Suburb_Field);
         WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
         WebDriverWaits.ClickOn(Postal_Code_field);
@@ -121,7 +125,6 @@ public class Services {
         select = new Select(StateOption);
         select.selectByVisibleText("New South Wales");
         WebDriverWaits.ClickOn(AddButton);
-        jse.executeScript("window.scrollBy(0,-300)", "");
         System.out.println(ServiceIDLater1);
 
         return ServiceIDLater1;
@@ -134,12 +137,12 @@ public class Services {
         WebDriverWaits.ClickOn(ServiceTab);
         // Search service id ("N" + random+"11"); which is created above
         WebDriverWaits.ClickOn(Edit_icon);
-        jse.executeScript("window.scrollBy(0,300)", "");
+
     }
 
 
     public void clickOnOverviewTab() {
-        WebDriverWaits.ClickOn(OverviewTab);
+        WebDriverWaits.ClickOn(overviewTab);
     }
 
     public void clickRetailElectricity() {
@@ -229,12 +232,14 @@ public class Services {
         WebDriverWaits.ClickOn(ServiceTab);
         // Search service id ("N" + random+"11"); which is created above
         WebDriverWaits.ClickOn(Edit_icon);
-        jse.executeScript("window.scrollBy(0,300)", "");
+//        jse.executeScript("window.scrollBy(0,300)", "");
+        WebDriverWaits.scrollIntoView(Service_Status_Dropdown);
         WebDriverWaits.ClickOn(Service_Status_Dropdown);
         WebElement StatusOption = WebDriverWaits.WaitUntilVisibleWE(Service_Status_Dropdown);
         select = new Select(StatusOption);
         select.selectByVisibleText("Connected");
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(SaveChanges_Button);
         WebDriverWaits.ClickOn(SaveChanges_Button);
         WebDriverWaits.WaitUntilVisible(OkButton);
         WebDriverWaits.ClickOn(OkButton);
