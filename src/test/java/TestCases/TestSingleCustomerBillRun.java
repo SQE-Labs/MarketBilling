@@ -5,6 +5,7 @@ import CommonMethods.RandomStrings;
 import POM.*;
 import org.testng.annotations.Test;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,10 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-        Login.ValidLogin();
+        Login.validLogin();
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
-         serviceId=Services.M_AddService(customerId);
-         Services.EditService();
+         serviceId=Services.M_AddService();
+         Services.editService();
          meterId =Metering.AddMeter();
          registerId =Metering.createRegister();
         Metering.addMeterReads("Initial","150","200","300");
@@ -36,7 +37,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void create_Customer_invoiceTemplate() throws InterruptedException {
         extentTest = extent.startTest("Customer Invoice Template");
         extentTest.setDescription(" Verify that User is able to create Customer Invoice template");
-        Login.ValidLogin();
+     //   Login.ValidLogin();
         Admin.navigateToInvoiceSetup();
         invoiceTemplate="Customer_Invoice_"+ RandomStrings.RequiredCharacters(4);
         Invoice.createNewInvoice(invoiceTemplate);
@@ -63,7 +64,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
 
     }
     @Test(priority = 5,enabled = true)
-    public  void SmallBillRunWithSingleCustomer() throws InterruptedException {
+    public  void SmallBillRunWithSingleCustomer() throws InterruptedException, AWTException {
         extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         BillRun.runBillCycle(billCycleName);

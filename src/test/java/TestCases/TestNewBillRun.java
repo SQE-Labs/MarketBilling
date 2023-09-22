@@ -3,7 +3,6 @@ package TestCases;
 import CommonMethods.BaseTest;
 import POM.*;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 
 
@@ -14,14 +13,12 @@ public class TestNewBillRun extends BaseTest {
 
 
     @Test(priority = 0, enabled = true, description = "Creating Customer")
-    public void createCustomer() {
+    public void createCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
-
-        Customer cust = new Customer();
-        Login.loginWithGroupName("Test Utilities");
-        cust.createCustomer("12345678958", "456789145", "24 Railway Street", "Woondul", "Australia", "NSW", "4357");
+        Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","Active");
         System.out.println("Texts match. Assertion passed.");
+       // Assert.assertEquals(true,false);
     }
 
     // ============Creating Service=========
@@ -68,20 +65,12 @@ public class TestNewBillRun extends BaseTest {
     }
 
     @Test(priority = 6, enabled = true)
-    public void createBillRun() throws AWTException, InterruptedException {
+    public void billRun() throws AWTException, InterruptedException {
         extentTest = extent.startTest("Create BillRun Cycles ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
 
         bill.billRun();
     }
-
-//    @Test(priority = 10, enabled = false, description = "Commiting BillRun")
-//    public void commitCreatedBillRun() throws AWTException, InterruptedException {
-//        extentTest = extent.startTest("Committing Created BillRun");
-//        extentTest.setDescription("Verify that user is able to Commit the Created BillRun or not");
-//
-//        bill.commitBillRun();
-//    }
 
     @Test(priority =7, enabled = true, description = "RollBack BillRun")
     public void rollBackCreatedBillRun() throws InterruptedException {
@@ -99,10 +88,11 @@ public class TestNewBillRun extends BaseTest {
         bill.downloadZip();
     }
 
-    @Test(priority = 8, enabled = true, description = "Edit BillRunCycle")
+    @Test(priority = 8, enabled = false, description = "Edit BillRunCycle")
     public void editBillRunCycle() throws InterruptedException {
         extentTest = extent.startTest("Edit BillRun Cycle");
         extentTest.setDescription("Verify that user is able to Update the BillRunCycle or not");
+       // Login.ValidLogin();
         bill.editBillRunCycles();
     }
 

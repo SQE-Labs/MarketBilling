@@ -1,5 +1,6 @@
 package POM;
 
+import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
 
@@ -16,13 +17,12 @@ public class Invoice {
     public static By finishBtn = By.className("icon-arrow-right");
     public static By editBtn = By.className("icon-edit");
     public static By search = By.xpath("//label/input");
-
     public static By tinymce = By.xpath("//body[@id='tinymce']");
-
     public static By saveSettings = By.id("save");
 
+    public static String invoiceName;
 
-    public static void clickCreateNewInvoice() {
+    public static void clickCreateNewInvoiceBtn() {
         WebDriverWaits.ClickOn(createInvoiceBtn);
     }
     public static void enterNewInvoice(String invoiceName) {
@@ -33,7 +33,7 @@ public class Invoice {
         WebDriverWaits.SendKeys(search, invoiceName);
     }
 
-    public static void editInvoice() {
+    public static void click_EditInvoiceBtn() {
         WebDriverWaits.ClickOn(editBtn);
     }
 
@@ -50,6 +50,30 @@ public class Invoice {
         WebDriverWaits.WaitUntilVisibleWE(category);
         WebDriverWaits.selectByValue(category, name);
         Thread.sleep(4000);
+    }
+
+    public static void create_Invoice(String selectCategory1Txt, String selectCategory2Txt, String selectCategory3Txt, String templateTxt) throws InterruptedException {
+        clickCreateNewInvoiceBtn();
+        invoiceName="Invoice"+ RandomStrings.RequiredDigits(3);
+        enterNewInvoice(invoiceName);
+        selectInvoiceCheckBox(selectCategory1Txt);
+        selectInvoiceCheckBox(selectCategory2Txt);
+        clickSave();
+        selectCategory(selectCategory3Txt);
+        enterTemplateText(templateTxt);
+        clickSaveTemplate();
+    }
+
+    public static void edit_Invoice(String selectCategory1Txt, String selectCategory2Txt, String selectCategory3Txt, String selectCategory4Txt,String templateTxt) throws InterruptedException {
+        searchInvoice(invoiceName);
+        click_EditInvoiceBtn();
+        selectInvoiceCheckBox(selectCategory1Txt);
+        selectInvoiceCheckBox(selectCategory2Txt);
+        selectInvoiceCheckBox(selectCategory3Txt);
+        clickSave();
+        selectCategory(selectCategory4Txt);
+        enterTemplateText(templateTxt);
+        clickSaveTemplate();
     }
 
     public static void enterTemplateText(String txt) {

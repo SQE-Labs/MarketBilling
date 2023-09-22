@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -33,31 +34,36 @@ public class BaseTest extends BrowsersInvoked {
 
 	@AfterSuite
 	public void endReport() {
-		extent.flush();
+	//	extent.flush();
 		extent.close();
 	}
+
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
 
 		if (result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getName());
-			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " + result.getThrowable());
+			extentTest.log(LogStatus.FAIL, "TEST CASE FAILED IS " +result.getThrowable().toString());
 			System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
-
 			String screenshotPath = getScreenshot(driver, result.getName());
 			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath));
-			// extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+//			extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+			extent.endTest(extentTest);
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
 			System.out.println("*** Test " + result.getMethod().getMethodName() + " skipped...");
+			extent.endTest(extentTest);
+
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			extentTest.log(LogStatus.PASS, "Test Case PASSED IS " + result.getName());
 			System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
+			extent.endTest(extentTest);
+
 		}
-		extent.endTest(extentTest);
 		extent.flush();
 	}
+
 
 	public static String getScreenshot(WebDriver driver, String screenshotName) {
 		Long l = Calendar.getInstance().getTimeInMillis();
@@ -75,4 +81,5 @@ public class BaseTest extends BrowsersInvoked {
 		String ImagePath = "../ExtentReports/" + screenshotId + ".png";
 		return ImagePath;
 	}
+
 }

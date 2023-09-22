@@ -12,16 +12,11 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import static CommonMethods.BaseTest.extentTest;
-import static com.relevantcodes.extentreports.LogStatus.FAIL;
-import static com.relevantcodes.extentreports.LogStatus.PASS;
 
-
-//Todo
 public class WebDriverWaits extends BrowsersInvoked {
 	static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	static WebDriverWait wait20 = new WebDriverWait(driver,Duration.ofSeconds(10));
-
+	static WebDriverWait wait80 = new WebDriverWait(driver,Duration.ofSeconds(90));
 	static WebDriverWait wait5mins = new WebDriverWait(driver,Duration.ofSeconds(10));
 
 	public static void WaitUntilPresent(By element) {
@@ -29,15 +24,18 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 	public static void WaitUntilVisible(By element) {
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 
 	public static void Waituntilvisible(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		}
-		catch (ElementClickInterceptedException e){
+		catch (TimeoutException e){
+			WebElement ele = driver.findElement(element);
+			ele.click();
 
 		}
 	}
@@ -59,13 +57,17 @@ public class WebDriverWaits extends BrowsersInvoked {
 		return wait20.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 
+	public static WebElement WaitUntilVisibleWE80(By element) {
+		return wait80.until(ExpectedConditions.visibilityOfElementLocated(element));
+	}
+
 	public static List<WebElement> WaitUntilVisibleList(By element) {
 		return (List<WebElement>) wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
 	}
 
 	public static void ClickOn(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(10)));
+			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(15)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
@@ -75,16 +77,6 @@ public class WebDriverWaits extends BrowsersInvoked {
 		//System.out.println("Clicked On " + element);
 	}
 
-	public static void fluentWait_Clickable(By element) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-		} catch (ElementNotInteractableException e){
-
-		}
-
-	}
 
 
 
@@ -213,7 +205,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 		for(String handle : tabs) {
 			if (!handle.equals(originalHandle)) {
-				driver.switchTo().window(handle);
+				driver.switchTo().window(originalHandle);
 				driver.close();
 			}
 		}
@@ -222,8 +214,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 		System.out.print(driver.getCurrentUrl());
 		Thread.sleep(3000);
 	}
-	public static void
-	SwitchToNewTab() throws InterruptedException {
+	public static void SwitchToNewTab() throws InterruptedException {
 		String originalHandle = driver.getWindowHandle();
 		Set<String> tabs = driver.getWindowHandles();
 
@@ -265,6 +256,6 @@ public class WebDriverWaits extends BrowsersInvoked {
 		// for pressing and releasing Enter
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
-	}
 
+	}
 }
