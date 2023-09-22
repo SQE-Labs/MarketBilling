@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static POM.Admin.customerId;
-import static POM.Flow5_AddCustomer.*;
+import static POM.Customer.*;
 import static POM.GroupEdit.softAssert;
 
 public class BillRun extends TestLogin {
@@ -387,9 +387,9 @@ public class BillRun extends TestLogin {
     public static void filterCustomerId(String customerId) throws InterruptedException {
         WebDriverWaits.SendKeysWithClear(customId,customerId);
         WebDriverWaits.ClickOn(CustomerListFilter);
-        System.out.println("Customer 1R -- " + CustomerID01R);
-        System.out.println("Customer 2B -- " + CustomerID02B);
-        System.out.println("Customer 3C -- " + CustomerID03C);
+    //    System.out.println("Customer 1R -- " + CustomerID01R);
+     //   System.out.println("Customer 2B -- " + CustomerID02B);
+    //    System.out.println("Customer 3C -- " + CustomerID03C);
         WebDriverWaits.ClickOn(filterButton);
         WebDriverWaits.Waituntilvisible(CustomerListFilter);
         WebDriverWaits.SendKeysWithClear(CustomerListFilter, customerId);

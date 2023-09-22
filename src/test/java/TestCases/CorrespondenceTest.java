@@ -22,7 +22,7 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondenceToggle() throws InterruptedException {
         extentTest = extent.startTest(" Enable Correspondence Toggle");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-        Login.validLogin();
+       // Login.validLogin();
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
         groupEdit.enable_CorrepondenceToggle();
@@ -97,7 +97,6 @@ public class CorrespondenceTest extends BaseTest {
         correspondence.validate_DeleteImportAttachmentsRECORD("Showing 1 to 2 of 2 entries");
     }
 
-    //TODO Functionality not working properly //
     @Test(priority = 7, enabled = true)
     public void manualSendingLetters() throws InterruptedException {
         extentTest = extent.startTest(" Manual Sending Letters ");
@@ -105,5 +104,6 @@ public class CorrespondenceTest extends BaseTest {
         admin.navigateToAdmin();
         cust.navigateToCustomer();
         comm.enter_CorrespondenceDetails("Welcome Pack");
+
     }
 }

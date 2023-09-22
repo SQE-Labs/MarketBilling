@@ -8,7 +8,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static POM.Flow5_AddCustomer.*;
+import static POM.Customer.*;
+
 
 public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;

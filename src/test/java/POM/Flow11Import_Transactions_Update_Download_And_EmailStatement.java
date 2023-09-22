@@ -3,7 +3,6 @@
 //
 //import CommonMethods.RandomStrings;
 //import CommonMethods.WebDriverWaits;
-//import POM.Flow6_7AddingServiceAndMeter.X_AddService;
 //import TestCases.TestLogin;
 //import com.opencsv.CSVReader;
 //import com.opencsv.CSVWriter;
@@ -30,7 +29,7 @@
 //    public static void CustomerPrerequiste() throws InterruptedException, AWTException {
 //        Thread.sleep(2000);
 //Customer.FirstResidentialCustomer();
-//   Services.AddThirdService();
+//   Services.M_AddService();
 //  //Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
 //
 //
@@ -128,13 +127,13 @@
 //
 //    public static void SearchCustomer() throws InterruptedException {
 //
-//        WebDriverWaits.ClickOn(X_AddService.SearchIcon);
+//        WebDriverWaits.ClickOn(M_AddService.searchIcon);
 //        Thread.sleep(1000);
-//        WebDriverWaits.ClickOn(X_AddService.SearchField);
-//        String ThirdRecID = WebDriverWaits.GetText(X_AddService.selectResidentialCustomer_Record);
-//        WebDriverWaits.SendKeys(X_AddService.SearchField, ThirdRecID);
+//        WebDriverWaits.ClickOn(M_AddService.searchField);
+//        String ThirdRecID = WebDriverWaits.GetText(M_AddService.selectResidentialCustomer_Record);
+//        WebDriverWaits.SendKeys(M_AddService.SearchField, ThirdRecID);
 //
-//        WebDriverWaits.ClickOn(X_AddService.SearchIcon);
+//        WebDriverWaits.ClickOn(M_AddService.SearchIcon);
 //        Thread.sleep(4000);
 //    }
 //

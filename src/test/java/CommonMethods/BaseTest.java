@@ -38,11 +38,6 @@ public class BaseTest extends BrowsersInvoked {
 		extent.close();
 	}
 
-	@AfterClass
-	public void closeclass()
-	{
-		extent.close();
-	}
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {

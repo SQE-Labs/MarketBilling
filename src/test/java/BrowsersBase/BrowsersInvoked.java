@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public class BrowsersInvoked {
@@ -53,9 +54,9 @@ public class BrowsersInvoked {
 		driver.get(DataInterface.URL);
 	}
 
-//	@AfterSuite
-//	public void toClose() {
-//		driver.quit();
-//	}
+	@AfterSuite
+	public void toClose() {
+		driver.quit();
+	}
 
 }
