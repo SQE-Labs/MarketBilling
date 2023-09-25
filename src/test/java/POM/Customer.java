@@ -364,9 +364,7 @@ public class Customer {
         WebDriverWaits.ClickOn(Cityfield);
         WebDriverWaits.SendKeys(Cityfield, Cityfield1);
         WebDriverWaits.ClickOn(Statedropdown);
-        WebElement WAOption = WebDriverWaits.WaitUntilVisibleWE(Statedropdown);
-        select = new Select(WAOption);
-        select.selectByVisibleText(state);
+        WebDriverWaits.selectByVisibleText(Statedropdown,state);
         WebDriverWaits.ClickOn(PostalCodefield);
         WebDriverWaits.SendKeys(PostalCodefield, PostalCodefield1);
     }
