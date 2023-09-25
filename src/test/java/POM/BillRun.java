@@ -122,7 +122,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(BillRun);
         String cycleName="Cycle" + RandomStrings.RequiredCharacters(2);
         WebDriverWaits.SendKeysWithClear(manualOveride,cycleName);
-     //   WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
+        //   WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
         WebDriverWaits.ClickOn(BillRun_EndDate_Datepicker);
         WebDriverWaits.ClickOn(Select_BillRun_EndDate_Datepicker);
 
@@ -154,16 +154,16 @@ public class BillRun extends TestLogin {
 
     public static void BillRunWithUncommittedStatement(String billCycleName, String customerId) throws InterruptedException {
         SoftAssert softAssert = new SoftAssert();
-      // driver.navigate().refresh();
+        // driver.navigate().refresh();
 //
 //////		WebDriverWaits.ClickOn(X_BillrunCycle.Bill_Run_Complete_CloseButton);
 ////		WebDriverWaits.ClickOn(Cancel_Button);
 ////		WebDriverWaits.ClickOn(Yes_Button);
         Thread.sleep(5000);
-          WebDriverWaits.ClickOn(BillRun_Tab);
+        WebDriverWaits.ClickOn(BillRun_Tab);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(5000);
-          WebDriverWaits.ClickOn(RunTheBills_Button);
+        WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
 //        WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
 //        WebDriverWaits.ClickOn(BillRun_EndDate_Datepicker);
@@ -209,7 +209,7 @@ public class BillRun extends TestLogin {
 
     }
 
-   public static String BillRunCycle(String customerId) throws InterruptedException {
+    public static String BillRunCycle(String customerId) throws InterruptedException {
         SoftAssert softAssert = new SoftAssert();
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(Admin_Tab);
@@ -223,9 +223,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.scrollIntoView(advanceArrowMark);
         WebDriverWaits.ClickOn(advanceArrowMark);
         WebDriverWaits.SendKeysWithClear(customId,customerId);
-      //  WebDriverWaits.scrollIntoView(advanceArrowMark);
-      //  WebDriverWaits.ClickOn(advanceArrowMark);
-       WebDriverWaits.ClickOn(filterButton);
+        //  WebDriverWaits.scrollIntoView(advanceArrowMark);
+        //  WebDriverWaits.ClickOn(advanceArrowMark);
+        WebDriverWaits.ClickOn(filterButton);
         WebDriverWaits.ClickOn(CustomerListFilter);
         WebDriverWaits.SendKeys(CustomerListFilter, customerId);
         Thread.sleep(2000);
@@ -252,9 +252,9 @@ public class BillRun extends TestLogin {
     }
 
     public static void SmallBillRunWithSingleCustomer(String BillCycleName) throws InterruptedException, AWTException {
-       Thread.sleep(3000);
+        Thread.sleep(3000);
         WebDriverWaits.ClickOn(BillRun_Tab);
-      //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(6000);
         WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
@@ -271,14 +271,14 @@ public class BillRun extends TestLogin {
 //        Thread.sleep(2000);
 //        WebElement BillRunCycOption = WebDriverWaits.WaitUntilVisibleWE(BillRunCycleOption);
 //        Select select = new Select(BillRunCycOption);
- //       Thread.sleep(4000);
- //       select.selectByVisibleText(billCycleName);
- //       Thread.sleep(2000);
- //       jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-      WebDriverWaits.Waituntilvisible(billRunCycleSelect);
-      WebDriverWaits.ClickOn(billRunCycleSelect);
-      Thread.sleep(3000);
-      WebDriverWaits.SendKeysWithClear(selectBillRunCycle,BillCycleName);
+        //       Thread.sleep(4000);
+        //       select.selectByVisibleText(billCycleName);
+        //       Thread.sleep(2000);
+        //       jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.Waituntilvisible(billRunCycleSelect);
+        WebDriverWaits.ClickOn(billRunCycleSelect);
+        Thread.sleep(3000);
+        WebDriverWaits.SendKeysWithClear(selectBillRunCycle,BillCycleName);
         Actions s = new Actions(driver);
         s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
         Thread.sleep(1000);
@@ -435,7 +435,7 @@ public class BillRun extends TestLogin {
     }
 
     public static void rollback() throws InterruptedException {
-     //   if(Pro)
+        //   if(Pro)
         SoftAssert softAssert = new SoftAssert();
         WebDriverWaits.ClickOn(detailsIcon);
         WebDriverWaits.SwitchToNewTab();
@@ -457,7 +457,7 @@ public class BillRun extends TestLogin {
 
     public static String createBillCycle(List<String> customerIdList) throws InterruptedException {
         driver.navigate().refresh();
-      //  jse.executeScript("window.scrollBy(0,-500)", "");
+        //  jse.executeScript("window.scrollBy(0,-500)", "");
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(Admin_Tab);
         WebDriverWaits.scrollIntoView(BillRunCycles_Subtab);
@@ -519,7 +519,7 @@ public class BillRun extends TestLogin {
         LandingPage.navigateToHomePage();
         //First Time Bill run
         WebDriverWaits.ClickOn(BillRun_Tab);
-  //      jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //      jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
 //        WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
@@ -581,7 +581,7 @@ public class BillRun extends TestLogin {
 
         //First Time Bill run
         WebDriverWaits.ClickOn(BillRun_Tab);
-     //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
@@ -747,7 +747,7 @@ public class BillRun extends TestLogin {
      * Clickk=By.xpath("//td[text()='11']");
      */
     public static By toggle = By.xpath("//span[@data-on='Yes']");
-  //  public static By billRunCycleSelect = By.xpath("(//span[@class='filter-option pull-left'])[2]");
+    //  public static By billRunCycleSelect = By.xpath("(//span[@class='filter-option pull-left'])[2]");
     public static By selectBillRunCycle = By.xpath("(//input[@class='input-block-level form-control'])[2]");
     public static By endDate = By.xpath("//input[@id='cycleEnd']");
     public static By next = By.xpath("(//th[@class='next'])[1]");
@@ -1025,7 +1025,7 @@ public class BillRun extends TestLogin {
     }
 
     public void clickOnCommitOkButton() throws InterruptedException {
-     //   WebDriverWaits.SwitchToNewTab();
+        //   WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.ClickOn(commitOkButton);
     }
 
@@ -1040,9 +1040,9 @@ public class BillRun extends TestLogin {
     }
     public void clickONDetailsIcon() throws InterruptedException {
         WebDriverWaits.Waituntilvisible(detailsIcon);
-       //driver.navigate().refresh();
-      // WebDriverWaits.SwitchToNewTab();
-       WebDriverWaits.ClickOn(detailsIcon);
+        //driver.navigate().refresh();
+        // WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.ClickOn(detailsIcon);
     }
 
 
@@ -1066,7 +1066,7 @@ public class BillRun extends TestLogin {
     }
     public void clickCross() throws InterruptedException {
         WebDriverWaits.ClickOn(crossMark);
-      //  WebDriverWaits.CloseOtherTabs();
+        //  WebDriverWaits.CloseOtherTabs();
 //        WebDriverWaits.ClickOn(reason);
 //        WebDriverWaits.SendKeysWithClear(reason, "Testing");
 //        WebDriverWaits.ClickOn(reasonOk);
@@ -1179,7 +1179,7 @@ public class BillRun extends TestLogin {
     }
 
     public void rollBack() throws InterruptedException {
-       Thread.sleep(3000);
+        Thread.sleep(3000);
         clickOnBillRunTab();
         Thread.sleep(1000);
         reloadButton();
@@ -1245,7 +1245,7 @@ public class BillRun extends TestLogin {
 
     public void reBillRun() throws AWTException, InterruptedException {
         Thread.sleep(2000);
-      //  clickOnBillRunTab();
+        //  clickOnBillRunTab();
         clickOnRunTheBillsButton();
         Thread.sleep(1000);
         selectBillRun();
@@ -1262,4 +1262,3 @@ public class BillRun extends TestLogin {
 
     }
 }
-

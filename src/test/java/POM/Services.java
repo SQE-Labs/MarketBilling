@@ -131,6 +131,46 @@ public class Services {
     }
 
 
+    public static String addService() throws InterruptedException {
+
+        WebDriverWaits.ClickOn(overviewTab);
+        WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);
+        Thread.sleep(2000);
+        WebDriverWaits.ClickOn(Market_Type_Field);
+        WebElement Option = WebDriverWaits.WaitUntilVisibleWE(Market_Type_Field);
+        select = new Select(Option);
+        select.selectByVisibleText("Off Market");
+//        Thread.sleep(4000);
+//        jse.executeScript("window.scrollBy(0,300)", "");
+//        Thread.sleep(2000);
+        WebDriverWaits.scrollIntoView(NMI_Field);
+        WebDriverWaits.ClickOn(NMI_Field);
+        String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
+        WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater1);
+        Thread.sleep(1000);
+        WebDriverWaits.ClickOn(Service_Plan_Dropdown);
+
+        Thread.sleep(2000);
+        WebDriverWaits.ClickOn(Service_Plan_Elec);
+        // WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
+        WebDriverWaits.SendKeys(Move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
+
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(Suburb_Field);
+        WebDriverWaits.ClickOn(Suburb_Field);
+        WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
+        WebDriverWaits.ClickOn(Postal_Code_field);
+        String RandomNumber2 = RandomStrings.RequiredDigits(15);
+        WebDriverWaits.SendKeys(Postal_Code_field, RandomNumber2);
+        WebDriverWaits.ClickOn(StateDropdown);
+        WebElement StateOption = WebDriverWaits.WaitUntilVisibleWE(StateDropdown);
+        select = new Select(StateOption);
+        select.selectByVisibleText("New South Wales");
+        WebDriverWaits.ClickOn(AddButton);
+        System.out.println(ServiceIDLater1);
+
+        return ServiceIDLater1;
+    }
 
 
     public static void navigateToEditServices() throws InterruptedException {
@@ -254,6 +294,3 @@ public class Services {
 
 
 }
-
-
-

@@ -21,7 +21,7 @@ public class TestAddService extends BaseTest {
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
        // Login.validLogin();
         Customer.searchCustomer(CustomerID01R);
-        Services.M_AddService();
+        Services.addService();
     }
 
     @Test(priority = 2)
@@ -49,8 +49,10 @@ public class TestAddService extends BaseTest {
     public void AddBusinessService() throws InterruptedException, AWTException {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
+      //Login.validLogin();
+      //String CustomerID02B="36896";
         Customer.searchCustomer(CustomerID02B);
-        Services.M_AddService();
+        Services.addService();
         Services.editService();
         Metering metering = new Metering();
         metering.AddMeter();
@@ -66,7 +68,7 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.searchCustomer(CustomerID03C);
-        Services.M_AddService();
+        Services.addService();
         Services.editService();
         Metering metering = new Metering();
         metering.AddMeter();

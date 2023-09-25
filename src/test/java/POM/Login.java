@@ -18,10 +18,10 @@ public class Login {
 		WebDriverWaits.SendKeys(usernameField, PropertiesUtil.getValue("username") );
 		WebDriverWaits.SendKeys(passwordField, PropertiesUtil.getValue("password"));
 		if (PropertiesUtil.getValue("loginType").contains("single")) {
-		WebDriverWaits.ClickOn(loginButton);}
+			WebDriverWaits.ClickOn(loginButton);}
 		else {
-				WebDriverWaits.selectByVisibleText(selectGroup,PropertiesUtil.getValue("groupName"));
-				WebDriverWaits.ClickOn(groupLogiin);
+			WebDriverWaits.selectByVisibleText(selectGroup,PropertiesUtil.getValue("groupName"));
+			WebDriverWaits.ClickOn(groupLogiin);
 		}
 
 

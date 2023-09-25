@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class TestAddMeter extends BaseTest {
 
-
 	String 	registerId;
 	@Test(priority = 1)
 	public  void Metering() throws InterruptedException {
@@ -40,10 +39,5 @@ public class TestAddMeter extends BaseTest {
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 	}
-
-
-
-
-
 
 }

@@ -3,6 +3,7 @@ package CommonMethods;
 import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -12,11 +13,10 @@ import java.util.List;
 import java.util.Set;
 
 
-//Todo
 public class WebDriverWaits extends BrowsersInvoked {
 	static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	static WebDriverWait wait20 = new WebDriverWait(driver,Duration.ofSeconds(10));
-
+	static WebDriverWait wait80 = new WebDriverWait(driver,Duration.ofSeconds(90));
 	static WebDriverWait wait5mins = new WebDriverWait(driver,Duration.ofSeconds(10));
 
 	public static void WaitUntilPresent(By element) {
@@ -55,6 +55,10 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static WebElement WaitUntilVisibleWE20(By element) {
 		return wait20.until(ExpectedConditions.visibilityOfElementLocated(element));
+	}
+
+	public static WebElement WaitUntilVisibleWE80(By element) {
+		return wait80.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 
 	public static List<WebElement> WaitUntilVisibleList(By element) {
@@ -252,5 +256,6 @@ public class WebDriverWaits extends BrowsersInvoked {
 		// for pressing and releasing Enter
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
+
 	}
 }
