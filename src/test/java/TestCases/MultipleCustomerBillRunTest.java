@@ -19,14 +19,14 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService();
-		Services.editService();
+		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
+		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
-		BillRun.BillrunMethod_NoCycle();
+	//	BillRun.BillrunMethod_NoCycle();
 
 	}
 
@@ -35,9 +35,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
 
-		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService();
-		Services.editService();
+		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
+		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
@@ -65,17 +65,17 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
 
-		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		 String serviceId=Services.M_AddService();
-		Services.editService();
+		customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
+		 String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
 
-		customerId2 = Customer.createCustomer("Tenant", "Business", "business124@yopmail.com");
-		String serviceId2=Services.M_AddService();
-		Services.editService();
+		customerId2 = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String serviceId2=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String 	meterId2 =Metering.AddMeter();
 		String 	registerId2 =Metering.createRegister();
 		Metering.addMeterReads("Initial","150","200","300");

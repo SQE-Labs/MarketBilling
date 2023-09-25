@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestSingleCustomerBillRun extends BaseTest {
-    String customerId;
+    static String customerId;
     String serviceId;
     String meterId;
     String registerId;
-    String billCycleName;
+    static String billCycleName;
     String invoiceTemplate;
 
     @Test(priority = 1,enabled = true)
@@ -22,9 +22,9 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
-        customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
-         serviceId=Services.M_AddService();
-         Services.editService();
+        customerId =Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+         serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+         Services.editService("Connected");
          meterId =Metering.AddMeter();
          registerId =Metering.createRegister();
         Metering.addMeterReads("Initial","150","200","300");
@@ -53,7 +53,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         settings.clickSave();
     }
     @Test(priority = 4,enabled = true)
-    public  void createAndEditBillCycleName() throws InterruptedException {
+    public static void createAndEditBillCycleName() throws InterruptedException {
         extentTest = extent.startTest(" Small Cycle Bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         //String customerId="40893";
@@ -75,7 +75,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Rollback for single customer ");
         extentTest.setDescription(" Verify that User is able to run rollback single customer ");
-        BillRun.Rollback_SmallBillRunWithSingleCustomer(customerId);
+        BillRun.Rollback_SmallBillRunWithSingleCustomer();
     }
     @Test(priority = 7)
 

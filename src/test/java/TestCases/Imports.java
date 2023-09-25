@@ -13,9 +13,9 @@ public class Imports extends BaseTest {
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");
          //Login.validLogin();
-         customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
+         customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
         // serviceId= Services.M_AddService(customerId);
-         Services.editService();
+         Services.editService("Connected");
 //         customerId="45809";
 //         serviceId="6507343299";
 

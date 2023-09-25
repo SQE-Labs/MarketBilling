@@ -90,15 +90,12 @@ public class Metering {
     }
 
     public static String createRegister() throws InterruptedException {
-       //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
          WebDriverWaits.scrollIntoView(MeterEdit_icon);
          Thread.sleep(1000);
         WebDriverWaits.ClickOn(MeterEdit_icon);
-     //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(AddMeterRegister_Icon);
-
         //Create register
         WebDriverWaits.ClickOn(RegisterID_Field);
         Thread.sleep(2000);

@@ -15,10 +15,10 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
 		AdminGroup.M_EnableDueDate("Calendar days");
 
-		String customerId = Customer.createCustomer("Tenant", "Residential", "business123@yopmail.com");
+		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
 
-		String serviceId = Services.M_AddService();
-		Services.editService();
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");
@@ -34,9 +34,9 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_BusinessDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
-		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId = Services.M_AddService();
-		Services.editService();
+		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");
@@ -54,9 +54,9 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_EndOfMonth");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");
 		AdminGroup.M_EnableDueDate("End of month");
-		String customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
-		String serviceId = Services.M_AddService();
-		Services.editService();
+		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
 		Metering.addMeterReads("Initial", "150", "200", "300");

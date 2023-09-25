@@ -1,6 +1,6 @@
 package POM;
 
-import BrowsersBase.DataInterface;
+
 import CommonMethods.WebDriverWaits;
 import TestCases.TestLogin;
 import org.openqa.selenium.By;
@@ -26,7 +26,7 @@ public class AdminGroup extends TestLogin {
 
 		public static void M_EnableDueDate(String paymentMethod) throws InterruptedException {
 			SoftAssert softAssert = new SoftAssert();
-			driver.get(DataInterface.URL);
+		//	driver.get(DataInterface.URL);
 			WebDriverWaits.ClickOn(Admin_Tab);
 			WebDriverWaits.ClickOn(EditGroup_SubTab);
 			jse.executeScript("window.scrollBy(0,2400)", "");
