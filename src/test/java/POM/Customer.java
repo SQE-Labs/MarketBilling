@@ -16,22 +16,7 @@ import static POM.Templates.softAssert;
 
 public class Customer {
 
-    public static String CustomerFirstName = "Caerry" + RandomStrings.RequiredCharacters(2);
-    public static String CustomersurName = "Carse"
-            + RandomStrings.RequiredCharacters(2);
-
-    public static final String SUCCESS_MESG = "Successfully saved customer.";
- //   public static String CustomerFirstName = "Caerry" + RandomStrings.RequiredCharacters(2);
-    public static String RandomName1;
     public static By customerId = By.xpath("//*[@id=\"tbl-customer\"]/tbody/tr[1]/td[1]/a");
-    public static String RandomName2;
-
-    public static Select select;
-    public static String CustomerID01R;
-    public static String CustomerID02B;
-    public static String CustomerID03C;
-
-    public static JavascriptExecutor jse = (JavascriptExecutor) driver;
     public static By CustomerIcontab = By.xpath("//span[text()='Customers']");
     public static By CustomerTypedropdown = By.xpath("//select[@id='custTypeEl']");
     public static By Categorydropdown = By.xpath("//*[@id='category']");
@@ -57,26 +42,17 @@ public class Customer {
     public static By PaymentTermMethod_DropdownOpnE1 = By.xpath("//*[@id='payment_term']/option[1]");
     public static By CurrentDate = By.xpath("//*[@class=\"active day\"]");
     public static By ContractTerm_Field = By.xpath("//*[@id='contract_term']");
-    // Scroll to last of the page
     public static By SaveCustomerButton = By.xpath("//*[@value='Save Customer']");
-    // public static By SaveandAddProvisioning= By.xpath("//*[contains(text(),'Save
-    // and Add Provisioning')])[2]");
-
     public static By SaveOnlyButton = By.xpath("//button[contains(text(),'Save Only')]");
     public static By CustomerSuccessMsg = By.xpath("//div[@class='alert alert-success']/center");
-
-    // Scroll the page to last again
-    // Change Status button appears
     public static By ChangeStatusButton = By.xpath("//*[@class=\"btn btn-danger\"]");
     public static By NewStatusDropdown = By.xpath("//select[@id='acctStatus']");
     public static By ReasonforchangeField = By.xpath("//*[@id='statusReason']");
     public static By Save_button_on_popup = By.xpath("//*[@id='save']");
     public static By Closepopup_icon = By.xpath("//*[@class='close']");
     public static By Company_Name_Field = By.xpath("//*[@id=\"company\"]");
-
     public static By comm = By.xpath("//option[text()='Commercial']");
     public static By settingsTab = By.xpath("//a[text()=' Settings']");
-
     public static By communications = By.xpath("(//*[contains(text(),'Communications')])[1]");
 
     //=======NEW UPDATED CODES=========
@@ -100,7 +76,7 @@ public class Customer {
     public static By saveOnlyButton = By.xpath("//button[text()='Save Only']");
     public static By searchIcon = By.xpath("//*[@class='glyphicon glyphicon-search']");
     public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
- //   private static String CustomerID01R;
+    //   private static String CustomerID01R;
 
     //=======NEW UPDATED CODES=========// ========Creating Customer=======
 //    public static By customerTab = By.xpath("//span[text()='Customers']");
@@ -123,6 +99,18 @@ public class Customer {
 //    public static By ActualMsg1 = By.xpath("//center[text()='Successfully saved customer.']");
 //    public static By contractdate = By.xpath("//input[@id='contract_start_date']");
 
+    public static String CustomerFirstName = "Caerry" + RandomStrings.RequiredCharacters(2);
+
+    public static String RandomName1;
+    public static String RandomName2;
+    public static Select select;
+    public static String CustomerID01R;
+    public static String CustomerID02B;
+    public static String CustomerID03C;
+
+    public static final String SUCCESS_MESG = "Successfully saved customer.";
+
+    public static JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
     public static Communications clickCommunications() {
@@ -203,6 +191,7 @@ public class Customer {
     }
 
     public static void addBusinessDetails() throws InterruptedException {
+        WebDriverWaits.scrollIntoView(CompanyNameField);
         WebDriverWaits.ClickOn(Customer.CompanyNameField);
         WebDriverWaits.SendKeys(Customer.CompanyNameField, "FranklinCovey");
         jse.executeScript("window.scrollBy(0,400)", "");
@@ -211,9 +200,9 @@ public class Customer {
         Thread.sleep(2000);
     }
 
-    public static Customer clickRecentCustomerId(){
+    public static Customer clickRecentCustomerId() {
         WebDriverWaits.ClickOn(customerId);
-        return  new Customer();
+        return new Customer();
     }
 
     public static void navigateToCustomer() throws InterruptedException {
@@ -223,14 +212,14 @@ public class Customer {
 
     }
 
-    public static void clickSearchIcon(){
+    public static void clickSearchIcon() {
         WebDriverWaits.ClickOn(searchIcon);
     }
 
     public static void addAccountManagement(String category) throws InterruptedException {
         WebDriverWaits.scrollIntoView(AccountManagementSection);
 
-        if(category!="Commercial")
+        if (category != "Commercial")
             WebDriverWaits.ClickOn(AccountManagementSection);
         WebDriverWaits.scrollIntoView(ContractStartDate_Datepicker);
         Thread.sleep(3000);
@@ -238,7 +227,7 @@ public class Customer {
         WebDriverWaits.ClickOn(CurrentDate);
         WebDriverWaits.ClickOn(ContractTerm_Field);
         WebDriverWaits.SendKeys(ContractTerm_Field, "10");
-       // jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        // jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollPageEnd();
     }
 
@@ -400,9 +389,9 @@ public class Customer {
     public static void accountTypeSection(String customerType, String catagory) {
         WebDriverWaits.ClickOn(CustomerIcontab);
         WebDriverWaits.ClickOn(CustomerTypedropdown);
-        WebDriverWaits.selectByVisibleText(CustomerTypedropdown,customerType);
-       WebDriverWaits.ClickOn(Categorydropdown);
-        WebDriverWaits.selectByVisibleText(Categorydropdown,catagory);
+        WebDriverWaits.selectByVisibleText(CustomerTypedropdown, customerType);
+        WebDriverWaits.ClickOn(Categorydropdown);
+        WebDriverWaits.selectByVisibleText(Categorydropdown, catagory);
     }
 
     public static void postalCodeSection(String Addressfield, String Cityfield1, String PostalCodefield1, String state) {
@@ -477,7 +466,7 @@ public class Customer {
         WebDriverWaits.scrollIntoView(ChangeStatusButton);
         WebDriverWaits.ClickOn(ChangeStatusButton);
         WebDriverWaits.ClickOn(NewStatusDropdown);
-        WebDriverWaits.selectByVisibleText(NewStatusDropdown,status);
+        WebDriverWaits.selectByVisibleText(NewStatusDropdown, status);
         WebDriverWaits.ClickOn(ReasonforchangeField);
         WebDriverWaits.SendKeys(ReasonforchangeField, "Only For testing Residential Type of Category");
         WebDriverWaits.ClickOn(Save_button_on_popup);
@@ -502,12 +491,12 @@ public class Customer {
     }
 
 
-    public static String createResidentialCustomer(String customerType, String catagory, String Addressfield, String Cityfield1, String PostalCodefield1, String state,String title,String emailField,  String category, String status) throws InterruptedException {
+    public static String createResidentialCustomer(String customerType, String catagory, String Addressfield, String Cityfield1, String PostalCodefield1, String state, String title, String emailField, String category, String status) throws InterruptedException {
         SoftAssert softAssert = new SoftAssert();
         driver.navigate().refresh();
         accountTypeSection(customerType, catagory);
         postalCodeSection(Addressfield, Cityfield1, PostalCodefield1, state);
-         contactDetailsSection(title, emailField);
+        contactDetailsSection(title, emailField);
         addAccountManagement(category);// accountManagement
         saveButton();
         statusChangeSection(status);

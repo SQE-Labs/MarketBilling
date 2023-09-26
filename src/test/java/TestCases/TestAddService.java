@@ -37,10 +37,11 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
 
     }
@@ -55,10 +56,11 @@ public class TestAddService extends BaseTest {
         Services.addService();
         Services.editService();
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
     }
 
@@ -71,10 +73,11 @@ public class TestAddService extends BaseTest {
         Services.addService();
         Services.editService();
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
     }
     @Test(priority = 6,enabled=false)

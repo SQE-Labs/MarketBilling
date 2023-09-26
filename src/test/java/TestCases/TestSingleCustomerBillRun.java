@@ -23,12 +23,13 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
-         serviceId=Services.M_AddService();
+         serviceId=Services.M_AddService(customerId);
          Services.editService();
-         meterId =Metering.AddMeter();
-         registerId =Metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+         meterId =Metering.add_Metering();
+         registerId =Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
 
     }

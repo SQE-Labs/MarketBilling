@@ -22,7 +22,6 @@ public class TestAddPlan extends BaseTest {
     public  void AddPlanwithoutTOUDefinition() throws InterruptedException {
         extentTest = extent.startTest(" AddPlanwithoutTOUDefinition ");
         extentTest.setDescription(" Verify that User is able to add simple plan. ");
-
         Plans.AddPlanwithoutTOUDefinition();
     }
 
@@ -37,7 +36,6 @@ public class TestAddPlan extends BaseTest {
     public  void PlanwithDemandTOUdefinition_Network_and_Retail_Trf() throws InterruptedException {
         extentTest = extent.startTest(" PlanwithDemandTOUdefinition_Network_and_Retail_Trf ");
         extentTest.setDescription(" Verify that User is able to add plan with Demand TOU definition ");
-
         planId= Plans.PlanwithDemandTOUdefinition_Network_and_Retail_Trf();
     }
 
