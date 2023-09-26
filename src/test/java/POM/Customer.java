@@ -39,6 +39,7 @@ public class Customer {
     public static By Cityfield = By.xpath("//*[@id='hSuburb']");
     public static By Statedropdown = By.xpath("//*[@id='hState']");
     public static By PostalCodefield = By.xpath("//*[@name='pcode']");
+    public static By firstCustomer = By.xpath("(//td[@class='sorting_1'])[1]");
 
     // Company/Business Details
     public static By CompanyNameField = By.xpath("//*[@id=\"company\"]");
@@ -203,6 +204,8 @@ public class Customer {
     }
 
     public static void addBusinessDetails() throws InterruptedException {
+        Thread.sleep(2000 );
+        WebDriverWaits.scrollIntoView(CompanyNameField);
         WebDriverWaits.ClickOn(Customer.CompanyNameField);
         WebDriverWaits.SendKeys(Customer.CompanyNameField, "FranklinCovey");
         jse.executeScript("window.scrollBy(0,400)", "");
@@ -276,7 +279,7 @@ public class Customer {
         return customerId;
     }
 
-    public static void searchCustomer(String CustomerID01R) throws InterruptedException {
+        public static void searchCustomer(String CustomerID01R) throws InterruptedException {
 
         LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(searchIcon);

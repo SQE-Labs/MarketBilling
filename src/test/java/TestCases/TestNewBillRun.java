@@ -53,7 +53,6 @@ public class TestNewBillRun extends BaseTest {
         extentTest = extent.startTest("Create meter Reads");
         extentTest.setDescription("Verify that user is able to Create Meter Register or Not");
         meter.createMeterReads();
-
     }
 
 
@@ -68,7 +67,6 @@ public class TestNewBillRun extends BaseTest {
     public void billRun() throws AWTException, InterruptedException {
         extentTest = extent.startTest("Create BillRun Cycles ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
-
         bill.billRun();
     }
 
@@ -76,7 +74,6 @@ public class TestNewBillRun extends BaseTest {
     public void rollBackCreatedBillRun() throws InterruptedException {
         extentTest = extent.startTest("RollBack Created BillRun");
         extentTest.setDescription("Verify that user is able to RollBack the Created BillRun or not");
-
         bill.rollBack();
     }
 
@@ -84,7 +81,6 @@ public class TestNewBillRun extends BaseTest {
     public void downloadZip() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Download Zip");
         extentTest.setDescription("Verify that user is able to DownloadZip file or not");
-
         bill.downloadZip();
     }
 
@@ -92,7 +88,6 @@ public class TestNewBillRun extends BaseTest {
     public void editBillRunCycle() throws InterruptedException {
         extentTest = extent.startTest("Edit BillRun Cycle");
         extentTest.setDescription("Verify that user is able to Update the BillRunCycle or not");
-       // Login.ValidLogin();
         bill.editBillRunCycles();
     }
 
@@ -100,7 +95,6 @@ public class TestNewBillRun extends BaseTest {
     public void reBill() throws AWTException, InterruptedException {
         extentTest = extent.startTest("Re BillRun   ");
         extentTest.setDescription("Verify that user is able to ReBill or Not");
-
         bill.reBillRun();
     }
 

@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 import static BrowsersBase.BrowsersInvoked.driver;
 import static POM.GroupEdit.softAssert;
@@ -81,7 +80,7 @@ public class Services {
     public static By moveinSearch = By.xpath("//label[text()='Move-In Date']");
     public static By ServiceSuccMsg = By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
-    public static String M_AddService() throws InterruptedException {
+    public static String M_AddService(String customerId) throws InterruptedException {
         WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(searchField);

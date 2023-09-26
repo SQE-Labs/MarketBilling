@@ -17,7 +17,7 @@ public class TestAutoDueDate extends BaseTest {
 
 		String customerId = Customer.createCustomer("Tenant", "Residential", "business123@yopmail.com");
 
-		String serviceId = Services.M_AddService();
+		String serviceId = Services.M_AddService(customerId);
 		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
@@ -35,7 +35,7 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId = Services.M_AddService();
+		String serviceId = Services.M_AddService(customerId);
 		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();
@@ -55,7 +55,7 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");
 		AdminGroup.M_EnableDueDate("End of month");
 		String customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
-		String serviceId = Services.M_AddService();
+		String serviceId = Services.M_AddService(customerId);
 		Services.editService();
 		String meterId = Metering.AddMeter();
 		String registerId = Metering.createRegister();

@@ -12,38 +12,34 @@ import org.testng.asserts.SoftAssert;
 
 public class TestCustomers extends BaseTest {
 
-	@Test(priority = 1)
-	public  void ResidentialCustomer() throws InterruptedException {
-		extentTest = extent.startTest(" Add Residential Customer ");
-		extentTest.setDescription(" Verify that User is able to add Residential customer. ");
-		//Login.validLogin();
-		String customerIdRes=Customer.createResidentialCustomer("Tenant","Residential","Madirma R-Town","Mills NY","1265","WA","Mr.","gamler123@yopmail.com","","Active");
-		System.out.println(customerIdRes);
-		Assert.assertNotNull(customerIdRes);
+    @Test(priority = 1)
+    public void ResidentialCustomer() throws InterruptedException {
+        extentTest = extent.startTest(" Add Residential Customer ");
+        extentTest.setDescription(" Verify that User is able to add Residential customer. ");
+        String customerIdRes = Customer.createResidentialCustomer("Tenant", "Residential", "Madirma R-Town", "Mills NY", "1265", "WA", "Mr.", "gamler123@yopmail.com", "", "Active");
+        System.out.println(customerIdRes);
+        Assert.assertNotNull(customerIdRes);
 
 
-	}
+    }
 
-	@Test(priority = 2)
-	public  void BusinessCustomer() throws InterruptedException {
-		extentTest = extent.startTest(" Add Business Customer ");
-		extentTest.setDescription(" Verify that User is able to add Business SecondCustomer. ");
-//		Login.validLogin();
+    @Test(priority = 2)
+    public void BusinessCustomer() throws InterruptedException {
+        extentTest = extent.startTest(" Add Business Customer ");
+        extentTest.setDescription(" Verify that User is able to add Business SecondCustomer. ");
+		String customerIdBus = Customer.creteBusinessCustomer("Tenant", "Business", "Madirma R-Town", "Mills NY", "1265", "WA", "FranklinCovey", "32165485216", "Dr.", "test_Resdnt2@yopmail.com", "", "Active");
+        System.out.println(customerIdBus);
+        Assert.assertNotNull(customerIdBus);
 
-		String customerIdBus=   Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","Active");
-		System.out.println(customerIdBus);
-		Assert.assertNotNull(customerIdBus);
+    }
 
-	}
+    @Test(priority = 3)
+    public void CommercialCustomer() throws InterruptedException {
+        extentTest = extent.startTest(" Add Commercial Customer ");
+        extentTest.setDescription(" Verify that User is able to add  Commercial ThirdCustomer. ");
+        String customerIdCom = Customer.createCommercialCustomer("Tenant", "Commercial", "Madirma R-Town", "Mills NY", "1265", "WA", "FranklinCovey", "32165485216", "Dr.", "test_Resdnt2@yopmail.com", "10", "Active");
+        System.out.println(customerIdCom);
+        Assert.assertNotNull(customerIdCom);
 
-	@Test(priority = 3)
-	public  void CommercialCustomer() throws InterruptedException {
-		extentTest = extent.startTest(" Add Commercial Customer ");
-		extentTest.setDescription(" Verify that User is able to add  Commercial ThirdCustomer. ");
-//		Login.validLogin();
-	  String customerIdCom =Customer.createCommercialCustomer("Tenant","Commercial","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","10","Active");
-		System.out.println(customerIdCom);
-	  Assert.assertNotNull(customerIdCom);
-
-	}
+    }
 }

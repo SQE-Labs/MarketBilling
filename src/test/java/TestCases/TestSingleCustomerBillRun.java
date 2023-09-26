@@ -23,7 +23,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
         customerId =Customer.createCustomer("Tenant", "Residential", "residential123@yopmail.com");
-         serviceId=Services.M_AddService();
+         serviceId=Services.M_AddService(customerId);
          Services.editService();
          meterId =Metering.AddMeter();
          registerId =Metering.createRegister();

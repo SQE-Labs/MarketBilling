@@ -20,7 +20,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService();
+		String serviceId=Services.M_AddService(customerId);
 		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
@@ -36,7 +36,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
 
 		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId=Services.M_AddService();
+		String serviceId=Services.M_AddService(customerId);
 		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
@@ -66,7 +66,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
 
 		customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		 String serviceId=Services.M_AddService();
+		 String serviceId=Services.M_AddService(customerId);
 		Services.editService();
 		String 	meterId =Metering.AddMeter();
 		String 	registerId =Metering.createRegister();
@@ -74,7 +74,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 		customerId2 = Customer.createCustomer("Tenant", "Business", "business124@yopmail.com");
-		String serviceId2=Services.M_AddService();
+		String serviceId2=Services.M_AddService(customerId);
 		Services.editService();
 		String 	meterId2 =Metering.AddMeter();
 		String 	registerId2 =Metering.createRegister();
