@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 public class TestCustomers extends BaseTest {
 
 	@Test(priority = 1)
-	public  void ResidentialCustomer() throws InterruptedException {
+	public  void residentialCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Residential Customer ");
 		extentTest.setDescription(" Verify that User is able to add Residential customer. ");
 		//Login.validLogin();
@@ -25,7 +25,7 @@ public class TestCustomers extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public  void BusinessCustomer() throws InterruptedException {
+	public  void businessCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Business Customer ");
 		extentTest.setDescription(" Verify that User is able to add Business SecondCustomer. ");
 //		Login.validLogin();

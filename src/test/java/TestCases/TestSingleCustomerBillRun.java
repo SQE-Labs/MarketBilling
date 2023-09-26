@@ -75,16 +75,17 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Rollback for single customer ");
         extentTest.setDescription(" Verify that User is able to run rollback single customer ");
-        BillRun.Rollback_SmallBillRunWithSingleCustomer();
+        BillRun.Rollback_SmallBillRunWithSingleCustomer(billCycleName);
     }
     @Test(priority = 7)
 
-    public  void rebill_and_Reuse() throws InterruptedException {
+    public  void rebill_and_Reuse() throws InterruptedException, AWTException {
         extentTest = extent.startTest(" Rebill and Reuse Statement ");
         extentTest.setDescription(" Verify that User is able to run rebill and reuse and Statement");
         BillRun.rebillSingleCustomer(  billCycleName);
     }
     @Test(priority = 8)
+
 
     public  void emailBills() throws InterruptedException {
         extentTest = extent.startTest(" Send Email ");

@@ -16,7 +16,7 @@ public class TestNewBillRun extends BaseTest {
     public static String meterReg;
     public static String billRunCycle;
     public static String  billCycleName;
-    Metering meter = new Metering();
+
 
 
 
@@ -24,8 +24,7 @@ public class TestNewBillRun extends BaseTest {
     public void createCustomer() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
-    //
-        //    Login.validLogin();
+//       Login.validLogin();
         customerID=Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active");
         System.out.println("Texts match. Assertion passed.");
         serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
@@ -34,23 +33,26 @@ public class TestNewBillRun extends BaseTest {
         meterReg=Metering.createRegister();
         Metering.addMeterReads("Initial","150","200","300");
         Metering.addMeterReads("Actual Read","200","400","650");
-
-
     }
 
-    @Test(priority = 2, enabled = true, description = "Create BillRun Cycles")
+    @Test(priority = 1, enabled = true, description = "Create BillRun Cycles")
     public void createBillRunCycle() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Create BillRun Cycle ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
          billRunCycle = BillRun.BillRunCycle(customerID);
-
     }
-
-    @Test(priority = 3, enabled = true)
+    @Test(priority = 2, enabled = true)
     public void billRun() throws AWTException, InterruptedException {
         extentTest = extent.startTest("Create BillRun Cycles ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
         BillRun.SmallBillRunWithSingleCustomer(billRunCycle);
+    }
+
+    @Test(priority = 3, enabled = true, description = "RollBack Created BillRun")
+    public void commitBillRun() throws InterruptedException {
+        extentTest = extent.startTest("Create BillRun Cycles ");
+        extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
+        BillRun.commitBillRun(billRunCycle);
     }
 
     @Test(priority =4, enabled = true, description = "RollBack BillRun")
@@ -58,18 +60,10 @@ public class TestNewBillRun extends BaseTest {
         extentTest = extent.startTest("RollBack Created BillRun");
         extentTest.setDescription("Verify that user is able to RollBack the Created BillRun or not");
 
-       BillRun.Rollback_SmallBillRunWithSingleCustomer();
+       BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycle);
     }
 
-    @Test(priority = 8, enabled = true, description = "Download Zip")
-    public void downloadZip() throws InterruptedException, AWTException {
-        extentTest = extent.startTest("Download Zip");
-        extentTest.setDescription("Verify that user is able to DownloadZip file or not");
-
-        BillRun.downloadZip();
-    }
-//TO-DO
-    @Test(priority = 5, enabled = false, description = "Edit BillRunCycle")
+    @Test(priority = 5, enabled = true, description = "Edit BillRunCycle")
     public void editBillRunCycle() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Edit BillRun Cycle");
         extentTest.setDescription("Verify that user is able to Update the BillRunCycle or not");
@@ -84,13 +78,15 @@ public class TestNewBillRun extends BaseTest {
         BillRun.rebillSingleCustomer(billRunCycle);
     }
 
-    @Test(priority = 7, enabled = true, description = "RollBack Created BillRun")
-    public void CommitBillRun() throws InterruptedException {
-        extentTest = extent.startTest("Create BillRun Cycles ");
-        extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
-        BillRun.commitBillRun();
+    @Test(priority = 7, enabled = true, description = "Download Zip")
+    public void downloadZip() throws InterruptedException, AWTException {
+        extentTest = extent.startTest("Download Zip");
+        extentTest.setDescription("Verify that user is able to DownloadZip file or not");
+
+        BillRun.downloadZip();
     }
-@Test(priority = 9 , enabled=true, description="Email BillRun ")
+
+@Test(priority = 8 , enabled=true, description="Email BillRun ")
     public void emailBillRun() throws InterruptedException {
         extentTest = extent.startTest("Email BillRun to customer ");
         extentTest.setDescription("Verify that user is able to Email the BillRun or Not");

@@ -13,9 +13,9 @@ public class Navigation  {
 
     public static void searchResults() throws InterruptedException {
         Thread.sleep(2000);
-        List<WebElement> EditIcon = driver.findElements( Edit_icon);
+        List<WebElement> EditIcon = driver.findElements( edit_icon);
         if (EditIcon.size() == 2) {
-            WebDriverWaits.ClickOn(TwosearchResults);
+            WebDriverWaits.ClickOn(twoSearchResults);
 
 
         }

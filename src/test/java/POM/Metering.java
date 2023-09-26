@@ -36,7 +36,7 @@ public class Metering {
     public static By DateConnectedDatepicker = By.xpath("//*[@id='datecon']");
     public static By SelectTodayDateConnected_Datepicker = By.xpath("//*[@class='active day']");
     public static By CreateRegister_Button = By.xpath("//*[@id='createRegister']");
-    public static By MeterReads_Tab = By.xpath("//*[@class='icon-bar-chart']");
+    public static By MeterReads_Tab = By.xpath("//a[text()=' Meter Reads']");
     public static By ServiceName_Dropdown = By.xpath("//*[@id='nmis']");
     public static By ServiceName_DropdownOpn = By.xpath("//*[@id='nmis']/option[2]");
     public static By MeterNumber_Dropdown = By.xpath("//*[@id='meterNo']");
@@ -72,29 +72,26 @@ public class Metering {
         WebDriverWaits.SendKeys(MeterSerialNumber_Field, RandomNumber1);
         WebDriverWaits.ClickOn(ConfigurationType_Dropdown);
         WebDriverWaits.ClickOn(ConfigurationType_Opn);
-//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        Thread.sleep(2000);
-            WebDriverWaits.scrollIntoView(LastTestdate_Datepiker);
+        WebDriverWaits.scrollIntoView(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(Select_LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(DateConnected_Datepicker);
-        Thread.sleep(2000);
+        WebDriverWaits.Waituntilvisible(Select_DateConnected_Datepicker);
         WebDriverWaits.ClickOn(Select_DateConnected_Datepicker);
          WebDriverWaits.scrollIntoView(CreateMeter_Button);
         WebDriverWaits.ClickOn(CreateMeter_Button);
-        Thread.sleep(4000);
         String ExpectedMsg = "Successfully registered meter";
         softAssert.assertEquals(ExpectedMsg, "Successfully registered meter");
-        Thread.sleep(4000);
         return RandomNumber1;
     }
 
     public static String createRegister() throws InterruptedException {
+        Thread.sleep(2000);
          WebDriverWaits.scrollIntoView(MeterEdit_icon);
-         Thread.sleep(1000);
+          WebDriverWaits.Waituntilvisible(MeterEdit_icon);
         WebDriverWaits.ClickOn(MeterEdit_icon);
         WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
-        Thread.sleep(2000);
+       WebDriverWaits.Waituntilvisible(AddMeterRegister_Icon);
         WebDriverWaits.ClickOn(AddMeterRegister_Icon);
         //Create register
         WebDriverWaits.ClickOn(RegisterID_Field);
@@ -107,7 +104,6 @@ public class Metering {
         WebDriverWaits.SendKeys(UnitOfMeasure_Field, "KWH");
         WebDriverWaits.ClickOn(TimeofDay_Field);
         WebDriverWaits.SendKeys(TimeofDay_Field, "ALLDAY");
-//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(DialFormat_Field);
         WebDriverWaits.ClickOn(DialFormat_Field);
         WebDriverWaits.SendKeys(DialFormat_Field, "5");
@@ -120,39 +116,30 @@ public class Metering {
         WebDriverWaits.ClickOn(DateConnectedDatepicker);
         WebDriverWaits.ClickOn(SelectTodayDateConnected_Datepicker);
         WebDriverWaits.ClickOn(CreateRegister_Button);
-        // Validate Successfully created meter register.
-//        String ActualSucessMsg = WebDriverWaits.GetText(CustomerSuccessMeterRegister);
-//        String ExpectedSucessMsg1 = "Successfully created meter register.";
-//        softAssert.assertEquals(ExpectedSucessMsg1, ActualSucessMsg);
-//        Thread.sleep(3000);
         System.out.println("register Id created ----- "+registerId);
         return registerId;
     }
 
     public static void  addMeterReads(String readType,String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
-       Thread.sleep(3000);
+        Thread.sleep(2000);
+        WebDriverWaits.Waituntilvisible(MeterReads_Tab);
         WebDriverWaits.ClickOn(MeterReads_Tab);
-     //   WebDriverWaits.ClickOn(ServiceName_Dropdown);
-        Thread.sleep(1000);
+       WebDriverWaits.Waituntilvisible(ServiceName_DropdownOpn);
         WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
         WebDriverWaits.ClickOn(MeterNumber_Dropdown);
-        Thread.sleep(3000);
+      WebDriverWaits.Waituntilvisible(MeterNumber_DropdownOpn);
         WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
-//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(ViewMeterReads);
         WebDriverWaits.ClickOn(ViewMeterReads);
         WebDriverWaits.scrollIntoView(AddMeterReads);
         WebDriverWaits.ClickOn(AddMeterReads);
-        Thread.sleep(1000);
+         WebDriverWaits.Waituntilvisible(MeterNo_Dropdown);
         WebDriverWaits.ClickOn(MeterNo_Dropdown);
         WebDriverWaits.ClickOn(MeterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_Dropdown);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
         WebDriverWaits.selectByVisibleText(ReadType_Dropdown,readType);
-        // WebElement ReadTypeOption2 = WebDriverWaits.WaitUntilVisibleWE(ReadType_Dropdown);
-        // select = new Select(ReadTypeOption2);
-        // select.selectByVisibleText("Actual Read");
         WebDriverWaits.ClickOn(ReadDate_Datepicker);
         WebDriverWaits.ClickOn(Select_ReadDate_Datepicker);
         WebDriverWaits.ClickOn(MeterReadPeak_Field);
@@ -163,9 +150,6 @@ public class Metering {
         WebDriverWaits.SendKeys(MeterReadShoulder_Field, shoulderValue);
         WebDriverWaits.scrollIntoView(Save_Button);
         WebDriverWaits.ClickOn(Save_Button);
-        Thread.sleep(2000);
-
-      //  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
 
