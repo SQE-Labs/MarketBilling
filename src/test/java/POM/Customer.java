@@ -96,7 +96,7 @@ public class Customer {
         return new Communications();
     }
 
-    public static String createCustomer(String type, String contactTermField,String category, String abnField,String companyName,String addressField,String cityField,String stateField,String postalField,String titledropDown,String email) throws InterruptedException {
+    public static String createCustomer(String type, String category,String contactTermField, String abnField,String companyName,String addressField,String cityField,String stateField,String postalField,String titledropDown,String email) throws InterruptedException {
         //driver.get(DataInterface.URL);
         Thread.sleep(3000);
         //Account Type
@@ -224,6 +224,7 @@ public class Customer {
         WebDriverWaits.ClickOn(searchIcon);
         return customerId;
     }
+
 
     public static void searchCustomer(String CustomerID01R) throws InterruptedException {
 

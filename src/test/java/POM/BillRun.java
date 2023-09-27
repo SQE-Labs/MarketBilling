@@ -188,9 +188,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "15/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "27/10/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "15/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "27/10/2023");
         WebDriverWaits.ClickOn(runBillButton);
         String ActualMsg = WebDriverWaits.GetText(ConfirmationAssertion);
         String ExpectedMsg1 = "Customer " + customerId + "previously billed on uncommitted statement. Do you want to proceed?";
@@ -311,6 +311,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(ViewDetails_Icon);
         WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.ClickOn(detailsIcon);
+        WebDriverWaits.Waituntilvisible(Rollback_Button);
         WebDriverWaits.ClickOn(Rollback_Button);
         WebDriverWaits.SendKeysWithClear(RollbackReason_Field,"RollBacking for update");
         WebDriverWaits.ClickOn(okButton);
@@ -379,12 +380,16 @@ public class BillRun extends TestLogin {
 
 
     public static void filterCustomerId(String customerId) throws InterruptedException {
+
         WebDriverWaits.SendKeysWithClear(customId,customerId);
-        WebDriverWaits.ClickOn(CustomerListFilter);
+        WebDriverWaits.ClickOn(filterButton);
         System.out.println("Customer 1R -- " + CustomerID01R);
         System.out.println("Customer 2B -- " + CustomerID02B);
-       System.out.println("Customer 3C -- " + CustomerID03C);
-        WebDriverWaits.ClickOn(filterButton);
+        if(customerId==customerId){
+            System.out.println("Customer 3C -- " + CustomerID03C);
+        }
+
+      //  WebDriverWaits.ClickOn(filterButton);
         WebDriverWaits.Waituntilvisible(CustomerListFilter);
         WebDriverWaits.SendKeysWithClear(CustomerListFilter, customerId);
         Thread.sleep(2000);
@@ -418,19 +423,19 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(Statement_Subtab);
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(viewRollBackHistoryBtn);
-        Thread.sleep(3000);
-        WebDriverWaits.ClickOn(editActionIcon);
-        Thread.sleep(3000);
-        WebDriverWaits.ClickOn(runBillS);
-        Thread.sleep(3000);
-        WebDriverWaits.ClickOn(Ok_Button);
-        Thread.sleep(5000);
+//        Thread.sleep(3000);
+//        WebDriverWaits.ClickOn(editActionIcon);
+//        Thread.sleep(3000);
+//        WebDriverWaits.ClickOn(runBillS);
+//        Thread.sleep(3000);
+//        WebDriverWaits.ClickOn(Ok_Button);
+//        Thread.sleep(5000);
 
     }
 
     public static void rollback() throws InterruptedException {
         //   if(Pro)
-        SoftAssert softAssert = new SoftAssert();
+     //   SoftAssert softAssert = new SoftAssert();
         WebDriverWaits.ClickOn(detailsIcon);
         WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.Waituntilvisible(rollBackAndFixButton);
@@ -438,6 +443,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(CountinueRollBack);
         WebDriverWaits.ClickOn(crossMark);
         System.out.println("Successfully Rollback completed for two customers.");
+        WebDriverWaits.SwitchToParentTab();
     }
 
     public static String createBillCycle(List<String> customerIdList) throws InterruptedException {
@@ -452,14 +458,7 @@ public class BillRun extends TestLogin {
         String billRunCycleName = RandomStrings.RequiredCharacters(6);
         WebDriverWaits.SendKeysWithClear(CycleName_Field, billRunCycleName);
         WebDriverWaits.scrollIntoView(advanceArrowMark);
-        WebDriverWaits.ClickOn(advanceArrowMark );
-
-//        //  WebDriverWaits.scrollIntoView(advanceArrowMark);
-//        //  WebDriverWaits.ClickOn(advanceArrowMark);
-//        WebDriverWaits.ClickOn(filterButton);
-//        WebDriverWaits.ClickOn(CustomerListFilter);
-//        WebDriverWaits.SendKeys(CustomerListFilter,customerIdList );
-
+        WebDriverWaits.ClickOn(advanceArrowMark);
         System.out.println("Bill run cyccle create with name ---" + billRunCycleName);
         for (String customerId : customerIdList) {
             filterCustomerId(customerId);
@@ -558,7 +557,7 @@ public class BillRun extends TestLogin {
 
     }
 
-    public static String runBillCycleForRollBack(String billRunCycleName) throws InterruptedException, AWTException {
+    public static String billRunForTwoCustomer(String billRunCycleName) throws InterruptedException, AWTException {
 
         //First Time Bill run
         WebDriverWaits.ClickOn(BillRun_Tab);
