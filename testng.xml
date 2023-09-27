@@ -15,16 +15,15 @@
             <class name="TestCases.InvoiceTest"></class>
             <class name="TestCases.Imports"></class>
 
-<!--            <class name="TestCases.TestNewBillRun"></class>-->
+            <class name="TestCases.TestNewBillRun"></class>
 
-
-            <!--            <class name="TestCases.PaymentViaCreditCardTest"></class>-->
-            <!--            <class name="TestCases.PaymentViaBankAccountTest"></class>-->
-            <!--            <class name="TestCases.PaymentViaCashTest"></class>-->
-            <!--            <class name="TestCases.TokenTest"></class>-->
-            <!--            <class name="TestCases.MultipleCustomerBillRunTest"></class>-->
-            <!--            <class name="TestCases.TestAutoDueDate"></class>-->
-            <!--            <class name="TestCases.TestAddPlan"></class>-->
+            <class name="TestCases.PaymentViaCreditCardTest"></class>
+            <class name="TestCases.PaymentViaBankAccountTest"></class>
+            <class name="TestCases.PaymentViaCashTest"></class>
+            <class name="TestCases.TokenTest"></class>
+            <class name="TestCases.MultipleCustomerBillRunTest"></class>
+            <class name="TestCases.TestAutoDueDate"></class>
+            <class name="TestCases.TestAddPlan"></class>
 
         </classes>
     </test>
