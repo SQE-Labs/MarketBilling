@@ -1,6 +1,7 @@
 package BrowsersBase;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
+import CommonMethods.PropertiesUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +15,7 @@ import org.testng.annotations.BeforeSuite;
 
 public class BrowsersInvoked {
 	public static WebDriver driver;
-	public String browser = DataInterface.browserMain;
+	public String browser = PropertiesUtil.getValue("browserMain");
 	public String FinalBrowser = browser.toUpperCase();
 
 	@BeforeSuite
@@ -51,12 +52,12 @@ public class BrowsersInvoked {
 		}
 
 		driver.manage().window().maximize();
-		driver.get(DataInterface.URL);
+		driver.get(PropertiesUtil.getValue("URL"));
 	}
 
 	@AfterSuite
 	public void toClose() {
-		driver.quit();
+	//	driver.quit();
 	}
 
 }

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class TestAddMeter extends BaseTest {
 
-	String 	registerId;
+	String     registerId;
 	@Test(priority = 1)
 	public  void add_Metering() throws InterruptedException {
 		extentTest = extent.startTest("Add  Metering");

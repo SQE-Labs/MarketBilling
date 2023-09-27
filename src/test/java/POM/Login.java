@@ -2,7 +2,6 @@ package POM;
 
 import CommonMethods.PropertiesUtil;
 import org.openqa.selenium.By;
-import BrowsersBase.DataInterface;
 import CommonMethods.WebDriverWaits;
 
 public class Login {
