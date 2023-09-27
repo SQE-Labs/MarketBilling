@@ -20,7 +20,8 @@ public class Admin  extends TestLogin {
 
 
 
-    public static void navigateToInvoiceSetup(){
+    public static void navigateToInvoiceSetup() throws InterruptedException {
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(AdminIcon);
         WebDriverWaits.ClickOn(invoiceSetupBtn);
 

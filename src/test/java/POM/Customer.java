@@ -9,9 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static BrowsersBase.BrowsersInvoked.driver;
-import static POM.Services.searchField;
-import static POM.Services.searchIcon;
+import static POM.Services.*;
 import static POM.Templates.softAssert;
 
 public class Customer {
@@ -137,7 +139,8 @@ public class Customer {
         }
         addContactDetails(email);
         addAccountManagement(category);
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollPageEnd();
         WebDriverWaits.ClickOn(SaveCustomerButton);
         WebDriverWaits.ClickOn(SaveOnlyButton);
 
@@ -165,7 +168,8 @@ public class Customer {
         select.selectByVisibleText("WA");
         WebDriverWaits.ClickOn(PostalCodefield);
         WebDriverWaits.SendKeys(PostalCodefield, "1265");
-        jse.executeScript("window.scrollBy(0,500)", "");
+        WebDriverWaits.scrollIntoView(TitleDropdown);
+       // jse.executeScript("window.scrollBy(0,500)", "");
         WebDriverWaits.ClickOn(TitleDropdown);
         WebElement DrOption = WebDriverWaits.WaitUntilVisibleWE(TitleDropdown);
         select = new Select(DrOption);
@@ -177,16 +181,19 @@ public class Customer {
         RandomName2 = RandomStrings.RequiredCharacters(6);
         Thread.sleep(2000);
         WebDriverWaits.SendKeys(SurnameField, RandomName2);
-        jse.executeScript("window.scrollBy(0,200)", "");
+       // jse.executeScript("window.scrollBy(0,200)", "");
+        WebDriverWaits.scrollIntoView(PhoneBHField);
         WebDriverWaits.ClickOn(PhoneBHField);
         String RandomNumber = "4" + RandomStrings.RequiredDigits(8);
         WebDriverWaits.SendKeys(PhoneBHField, RandomNumber);
         Thread.sleep(2000);
-        jse.executeScript("window.scrollBy(0,200)", "");
+        WebDriverWaits.scrollIntoView(EmailField);
+      //  jse.executeScript("window.scrollBy(0,200)", "");
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(EmailField);
         WebDriverWaits.SendKeys(EmailField, email);
-        jse.executeScript("window.scrollBy(0,400)", "");
+      //  jse.executeScript("window.scrollBy(0,400)", "");
+        WebDriverWaits.scrollIntoView(AccountManagementSection);
         Thread.sleep(1000);
     }
 
@@ -194,7 +201,8 @@ public class Customer {
         WebDriverWaits.scrollIntoView(CompanyNameField);
         WebDriverWaits.ClickOn(Customer.CompanyNameField);
         WebDriverWaits.SendKeys(Customer.CompanyNameField, "FranklinCovey");
-        jse.executeScript("window.scrollBy(0,400)", "");
+        WebDriverWaits.scrollIntoView(ABNField);
+      //  jse.executeScript("window.scrollBy(0,400)", "");
         WebDriverWaits.ClickOn(ABNField);
         WebDriverWaits.SendKeys(ABNField, "32165485216");
         Thread.sleep(2000);
@@ -212,11 +220,23 @@ public class Customer {
 
     }
 
+    public static void switchToCustomerpage() throws InterruptedException {
+        Thread.sleep(2000);
+        List<WebElement> overViewTab = driver.findElements(overviewTab);
+        if (overViewTab.size() == 0) {
+            WebDriverWaits.ClickOn( selectBusinessCustomer_Record1);
+            ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+            Thread.sleep(3000);
+            driver.switchTo().window((String) tabs.get(1));
+        }
+    }
+
     public static void clickSearchIcon() {
         WebDriverWaits.ClickOn(searchIcon);
     }
 
     public static void addAccountManagement(String category) throws InterruptedException {
+        Thread.sleep(2000);
         WebDriverWaits.scrollIntoView(AccountManagementSection);
 
         if (category != "Commercial")

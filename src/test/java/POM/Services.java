@@ -131,6 +131,7 @@ public class Services {
 
 
     public static String addService() throws InterruptedException {
+        Customer.switchToCustomerpage();
         WebDriverWaits.WaitUntilVisible(overviewTab);
         WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(RetailElectricity_Plus_Subtab);

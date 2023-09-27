@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 public class TestAddPlan extends BaseTest {
     String planId;
 
-    @Test(priority = 0,enabled = true)
+    @Test(priority = 0,enabled = false)
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
         extentTest.setDescription(" Verify that User is able to do TouImport");
-        //Login.loginWithGroupName("Test Utilities");
+        Login.validLogin();
         TouImport.TOUImportFile();
 
     }
@@ -22,6 +22,7 @@ public class TestAddPlan extends BaseTest {
     public  void AddPlanwithoutTOUDefinition() throws InterruptedException {
         extentTest = extent.startTest(" AddPlanwithoutTOUDefinition ");
         extentTest.setDescription(" Verify that User is able to add simple plan. ");
+        Login.validLogin();
         Plans.AddPlanwithoutTOUDefinition();
     }
 

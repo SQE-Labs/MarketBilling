@@ -11,9 +11,10 @@
             <class name="TestCases.TestCustomers"></class>
             <class name="TestCases.TestAddService"></class>
             <class name="TestCases.TestAddMeter"></class>
-<!--            <class name="TestCases.CorrespondenceTest"></class>-->
-<!--            <class name="TestCases.InvoiceTest"></class>-->
-<!--            <class name="TestCases.Imports"></class>-->
+            <class name="TestCases.CorrespondenceTest"></class>
+            <class name="TestCases.InvoiceTest"></class>
+            <class name="TestCases.Imports"></class>
+
 <!--            <class name="TestCases.TestNewBillRun"></class>-->
 
 
