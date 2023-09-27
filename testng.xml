@@ -6,7 +6,6 @@
         <!--            <package name="TestCases.*"></package>-->
         <!--        </packages>-->
         <classes>
-
             <class name="TestCases.TestLogin"></class>
             <class name="TestCases.TestCustomers"></class>
             <class name="TestCases.TestAddService"></class>
