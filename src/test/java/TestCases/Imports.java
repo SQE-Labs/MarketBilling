@@ -11,11 +11,11 @@ public class Imports extends BaseTest {
 
     @Test(priority = 0)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
-         extentTest = extent.startTest("Add_Customer_and_Service");
-         //Login.validLogin();
-         customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
-        // serviceId= Services.M_AddService(customerId);
-         Services.editService("Connected");
+        extentTest = extent.startTest("Add_Customer_and_Service");
+        //Login.validLogin();
+        String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+        String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        Services.editService("Connected");
 //         customerId="45809";
 //         serviceId="6507343299";
 
@@ -58,7 +58,7 @@ public class Imports extends BaseTest {
         String readDate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
         //meterNo="Meters359";
         String col = "*Service ID,*Meter Number,*Date of Read,*Meter Read,*Period,*Read Type [I-Initial / A-Actual / C - Consumption / E-Estimate],Notes,Is Read Rollover? [Yes/No],Unit? [GAC-Cubic meter (m3)/GAB-Cubic feet (ft3)/GAA-British thermal unit (btu)/GAD-Kilowatt hour (kWh)/GAE-Mega joules (MJ)/GAF-Therms (th)],Datastream,Special Type";
-        CSVHelper.ImportMeterReads(path,col, serviceId,meterNo,readDate,"200","P","I","notes","","","E1","none");
+        CSVHelper.ImportMeterReads(path,col, serviceId,meterNo,readDate,"100","P","I","notes","","","E1","none");
         MeterImport.meterReadsImport(path);
 
     }

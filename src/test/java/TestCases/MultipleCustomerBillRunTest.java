@@ -23,10 +23,10 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String 	meterId =Metering.AddMeter();
-		String 	registerId =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String 	meterId =Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 	//	BillRun.BillrunMethod_NoCycle();
 
 	}
@@ -39,10 +39,10 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String customerId = Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active" );
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String 	meterId =Metering.AddMeter();
-		String 	registerId =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String 	meterId =Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 		String billRunCycle= BillRun.BillRunCycle(customerId);
 		BillRun.SmallBillRunWithSingleCustomer(billRunCycle);
 	//	BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
@@ -56,26 +56,26 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String CustomerID01R = Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active" );
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String 	meterId =Metering.AddMeter();
-		String 	registerId =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String 	meterId =Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 
 		String CustomerID02B = Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active" );
 		String serviceId2=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String 	meterId2 =Metering.AddMeter();
-		String 	registerId2 =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String 	meterId2 =Metering.add_Metering();
+		String registerId2 = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 
 		String CustomerID03C = Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active" );
 		String serviceId3=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String 	meterId3 =Metering.AddMeter();
-		String 	registerId3 =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String 	meterId3 =Metering.add_Metering();
+		String registerId3 = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(CustomerID01R);
 		customerList.add(CustomerID02B);
@@ -83,40 +83,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 		String billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
+		//commit
 	}
-	@Test(priority = 3,enabled = false)
-	public  void TwoCustomerBillRun() throws InterruptedException, AWTException {
-		extentTest = extent.startTest(" Small Cycle Bill run with 2 customer ");
-		extentTest.setDescription(" Verify that User is able to run the small bill run with 2 customer ");
-	//	Login.validLogin();
-		customerId = Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active" );
-		 String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
-		Services.editService("Connected");
-		String 	meterId =Metering.AddMeter();
-		String 	registerId =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
 
-		customerId2 = Customer.createResidentialCustomer("Tenant","Residential","Madirma R-Town","Mills NY","1265","WA","Mr.","gamler123@yopmail.com", "10","Active");
-		String serviceId2=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
-		Services.editService("Connected");
-		String 	meterId2 =Metering.AddMeter();
-		String 	registerId2 =Metering.createRegister();
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
-
-
-		List<String> customerList = new ArrayList<String>();
-		customerList.add(customerId);
-		customerList.add(customerId2);
-		billRunCycle= BillRun.createBillCycle(customerList);
-		BillRun.billRunForTwoCustomer(billRunCycle);
-
-
-		BillRun.commitBillRun(billRunCycle);
-
-
-	}
 	@Test(priority = 4,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");

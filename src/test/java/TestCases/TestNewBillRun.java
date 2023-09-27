@@ -4,8 +4,7 @@ import CommonMethods.BaseTest;
 import POM.*;
 import org.testng.annotations.Test;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class TestNewBillRun extends BaseTest {
@@ -29,10 +28,11 @@ public class TestNewBillRun extends BaseTest {
         System.out.println("Texts match. Assertion passed.");
         serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
         Services.editService("Connected");
-        meterId=Metering.AddMeter();
-        meterReg=Metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        meterId=Metering.add_Metering();
+        meterReg= Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
     }
 
     @Test(priority = 1, enabled = true, description = "Create BillRun Cycles")

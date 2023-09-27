@@ -19,10 +19,10 @@ public class TestAutoDueDate extends BaseTest {
 
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		//	String billRunCycle= BillRunTest.createBillCycle(customerList);
@@ -37,10 +37,10 @@ public class TestAutoDueDate extends BaseTest {
 		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
@@ -57,10 +57,10 @@ public class TestAutoDueDate extends BaseTest {
 		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		//	String billRunCycle= BillRunTest.createBillCycle(customerList);
