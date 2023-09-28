@@ -28,7 +28,7 @@ public class Services {
 
     // Select the Residential/Business/Commercial customer created in add customer
     public static By twoSearchResults = By.xpath("//*[@class='icon-edit ']");
-    public static By selectResidentialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[1]");
+    public static By selectRecord = By.xpath("(//td[@class='sorting_1']/a)[1]");
     public static By selectBusinessCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[2]");
     public static By selectBusinessCustomer_Record1 = By.xpath("(//td[@class='sorting_1']/a)[1]"); // Just temporary
     // due to issue
@@ -84,7 +84,7 @@ public class Services {
         WebDriverWaits.Waituntilvisible(searchField);
         WebDriverWaits.ClickOn(searchField);
         Thread.sleep(2000);
-        String ThirdRecID = WebDriverWaits.GetText(selectResidentialCustomer_Record);
+        String ThirdRecID = WebDriverWaits.GetText(selectRecord);
         WebDriverWaits.SendKeys(searchField, ThirdRecID);
         WebDriverWaits.ClickOn(searchIcon);
         Customer.switchToCustomerpage();

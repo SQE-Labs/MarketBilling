@@ -22,7 +22,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
-        customerId =Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+        customerId =Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
          serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
          Services.editService("Connected");
          meterId =Metering.add_Metering();

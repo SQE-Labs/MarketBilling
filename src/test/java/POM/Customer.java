@@ -96,7 +96,7 @@ public class Customer {
         return new Communications();
     }
 
-    public static String createCustomer(String type, String category,String contactTermField, String abnField,String companyName,String addressField,String cityField,String stateField,String postalField,String titledropDown,String email) throws InterruptedException {
+    public static String createCustomer(String type, String category,String companyName, String abnField, String addressField,String cityField,String stateField,String postalField,String titledropDown,String email,String catagory, String contactTermField) throws InterruptedException {
         //driver.get(DataInterface.URL);
         Thread.sleep(3000);
         //Account Type
@@ -110,7 +110,7 @@ public class Customer {
             addBusinessDetails(abnField,companyName);
         }
         addContactDetails(addressField,cityField,stateField,postalField,titledropDown,email);
-        addAccountManagement(contactTermField,category);
+        addAccountManagement(category,contactTermField);
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.ClickOn(saveCustomerButton);
         WebDriverWaits.ClickOn(saveOnlyButton);
@@ -226,12 +226,12 @@ public class Customer {
     }
 
 
-    public static void searchCustomer(String CustomerID01R) throws InterruptedException {
+    public static void searchCustomer(String customerId) throws InterruptedException {
 
-      //  LandingPage.navigateToHomePage();
+     //   LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(searchIcon);
         WebDriverWaits.ClickOn(searchField);
-        WebDriverWaits.SendKeys(searchField, CustomerID01R);
+        WebDriverWaits.SendKeys(searchField, customerId);
         WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(2000);
     }
@@ -246,6 +246,7 @@ public class Customer {
         WebDriverWaits.ClickOn(settingsTab);
         return new Settings();
     }
+
 //
 //    //========NEW UPDATED CODES============
 //

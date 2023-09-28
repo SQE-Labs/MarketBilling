@@ -1,26 +1,24 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import CommonMethods.WebDriverWaits;
 import POM.*;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static POM.Customer.*;
+
 
 
 public class MultipleCustomerBillRunTest extends BaseTest {
 	public String customerId;
 	public String customerId2;
-	public String billRunCycle;
-	@Test(priority = 0,enabled = false)  // cannot automate because this depricated
+	public String billRunCycleName;
+	@Test(priority = 0,enabled = false)  // cannot automate because BillRun is not happen without billruncycle.
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com" );
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
 		String 	meterId =Metering.add_Metering();
@@ -31,8 +29,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 	}
 
-	@Test(priority = 1,enabled =true)
-	public  void BillRunWithUncommittedStatement() throws InterruptedException, AWTException {
+	@Test(priority = 1,enabled =false)
+	public  void billRunWithUncommittedStatement() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
 		Login.validLogin();
@@ -48,8 +46,8 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	//	BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
-	@Test(priority = 2,enabled = true)
-	public  void TestLargeBillRun() throws InterruptedException, AWTException {
+	@Test(priority=2,enabled = true)
+	public  void testLargeBillRun() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
 		Login.validLogin();
@@ -81,16 +79,16 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		customerList.add(CustomerID02B);
 		customerList.add(CustomerID03C);
 
-		String billRunCycleName= BillRun.createBillCycle(customerList);
+		 billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
-		//commit
+		BillRun.commitBillRun(billRunCycleName);
 	}
 
 	@Test(priority = 4,enabled = true)
 	public  void TwoCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycle);
+		BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycleName);
 	}
 	@Test(priority = 5,enabled = true)
 	public  void TwoCustomer_ReBill() throws InterruptedException, AWTException {
@@ -99,7 +97,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		customerList.add(customerId2);
-		BillRun.runBillCycle(billRunCycle);
+		BillRun.runBillCycle(billRunCycleName);
 
 	}
 	@Test(priority = 6,enabled = true)

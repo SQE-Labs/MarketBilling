@@ -60,7 +60,8 @@ public class Metering {
     public static By ConsumptiomType=By.xpath("//select[@id='consumptionType']");
     public static SoftAssert softAssert = new SoftAssert();
 
-    public static String add_Metering() throws InterruptedException {
+    public static String
+    add_Metering() throws InterruptedException {
 
 //        jse.executeScript("window.scrollBy(0,1000)", "");
         System.out.println("I am clicking add meter button");
