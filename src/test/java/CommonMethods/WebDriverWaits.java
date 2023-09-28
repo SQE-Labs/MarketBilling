@@ -2,6 +2,7 @@ package CommonMethods;
 
 import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
@@ -277,5 +278,10 @@ public class WebDriverWaits extends BrowsersInvoked {
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
 
+	}
+	//create method moveToelemenet
+	public static void moveToelemenet(WebElement element){
+		Actions s = new Actions(driver);
+       s.moveToElement(element).click().build().perform();
 	}
 }

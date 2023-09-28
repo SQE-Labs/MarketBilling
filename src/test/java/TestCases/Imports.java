@@ -11,22 +11,20 @@ public class Imports extends BaseTest {
 
     @Test(priority = 0)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
-        extentTest = extent.startTest("Add_Customer_and_Service");
-        Login.validLogin();
-        String customerId = Customer.createCustomer("Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
-        String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+         extentTest = extent.startTest("Add_Customer_and_Service");
+         Login.validLogin();
+        customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
+        serviceId= Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
         Services.editService("Connected");
-//         customerId="45809";
-//         serviceId="6507343299";
-
-
+//         customerId="36946";
+//         serviceId="7680996802";
 	}
 
     @Test(priority = 1,enabled = true)
     public void Import_Meter_Number() throws Exception {
         extentTest = extent.startTest(" Meter Number import ");
         extentTest.setDescription(" Verify that User is able to run meter number import");
-       // Login.ValidLogin();
+        //Login.validLogin();
          int random2 = (new Random()).nextInt(900) + 100;
         String meterImport_FilePath = System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv";
         String col = "*Service ID,*Meter Serial Number,*Status,*Consumption Type,*Configuration,Multiplier,Constant,Hazard,Location,Additional Site Info,Meter Point ID,Next Scheduled Read Date,Manufacturer,Model,Meter Read Type,Route,Walk Order,*Meter Installation Type,*Date Connected,Date Removed";

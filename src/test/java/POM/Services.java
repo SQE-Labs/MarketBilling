@@ -1,17 +1,14 @@
 package POM;
-
 import CommonMethods.DateAndTime;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
-import helper.Navigation;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
-
 import java.awt.*;
-
 import static BrowsersBase.BrowsersInvoked.driver;
 import static POM.GroupEdit.softAssert;
 
@@ -75,7 +72,7 @@ public class Services {
     public static By postCode = By.xpath("//*[@id=\"postCode\"]");
     public static By selectState1 = By.xpath("//*[@id=\"state\"]");
 
- //   public static By ServiceTab = By.xpath("//*[@class=\"icon-power-off\"]");
+    //   public static By ServiceTab = By.xpath("//*[@class=\"icon-power-off\"]");
     public static By moveinSearch = By.xpath("//label[text()='Move-In Date']");
     public static By serviceSuccMsg = By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
@@ -97,7 +94,7 @@ public class Services {
         WebDriverWaits.ClickOn(nMI_Field);
         String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
         WebDriverWaits.SendKeys(nMI_Field, ServiceIDLater1);
-       WebDriverWaits.Waituntilvisible(service_Plan_Dropdown);
+        WebDriverWaits.Waituntilvisible(service_Plan_Dropdown);
         WebDriverWaits.ClickOn(service_Plan_Dropdown);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(service_Plan_Elec);
@@ -109,7 +106,7 @@ public class Services {
         String RandomNumber2 = RandomStrings.RequiredDigits(15);
         WebDriverWaits.SendKeys(postal_Code_field, RandomNumber2);
         WebDriverWaits.ClickOn(stateDropdown);
-      WebDriverWaits.selectByVisibleText(stateDropdown,StateName);
+        WebDriverWaits.selectByVisibleText(stateDropdown,StateName);
         WebDriverWaits.ClickOn(addButton);
         System.out.println(ServiceIDLater1);
         return ServiceIDLater1;
@@ -118,6 +115,7 @@ public class Services {
 
     public static String addService(String offMarket,String StateName,String subField) throws InterruptedException {
         Customer.switchToCustomerpage();
+        Thread.sleep(1000);
         WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);
         Thread.sleep(2000);
@@ -133,7 +131,7 @@ public class Services {
         WebDriverWaits.ClickOn(service_Plan_Elec);
         WebDriverWaits.ClickOn(moveSearch);
         WebDriverWaits.ClickOn(moveInDate);
-      //  WebDriverWaits.SendKeys(move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
+        //  WebDriverWaits.SendKeys(move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         WebDriverWaits.scrollIntoView(suburb_Field);
         WebDriverWaits.ClickOn(suburb_Field);
         WebDriverWaits.SendKeys(suburb_Field, subField );
@@ -152,7 +150,7 @@ public class Services {
     public static void navigateToEditServices() throws InterruptedException {
         WebDriverWaits.ClickOn(serviceTab);
         // Search service id ("N" + random+"11"); which is created above
-      //  WebDriverWaits.ClickOn(Edit_icon);
+        //  WebDriverWaits.ClickOn(Edit_icon);
 
     }
 
