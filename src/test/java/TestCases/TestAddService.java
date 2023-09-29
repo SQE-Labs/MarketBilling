@@ -53,7 +53,7 @@ public class TestAddService extends BaseTest {
       //Login.validLogin();
       //String CustomerID02B="36896";
          Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-        Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        Services.M_AddService("Off Market","NSW", "New South Wales");
         Services.editService("Connected");
         Metering metering = new Metering();
         Metering.AddMeter() ;
@@ -70,16 +70,12 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-        Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        Services.M_AddService("Off Market","NSW", "New South Wales");
         Services.editService("Connected");
-
         Metering.AddMeter() ;
         Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-
         Metering.addMeterReads("Initial","150","200","300");
         Metering.addMeterReads("Actual Read","200","400","650");
-
-
     }
     @Test(priority = 6,enabled=false)
     public void addSitePlans() throws InterruptedException {

@@ -4,7 +4,6 @@ import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -259,7 +258,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 
 	public static void uploadFileUsingRobot(String filepath) throws AWTException {
-				// creating object of Robot class
+		// creating object of Robot class
 		Robot rb = new Robot();
 
 		// copying File path to Clipboard
@@ -279,9 +278,16 @@ public class WebDriverWaits extends BrowsersInvoked {
 		rb.keyRelease(KeyEvent.VK_ENTER);
 
 	}
+
 	//create method moveToelemenet
-	public static void moveToelemenet(WebElement element){
+	public static void moveToelemenet(WebElement element) {
 		Actions s = new Actions(driver);
-       s.moveToElement(element).click().build().perform();
+		s.moveToElement(element).click().build().perform();
+	}
+	public static WebElement byToWebElement(By by) {
+		return driver.findElement(by);
+	}
+	public static void clickOnMoveToElemenet(By element) {
+		byToWebElement(element).click();
 	}
 }

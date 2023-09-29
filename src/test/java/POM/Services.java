@@ -47,7 +47,7 @@ public class Services {
     public static By Street_Number_Suffix_Dropdown = By.xpath("//*[@id=\"houseNBRSuffix\"]");
     public static By suburb_Field = By.xpath("//*[@id=\"locality\"]");
     public static By postal_Code_field = By.xpath("//*[@id=\"postCode\"]");
-    public static By stateDropdown = By.xpath("//*[@id=\"state\"]");
+    public static By stateDropdown = By.xpath("//select[@id='state']");
     public static By addButton = By.xpath("//*[@id=\"submitBttn\"]");
 
     // Edit Residential/Business/Commercial customer service
@@ -76,7 +76,7 @@ public class Services {
     public static By moveinSearch = By.xpath("//label[text()='Move-In Date']");
     public static By serviceSuccMsg = By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
-    public static String M_AddService(String offMarket,String StateName,String subField) throws InterruptedException {
+    public static String M_AddService(String offMarket,String subField,String StateName) throws InterruptedException {
         WebDriverWaits.ClickOn(searchIcon);
         WebDriverWaits.Waituntilvisible(searchField);
         WebDriverWaits.ClickOn(searchField);
@@ -84,7 +84,8 @@ public class Services {
         String ThirdRecID = WebDriverWaits.GetText(selectRecord);
         WebDriverWaits.SendKeys(searchField, ThirdRecID);
         WebDriverWaits.ClickOn(searchIcon);
-        Customer.switchToCustomerpage();
+      //  Customer.switchToCustomerpage();
+       // WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);
         WebDriverWaits.Waituntilvisible(market_Type_Field);
@@ -112,9 +113,9 @@ public class Services {
         return ServiceIDLater1;
     }
 
-
     public static String addService(String offMarket,String StateName,String subField) throws InterruptedException {
         Customer.switchToCustomerpage();
+     //   WebDriverWaits.SwitchToNewTab();
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);

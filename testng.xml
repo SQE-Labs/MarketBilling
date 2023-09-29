@@ -9,6 +9,7 @@
             <class name="TestCases.TestLogin"></class>
             <class name="TestCases.TestCustomers"></class>
             <class name="TestCases.TestAddService"></class>
+            <class name="TestCases.TestAutoDueDate"></class>
 <!--            <class name="TestCases.TestAddMeter"></class>-->
 <!--&lt;!&ndash;            <class name="TestCases.CorrespondenceTest"></class>&ndash;&gt;-->
 <!--&lt;!&ndash;            <class name="TestCases.InvoiceTest"></class>&ndash;&gt;-->
@@ -19,7 +20,7 @@
 <!--&lt;!&ndash;            <class name="TestCases.TokenTest"></class>&ndash;&gt;-->
 <!--            <class name="TestCases.TestNewBillRun"></class>-->
             <class name="TestCases.MultipleCustomerBillRunTest"></class>
-<!--            <class name="TestCases.TestAutoDueDate"></class>-->
+
 <!--            <class name="TestCases.TestAddPlan"></class>-->
 
 

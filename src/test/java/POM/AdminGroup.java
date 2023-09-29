@@ -29,23 +29,21 @@ public class AdminGroup extends TestLogin {
 		//	driver.get(DataInterface.URL);
 			WebDriverWaits.ClickOn(Admin_Tab);
 			WebDriverWaits.ClickOn(EditGroup_SubTab);
-			jse.executeScript("window.scrollBy(0,2400)", "");
+			WebDriverWaits.scrollIntoView(DueDatebyPaymentTerms_ToggleButton);
 			if ( driver.findElement(By.id("payTermOption")).getAttribute("style").contains("none")){
 				WebDriverWaits.ClickOn(DueDatebyPaymentTerms_ToggleButton);
-
 			}
 			WebDriverWaits.selectCheckBox(ToggleButton_opn1_Commercial);
 			WebDriverWaits.selectCheckBox(ToggleButton_opn2_Residential);
 			WebDriverWaits.selectCheckBox(ToggleButton_opn3_Business);
-			jse.executeScript("window.scrollBy(0,100)", "");
+			WebDriverWaits.scrollIntoView(g_payment_term_method);
 			WebDriverWaits.selectByVisibleText(g_payment_term_method,paymentMethod);
 			if(paymentMethod!="End of month"){
 				WebElement Field = WebDriverWaits.WaitUntilVisibleWE(PaymentTermNumberofDays_Field);
-				Field.clear();
-				WebDriverWaits.SendKeys(PaymentTermNumberofDays_Field, "10");
-			}
 
-			jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+				WebDriverWaits.SendKeysWithClear(PaymentTermNumberofDays_Field, "10");
+			}
+			WebDriverWaits.scrollIntoView(SaveChanges_Button);
 			WebDriverWaits.ClickOn(SaveChanges_Button);
 			WebDriverWaits.ClickOn(Save_Button);
 			Thread.sleep(2000);

@@ -21,7 +21,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-		Login.validLogin();
+	//	Login.validLogin();
 
 		String customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
@@ -34,11 +34,11 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 	}
 
-	@Test(priority = 1,enabled =true)//functionality not there
+	@Test(priority = 1,enabled =false)//functionality not there
 	public  void billRunWithUncommittedStatement() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Bill Run With Uncommitted Statement ");
 		extentTest.setDescription(" Verify that User is gets the confirmation popup when user tries to run the bill WitUncommitted Statement ");
-		Login.validLogin();
+		//Login.validLogin();
 		customerId=Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
@@ -48,6 +48,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		Metering.addMeterReads("Actual Read","200","400","650");
 		 billRunCycle= BillRun.BillRunCycle(customerId);
 		BillRun.runBillCycle(billRunCycle);
+		BillRun.directRollBack(billRunCycleName);
 	//	BillRun.BillRunWithUncommittedStatement(billRunCycle,customerId);
 
 	}
@@ -55,9 +56,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void testLargeBillRun() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
-		//Login.validLogin();
+	//	Login.validLogin();
 		 CustomerID01R = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-		String serviceId=Services.addService("Off Market","New South Wales","Almor Distt 324");
+		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
 		String registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
@@ -65,18 +66,18 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 		CustomerID02B = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-		String serviceId2=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
-		String 	meterId2 =Metering.AddMeter();
-		String registerId2 = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+		 Metering.AddMeter();
+		  Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
 
 		 CustomerID03C = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-		String serviceId3=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
-		String 	meterId3 =Metering.AddMeter();
-		String registerId3 = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+		 Metering.AddMeter();
+		 Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
 		Metering.addMeterReads("Initial","150","200","300");
 		Metering.addMeterReads("Actual Read","200","400","650");
 
@@ -86,14 +87,14 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		customerList.add(CustomerID03C);
 		billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
-		BillRun.commitBillRun(billRunCycleName);
+	//	BillRun.commitBillRun(billRunCycleName);
 	}
 
 	@Test(priority = 4,enabled = true)
 	public  void multiCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycleName);
+		BillRun.directRollBack(billRunCycleName);
 	}
 	@Test(priority = 5,enabled = true)
 	public  void multiCustomer_ReBill() throws InterruptedException, AWTException {

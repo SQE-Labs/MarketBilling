@@ -14,7 +14,7 @@ public class Imports extends BaseTest {
          extentTest = extent.startTest("Add_Customer_and_Service");
          Login.validLogin();
         customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-        serviceId= Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        serviceId= Services.M_AddService("Off Market","NSW","New South Wales");
         Services.editService("Connected");
 //         customerId="36946";
 //         serviceId="7680996802";
