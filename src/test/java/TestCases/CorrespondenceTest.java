@@ -41,7 +41,7 @@ public class CorrespondenceTest extends BaseTest {
 
     }
 
-    //TODO Assertion pending due to search SSERTION PENDING DUE TO SEARCH FILED ISSUE //
+    //TODO ASERTION PENDING DUE TO SEARCH FILED ISSUE //
     @Test(priority = 2, enabled = true)
     public void edit_CorrespondenceLetter() throws InterruptedException {
         extentTest = extent.startTest(" Edit Correspondence Letter ");
@@ -49,7 +49,7 @@ public class CorrespondenceTest extends BaseTest {
         admin.navigateToAdmin();
         correspondence.navigateToCorrespondenceSetup();
         correspondence.edit_Correspondenceletter();
-    //    correspondence.validate_EditLetterSuccessTXT(Correspondence_letterName);
+        //    correspondence.validate_EditLetterSuccessTXT(Correspondence_letterName);
 
     }
 

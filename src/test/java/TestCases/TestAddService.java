@@ -21,7 +21,7 @@ public class TestAddService extends BaseTest {
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
        // Login.validLogin();
         Customer.searchCustomer(CustomerID01R);
-        Services.addService();
+        Services.addService("Off Market","New South Wales","Almor Distt 324");
     }
 
     @Test(priority = 2)
@@ -29,7 +29,7 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
        // Login.validLogin();
-        Services.editService();
+        Services.editService("Connected");
     }
 
     @Test(priority = 3)
@@ -37,10 +37,11 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
 
     }
@@ -52,13 +53,14 @@ public class TestAddService extends BaseTest {
       //Login.validLogin();
       //String CustomerID02B="36896";
         Customer.searchCustomer(CustomerID02B);
-        Services.addService();
-        Services.editService();
+        Services.addService("Off Market","New South Wales","Almor Distt 324");
+        Services.editService("Connected");
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
     }
 
@@ -68,13 +70,14 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
         Customer.searchCustomer(CustomerID03C);
-        Services.addService();
-        Services.editService();
+        Services.addService("Off Market","New South Wales","Almor Distt 324");
+        Services.editService("Connected");
         Metering metering = new Metering();
-        metering.AddMeter();
-        metering.createRegister();
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        metering.add_Metering();
+        metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
     }
     @Test(priority = 6,enabled=false)

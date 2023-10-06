@@ -12,7 +12,7 @@ public class PaymentViaCashTest extends BaseTest {
     public  void valid_Cash_PaymentType() throws InterruptedException {
         extentTest = extent.startTest("valid_Cash_PaymentType");
         extentTest.setDescription("Verify 'Transactions' successfully done via 'Cash' from the Payment Method drop-down.");
-        //Login.ValidLogin();
+        Login.validLogin();
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.make_Payment("Payment","Cash");
         Transactions.verify_CashPaySuccess_MSG("Cash");

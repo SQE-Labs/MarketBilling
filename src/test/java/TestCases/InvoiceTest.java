@@ -19,7 +19,7 @@ public class InvoiceTest extends BaseTest {
     public  void createInvoice_template() throws InterruptedException {
         extentTest = extent.startTest("Create Invoice Template ");
         extentTest.setDescription(" Verify that User is able to create Invoice Template. ");
-       // Login.validLogin();
+        //Login.validLogin();
         admin.navigateToInvoiceSetup();
         invoice.create_Invoice("TRANSACTION-SUMMARY","TRANSACTION-SUMMARY-LIST","TRANSACTION-SUMMARY-LIST","Sample template text" );
 

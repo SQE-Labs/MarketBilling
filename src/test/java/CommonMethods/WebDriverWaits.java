@@ -14,10 +14,10 @@ import java.util.Set;
 
 
 public class WebDriverWaits extends BrowsersInvoked {
-	static WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-	static WebDriverWait wait20 = new WebDriverWait(driver,Duration.ofSeconds(10));
-	static WebDriverWait wait80 = new WebDriverWait(driver,Duration.ofSeconds(90));
-	static WebDriverWait wait5mins = new WebDriverWait(driver,Duration.ofSeconds(10));
+	static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	static WebDriverWait wait20 = new WebDriverWait(driver, Duration.ofSeconds(10));
+	static WebDriverWait wait80 = new WebDriverWait(driver, Duration.ofSeconds(90));
+	static WebDriverWait wait5mins = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	public static void WaitUntilPresent(By element) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(element));
@@ -30,10 +30,9 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void Waituntilvisible(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(20)));
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(20)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-		}
-		catch (TimeoutException e){
+		} catch (TimeoutException e) {
 			WebElement ele = driver.findElement(element);
 			ele.click();
 
@@ -67,17 +66,15 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void ClickOn(By element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,(Duration.ofSeconds(15)));
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
-				}
+		}
 		WebElement ele = driver.findElement(element);
 		ele.click();
 		//System.out.println("Clicked On " + element);
 	}
-
-
 
 
 	public static void SendKeys(By element, String value) {
@@ -86,12 +83,14 @@ public class WebDriverWaits extends BrowsersInvoked {
 		ele.sendKeys(value);
 		//System.out.println(ele+" ------"+value);
 	}
+
 	public static void SendKeysWithClear(By element, String value) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 		WebElement ele = driver.findElement(element);
 		ele.clear();
 		ele.sendKeys(value);
 	}
+
 	public static void ClickOnWE(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
@@ -125,7 +124,8 @@ public class WebDriverWaits extends BrowsersInvoked {
 			checkBoxElement.click();
 		}
 	}
-	public static void toggleButton(By element,boolean value) {
+
+	public static void toggleButton(By element, boolean value) {
 
 		WebElement checkBoxElement = driver.findElement(element);
 		String data = checkBoxElement.getAttribute("data-on");
@@ -135,29 +135,34 @@ public class WebDriverWaits extends BrowsersInvoked {
 			checkBoxElement.click();
 		}
 	}
+
 	public static void selectByValue(By element, String value) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		WebElement ele = driver.findElement(element);
-        ele.click();
+		ele.click();
 		Select dropdown = new Select(ele);
 		dropdown.selectByValue(value);
 	}
+
 	public static void scrollIntoView(By element) {
-		 JavascriptExecutor jse = (JavascriptExecutor) driver;
-		 WebElement ele = driver.findElement(element);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		WebElement ele = driver.findElement(element);
 		jse.executeScript("arguments[0].scrollIntoView(true);", ele);
 
 	}
+
 	public static void scrollDown() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,250)", "");
 		Thread.sleep(2000);
 
 	}
+
 	public static void scrollPageEnd() {
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
 	}
+
 	public static void selectByVisibleText(By element, String text) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		WebElement ele = driver.findElement(element);
@@ -173,7 +178,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeSelected(element));
 			WebElement ele = driver.findElement(element);
-		}catch(TimeoutException e) {
+		} catch (TimeoutException e) {
 
 		}
 	}
@@ -185,25 +190,28 @@ public class WebDriverWaits extends BrowsersInvoked {
 		Select dropdown = new Select(ele);
 		dropdown.selectByIndex(index);
 	}
+
 	public static void acceptAlert() {
 		wait.until(ExpectedConditions.alertIsPresent());
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 	}
+
 	public static boolean isElementPresent(By by) {
 		boolean exists = false;
 		List list = driver.findElements(by);
 		// We can verify the presence using list.size() or list.isEmpty()
-		if(!list.isEmpty()) {
+		if (!list.isEmpty()) {
 			exists = true;
 		}
 		return exists;
 	}
+
 	public static void CloseOtherTabs() throws InterruptedException {
 		String originalHandle = driver.getWindowHandle();
 		Set<String> tabs = driver.getWindowHandles();
 
-		for(String handle : tabs) {
+		for (String handle : tabs) {
 			if (!handle.equals(originalHandle)) {
 				driver.switchTo().window(originalHandle);
 				driver.close();
@@ -214,18 +222,30 @@ public class WebDriverWaits extends BrowsersInvoked {
 		System.out.print(driver.getCurrentUrl());
 		Thread.sleep(3000);
 	}
+
 	public static void SwitchToNewTab() throws InterruptedException {
 		String originalHandle = driver.getWindowHandle();
 		Set<String> tabs = driver.getWindowHandles();
 
-		for(String handle : tabs) {
+		for (String handle : tabs) {
 			if (!handle.equals(originalHandle)) {
 				driver.switchTo().window(handle);
 			}
 		}
-
-		Thread.sleep(3000);
 	}
+
+	public static void SwitchToParentTab() {
+		String originalHandle = driver.getWindowHandle();
+		Set<String> tabs = driver.getWindowHandles();
+
+		for (String handle : tabs) {
+			if (!handle.equals(originalHandle)) {
+				driver.switchTo().defaultContent();
+			}
+		}
+	}
+
+
 	public static void SwitchToFrameId(String id) throws InterruptedException {
 		driver.switchTo().frame(id);
 		Thread.sleep(2000);

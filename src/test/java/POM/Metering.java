@@ -4,8 +4,6 @@ import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
-import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
@@ -13,7 +11,6 @@ import java.awt.event.KeyEvent;
 
 import static BrowsersBase.BrowsersInvoked.driver;
 import static POM.GroupEdit.softAssert;
-import static POM.Transactions.transactionTypeText;
 
 public class Metering {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -40,6 +37,7 @@ public class Metering {
     public static By SelectTodayDateConnected_Datepicker = By.xpath("//*[@class='active day']");
     public static By CreateRegister_Button = By.xpath("//*[@id='createRegister']");
     public static By MeterReads_Tab = By.xpath("//*[@class='icon-bar-chart']");
+    public static By ServiceName_Dropdown = By.xpath("//*[@id='nmis']");
     public static By ServiceName_DropdownOpn = By.xpath("//*[@id='nmis']/option[2]");
     public static By MeterNumber_Dropdown = By.xpath("//*[@id='meterNo']");
     public static By MeterNumber_DropdownOpn = By.xpath("//*[@id='meterNo']/option[2]");
@@ -50,26 +48,32 @@ public class Metering {
     public static By RegisterNo_Dropdown = By.xpath("//*[@id='rregno']");
     public static By RegisterNo_DropdownOpn = By.xpath("//*[@id='rregno']/option[2]");
     public static By ReadType_Dropdown = By.id("rreadType");
+    public static By ReadType_DropdownOpn1 = By.xpath("//*[@id='rreadType']/option[2]");
+    public static By ReadType_DropdownOpn2 = By.xpath("//*[@id='rreadType']/option[4]");
     public static By ReadDate_Datepicker = By.xpath("//*[@id='rreadDate']");
     public static By Select_ReadDate_Datepicker = By.xpath("//*[@class='active day']");
     public static By MeterReadPeak_Field = By.xpath("//*[@id='modalReadingP']");
     public static By MeterReadOffPeak_Field = By.xpath("//*[@id='modalReadingO']");
     public static By MeterReadShoulder_Field = By.xpath("//*[@id='modalReadingS']");
     public static By Save_Button = By.xpath("(//button[contains(text(),'Save')])[2]");
-
-
+    public static By CustomerSuccessMeterRegister = By.xpath("//div[@class='alert alert-success']/center");
+    public static By ConsumptiomType = By.xpath("//select[@id='consumptionType']");
     public static SoftAssert softAssert = new SoftAssert();
-    String ExpectedMsg = "Successfully registered meter";
 
-    public static String AddMeter() throws InterruptedException {
+    public static String add_Metering() throws InterruptedException {
 
+//        jse.executeScript("window.scrollBy(0,1000)", "");
+        //WebDriverWaits.scrollPageEnd();
+        System.out.println("I am clicking add meter button");
         WebDriverWaits.scrollIntoView(AddMeterIcon);
         WebDriverWaits.ClickOn(AddMeterIcon);
+        System.out.println("I am on add meter page");
         WebDriverWaits.ClickOn(MeterSerialNumber_Field);
         String RandomNumber1 = "Meter" + RandomStrings.RequiredDigits(3);
         WebDriverWaits.SendKeys(MeterSerialNumber_Field, RandomNumber1);
         WebDriverWaits.ClickOn(ConfigurationType_Dropdown);
         WebDriverWaits.ClickOn(ConfigurationType_Opn);
+//        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(2000);
         WebDriverWaits.scrollIntoView(LastTestdate_Datepiker);
         WebDriverWaits.ClickOn(LastTestdate_Datepiker);
@@ -80,18 +84,14 @@ public class Metering {
         WebDriverWaits.scrollIntoView(CreateMeter_Button);
         WebDriverWaits.ClickOn(CreateMeter_Button);
         Thread.sleep(4000);
+        String ExpectedMsg = "Successfully registered meter";
+        softAssert.assertEquals(ExpectedMsg, "Successfully registered meter");
+        Thread.sleep(4000);
         return RandomNumber1;
     }
 
-    public static void verify_Metering_SuccessMSG(String expected) throws InterruptedException {
-//         Thread.sleep(5000);
-//         String actual = WebDriverWaits.GetText();
-//         Assert.assertEquals(actual, expected);
-//         Thread.sleep(4000);
-    }
-
-
-    public static String createRegister() throws InterruptedException {
+    public static String create_Register(String networkCodeTxt, String unitTxt, String timeofDayTxt, String dailFormatTxt,
+                                         String demand1Txt, String demand2Txt, String nmiSuffixTxt) throws InterruptedException {
         //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(MeterEdit_icon);
         Thread.sleep(1000);
@@ -107,21 +107,21 @@ public class Metering {
         String registerId = "1215" + RandomStrings.RequiredDigits(3);
         WebDriverWaits.SendKeys(RegisterID_Field, registerId);
         WebDriverWaits.ClickOn(NetworkTariffCode_Field);
-        WebDriverWaits.SendKeys(NetworkTariffCode_Field, "Na");
+        WebDriverWaits.SendKeys(NetworkTariffCode_Field, networkCodeTxt);
         WebDriverWaits.ClickOn(UnitOfMeasure_Field);
-        WebDriverWaits.SendKeys(UnitOfMeasure_Field, "KWH");
+        WebDriverWaits.SendKeys(UnitOfMeasure_Field, unitTxt);
         WebDriverWaits.ClickOn(TimeofDay_Field);
-        WebDriverWaits.SendKeys(TimeofDay_Field, "ALLDAY");
+        WebDriverWaits.SendKeys(TimeofDay_Field, timeofDayTxt);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(DialFormat_Field);
         WebDriverWaits.ClickOn(DialFormat_Field);
-        WebDriverWaits.SendKeys(DialFormat_Field, "5");
+        WebDriverWaits.SendKeys(DialFormat_Field, dailFormatTxt);
         WebDriverWaits.ClickOn(Demand1_Field);
-        WebDriverWaits.SendKeys(Demand1_Field, "0");
+        WebDriverWaits.SendKeys(Demand1_Field, demand1Txt);
         WebDriverWaits.ClickOn(Demand2_Field);
-        WebDriverWaits.SendKeys(Demand2_Field, "0");
+        WebDriverWaits.SendKeys(Demand2_Field, demand2Txt);
         WebDriverWaits.ClickOn(NMISuffix_Field);
-        WebDriverWaits.SendKeys(NMISuffix_Field, "17");
+        WebDriverWaits.SendKeys(NMISuffix_Field, nmiSuffixTxt);
         WebDriverWaits.ClickOn(DateConnectedDatepicker);
         WebDriverWaits.ClickOn(SelectTodayDateConnected_Datepicker);
         WebDriverWaits.ClickOn(CreateRegister_Button);
@@ -134,7 +134,7 @@ public class Metering {
         return registerId;
     }
 
-    public static void addMeterReads(String readType, String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
+    public static void add_MeterReads(String readType, String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterReads_Tab);
         //   WebDriverWaits.ClickOn(ServiceName_Dropdown);

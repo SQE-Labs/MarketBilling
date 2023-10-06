@@ -21,14 +21,14 @@ public class MeterImport extends BaseTest {
     public static By textMsg = By.xpath("//*[contains(text(),'Import Successful!')]");
 
     public static void meterNumberImport(String path) throws InterruptedException, IOException {
-        LandingPage.navigateToHomePage();
+       // LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(AdminIcon);
         WebDriverWaits.scrollIntoView(MeterNumbersIcon);
         WebDriverWaits.ClickOn(MeterNumbersIcon);
         importFile(path);
     }
     public static void meterRegisterImport(String path) throws InterruptedException, IOException {
-        LandingPage.navigateToHomePage();
+      //  LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(AdminIcon);
         WebDriverWaits.scrollIntoView(MeterRegisterIcon);
         WebDriverWaits.ClickOn(MeterRegisterIcon);
@@ -36,7 +36,7 @@ public class MeterImport extends BaseTest {
 
     }
     public static void meterReadsImport(String path) throws InterruptedException, IOException {
-        LandingPage.navigateToHomePage();
+      //  LandingPage.navigateToHomePage();
         WebDriverWaits.ClickOn(AdminIcon);
         WebDriverWaits.scrollIntoView(meterReadings);
         WebDriverWaits.ClickOn(meterReadings);

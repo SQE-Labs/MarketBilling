@@ -15,14 +15,14 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
 		AdminGroup.M_EnableDueDate("Calendar days");
 
-		String customerId = Customer.createCustomer("Tenant", "Residential", "business123@yopmail.com");
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 
-		String serviceId = Services.M_AddService(customerId);
-		Services.editService();
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		//	String billRunCycle= BillRunTest.createBillCycle(customerList);
@@ -34,13 +34,13 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_BusinessDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
-		String customerId = Customer.createCustomer("Tenant", "Business", "business123@yopmail.com");
-		String serviceId = Services.M_AddService(customerId);
-		Services.editService();
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10" );
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
@@ -54,13 +54,13 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_EndOfMonth");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");
 		AdminGroup.M_EnableDueDate("End of month");
-		String customerId = Customer.createCustomer("Tenant", "Commercial", "residential123@yopmail.com");
-		String serviceId = Services.M_AddService(customerId);
-		Services.editService();
-		String meterId = Metering.AddMeter();
-		String registerId = Metering.createRegister();
-		Metering.addMeterReads("Initial", "150", "200", "300");
-		Metering.addMeterReads("Actual Read", "200", "400", "650");
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
+		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+		Services.editService("Connected");
+		String meterId = Metering.add_Metering();
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial", "150", "200", "300");
+		Metering.add_MeterReads("Actual Read", "200", "400", "650");
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(customerId);
 		//	String billRunCycle= BillRunTest.createBillCycle(customerList);
