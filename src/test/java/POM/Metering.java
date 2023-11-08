@@ -141,10 +141,10 @@ public class Metering {
         WebDriverWaits.ClickOn(MeterReads_Tab);
         //   WebDriverWaits.ClickOn(ServiceName_Dropdown);
         Thread.sleep(1000);
-        WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
-        WebDriverWaits.ClickOn(MeterNumber_Dropdown);
+       // WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
+      //  WebDriverWaits.ClickOn(MeterNumber_Dropdown);
         Thread.sleep(3000);
-        WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
+     //  WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(ViewMeterReads);
         WebDriverWaits.ClickOn(ViewMeterReads);

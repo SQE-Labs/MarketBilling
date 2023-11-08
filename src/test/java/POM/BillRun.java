@@ -187,8 +187,7 @@ public class BillRun extends TestLogin {
 //        Thread.sleep(2000);
         WebDriverWaits.ClickOn(billRunCycleSelect);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,billCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
@@ -275,15 +274,15 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(billRunCycleSelect);
         Thread.sleep(3000);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,BillCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+        WebDriverWaits.byToWebElement(billCycle);
+        WebDriverWaits.clickOnMoveToElemenet(billCycle);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "16/11/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "16/11/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -306,6 +305,7 @@ public class BillRun extends TestLogin {
 //        WebDriverWaits.ClickOn(Cancel_Button);
 //        Thread.sleep(2000);
 //        WebDriverWaits.ClickOn(Yes_Button);
+
     }
 
     public static void Rollback_SmallBillRunWithSingleCustomer(String billRunCycle ) throws InterruptedException {
@@ -368,9 +368,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -556,9 +556,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "29/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "29/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  billRunCycleName);
@@ -613,9 +613,9 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  billRunCycleName);

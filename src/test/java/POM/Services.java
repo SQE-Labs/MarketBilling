@@ -5,11 +5,14 @@ import CommonMethods.WebDriverWaits;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import java.awt.*;
 import static BrowsersBase.BrowsersInvoked.driver;
+import static CommonMethods.WebDriverWaits.byToWebElement;
 import static POM.GroupEdit.softAssert;
 
 public class Services {
@@ -30,12 +33,19 @@ public class Services {
     public static By selectBusinessCustomer_Record1 = By.xpath("(//td[@class='sorting_1']/a)[1]"); // Just temporary
     // due to issue
     public static By selectCommercialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[1]");
-    public static By overviewTab = By.xpath("//*[@class=\"icon-eye-open\"]"); // //*[contains(text(),'Overview')]
+    public static By overviewTab = By.xpath("//*[@class=\"icon-eye-open\"]");
+
+   public static By Overview=By.xpath("//*[@class=\"icon-eye-open\"]");
+
+
+
+
+    // //*[contains(text(),'Overview')]
 
     // Add Service for Residential/Business/Commercial customer
     public static By retailElectricity_Plus_Subtab = By.xpath("(//*[@class='icon-minus'])[2]");
     public static By market_Type_Field = By.xpath("//*[@id='marketTypeSel']");
-    public static By nMI_Field = By.xpath("//*[@id=\"NMI\"]");
+    public static By nMI_Field = By.xpath("//button[text()='Generate Virtual NMI']");
     public static By service_Plan_Dropdown = By.xpath("//li[@class='search-field']");
     public static By service_Plan_Elec = By.xpath("//li[text()='Electricity Template Plan']");
 
@@ -83,9 +93,10 @@ public class Services {
         Thread.sleep(2000);
         String ThirdRecID = WebDriverWaits.GetText(selectRecord);
         WebDriverWaits.SendKeys(searchField, ThirdRecID);
-        WebDriverWaits.ClickOn(searchIcon);
-      //  Customer.switchToCustomerpage();
-       // WebDriverWaits.SwitchToNewTab();
+       WebDriverWaits.ClickOn(selectRecord);
+      //  WebDriverWaits.ClickOn(selectRecord);
+     //  Customer.switchToCustomerpage();
+       WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.ClickOn(overviewTab);
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);
         WebDriverWaits.Waituntilvisible(market_Type_Field);
@@ -93,8 +104,8 @@ public class Services {
         WebDriverWaits.selectByVisibleText(market_Type_Field,offMarket);
         WebDriverWaits.scrollIntoView(nMI_Field);
         WebDriverWaits.ClickOn(nMI_Field);
-        String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
-        WebDriverWaits.SendKeys(nMI_Field, ServiceIDLater1);
+//        String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
+//        WebDriverWaits.SendKeys(nMI_Field, ServiceIDLater1);
         WebDriverWaits.Waituntilvisible(service_Plan_Dropdown);
         WebDriverWaits.ClickOn(service_Plan_Dropdown);
         Thread.sleep(2000);
@@ -109,6 +120,7 @@ public class Services {
         WebDriverWaits.ClickOn(stateDropdown);
         WebDriverWaits.selectByVisibleText(stateDropdown,StateName);
         WebDriverWaits.ClickOn(addButton);
+        Thread.sleep(3000);
         System.out.println(ServiceIDLater1);
         return ServiceIDLater1;
     }

@@ -44,8 +44,8 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 
-	public static void WaitUntilInvisible(By element) {
-		wait.until(ExpectedConditions.invisibilityOf((WebElement) element));
+	public static void refreshPage() {
+		driver.navigate().refresh();
 	}
 
 	public static WebElement WaitUntilVisibleWE(By element) {
@@ -70,6 +70,19 @@ public class WebDriverWaits extends BrowsersInvoked {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
+		}
+		WebElement ele = driver.findElement(element);
+		ele.click();
+		//System.out.println("Clicked On " + element);
+	}
+
+	public static void ClickOnE(By element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (ElementClickInterceptedException e) {
+
 		}
 		WebElement ele = driver.findElement(element);
 		ele.click();
@@ -280,14 +293,18 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 	//create method moveToelemenet
-	public static void moveToelemenet(WebElement element) {
+	public static WebElement moveToelemenet(WebElement element) {
 		Actions s = new Actions(driver);
 		s.moveToElement(element).click().build().perform();
-	}
+        return element;
+    }
+
 	public static WebElement byToWebElement(By by) {
 		return driver.findElement(by);
 	}
 	public static void clickOnMoveToElemenet(By element) {
+		Actions s = new Actions(driver);
 		byToWebElement(element).click();
+
 	}
 }

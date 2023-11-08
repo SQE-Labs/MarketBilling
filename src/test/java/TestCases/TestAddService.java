@@ -21,7 +21,7 @@ public class TestAddService extends BaseTest {
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
        // Login.validLogin();
 
-        Services.addService("Off Market","New South Wales","Almor Distt 324");
+        Services.M_AddService("Off Market","New South Wales","Australian Capital Territory");
     }
 
     @Test(priority = 2)
@@ -36,6 +36,7 @@ public class TestAddService extends BaseTest {
     public void AddMeter_MeterRegisterR() throws InterruptedException {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
+
 
          Metering.AddMeter() ;
         Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");

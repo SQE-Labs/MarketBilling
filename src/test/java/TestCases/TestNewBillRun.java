@@ -5,6 +5,7 @@ import POM.*;
 import org.testng.annotations.Test;
 import java.awt.*;
 
+import static POM.Customer.CustomerID01R;
 
 
 public class TestNewBillRun extends BaseTest {
@@ -24,9 +25,9 @@ public class TestNewBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
 //       Login.validLogin();
-        customerID=Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active");
+        customerID=Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","Australia","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active");
         System.out.println("Texts match. Assertion passed.");
-        serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        serviceId=Services.M_AddService("Off Market","New South Wales","Australian Capital Territory");
         Services.editService("Connected");
         meterId =Metering.AddMeter() ;
         meterReg = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
@@ -38,6 +39,7 @@ public class TestNewBillRun extends BaseTest {
     public void createBillRunCycle() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Create BillRun Cycle ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
+
          billRunCycle = BillRun.BillRunCycle(customerID);
     }
     @Test(priority = 2, enabled = true)
