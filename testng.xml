@@ -6,10 +6,11 @@
         <!--            <package name="TestCases.*"></package>-->
         <!--        </packages>-->
         <classes>
-            <class name="TestCases.TestLogin"></class>
-            <class name="TestCases.TestCustomers"></class>
-<!--         <class name="TestCases.TestAddService"></class>-->
-            <class name="TestCases.TestWorkFlowTypes"></class>
+<!--            <class name="TestCases.TestLogin"></class>-->
+<!--            <class name="TestCases.TestCustomers"></class>-->
+<!--&lt;!&ndash;         <class name="TestCases.TestAddService"></class>&ndash;&gt;-->
+<!--            <class name="TestCases.TestWorkFlowTypes"></class>-->
+            <class name="TestCases.TestOffers"></class>
 
 <!--            <class name="TestCases.TestAddMeter"></class>-->
 <!--            <class name="TestCases.CorrespondenceTest"></class>-->
