@@ -88,7 +88,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Send Email ");
         extentTest.setDescription(" Verify that User is able to send emails");
 
-         BillRun.billRunCycleSearch(billCycleName);
+        BillRun.billRunCycleSearch(billCycleName);
         BillRun.viewBillDetails( );
         BillRun.selectCustCheckBox();
         BillRun.clickEmailBills();

@@ -4,6 +4,8 @@ import TestCases.TestLogin;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CSVHelper  extends TestLogin {
 
@@ -101,7 +103,67 @@ public class CSVHelper  extends TestLogin {
 
 	}
 
-		public static void ImportMeterRegister(String fileName, String header , String serviceId, String meterNo, String register, String networkTariffCode, String UnitOfMeasure, String timeOfDay,String multiplier, String dialFormat, String suffix, String controlledLoad, String status, String consumptionType, String Demand1, String Demand2, String dateConnected, String dateRemoved) {
+	public static void createCSVGeneric(String fileName, String[] headerList, String[] rowValues) throws Exception {
+
+		FileWriter fileWriter = null;
+		ArrayList<String> rowList = new ArrayList<String>(
+				Arrays.asList(rowValues));
+		ArrayList<String> columnList = new ArrayList<String>(
+				Arrays.asList(headerList));
+
+
+		try {
+			if (columnList.size() != rowList.size()) {
+				throw new Exception("rows and columns size is not equal in csv file");
+			}
+
+			fileWriter = new FileWriter(fileName);
+			StringBuilder header = new StringBuilder();
+			for (int i = 0; i < columnList.size(); i++) {
+				if (i == (columnList.size() - 1)) {
+					header.append(columnList.get(i));
+				} else {
+					header.append(columnList.get(i));
+					header.append(",");
+				}
+
+
+			}
+			fileWriter.append(header);
+			fileWriter.append(NEW_LINE_SEPARATOR);
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < rowList.size(); i++) {
+				if (i == (rowList.size() - 1)) {
+					sb.append(rowList.get(i));
+				} else {
+					sb.append(rowList.get(i));
+					sb.append(",");
+				}
+			}
+			fileWriter.append(sb);
+			fileWriter.append(NEW_LINE_SEPARATOR);
+			System.out.println("CSV file was created successfully !!!");
+
+		} catch (Exception e) {
+			System.out.println("Error in CsvFileWriter !!!");
+			e.printStackTrace();
+		} finally {
+
+			try {
+				fileWriter.flush();
+				fileWriter.close();
+			} catch (IOException e) {
+				System.out.println("Error while flushing/closing fileWriter !!!");
+				e.printStackTrace();
+			}
+
+
+		}
+
+	}
+
+
+	public static void ImportMeterRegister(String fileName, String header , String serviceId, String meterNo, String register, String networkTariffCode, String UnitOfMeasure, String timeOfDay,String multiplier, String dialFormat, String suffix, String controlledLoad, String status, String consumptionType, String Demand1, String Demand2, String dateConnected, String dateRemoved) {
 
 			String FILE_HEADER = header;
 			FileWriter fileWriter = null;

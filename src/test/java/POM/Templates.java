@@ -77,14 +77,14 @@ public class Templates extends BaseTest {
     }
 
     public void enterEmailMessage(String emailMessageText) throws InterruptedException {
-        //WebDriverWaits.SwitchToFrameId("email_rem_message-wysiwyg-iframe");
-Thread.sleep(1000);
+         Thread.sleep(1000);
         WebDriverWaits.SendKeys(emailMessage, emailMessageText);
+        //WebDriverWaits.scrollIntoView(validate);
     }
 
     public void enterSubject(String subjectText) {
         WebDriverWaits.SendKeys(emailSubject, subjectText);
-        WebDriverWaits.scrollIntoView(attachCorrespondenceLetter);
+        WebDriverWaits.scrollIntoView(validate);
     }
 
     public void selectAttachLetter(String selectLetterText) throws InterruptedException {

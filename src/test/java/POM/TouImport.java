@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.IOException;
+
 import static BrowsersBase.BrowsersInvoked.driver;
 
 
@@ -22,6 +24,13 @@ public  class TouImport {
     public static By ImportDataIcon = By.xpath("//a[@title='Import data']");
     public static By OKBtnConfirmationPopup = By.xpath("//div[@class='bootstrap-dialog-footer-buttons']/button[1]");
     public static By ImportSuccessMessage = By.xpath("//div[@class='alert alert-success']/strong");
+
+    public static By attDesc = By.id("attDesc");
+    public static By upload = By.xpath("//*[contains(text(),'Upload File')]");
+    public static By executelink = By.xpath("//i[@class='fa fa-play ']");
+    public static By alertOk = By.xpath("//button[contains(text(),'OK')]");
+    public static By textMsg = By.xpath("//*[contains(text(),'Import Successful!')]");
+    public static By message = By.xpath("//strong");
 
 
     public static void TOUImportFile() throws InterruptedException {
@@ -42,4 +51,5 @@ public  class TouImport {
         String SuccessMsg = WebDriverWaits.GetText(ImportSuccessMessage);
         Assert.assertEquals(SuccessMsg, "Import Successful!");
     }
+
 }

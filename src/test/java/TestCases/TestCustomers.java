@@ -11,7 +11,7 @@ public class TestCustomers extends BaseTest {
 	public  void ResidentialCustomer() throws InterruptedException {
 		extentTest = extent.startTest(" Add Residential Customer ");
 		extentTest.setDescription(" Verify that User is able to add Residential customer. ");
-		Login.loginWithGroupName("Testing1228");
+		//Login.loginWithGroupName("Testing1228");
 		Flow5_AddCustomer.FirstCustomer.FirstResidentialCustomer();
 	}
 

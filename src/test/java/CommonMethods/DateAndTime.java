@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DateAndTime {
@@ -15,20 +16,34 @@ public class DateAndTime {
 		date1 = dateFormat.format(date);
 		return date1;
 	}
+
 	public static String DateTimeGenerator(String format) {
 		DateFormat dateFormat = new SimpleDateFormat(format);
 		Date date = new Date();
 		date1 = dateFormat.format(date);
-		System.out.println("generated Date is ======   "+ date1);
-		return  date1;
+		System.out.println("generated Date is ======   " + date1);
+		return date1;
 	}
-	public static String getDateWithDays(String format,int dayToAdd) {
+
+	public static String getDateWithDays(String format, int dayToAdd) {
 
 		LocalDate todayDate = LocalDate.now();
 		LocalDate date = LocalDate.parse(todayDate.toString());
 		LocalDate date2 = date.plusDays(dayToAdd);
 		System.out.println("Date " + date + " plus 5 days is " + date2);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-		return  formatter.format(date2);
+		return formatter.format(date2);
 	}
+
+	public static String futureDateGenerator(String format) {
+//		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//		Date date = new Date();
+//		return format;
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, 10);
+		Date futureDateTime = calendar.getTime();
+		System.out.println(futureDateTime);
+		return format;
+	}
+
 }

@@ -10,7 +10,9 @@ import static BrowsersBase.BrowsersInvoked.driver;
 
 public class Metering {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
-    public static By AddMeterIcon = By.xpath("//a[@id='addMeter']/i");
+    //public static By AddMeterIcon = By.xpath("//a[@id='addMeter']/i");
+    public static By AddMeterIcon = By.xpath("//*[@id='addMeter']\n");
+
     public static By MeterSerialNumber_Field = By.xpath("//*[@id='meterNo']");
     public static By ConfigurationType_Dropdown = By.xpath("//*[@id='configurationType']");
     public static By ConfigurationType_Opn = By.xpath("//option[text()='POS']");
@@ -59,6 +61,7 @@ public class Metering {
 
         jse.executeScript("window.scrollBy(0,1000)", "");
         System.out.println("I am clicking add meter button");
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(AddMeterIcon);
         System.out.println("I am on add meter page");
         WebDriverWaits.ClickOn(MeterSerialNumber_Field);

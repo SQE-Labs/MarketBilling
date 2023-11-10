@@ -12,7 +12,6 @@ public class CorrespondenceTest extends BaseTest {
     Admin admin = new Admin();
     GroupEdit groupEdit = new GroupEdit();
     CorrespondenceSetup correspondence = new CorrespondenceSetup();
-
     Templates template = new Templates();
     final String SUCCESS = "Successfully saved message.";
     String letterName;
@@ -35,8 +34,8 @@ public class CorrespondenceTest extends BaseTest {
         extentTest = extent.startTest(" Create New Correspondence Letter ");
         extentTest.setDescription(" Verify that User is able to create new correspondence letter ");
         //Login.loginWithGroupName("Testing1228");
-        admin.navigateToAdmin();
-        correspondence.navigateToCorrespondenceSetup();
+        Admin.navigateToAdmin();
+        CorrespondenceSetup.navigateToCorrespondenceSetup();
         correspondence.clickCreateCorrespondence();
         letterName = "Letter" + RandomStrings.RequiredCharacters(4);
         correspondence.enterLetterName(letterName);
@@ -44,9 +43,9 @@ public class CorrespondenceTest extends BaseTest {
         correspondence.clickSaveCorrespondence();
         correspondence.clickSaveThisCorrespondence();
         correspondence.clickOkMessage();
-        //correspondence.clickNext();
-        //correspondence.clickBackToCorrespondence();
-        //correspondence.searchCorrespondence(letterName);
+//        correspondence.clickNext();
+//        correspondence.clickBackToCorrespondence();
+//        correspondence.searchCorrespondence(letterName);
     }
 
     @Test(priority = 2,enabled = true)
@@ -86,9 +85,7 @@ public class CorrespondenceTest extends BaseTest {
         correspondence.clickUploadIcon();
         Thread.sleep(4000);
         fileName = "LetterSample.pdf";
-        //String filepath = "C:\\Users\\Itsqe\\Downloads\\MarketBilling\\TestData\\" + fileName;
-        String filepath = "C:\\Users\\Itsqe\\Downloads\\" + fileName;
-
+        String filepath = "C:\\Users\\Itsqe\\Downloads\\MarketBilling-main\\MarketBilling-main\\TestData\\" + fileName;
         WebDriverWaits.uploadFileUsingRobot(filepath);
         Thread.sleep(2000);
         correspondence.enterDescription("DescriptionTest");
@@ -99,17 +96,17 @@ public class CorrespondenceTest extends BaseTest {
 
     //Buttons not working (Preview,Save,Validate)
 
-    @Test(priority = 5,enabled = false)
+    @Test(priority = 5,enabled = true)
     public void setupWelcomePackEmail() throws InterruptedException {
         extentTest = extent.startTest(" Setup Welcome Pack Email ");
         extentTest.setDescription(" Verify that User is able to setup Welcome Pack Email");
-        Login.loginWithGroupName("Testing1228");
         admin.navigateToAdmin();
         template.navigateToTemplate();
         template.clickEmail();
-        template.selectMessageType("Welcome Pack");
+        template.selectMessageType("Invoice");
         template.selectEmailFrom("Reck@yopmail.com");
         template.enterSubject("Test Correspondence");
+        Thread.sleep(2000);
         template.enterEmailMessage("This Email is for Testing Purpose");
         template.selectAttachLetter(letterName);
         Thread.sleep(2000);
@@ -135,7 +132,7 @@ public class CorrespondenceTest extends BaseTest {
         //correspondence.validateDeleteImportAttachments("No data available in table");
     }
 
-    @Test(priority = 7,enabled = false)
+    @Test(priority = 7,enabled = true)
     public void manualSendingLetters() throws InterruptedException {
         extentTest = extent.startTest(" Manual Sending Letters ");
         extentTest.setDescription(" Verify that User is able to send Manual Letters ");

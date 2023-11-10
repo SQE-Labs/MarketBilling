@@ -1,16 +1,50 @@
 package TestCases;
 import CommonMethods.BaseTest;
 import CommonMethods.DateAndTime;
-import POM.CSVHelper;
-import POM.Customer;
-import POM.MeterImport;
-import POM.Services;
+import CommonMethods.RandomStrings;
+import POM.*;
 import org.testng.annotations.Test;
 import java.util.Random;
 public class Imports extends BaseTest {
     String meterNo;
     String serviceId;
     String customerId;
+
+    @Test(priority = 1, enabled = true)
+    public void Import_Customers() throws Exception {
+        String columnData = "Alternative Customer Number,Category,Customer Type,Salutation,First Name,Surname,Billing Address,Billing Address2,Billing Suburb,Billing State,Billing Postal (Zip) Code,Billing Country,Phone Number,Mobile Number,Fax Number,Email Address,Company,Business Name Type,Company Trading Name,ABN,ACN,Notes/Feedbacks,Is Home Address same as Billing Address?,Home Address,Home Address2,Home Suburb,Home State,Home Postal (Zip) Code,Home Country,Billing Email,Account Name,Authentication Type,Authentication Number,Date of Birth,Referee Name,Referee Contact Number,Referee Relationship to Tenant,Enable Internet Access?,Internet Password,Secondary Customer Name,Secondary Phone Number,Secondary Mobile Number,Secondary Fax Number,Secondary Email,Life Support Status,Purchase Order,Contract Start Date,Contract Term,Overdue Interest % (Base Rate) ,Overdue Interest % (Additional) ,Early Payment Discount,Early Payment Discount Rate,Payment Term Method ,Payment Term Number of Days ,Card First Name,Card Last Name,Card Type,Card No.,Card Start Date,Card Expiry Date";
+        System.out.println("user.dir");
+        String filePath = System.getProperty("user.dir") + "/TestData/Customer_Import.csv";
+       // C:\Users\Itsqe\Downloads\MarketBilling-main\MarketBilling-main\test-output
+
+                String category ="R";
+        String firstName = Data.FirstName.getFirstName().toString();
+        String lastName = Data.LastName.getLastName().toString();
+        String billingAddress = "" + RandomStrings.RequiredCharacters(10);
+//        String billing suburb= "Victorian Suburb"
+//        String Billing State="VIC";
+//        String Billing Postal (Zip) Code= "3"+RandomStrings.RequiredDigits(3);
+//        String Billing Country=
+//        String postalCode =  RandomStrings.RequiredDigits("4");
+        String phoneNumber = "03" + RandomStrings.RequiredDigits(8);
+        String MobileNumber = "0" + RandomStrings.RequiredDigits(9);
+        String emailAddress = firstName + lastName + "@yopmail.com";
+//        String CardFirstName = "Glen" + RandomStrings.RequiredCharacters("5");
+//        String CardLastName= "Maxwell" + RandomStrings.RequiredCharacters("5");
+//        String CardStartDate=
+//        String CardExpiryDate=
+        String futureDate = DateAndTime.futureDateGenerator("");
+        String rowData = ",R,Tenant,Mr,"+firstName+","+lastName+",Madirma R-Town, MILLS NY, WA 1265,,Victorian ,VIC,3401,Australia,"+phoneNumber+","+MobileNumber+", ,"+emailAddress+", , , , , Yes, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,Gilli,Andrews,VAC,4200000000000000,"+futureDate+",09/03/2041";
+        // rowData= rowData.replace();
+        String[] row = rowData.split(",");
+        String[] column = columnData.split(",");
+
+        CSVHelper.createCSVGeneric(filePath, column, row);
+       // Imports importObj = Admin.navigateToAdmin();
+        //importObj.importFile(filePath, "Customer");
+
+    }
+
     @Test(priority = 0,enabled = false)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");

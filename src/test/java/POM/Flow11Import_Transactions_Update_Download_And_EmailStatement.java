@@ -17,6 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,7 +27,7 @@ import java.util.List;
 public class Flow11Import_Transactions_Update_Download_And_EmailStatement extends TestLogin {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
 
-    public static void CustomerPrerequiste() throws InterruptedException {
+    public static void CustomerPrerequiste() throws InterruptedException, AWTException {
         Thread.sleep(2000);
         Flow5_AddCustomer.FirstCustomer.FirstResidentialCustomer();
         Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();

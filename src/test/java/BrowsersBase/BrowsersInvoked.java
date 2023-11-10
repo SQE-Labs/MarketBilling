@@ -1,5 +1,6 @@
 package BrowsersBase;
 
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,8 +21,11 @@ public class BrowsersInvoked {
 	public void SetProp() {
 		switch (FinalBrowser) {
 		case "CHROME": {
+			//WebDriverManager.chromedriver().setup();
+
 			ChromeOptions chromeOptions = new ChromeOptions();
-			WebDriverManager.chromedriver().setup();
+			chromeOptions.setBrowserVersion("115");
+			//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(chromeOptions);
 			break;
 		}
