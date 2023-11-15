@@ -1,9 +1,11 @@
 package CommonMethods;
 
+import org.apache.commons.csv.CSVParser;
+
 public class RandomStrings {
-    public static String RequiredString(int n)
-    {
-        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz" + "               ";
+	public static String RequiredString(int n)
+	{
+		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz" + "               ";
 		StringBuilder s = new StringBuilder(n);
 		int y;
 		for (y = 0; y < n; y++) {
@@ -27,7 +29,7 @@ public class RandomStrings {
     
     public static String RequiredDigits(int n)
     {
-        String AlphaNumericString = "1234567890";
+        String AlphaNumericString = "123456789";
 		StringBuilder s = new StringBuilder(n);
 		int y;
 		for (y = 0; y < n; y++) {

@@ -1,11 +1,21 @@
 package POM;
 
+import CommonMethods.RandomStrings;
 import TestCases.TestLogin;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class CSVHelper  extends TestLogin {
 
@@ -103,7 +113,7 @@ public class CSVHelper  extends TestLogin {
 
 	}
 
-	public static void createCSVGeneric(String fileName, String[] headerList, String[] rowValues) throws Exception {
+	public static void createCSVGeneric(String fileName,  String[] headerList, String[] rowValues) throws Exception {
 
 		FileWriter fileWriter = null;
 		ArrayList<String> rowList = new ArrayList<String>(
@@ -157,10 +167,57 @@ public class CSVHelper  extends TestLogin {
 				e.printStackTrace();
 			}
 
-
 		}
 
 	}
+	public static String  billingAddress() {
+		String []array ={"Kangaroo Crescent","Eucalyptus Drive","Boomerang Road","Koala Avenue","Wattle Street","Sydney Court","Barossa Parade","Great Barrier Place","Ayers Rock Boulevard","Didgeridoo Lane","Australian Alps Way","Gold Coast Track","Blue Mountains Court","Opal Path","Platypus Green","Bondi Terrace","Kookaburra Alley","Byron Bay Grove","Surfers Paradise Place","Outback Street","Uluru Crescent","Waratah Drive","Quokka Road","Whitsunday Avenue","Boat Harbour Close","Alice Springs Parade","Great Ocean Road Place","Kangaroo Island Boulevard","Nullarbor Lane","Tasmanian Devil Way","Ayers Rock Track","Murray River Court","Koala Path","Bushland Green","Reef Terrace","Sydney Harbour Alley","Outback Grove","Australian Open Place","Golden Beach Street","Opera House Crescent","Bondi Beach Drive","Red Centre Road","Surf Coast Avenue","Great Dividing Range Street","Federation Close","Snowy Mountains Parade","Blue Reef Place","Victorian Alps Boulevard","Coral Coast Lane","Koala Sanctuary Way","Harbour Bridge Track","Australian Rules Court","Golden Sunset Path","Coastal Breeze Green","Mountain View Terrace","Australian Wildlife Alley","Koala Forest Grove","Desert Oasis Place","Sunset Beach Street","Rainforest Crescent","Great Southern Drive","Whale Watch Road","Barbecue Avenue","Sunflower Street","Palm Cove Close","Bushfire Parade","Tropical Rainforest Place","Kangaroo Crossing Boulevard","Golden Sand Lane","Surfside Way","Wildflower Track","Kangaroo Jump Court","Sunset View Path","Native Garden Green","Seaside Terrace","Emu Walk Alley","Reef View Grove","Island Paradise Place","Wildlife Street","Wombat Crescent","Great Barrier Reef Drive","Blue Lake Road","Green Valley Avenue","Golden Gate Street","Sunny Side Close","Wilderness Parade","Hidden Cove Place","Coastal Drive Boulevard","Australian Dream Lane","Gumtree Way","Harmony Track","Summer Breeze Court","Riverbank Path","Sunrise Green","Aussie Bush Terrace","Quandong Alley","Australia Fair Grove","Sapphire Shores Place","Wide Horizon Street","Sydney Opera Crescent"};
+
+
+		Random r=new Random();
+		int randomNumber=r.nextInt(array.length);
+		String address= array[randomNumber];
+		return address;
+
+
+	}
+
+	public static String readCSVSuburb(String readFilePath,int i) throws IOException {
+		//"C:\Users\Itsqe\eclipse-workspace\MarketBilling\TestData\AddressFile.csv"
+		//"C:\Users\Itsqe\Downloads\MarketBilling-main\MarketBilling-main\TestData\AdressFile (1).csv"
+		//String path = "C:/Users/Itsqe/Downloads/MarketBilling-main/MarketBilling-main/TestData/Address.csv";
+
+		// Create a new BufferReader object and pass the path of CSV file
+		Reader reader = Files.newBufferedReader(Paths.get(readFilePath));
+		// parse the file into csv values
+		CSVParser parse = new CSVParser(reader, CSVFormat.DEFAULT);
+		CSVRecord record =parse.getRecords().get(i);
+	   return	record.get(0);
+	}
+
+	public static String readCSVState(String readFilePath,int i) throws IOException {
+		// Create a new BufferReader object and pass the path of CSV file
+		Reader reader = Files.newBufferedReader(Paths.get(readFilePath));
+
+		// parse the file into csv values
+		CSVParser parse = new CSVParser(reader, CSVFormat.DEFAULT);
+		CSVRecord record =parse.getRecords().get(i);
+		return	record.get(1);
+	}
+
+
+	public static String readCSVPostal(String readFilePath,int i) throws IOException {
+
+		// Create a new BufferReader object and pass the path of CSV file
+		Reader reader = Files.newBufferedReader(Paths.get(readFilePath));
+
+		// parse the file into csv values
+		CSVParser parse = new CSVParser(reader, CSVFormat.DEFAULT);
+		CSVRecord record =parse.getRecords().get(i);
+		return	record.get(2);
+	}
+
+
 
 
 	public static void ImportMeterRegister(String fileName, String header , String serviceId, String meterNo, String register, String networkTariffCode, String UnitOfMeasure, String timeOfDay,String multiplier, String dialFormat, String suffix, String controlledLoad, String status, String consumptionType, String Demand1, String Demand2, String dateConnected, String dateRemoved) {
