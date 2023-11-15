@@ -75,7 +75,7 @@ public class WorkFlowTypes
         WebDriverWaits.ClickOn(okButton);
     }
 
-    public void createWorkFlowType(){
+    public void createWorkFlowType(String RandomName1){
         Admin.navigateToAdmin();
         clickWorkFlowSubTab();
         clickOncreateNewLogTypeButton();
@@ -84,7 +84,7 @@ public class WorkFlowTypes
         clickOnSaveButton();
     }
 
-    public void editWorkFlowType(){
+    public void editWorkFlowType(String RandomName1){
         Admin.navigateToAdmin();
         clickWorkFlowSubTab();
         searchFieldText(RandomName1);
@@ -93,7 +93,7 @@ public class WorkFlowTypes
         clickOnSaveButton();
     }
 
-    public void deleteWorkFlowType() throws InterruptedException {
+    public void deleteWorkFlowType(String RandomName1) throws InterruptedException {
         Admin.navigateToAdmin();
         clickWorkFlowSubTab();
         searchFieldText(RandomName1);

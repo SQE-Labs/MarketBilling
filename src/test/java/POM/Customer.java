@@ -17,6 +17,7 @@ import static POM.Invoice.category;
 import static POM.Services.*;
 import static POM.Services.selectBusinessCustomer_Record1;
 import static POM.Templates.softAssert;
+import static POM.WorkFlowTypes.RandomName1;
 
 public class Customer {
 
@@ -25,7 +26,7 @@ public class Customer {
 
     public static final String SUCCESS_MESG = "Successfully saved customer.";
     //   public static String CustomerFirstName = "Caerry" + RandomStrings.RequiredCharacters(2);
-    public static String RandomName1;
+
     public static By customerId = By.xpath("//*[@id=\"tbl-customer\"]/tbody/tr[1]/td[1]/a");
     public static String RandomName2;
 

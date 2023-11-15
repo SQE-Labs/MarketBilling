@@ -1,13 +1,19 @@
 package POM;
 
+
+import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
 
-import static POM.Customer.RandomName2;
-import static POM.WorkFlowTypes.RandomName1;
+import java.awt.*;
+
+
 
 public class Offers
 {
+    public static String offerName = RandomStrings.RequiredCharacters(4);
+    public static String randomOfferDisplayName = RandomStrings.RequiredCharacters(4);
+
 public static By offerTab=By.xpath("//p[text()='Offer']");
 public static By plusIcon=By.xpath("(//i[@class='icon-plus'])[2]");
 public static By offerGroupField=By.xpath("//input[@id='offerGroupName']");
@@ -29,6 +35,17 @@ public static By crossIcon=By.xpath("//button[text()='×']");
 public static By deleteIcon=By.xpath("(//a[@class='btn btn-danger'])[1]");
 public static By deleteOkButton=By.xpath("//button[text()='OK']");
 public static By succOkButton=By.xpath("//button[text()='OK']");
+
+//++++++Create offer++++++++
+    public static By offerPlusIcon=By.xpath("(//i[@class='icon-plus'])[3]");
+    public static By offerNameField=By.xpath("//input[@id='offerName']");
+    public static By offerDisplayName=By.xpath("//input[@id='offerDisplayName']");
+    public static By offerGroupDropDown=By.xpath("(//button[@class='btn dropdown-toggle selectpicker btn-default'])[1]");
+    public static By offerGroupSearchField=By.xpath("(//input[@class='input-block-level form-control'])[1]");
+    public static By offerGroupText=By.xpath("//*[@id=\"formOffer\"]/div[4]/div/div[1]/div/ul/li[171]/a");
+    public static By dateValidFrom=By.xpath("//input[@id='dateValidFrom']");
+    public static By todayText=By.xpath("//th[text()='Today']");
+    public static By offerSaveButton=By.xpath("(//button[text()='Save'])[2]");
 
 public void clickOnOfferTab(){
     WebDriverWaits.scrollIntoView(offerTab);
@@ -86,7 +103,36 @@ public void clickOnCrossIcon(){
     WebDriverWaits.ClickOn(succOkButton);
     }
 
-public void createOfferGroupBusinessType(String customerTypeDropDownText){
+    //++++++++++CRETAE OFFER+++++++++++
+    public void clickOnofferPlusIcon(){
+    WebDriverWaits.ClickOn(offerPlusIcon);
+    }
+    public void enterTextInofferNameField(String offerNameFieldText){
+    WebDriverWaits.SendKeysWithClear(offerNameField,offerNameFieldText);
+    }
+
+    public void enterTextInofferDisplayName(String offerDisplayNameFieldText){
+        WebDriverWaits.SendKeysWithClear(offerDisplayName,offerDisplayNameFieldText);
+    }
+    public void clickOnofferGroupDropDown(String offerGroupSearchFieldText) throws InterruptedException, AWTException {
+    WebDriverWaits.ClickOn(offerGroupDropDown);
+    WebDriverWaits.SendKeysWithClear(offerGroupSearchField,offerGroupSearchFieldText);
+    Thread.sleep(2000);
+      WebDriverWaits.SelectElementByRobotClass();
+   // WebDriverWaits.ClickOn(offerGroupText);
+    }
+    public void clickOndateValidFrom(){
+    WebDriverWaits.Waituntilvisible(dateValidFrom);
+    WebDriverWaits.ClickOn(dateValidFrom);
+    WebDriverWaits.ClickOn(todayText);
+    }
+    public void clickOnOfferSaveButton() throws InterruptedException {
+    WebDriverWaits.scrollIntoView(offerSaveButton);
+    WebDriverWaits.scrollDown();
+    WebDriverWaits.ClickOn(offerSaveButton);
+    }
+
+public void createOfferGroupBusinessType(String RandomName1,String customerTypeDropDownText){
     clickOnOfferTab();
     clickOnPlusIcon();
     enterInofferGroupField(RandomName1);
@@ -95,7 +141,7 @@ public void createOfferGroupBusinessType(String customerTypeDropDownText){
     clickOnSaveButton();
     clickOnOkButton();
 }
-public void editOfferGroupBusinessType(){
+public void editOfferGroupBusinessType(String RandomName1){
     enterInSearchField(RandomName1);
     clickOnEditIcon();
     clickdateValidToField();
@@ -107,6 +153,16 @@ public void deleteOfferGroupBusinessType() throws InterruptedException {
     clickdeleteOkButton();
     Thread.sleep(2000);
     clickOkOnsuccMsg();
+}
+public void createOffer( String offerName,String randomOfferDisplayName,String RandomName1 ) throws InterruptedException, AWTException {
+    clickOnofferPlusIcon();
+    enterTextInofferNameField(offerName);
+    enterTextInofferDisplayName(randomOfferDisplayName);
+    clickOnofferGroupDropDown(RandomName1);
+    clickOndateValidFrom();
+    clickOnOfferSaveButton();
+    clickOnCrossIcon();
+
 }
 
 }

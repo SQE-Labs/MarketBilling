@@ -303,8 +303,14 @@ public class WebDriverWaits extends BrowsersInvoked {
 		return driver.findElement(by);
 	}
 	public static void clickOnMoveToElemenet(By element) {
-		Actions s = new Actions(driver);
+
 		byToWebElement(element).click();
 
+	}
+	public static void SelectElementByRobotClass() throws AWTException {
+		Robot s= new Robot();
+		s.keyPress(KeyEvent.VK_DOWN);
+		s.keyPress(KeyEvent.VK_ENTER);
+		s.keyRelease(KeyEvent.VK_ENTER);
 	}
 }

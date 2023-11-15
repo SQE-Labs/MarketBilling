@@ -20,6 +20,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 import static POM.Customer.*;
+import static POM.WorkFlowTypes.RandomName1;
 
 
 public class BillRun extends TestLogin {
