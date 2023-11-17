@@ -4,30 +4,23 @@ import CommonMethods.DateAndTime;
 import CommonMethods.RandomStrings;
 import POM.*;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.util.Random;
 public class Imports extends BaseTest {
     String meterNo;
     String serviceId;
     String customerId;
+    public String createRows(String addressfilePath,int i) throws IOException {
 
-    @Test(priority = 1, enabled = true)
-    public void Import_Customers() throws Exception {
-        String columnData = "Alternative Customer Number,Category,Customer Type,Salutation,First Name,Surname,Billing Address,Billing Address2,Billing Suburb,Billing State,Billing Postal (Zip) Code,Billing Country,Phone Number,Mobile Number,Fax Number,Email Address,Company,Business Name Type,Company Trading Name,ABN,ACN,Notes/Feedbacks,Is Home Address same as Billing Address?,Home Address,Home Address2,Home Suburb,Home State,Home Postal (Zip) Code,Home Country,Billing Email,Account Name,Authentication Type,Authentication Number,Date of Birth,Referee Name,Referee Contact Number,Referee Relationship to Tenant,Enable Internet Access?,Internet Password,Secondary Customer Name,Secondary Phone Number,Secondary Mobile Number,Secondary Fax Number,Secondary Email,Life Support Status,Purchase Order,Contract Start Date,Contract Term,Overdue Interest % (Base Rate) ,Overdue Interest % (Additional) ,Early Payment Discount,Early Payment Discount Rate,Payment Term Method ,Payment Term Number of Days ,Card First Name,Card Last Name,Card Type,Card No.,Card Start Date,Card Expiry Date";
-        System.out.println("user.dir");
-        String readFilePath = "C:/Users/Itsqe/Downloads/MarketBilling-main/MarketBilling-main/TestData/Address.csv";
-     //   String filePath = System.getProperty("user.dir") + "/TestData/Customer_Import.csv";
-
-        for ( int i=1;i<=100;i++){
-            String filePath = System.getProperty("user.dir") + "/TestData/Customer_Import"+i+".csv";
-
-            String category = "R";
-            String customerType = Data.customerType.getCustomerType().toString();
-            String firstName = Data.firstName.getFirstName().toString();
-            String surName = Data.surName.getSurName().toString();
-            String billingAddress = RandomStrings.RequiredDigits(3)+" "+ CSVHelper.billingAddress();
-        String billingSuburb = CSVHelper.readCSVSuburb(readFilePath,i);
-        String billingState =  CSVHelper.readCSVState(readFilePath,i);
-        String billingPostal =  CSVHelper.readCSVPostal(readFilePath,i);
+        String category = "R";
+        String customerType = Data.customerType.getCustomerType().toString();
+        String firstName = Data.firstName.getFirstName().toString();
+        String surName = Data.surName.getSurName().toString();
+        String billingAddress = RandomStrings.RequiredDigits(3)+" "+ CSVHelper.billingAddress();
+        String billingSuburb = CSVHelper.readCSVSuburb(addressfilePath,i);
+        String billingState =  CSVHelper.readCSVState(addressfilePath,i);
+        String billingPostal =  CSVHelper.readCSVPostal(addressfilePath,i);
         String phoneNumber = "03" + RandomStrings.RequiredDigits(8);
         String mobileNumber = "03" + RandomStrings.RequiredDigits(8);
         String emailAddress = firstName + surName + "@yopmail.com";
@@ -35,9 +28,25 @@ public class Imports extends BaseTest {
 
         String rowData = ","+category+","+customerType+",Mr,"+firstName+","+surName+","+billingAddress+", ,"+billingSuburb+","+billingState+","+billingPostal+",Australia,"+phoneNumber+","+mobileNumber+", ,"+emailAddress+", , , , , , ,Yes, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ";
         // rowData= rowData.replace();
-        String[] row = rowData.split(",");
+ return rowData;
+    }
+
+    @Test(priority = 1, enabled = true)
+    public void Import_Customers() throws Exception {
+        extentTest = extent.startTest("Add_Customer_and_Service");
+
+        String columnData = "Alternative Customer Number,Category,Customer Type,Salutation,First Name,Surname,Billing Address,Billing Address2,Billing Suburb,Billing State,Billing Postal (Zip) Code,Billing Country,Phone Number,Mobile Number,Fax Number,Email Address,Company,Business Name Type,Company Trading Name,ABN,ACN,Notes/Feedbacks,Is Home Address same as Billing Address?,Home Address,Home Address2,Home Suburb,Home State,Home Postal (Zip) Code,Home Country,Billing Email,Account Name,Authentication Type,Authentication Number,Date of Birth,Referee Name,Referee Contact Number,Referee Relationship to Tenant,Enable Internet Access?,Internet Password,Secondary Customer Name,Secondary Phone Number,Secondary Mobile Number,Secondary Fax Number,Secondary Email,Life Support Status,Purchase Order,Contract Start Date,Contract Term,Overdue Interest % (Base Rate) ,Overdue Interest % (Additional) ,Early Payment Discount,Early Payment Discount Rate,Payment Term Method ,Payment Term Number of Days ,Card First Name,Card Last Name,Card Type,Card No.,Card Start Date,Card Expiry Date";
+        System.out.println("user.dir");
+        String addressFilePath = "C:/Users/Itsqe/Downloads/MarketBilling-main/MarketBilling-main/TestData/Address.csv";
+
+        String readFilePath = System.getProperty("user.dir") + "/TestData/Customer_Import.csv";
         String[] column = columnData.split(",");
-        CSVHelper.createCSVGeneric(filePath, column, row);
+
+ CSVHelper.appendHeader(readFilePath,column);
+        for ( int i=1;i<=120;i++){
+            String rowData=  createRows(addressFilePath, i);
+                String[] row = rowData.split(",");
+        CSVHelper.appendCsvRecords(readFilePath, column, row);
         }
 
 

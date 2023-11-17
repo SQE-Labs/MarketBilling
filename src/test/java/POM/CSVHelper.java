@@ -23,7 +23,95 @@ public class CSVHelper  extends TestLogin {
 	//Delimiter used in CSV file
 	private static final String COMMA_DELIMITER = ",";
 	private static final String NEW_LINE_SEPARATOR = "\r\n";
+	public static void appendCsvRecords(String fileName,  String[] headerList, String[] rowValues) throws Exception {
 
+		FileWriter fileWriter = null;
+		ArrayList<String> rowList = new ArrayList<String>(
+				Arrays.asList(rowValues));
+		ArrayList<String> columnList = new ArrayList<String>(
+				Arrays.asList(headerList));
+
+
+		try {
+			if (columnList.size() != rowList.size()) {
+				throw new Exception("rows and columns size is not equal in csv file");
+			}
+
+			fileWriter = new FileWriter(fileName,true);
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < rowList.size(); i++) {
+				if (i == (rowList.size() - 1)) {
+					sb.append(rowList.get(i));
+				} else {
+					sb.append(rowList.get(i));
+					sb.append(",");
+				}
+			}
+			fileWriter.append(sb);
+			fileWriter.append(NEW_LINE_SEPARATOR);
+			System.out.println("Record added to CSV successfully !!!");
+
+		} catch (Exception e) {
+			System.out.println("Error in CsvFileWriter !!!");
+			e.printStackTrace();
+		} finally {
+
+			try {
+				fileWriter.flush();
+				fileWriter.close();
+			} catch (IOException e) {
+				System.out.println("Error while flushing/closing fileWriter !!!");
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+	public static void appendHeader(String fileName,  String[] headerList) throws Exception {
+
+		FileWriter fileWriter = null;
+
+		ArrayList<String> columnList = new ArrayList<String>(
+				Arrays.asList(headerList));
+
+
+		try {
+
+
+			fileWriter = new FileWriter(fileName);
+			StringBuilder header = new StringBuilder();
+				for (int i = 0; i < columnList.size(); i++) {
+					if (i == (columnList.size() - 1)) {
+						header.append(columnList.get(i));
+					} else {
+						header.append(columnList.get(i));
+						header.append(",");
+					}
+
+
+				}
+				fileWriter.append(header);
+
+			fileWriter.append(NEW_LINE_SEPARATOR);
+
+			System.out.println("Header added to CSV successfully !!!");
+
+		} catch (Exception e) {
+			System.out.println("Error in CsvFileWriter !!!");
+			e.printStackTrace();
+		} finally {
+
+			try {
+				fileWriter.flush();
+				fileWriter.close();
+			} catch (IOException e) {
+				System.out.println("Error while flushing/closing fileWriter !!!");
+				e.printStackTrace();
+			}
+
+		}
+
+	}
 	public static void ImportMeterNumber(String fileName, String header , String serviceId, String meterNo, String status, String Consumption_Type, String Configuration, String Multiplier,String Constant, String Hazard, String Location, String Additional_Site_Info, String Meter_Point_ID, String Next_Scheduled_Read_Date, String Manufacturer, String Model, String Meter_Read_Type, String Route, String Walk_Order, String Meter_Installation_Type, String Date, String Date2) {
 
 		String FILE_HEADER = header;
