@@ -18,12 +18,14 @@ public class WorkFlowTypes
     public static By typeNameField=By.xpath("//input[@name='type_name']");
     public static By displayName=By.xpath("//input[@name='display_name']");
     public static By saveButton=By.xpath("//button[text()='Save']");
-    public static By succ_Msg=By.xpath("//p[@id='msgP']");
+    public static By succ_Msg=By.xpath("//span[@id='resultMsg']");
+
 
     //+++++++++++Edit workflow type++++++++++++++
     public static By searchField=By.xpath("//input[@type='search']");
     public static By editIcon=By.xpath("//a[@class='btn btn-info edit-logtype']");
     public static By actionDropDown=By.xpath("//select[@id='contact_action_days']");
+    public static By editedSucc_Msg=By.xpath("//span[@id='resultMsg']");
 
     //+++++++++++Delete workflow type++++++++++++++
     public static By deleteIcon=By.xpath("//tbody[@id='logtypeListBody']//i[@class='icon-trash']");
@@ -31,6 +33,7 @@ public class WorkFlowTypes
     public void clickAdminTab(){
         WebDriverWaits.ClickOn(adminTab);
     }
+    public static By deletedSucc_Msg=By.xpath("//span[@id='resultMsg']");
 
     public void clickWorkFlowSubTab(){
         WebDriverWaits.scrollIntoView(workFlowTypeSubTab);

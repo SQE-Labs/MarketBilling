@@ -9,8 +9,8 @@
 <!--            <class name="TestCases.TestLogin"></class>-->
 <!--            <class name="TestCases.TestCustomers"></class>-->
 <!--            <class name="TestCases.TestAddService"></class>-->
-<!--            <class name="TestCases.TestWorkFlowTypes"></class>-->
-            <class name="TestCases.TestOffers"></class>
+            <class name="TestCases.TestWorkFlowTypes"></class>
+<!--            <class name="TestCases.TestOffers"></class>-->
 <!--            <class name="TestCases.TestAutoDueDate"></class>-->
 <!--            <class name="TestCases.TestNewBillRun"></class>-->
 <!--            <class name="TestCases.MultipleCustomerBillRunTest"></class>-->
