@@ -25,8 +25,8 @@ public class CorrespondenceTest extends BaseTest {
         //Login.validLogin();
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
-        groupEdit.enable_CorrepondenceToggle();
-        groupEdit.validate_SuccessTXT("Success! Changes have been updated successfully.");
+        GroupEdit.enable_CorrepondenceToggle();
+        GroupEdit.validate_SuccessTXT("Success! Changes have been updated successfully.");
 
     }
 

@@ -4,7 +4,8 @@ import CommonMethods.BaseTest;
 import POM.WorkFlowTypes;
 import org.testng.annotations.Test;
 
-import static POM.WorkFlowTypes.RandomName1;
+import static POM.Customer.RandomName1;
+
 
 public class TestWorkFlowTypes extends BaseTest {
     WorkFlowTypes WorkFlow=new WorkFlowTypes();

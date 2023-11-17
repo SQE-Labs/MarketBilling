@@ -4,6 +4,7 @@ import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -11,6 +12,10 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+
+
+import static POM.Customer.RandomName1;
+
 
 
 public class WebDriverWaits extends BrowsersInvoked {
@@ -296,21 +301,42 @@ public class WebDriverWaits extends BrowsersInvoked {
 	public static WebElement moveToelemenet(WebElement element) {
 		Actions s = new Actions(driver);
 		s.moveToElement(element).click().build().perform();
-        return element;
-    }
+		return element;
+	}
 
 	public static WebElement byToWebElement(By by) {
 		return driver.findElement(by);
 	}
+
 	public static void clickOnMoveToElemenet(By element) {
 
 		byToWebElement(element).click();
 
 	}
+
 	public static void SelectElementByRobotClass() throws AWTException {
-		Robot s= new Robot();
-		s.keyPress(KeyEvent.VK_DOWN);
-		s.keyPress(KeyEvent.VK_ENTER);
-		s.keyRelease(KeyEvent.VK_ENTER);
+		Robot s = new Robot();
+		s.keyPress(KeyEvent.VK_TAB);
+		s.keyRelease(KeyEvent.VK_TAB);
+	}
+
+	public static void validate_SuccessTXT(By element,String expected) throws InterruptedException {
+		SoftAssert softAssert = new SoftAssert();
+		String actual = WebDriverWaits.GetText(element);
+		softAssert.assertEquals(actual, expected);
+		softAssert.assertAll();
+	}
+
+	public static void SelectOption(String element) {
+		List<WebElement> allOptions = driver.findElements(By.xpath(element));
+		String option = RandomName1;
+		// Iterate the list using for loop
+		for (int i = 0; i < allOptions.size(); i++) {
+			if (allOptions.get(i).getText().contains(option)) {
+				allOptions.get(i).click();
+				System.out.println("clicked");
+				break;
+			}
+		}
 	}
 }

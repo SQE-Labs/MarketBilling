@@ -11,7 +11,7 @@ import static CommonMethods.WebDriverWaits.*;
 public class WorkFlowTypes
 {
     //++++++++++Create workflow types+++++++++++++
-    public static String RandomName1 = RandomStrings.RequiredCharacters(4);
+
     public static By adminTab =By.xpath("//span[text()='Admin']");
     public static By workFlowTypeSubTab=By.xpath("//p[text()='Workflow Types']");
     public static By createNewLogTypeButton=By.xpath("//a[text()=' Create new log type ']");
