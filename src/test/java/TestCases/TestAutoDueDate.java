@@ -15,7 +15,7 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
 		AdminGroup.M_EnableDueDate("Calendar days");
 
-		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
@@ -34,7 +34,7 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_BusinessDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
 		AdminGroup.M_EnableDueDate("Business days");
-		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10" );
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
 		String meterId = Metering.add_Metering();
@@ -54,7 +54,7 @@ public class TestAutoDueDate extends BaseTest {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_EndOfMonth");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");
 		AdminGroup.M_EnableDueDate("End of month");
-		String customerId = Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
 		String serviceId = Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
 		String meterId = Metering.add_Metering();

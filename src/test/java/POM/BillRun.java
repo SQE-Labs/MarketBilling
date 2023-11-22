@@ -404,8 +404,8 @@ public class BillRun extends TestLogin {
         Thread.sleep(2000);
     }
 
-    public static void rollback_in_statementTab(String customerId) throws InterruptedException {
-        Customer.searchCustomer(customerId);
+    public static void rollback_in_statementTab(String customerId2) throws InterruptedException {
+        Customer.searchCustomer(customerId2);
         WebDriverWaits.ClickOn(Statement_Subtab);
         WebDriverWaits.ClickOn(ViewDetails_Icon);
         WebDriverWaits.ClickOn(Rollback_Button);
