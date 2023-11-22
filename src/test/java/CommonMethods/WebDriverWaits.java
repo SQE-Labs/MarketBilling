@@ -2,8 +2,9 @@ package CommonMethods;
 
 import BrowsersBase.BrowsersInvoked;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -11,6 +12,10 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+
+
+import static POM.Customer.RandomName1;
+
 
 
 public class WebDriverWaits extends BrowsersInvoked {
@@ -44,8 +49,8 @@ public class WebDriverWaits extends BrowsersInvoked {
 	}
 
 
-	public static void WaitUntilInvisible(By element) {
-		wait.until(ExpectedConditions.invisibilityOf((WebElement) element));
+	public static void refreshPage() {
+		driver.navigate().refresh();
 	}
 
 	public static WebElement WaitUntilVisibleWE(By element) {
@@ -70,6 +75,19 @@ public class WebDriverWaits extends BrowsersInvoked {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
+		}
+		WebElement ele = driver.findElement(element);
+		ele.click();
+		//System.out.println("Clicked On " + element);
+	}
+
+	public static void ClickOnE(By element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, (Duration.ofSeconds(15)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (ElementClickInterceptedException e) {
+
 		}
 		WebElement ele = driver.findElement(element);
 		ele.click();
@@ -258,7 +276,7 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 
 	public static void uploadFileUsingRobot(String filepath) throws AWTException {
-				// creating object of Robot class
+		// creating object of Robot class
 		Robot rb = new Robot();
 
 		// copying File path to Clipboard
@@ -277,5 +295,48 @@ public class WebDriverWaits extends BrowsersInvoked {
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
 
+	}
+
+	//create method moveToelemenet
+	public static WebElement moveToelemenet(WebElement element) {
+		Actions s = new Actions(driver);
+		s.moveToElement(element).click().build().perform();
+		return element;
+	}
+
+	public static WebElement byToWebElement(By by) {
+		return driver.findElement(by);
+	}
+
+	public static void clickOnMoveToElemenet(By element) {
+
+		byToWebElement(element).click();
+
+	}
+
+	public static void SelectElementByRobotClass() throws AWTException {
+		Robot s = new Robot();
+		s.keyPress(KeyEvent.VK_TAB);
+		s.keyRelease(KeyEvent.VK_TAB);
+	}
+
+	public static void validate_SuccessTXT(By element,String expected) throws InterruptedException {
+		SoftAssert softAssert = new SoftAssert();
+		String actual = WebDriverWaits.GetText(element);
+		softAssert.assertEquals(actual, expected);
+		softAssert.assertAll();
+	}
+
+	public static void SelectOption(String element) {
+		List<WebElement> allOptions = driver.findElements(By.xpath(element));
+		String option = RandomName1;
+		// Iterate the list using for loop
+		for (int i = 0; i < allOptions.size(); i++) {
+			if (allOptions.get(i).getText().contains(option)) {
+				allOptions.get(i).click();
+				System.out.println("clicked");
+				break;
+			}
+		}
 	}
 }

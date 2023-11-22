@@ -22,6 +22,7 @@ import java.util.List;
 import static POM.Customer.*;
 
 
+
 public class BillRun extends TestLogin {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
     public static By ConfirmationAssertion = By.xpath("//*[@class='bootstrap-dialog-message']");
@@ -101,7 +102,11 @@ public class BillRun extends TestLogin {
 
     public static By close = By.id("sendEmailResultClose");
     public static By download = By.xpath("(//button[text()='Download'])[1]");
+    public static By billCycle= By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]");
     String Expectedsuccmsg = "Successfully updated .";
+
+
+
 
     static String BillCycleName = RandomStrings.RequiredCharacters(6);;
 
@@ -183,8 +188,7 @@ public class BillRun extends TestLogin {
 //        Thread.sleep(2000);
         WebDriverWaits.ClickOn(billRunCycleSelect);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,billCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
@@ -198,7 +202,7 @@ public class BillRun extends TestLogin {
         System.out.println("Successfully asserted the popup text while bill run with uncomitted statement.");
         Thread.sleep(4000);
         WebDriverWaits.ClickOn(OK_Button);
-        Thread.sleep(10000);
+        Thread.sleep(4000);
 
     }
 
@@ -247,6 +251,7 @@ public class BillRun extends TestLogin {
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(BillRun_Tab);
         WebDriverWaits.Waituntilvisible(RunTheBills_Button);
+        Thread.sleep(1000);
         WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
 //        WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
@@ -270,15 +275,15 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(billRunCycleSelect);
         Thread.sleep(3000);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,BillCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+        WebDriverWaits.byToWebElement(billCycle);
+        WebDriverWaits.clickOnMoveToElemenet(billCycle);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "16/11/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "16/11/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -301,6 +306,7 @@ public class BillRun extends TestLogin {
 //        WebDriverWaits.ClickOn(Cancel_Button);
 //        Thread.sleep(2000);
 //        WebDriverWaits.ClickOn(Yes_Button);
+
     }
 
     public static void Rollback_SmallBillRunWithSingleCustomer(String billRunCycle ) throws InterruptedException {
@@ -316,6 +322,18 @@ public class BillRun extends TestLogin {
         WebDriverWaits.SendKeysWithClear(RollbackReason_Field,"RollBacking for update");
         WebDriverWaits.ClickOn(okButton);
         WebDriverWaits.ClickOn(crossMark);
+
+    }
+
+    public static void directRollBack(String billRunCycle) throws InterruptedException {
+        WebDriverWaits.ClickOn(BillRun_Tab);
+        WebDriverWaits. SendKeysWithClear(searchBox,billRunCycle);
+        WebDriverWaits.ClickOn(ViewDetails_Icon);
+        WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.ClickOn(rollBackAndFixButton);
+        WebDriverWaits.ClickOn(CountinueRollBack);
+        driver.navigate().refresh();
+
 
     }
 
@@ -345,15 +363,15 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(billRunCycleSelect);
         Thread.sleep(3000);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,BillCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+        WebDriverWaits.byToWebElement(billCycle);
+        WebDriverWaits.clickOnMoveToElemenet(billCycle);
         Thread.sleep(1000);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -404,32 +422,30 @@ public class BillRun extends TestLogin {
         Thread.sleep(2000);
     }
 
-    public static void rollback_in_statementTab(String customerId) throws InterruptedException {
-        Customer.searchCustomer(customerId);
+    public static void rollback_in_statementTab(String customerId2) throws InterruptedException {
+        WebDriverWaits.Waituntilvisible(Statement_Subtab);
         WebDriverWaits.ClickOn(Statement_Subtab);
         WebDriverWaits.ClickOn(ViewDetails_Icon);
         WebDriverWaits.ClickOn(Rollback_Button);
         WebDriverWaits.ClickOn(RollbackReason_Field);
         WebDriverWaits.SendKeys(RollbackReason_Field, "Kindly rollback the statement.");
         WebDriverWaits.ClickOn(Ok_Button);
-     WebDriverWaits.Waituntilvisible(RollbackCross_Icon);
+        WebDriverWaits.Waituntilvisible(RollbackCross_Icon);
         //Assert Rollback for customer 40027 and statement 7892 has been successful.
-
         WebDriverWaits.ClickOn(RollbackCross_Icon);
     }
 
     public static void statementRebill(String customerId) throws InterruptedException {
-        Customer.searchCustomer(customerId);
         WebDriverWaits.ClickOn(Statement_Subtab);
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(viewRollBackHistoryBtn);
-//        Thread.sleep(3000);
-//        WebDriverWaits.ClickOn(editActionIcon);
-//        Thread.sleep(3000);
-//        WebDriverWaits.ClickOn(runBillS);
-//        Thread.sleep(3000);
-//        WebDriverWaits.ClickOn(Ok_Button);
-//        Thread.sleep(5000);
+        Thread.sleep(3000);
+        WebDriverWaits.ClickOn(editActionIcon);
+        Thread.sleep(3000);
+        WebDriverWaits.ClickOn(runBillS);
+        Thread.sleep(3000);
+        WebDriverWaits.ClickOn(Ok_Button);
+        Thread.sleep(5000);
 
     }
 
@@ -470,7 +486,7 @@ public class BillRun extends TestLogin {
         softAssert.assertEquals("Successfully added new bill run cycle.", ActualMsg);
         System.out.println("Successfully added new bill run cycle for  customers. " + billRunCycleName);
         Thread.sleep(4000);
-        return billRunCycleName;
+       return billRunCycleName;
     }
 
     public static String editBillCycle(String oldBillCycleName) throws InterruptedException {
@@ -496,11 +512,13 @@ public class BillRun extends TestLogin {
         return billRunCycleNewName;
     }
 
-    public static void runBillCycle(String billRunCycleName) throws InterruptedException, AWTException {
+    public static String runBillCycle(String billRunCycleName) throws InterruptedException, AWTException {
       //  LandingPage.navigateToHomePage();
         //First Time Bill run
+        WebDriverWaits.Waituntilvisible(BillRun_Tab);
         WebDriverWaits.ClickOn(BillRun_Tab);
         //      jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(RunTheBills_Button);
 //        WebDriverWaits.ClickOn(BillRun_StartDate_Datepicker);
 //        WebDriverWaits.ClickOn(Select_BillRun_StartDate_Datepicker);
@@ -531,14 +549,17 @@ public class BillRun extends TestLogin {
         WebDriverWaits.Waituntilvisible(billRunCycleSelect);
         WebDriverWaits.ClickOn(billRunCycleSelect);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,billRunCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+//        Actions s = new Actions(driver);
+//        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+        Thread.sleep(2000);
+        WebDriverWaits.byToWebElement(billCycle);
+        WebDriverWaits.clickOnMoveToElemenet(billCycle);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  billRunCycleName);
@@ -555,6 +576,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.Waituntilvisible(reloadButton);
         WebDriverWaits.ClickOn(reloadButton);
 
+        return billRunCycleName;
     }
 
     public static String billRunForTwoCustomer(String billRunCycleName) throws InterruptedException, AWTException {
@@ -587,14 +609,14 @@ public class BillRun extends TestLogin {
         WebDriverWaits.Waituntilvisible(billRunCycleSelect);
         WebDriverWaits.ClickOn(billRunCycleSelect);
         WebDriverWaits.SendKeysWithClear(selectBillRunCycle,billRunCycleName);
-        Actions s = new Actions(driver);
-        s.moveToElement(driver.findElement(By.xpath("(//ul[@class='dropdown-menu inner selectpicker'])[2]"))).click().build().perform();
+        WebDriverWaits.byToWebElement(billCycle);
+        WebDriverWaits.clickOnMoveToElemenet(billCycle);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "26/10/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  billRunCycleName);
@@ -781,7 +803,7 @@ public class BillRun extends TestLogin {
    // public static By download = By.xpath("(//button[text()='Download'])[1]");
 
     public static By BillRunCycleSucc = By.xpath(" //p/span[@id='resultMsg']");
-    public static By billCycle = By.xpath("//select[@id='cycleno']");
+
     public static By firstValue = By.xpath("//*[@id=\"logContent\"]/div/div/div[2]/div[2]/div/div/ul/li[1]/a");
 
     //=============Editing the created BillRunCycles for the customer=============

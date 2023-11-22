@@ -22,22 +22,20 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
-        customerId =Customer.createCustomer("Tenant", "10","Commercial", "32165485216","FranklinCovey","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com"  );
-         serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
-         Services.editService("Connected");
-         meterId =Metering.add_Metering();
-         registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
-        Metering.add_MeterReads("Initial","150","200","300");
-        Metering.add_MeterReads("Actual Read","200","400","650");
-
-
+        customerId =Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
+        serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        Services.editService("Connected");
+        meterId =Metering.AddMeter() ;
+        registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
     }
     @Test(priority = 2)
 
     public  void create_Customer_invoiceTemplate() throws InterruptedException {
         extentTest = extent.startTest("Customer Invoice Template");
         extentTest.setDescription(" Verify that User is able to create Customer Invoice template");
-     //   Login.ValidLogin();
+        //   Login.ValidLogin();
         Admin.navigateToInvoiceSetup();
         invoiceTemplate="Customer_Invoice_"+ RandomStrings.RequiredCharacters(4);
         Invoice.createNewInvoice(invoiceTemplate);
@@ -91,7 +89,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Send Email ");
         extentTest.setDescription(" Verify that User is able to send emails");
 
-         BillRun.billRunCycleSearch(billCycleName);
+        BillRun.billRunCycleSearch(billCycleName);
         BillRun.viewBillDetails( );
         BillRun.selectCustCheckBox();
         BillRun.clickEmailBills();

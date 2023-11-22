@@ -1,13 +1,11 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import CommonMethods.RandomStrings;
 import POM.Admin;
 import POM.GroupEdit;
 import POM.Invoice;
 import POM.Login;
 import org.testng.annotations.Test;
-
 import static POM.Invoice.invoiceName;
 
 public class InvoiceTest extends BaseTest {
