@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import static POM.Flow5_AddCustomer.jse;
+
 
 public class Overview {
 
@@ -75,9 +75,7 @@ public class Overview {
         select.selectByVisibleText("Off Market");
 
         Thread.sleep(4000);
-        jse.executeScript("window.scrollBy(0,300)", "");
-        Thread.sleep(2000);
-
+         WebDriverWaits.scrollIntoView(NMI_Field);
         WebDriverWaits.ClickOn(NMI_Field);
         ServiceIDLater3 = RandomStrings.RequiredDigits(10);
         WebDriverWaits.SendKeys(NMI_Field, ServiceIDLater3);
@@ -93,8 +91,7 @@ public class Overview {
         WebDriverWaits.ClickOn(Move_In_Date_Datepicker);
         //	WebDriverWaits.ClickOn(SelectCurrentDate);
         WebDriverWaits.SendKeys(Move_In_Date_Datepicker, "01/12/2022");
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-
+        WebDriverWaits.scrollIntoView(Select_Use_Structured_Address_Togglebutton);
         WebDriverWaits.ClickOn(Select_Use_Structured_Address_Togglebutton);
         WebDriverWaits.ClickOn(Building_Name_Field);
         WebDriverWaits.SendKeys(Building_Name_Field, "Los angels");
@@ -106,7 +103,7 @@ public class Overview {
         WebElement VOption = WebDriverWaits.WaitUntilVisibleWE(Street_Number_Suffix_Dropdown);
         select = new Select(VOption);
         select.selectByVisibleText("V");
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(Suburb_Field);
         WebDriverWaits.ClickOn(Suburb_Field);
         WebDriverWaits.SendKeys(Suburb_Field, "Almor Distt 324");
         WebDriverWaits.ClickOn(Postal_Code_field);
@@ -117,7 +114,8 @@ public class Overview {
         select = new Select(StateOption);
         select.selectByVisibleText("New South Wales");
         WebDriverWaits.ClickOn(AddButton);
-        jse.executeScript("window.scrollBy(0,-1000)", "");
+        WebDriverWaits.scrollIntoView(AddButton);
+
 
     }
 

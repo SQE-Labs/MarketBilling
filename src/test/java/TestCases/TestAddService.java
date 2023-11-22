@@ -1,11 +1,12 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
-import POM.AddSitePlans;
-import POM.Flow6_7AddingServiceAndMeter;
-import POM.Metering;
+import POM.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+import java.awt.*;
+import static POM.Customer.*;
+
 
 public class TestAddService extends BaseTest {
 
@@ -15,85 +16,87 @@ public class TestAddService extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void ResidentialService() throws InterruptedException {
-        extentTest = extent.startTest(" Residential Service ");
+    public void AddResidentialService( ) throws InterruptedException, AWTException {
+        extentTest = extent.startTest("Retail Electricity Service for  Residential Customer ");
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.M_AddService();
+       // Login.validLogin();
+
+        Services.M_AddService("Off Market","New South Wales","Australian Capital Territory");
     }
 
     @Test(priority = 2)
     public void EditResidentialService() throws InterruptedException {
-        extentTest = extent.startTest(" Edit First Residential Service ");
-        extentTest.setDescription(" Verify that User is able to edit Residential Service. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.EditService();
+        extentTest = extent.startTest(" Edit Retail Electricity Service for  Residential Customer ");
+        extentTest.setDescription(" Verify that User is able to edit Retail Electricity Service for  Residential Customer. ");
+       // Login.validLogin();
+        Services.editService("Connected");
     }
 
     @Test(priority = 3)
     public void AddMeter_MeterRegisterR() throws InterruptedException {
-        extentTest = extent.startTest(" AddMeter & MeterRegisterR for  service ");
+        extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
-        Metering metering = new Metering();
-        metering.AddMeter();    }
+
+
+         Metering.AddMeter() ;
+        Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
+
+
+    }
 
     @Test(priority = 4)
-    public void SecondService() throws InterruptedException {
-        extentTest = extent.startTest(" AddSecondService Business ");
+    public void AddBusinessService() throws InterruptedException, AWTException {
+        extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Business Customer  ");
         extentTest.setDescription(" Verify that User is able to add SecondService. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.AddSecondService();
+      //Login.validLogin();
+      //String CustomerID02B="36896";
+         Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
+        Services.M_AddService("Off Market","NSW", "New South Wales");
+        Services.editService("Connected");
+        Metering metering = new Metering();
+        Metering.AddMeter() ;
+      Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
+
     }
+
 
     @Test(priority = 5)
-    public void EditSecondService() throws InterruptedException {
-        extentTest = extent.startTest(" EditSecondService for  Business customer");
-        extentTest.setDescription(" Verify that User is able to edit SecondService. ");
-        Flow6_7AddingServiceAndMeter.X_AddService.EditSecondService();
-    }
-
-    @Test(priority = 6)
-    public void BAddMeter_MeterRegister() throws InterruptedException {
-        extentTest = extent.startTest(" AddMeter&MeterRegisterB  for second ");
-        extentTest.setDescription(" Verify that User is able to add meter for SecondService. ");
-        Metering metering = new Metering();
-        metering.AddMeter();
-    }
-
-
-    @Test(priority = 7)
-    public void AddThirdService() throws InterruptedException {
-        extentTest = extent.startTest(" AddThirdService  Commercial");
+    public void AddCommercialService( ) throws InterruptedException, AWTException {
+        extentTest = extent.startTest(" Add and edit Retail Electricity Service for  Commercial Customer  ");
         extentTest.setDescription(" Verify that User is able to add ThirdService ");
-        Flow6_7AddingServiceAndMeter.X_AddService.AddThirdService();
+        Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
+        Services.M_AddService("Off Market","NSW", "New South Wales");
+        Services.editService("Connected");
+        Metering.AddMeter() ;
+        Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.addMeterReads("Initial","150","200","300");
+        Metering.addMeterReads("Actual Read","200","400","650");
     }
-
-    @Test(priority = 8)
-    public void EditThirdService() throws InterruptedException {
-        extentTest = extent.startTest(" EditThirdService Commercial ");
-        extentTest.setDescription(" Verify that User is able to Edit ThirdService ");
-        Flow6_7AddingServiceAndMeter.X_AddService.EditThirdService();
-    }
-
-    @Test(priority = 9, enabled = true)
-    public void AddMeter_MeterRegisterC() throws InterruptedException {
-        extentTest = extent.startTest(" AddMeter&MeterRegisterC for third customer ");
-        extentTest.setDescription(" Verify that User is able to add  meter for ThirdService ");
-        Metering metering = new Metering();
-        metering.AddMeter();
-    }
-
-    @Test(priority = 10)
+    @Test(priority = 6,enabled=false)
     public void addSitePlans() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Plans ");
         extentTest.setDescription(" Verify that User is able to add  site plans ");
-        AddSitePlans.addSitePlan();
+      //  AddSitePlans.addSitePlan();
 
     }
 
-    @Test(priority = 11)
+    @Test(priority = 6)
     public void addSiteParameters() throws InterruptedException {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
         AddSitePlans.addSiteParameters();
 
     }
+
+
+
+
+
 
 }
