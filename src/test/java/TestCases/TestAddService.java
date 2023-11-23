@@ -38,10 +38,10 @@ public class TestAddService extends BaseTest {
         extentTest.setDescription(" Verify that User is able to add Service. ");
 
          Metering.AddMeter() ;
-        Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
 
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
 
     }
@@ -57,10 +57,10 @@ public class TestAddService extends BaseTest {
         Services.editService("Connected");
         Metering metering = new Metering();
         Metering.AddMeter() ;
-      Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
+      Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
 
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
 
     }
 
@@ -73,9 +73,9 @@ public class TestAddService extends BaseTest {
         Services.M_AddService("Off Market","NSW", "New South Wales");
         Services.editService("Connected");
         Metering.AddMeter() ;
-        Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
     }
     @Test(priority = 6,enabled=false)
     public void addSitePlans() throws InterruptedException {
@@ -92,10 +92,5 @@ public class TestAddService extends BaseTest {
         AddSitePlans.addSiteParameters();
 
     }
-
-
-
-
-
 
 }

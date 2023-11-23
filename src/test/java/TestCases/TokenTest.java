@@ -10,7 +10,7 @@ public class TokenTest extends BaseTest {
     public  void valid_Token_Details() throws InterruptedException {
         extentTest = extent.startTest("valid_Token_Details");
         extentTest.setDescription("Verify payment status on entering valid token details");
-        Login.validLogin();
+       // Login.validLogin();
         Admin.navigateToAdmin();
         Payments.validToken("aOrD6n7L4Ys791lmtaXVmfSe");
         Payments.verify_Token_Success_MSG("Group Payment Gateway has been successfully updated.");

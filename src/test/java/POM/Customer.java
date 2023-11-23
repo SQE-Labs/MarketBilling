@@ -156,7 +156,12 @@ public class Customer {
         WebDriverWaits.scrollPageEnd();
     }
 
+
+   // public static void addBusinessDetails(String companyName, String ABNField) throws InterruptedException {
+
     public static void addBusinessDetails(String companyName, String ABNField) throws InterruptedException {
+        WebDriverWaits.scrollIntoView(companyNameField);
+
         WebDriverWaits.ClickOn(Customer.companyNameField);
         WebDriverWaits.SendKeys(Customer.companyNameField, companyName);
         WebDriverWaits.scrollIntoView(abnField);
@@ -215,8 +220,12 @@ public class Customer {
         return WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
     }
 
+
+
     public static String searchAndNavigateToRecentCustomer() throws InterruptedException {
         //  driver.get(DataInterface.URL);
+
+        Thread.sleep(3000);
         WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(4000);
         String customerId = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
@@ -224,7 +233,6 @@ public class Customer {
         WebDriverWaits.ClickOn(searchIcon);
         return customerId;
     }
-
 
     public static void searchCustomer(String customerId) throws InterruptedException {
 
@@ -351,9 +359,15 @@ public class Customer {
     public static void accountTypeSection(String customerType, String category) {
         WebDriverWaits.ClickOn(customerIcontab);
         WebDriverWaits.ClickOn(customerTypedropdown);
-        WebDriverWaits.selectByVisibleText(customerTypedropdown, customerType);
+
+//        WebDriverWaits.selectByVisibleText(customerTypedropdown, customerType);
+//        WebDriverWaits.ClickOn(categorydropdown);
+//        WebDriverWaits.selectByVisibleText(categorydropdown, category);
+
+        WebDriverWaits.selectByVisibleText(customerTypedropdown,customerType);
         WebDriverWaits.ClickOn(categorydropdown);
-        WebDriverWaits.selectByVisibleText(categorydropdown, category);
+        WebDriverWaits.selectByVisibleText(categorydropdown,category);
+
     }
 
     public static void postalCodeSection(String addressfield, String cityfield1, String postalCodefield1, String state) {
@@ -477,7 +491,11 @@ public class Customer {
         accountTypeSection(customerType, category);
         postalCodeSection(Addressfield, Cityfield1, PostalCodefield1, state);
         contactDetailsSection(title, emailField);
-        addAccountManagement(category, contactTermField);// accountManagement
+
+        //addAccountManagement(category, contactTermField);// accountManagement
+
+        addAccountManagement(category,contactTermField);// accountManagement
+
         saveButton();
         statusChangeSection(status);
         CustomerID01R = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);

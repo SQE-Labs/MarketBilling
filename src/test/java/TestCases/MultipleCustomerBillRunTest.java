@@ -21,15 +21,15 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-	//	Login.validLogin();
 
-		String customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
+		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
-		String registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
+
 		//	BillRun.BillrunMethod_NoCycle();
 
 	}
@@ -43,9 +43,9 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
-		String registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 		 billRunCycle= BillRun.BillRunCycle(customerId);
 		BillRun.runBillCycle(billRunCycle);
 		BillRun.directRollBack(billRunCycleName);
@@ -61,30 +61,31 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
-		String registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 
 		CustomerID02B = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
 		 Metering.AddMeter();
-		  Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		  Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 
 		 CustomerID03C = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 		 Services.M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
 		 Metering.AddMeter();
-		 Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-		Metering.addMeterReads("Initial","150","200","300");
-		Metering.addMeterReads("Actual Read","200","400","650");
+		 Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+		Metering.add_MeterReads("Initial","150","200","300");
+		Metering.add_MeterReads("Actual Read","200","400","650");
 
 		List<String> customerList = new ArrayList<String>();
 		customerList.add(CustomerID01R);
 		customerList.add(CustomerID02B);
 		customerList.add(CustomerID03C);
+
 		billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
 	//	BillRun.commitBillRun(billRunCycleName);

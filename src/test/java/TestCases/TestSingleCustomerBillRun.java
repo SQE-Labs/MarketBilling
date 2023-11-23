@@ -22,13 +22,15 @@ public class TestSingleCustomerBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
         Login.validLogin();
-        customerId =Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-        serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
-        Services.editService("Connected");
-        meterId =Metering.AddMeter() ;
-        registerId = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        customerId =Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
+         serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+         Services.editService("Connected");
+         meterId =Metering.AddMeter();
+         registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
+
+
     }
     @Test(priority = 2)
 

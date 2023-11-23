@@ -5,6 +5,7 @@ import POM.*;
 import org.testng.annotations.Test;
 import java.awt.*;
 
+import static POM.Customer.CustomerID01R;
 
 
 public class TestNewBillRun extends BaseTest {
@@ -24,21 +25,22 @@ public class TestNewBillRun extends BaseTest {
         extentTest = extent.startTest(" Create Customer ");
         extentTest.setDescription(" Verify that User is able to Create Customer or not ");
 //       Login.validLogin();
-        customerID=Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","","10","Active");
+        customerID=Customer.creteBusinessCustomer("Tenant","Business","Madirma R-Town","Mills NY","Australia","1265","WA","FranklinCovey","32165485216","Dr.","test_Resdnt2@yopmail.com","10","Active");
         System.out.println("Texts match. Assertion passed.");
-        serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
+        serviceId=Services.M_AddService("Off Market","New South Wales","Australian Capital Territory");
         Services.editService("Connected");
         meterId =Metering.AddMeter() ;
-        meterReg = Metering.createRegister("Na","KWH","ALLDAY","5","0","0","17");
-        Metering.addMeterReads("Initial","150","200","300");
-        Metering.addMeterReads("Actual Read","200","400","650");
+        meterReg = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
+        Metering.add_MeterReads("Initial","150","200","300");
+        Metering.add_MeterReads("Actual Read","200","400","650");
     }
 
     @Test(priority = 1, enabled = true, description = "Create BillRun Cycles")
     public void createBillRunCycle() throws InterruptedException, AWTException {
         extentTest = extent.startTest("Create BillRun Cycle ");
         extentTest.setDescription("Verify that user is able to Create BillRun Cycles or Not");
-         billRunCycle = BillRun.BillRunCycle(customerID);
+
+        billRunCycle = BillRun.BillRunCycle(customerID);
     }
     @Test(priority = 2, enabled = true)
     public void billRun() throws AWTException, InterruptedException {
@@ -59,7 +61,7 @@ public class TestNewBillRun extends BaseTest {
         extentTest = extent.startTest("RollBack Created BillRun");
         extentTest.setDescription("Verify that user is able to RollBack the Created BillRun or not");
 
-       BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycle);
+        BillRun.Rollback_SmallBillRunWithSingleCustomer(billRunCycle);
     }
 
     @Test(priority = 5, enabled = true, description = "Edit BillRunCycle")
@@ -85,11 +87,10 @@ public class TestNewBillRun extends BaseTest {
         BillRun.downloadZip();
     }
 
-@Test(priority = 8 , enabled=true, description="Email BillRun ")
+    @Test(priority = 8 , enabled=true, description="Email BillRun ")
     public void emailBillRun() throws InterruptedException {
         extentTest = extent.startTest("Email BillRun to customer ");
         extentTest.setDescription("Verify that user is able to Email the BillRun or Not");
-       BillRun.emailBillRun();
+        BillRun.emailBillRun();
     }
 }
-

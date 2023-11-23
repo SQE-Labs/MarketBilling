@@ -4,8 +4,6 @@ import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
-import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
@@ -13,7 +11,6 @@ import java.awt.event.KeyEvent;
 
 import static BrowsersBase.BrowsersInvoked.driver;
 import static POM.GroupEdit.softAssert;
-import static POM.Transactions.transactionTypeText;
 
 public class Metering {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -59,14 +56,19 @@ public class Metering {
     public static By MeterReadOffPeak_Field = By.xpath("//*[@id='modalReadingO']");
     public static By MeterReadShoulder_Field = By.xpath("//*[@id='modalReadingS']");
     public static By Save_Button = By.xpath("(//button[contains(text(),'Save')])[2]");
-
-
+    public static By CustomerSuccessMeterRegister = By.xpath("//div[@class='alert alert-success']/center");
+    public static By ConsumptiomType = By.xpath("//select[@id='consumptionType']");
     public static SoftAssert softAssert = new SoftAssert();
-    String ExpectedMsg = "Successfully registered meter";
 
     public static String AddMeter() throws InterruptedException {
 
 //        jse.executeScript("window.scrollBy(0,1000)", "");
+
+//    public static String add_Metering() throws InterruptedException {
+//
+////        jse.executeScript("window.scrollBy(0,1000)", "");
+//        //WebDriverWaits.scrollPageEnd();
+
         System.out.println("I am clicking add meter button");
         WebDriverWaits.scrollIntoView(AddMeterIcon);
         WebDriverWaits.ClickOn(AddMeterIcon);
@@ -93,10 +95,18 @@ public class Metering {
         return RandomNumber1;
     }
 
-    public static String createRegister(String networkCodeTxt, String unitTxt,String timeofDayTxt,String dailFormatTxt,String demand1Txt,String demand2Txt,String nmiSuffixTxt) throws InterruptedException {
-       //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-         WebDriverWaits.scrollIntoView(MeterEdit_icon);
-         Thread.sleep(1000);
+
+//    public static String createRegister(String networkCodeTxt, String unitTxt,String timeofDayTxt,String dailFormatTxt,String demand1Txt,String demand2Txt,String nmiSuffixTxt) throws InterruptedException {
+//       //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//         WebDriverWaits.scrollIntoView(MeterEdit_icon);
+//         Thread.sleep(1000);
+
+    public static String create_Register(String networkCodeTxt, String unitTxt, String timeofDayTxt, String dailFormatTxt,
+                                         String demand1Txt, String demand2Txt, String nmiSuffixTxt) throws InterruptedException {
+        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        WebDriverWaits.scrollIntoView(MeterEdit_icon);
+        Thread.sleep(1000);
+
         WebDriverWaits.ClickOn(MeterEdit_icon);
         //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
@@ -136,8 +146,12 @@ public class Metering {
         return registerId;
     }
 
-    public static void  addMeterReads(String readType,String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
-       Thread.sleep(3000);
+
+//    public static void  addMeterReads(String readType,String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
+//       Thread.sleep(3000);
+
+    public static void add_MeterReads(String readType, String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
+        Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterReads_Tab);
         //   WebDriverWaits.ClickOn(ServiceName_Dropdown);
         Thread.sleep(1000);
