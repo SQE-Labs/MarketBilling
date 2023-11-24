@@ -13,7 +13,7 @@ public class TestAddPlan extends BaseTest {
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
         extentTest.setDescription(" Verify that User is able to do TouImport");
-       // Login.validLogin();
+        Login.validLogin();
         TouImport.TOUImportFile();
 
     }

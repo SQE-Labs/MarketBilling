@@ -249,7 +249,7 @@ public class Plans extends BaseTest {
 			// select = new Select(RatingOption1);
 			// select.selectByVisibleText("Retail Volume") // Need to scroll the dropdown
 				WebDriverWaits.WaitUntilVisible(RatingMethod_Dropdown);
-			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Retail Volume");
+			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Volume");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
 			Thread.sleep(3000);
 			WebDriverWaits.selectByIndex(Unit_Dropdown,0);

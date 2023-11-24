@@ -22,7 +22,7 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondenceToggle() throws InterruptedException {
         extentTest = extent.startTest(" Enable Correspondence Toggle");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-        //Login.validLogin();
+        Login.validLogin();
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
         GroupEdit.enable_CorrepondenceToggle();
@@ -49,7 +49,7 @@ public class CorrespondenceTest extends BaseTest {
         admin.navigateToAdmin();
         correspondence.navigateToCorrespondenceSetup();
         correspondence.edit_Correspondenceletter();
-        //    correspondence.validate_EditLetterSuccessTXT(Correspondence_letterName);
+        correspondence.validate_EditLetterSuccessTXT(Correspondence_letterName);
 
     }
 

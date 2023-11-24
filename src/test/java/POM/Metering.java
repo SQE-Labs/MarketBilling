@@ -169,7 +169,7 @@ public class Metering {
         WebDriverWaits.ClickOn(MeterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_Dropdown);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
-        WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
+        //WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);
         WebDriverWaits.ClickOn(ReadType_Dropdown);
         WebDriverWaits.selectByVisibleText(ReadType_Dropdown, readType);
         // WebElement ReadTypeOption2 = WebDriverWaits.WaitUntilVisibleWE(ReadType_Dropdown);

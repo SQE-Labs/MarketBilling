@@ -16,7 +16,7 @@ public class TestAddMeter extends BaseTest {
 	public  void add_Metering() throws InterruptedException {
 		extentTest = extent.startTest("Add  Metering");
 		extentTest.setDescription(" Verify that User is able to add Metering. ");
-Login.validLogin();
+		//Login.validLogin();
 		Customer.searchAndNavigateToRecentCustomer();
 		Services.navigateToEditServices();
 		Metering.AddMeter();

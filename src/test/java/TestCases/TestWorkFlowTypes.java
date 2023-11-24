@@ -17,7 +17,7 @@ public class TestWorkFlowTypes extends BaseTest {
     public void createFlowType() throws InterruptedException {
         extentTest = extent.startTest(" Add WorkFlowTypes ");
         extentTest.setDescription(" Verify that User is able to add WorkFlowTypes ");
-      // Login.validLogin();
+       // Login.validLogin();
         RandomName1 =  RandomStrings.RequiredCharacters(2);
          WorkFlow.createWorkFlowType(RandomName1);
         WebDriverWaits.validate_SuccessTXT(succ_Msg,"Successfully added the workflow type '" +RandomName1+"'.");

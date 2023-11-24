@@ -19,6 +19,7 @@ public class Invoice {
     public static By search = By.xpath("//label/input");
     public static By tinymce = By.xpath("//body[@id='tinymce']");
     public static By saveSettings = By.id("save");
+    public static By backToInvoice =By.xpath("//*[@id=\"invoiceContent\"]/div[1]/a");
 
     public static String invoiceName;
 
@@ -46,6 +47,16 @@ public class Invoice {
         WebDriverWaits.ClickOn(saveInvoice);
     }
 
+    public static void click_BackToInvoice() {
+        WebDriverWaits.scrollIntoView(backToInvoice);
+        WebDriverWaits.ClickOn(backToInvoice);
+    }
+
+
+    public static void clickOkbtn() {
+        WebDriverWaits.ClickOn(okBtn);
+    }
+
     public static void selectCategory(String name) throws InterruptedException {
         WebDriverWaits.WaitUntilVisibleWE(category);
         WebDriverWaits.selectByValue(category, name);
@@ -60,8 +71,9 @@ public class Invoice {
         selectInvoiceCheckBox(selectCategory2Txt);
         clickSave();
         selectCategory(selectCategory3Txt);
-        enterTemplateText(templateTxt);
+        //enterTemplateText(templateTxt);
         clickSaveTemplate();
+//        click_BackToInvoice();
     }
 
     public static void edit_Invoice(String selectCategory1Txt, String selectCategory2Txt, String selectCategory3Txt, String selectCategory4Txt,String templateTxt) throws InterruptedException {
@@ -89,9 +101,10 @@ public class Invoice {
     public static void clickSaveTemplate() {
         WebDriverWaits.scrollIntoView(saveTemplate);
         WebDriverWaits.ClickOn(saveTemplate);
+        WebDriverWaits.WaitUntilVisible(okBtn);
         WebDriverWaits.ClickOn(okBtn);
-        WebDriverWaits.scrollIntoView(finishBtn);
-        WebDriverWaits.ClickOn(finishBtn);
+        WebDriverWaits.scrollIntoView(backToInvoice);
+        WebDriverWaits.ClickOn(backToInvoice);
 
     }
 

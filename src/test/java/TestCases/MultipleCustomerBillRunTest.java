@@ -58,7 +58,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
 	//	Login.validLogin();
 		 CustomerID01R = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
-		 Services.M_AddService("Off Market","NSW","New South Wales");
+		 Services.	M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
 		String 	meterId =Metering.AddMeter();
 		String registerId = Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
