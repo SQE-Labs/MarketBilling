@@ -21,7 +21,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
     public  void CreateCustomer_For_BillrunCycle() throws InterruptedException {
         extentTest = extent.startTest(" Create Customer for bill run with 1 customer ");
         extentTest.setDescription(" Verify that User is able to run the small bill run with 1 customer ");
-        Login.validLogin();
+       // Login.validLogin();
         customerId =Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
          serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
          Services.editService("Connected");

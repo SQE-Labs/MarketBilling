@@ -1,4 +1,5 @@
 package POM;
+
 import CommonMethods.DateAndTime;
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
@@ -10,7 +11,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
+
 import java.awt.*;
+
 import static BrowsersBase.BrowsersInvoked.driver;
 import static CommonMethods.WebDriverWaits.byToWebElement;
 import static POM.GroupEdit.softAssert;
@@ -18,12 +21,11 @@ import static POM.GroupEdit.softAssert;
 public class Services {
     public static JavascriptExecutor jse = (JavascriptExecutor) driver;
     public static Select select;
-    public static String  ServiceIDLater3;
+    public static String ServiceIDLater3;
     public static String ServiceIDLater1;
     // Search Field
     public static By searchField = By.xpath("(//*[@id=\"search_input\"])[1]");
     public static By searchIcon = By.xpath("//button[@id='btn_search']");
-
 
 
     // Select the Residential/Business/Commercial customer created in add customer
@@ -35,9 +37,7 @@ public class Services {
     public static By selectCommercialCustomer_Record = By.xpath("(//td[@class='sorting_1']/a)[1]");
     public static By overviewTab = By.xpath("//*[@class=\"icon-eye-open\"]");
 
-    public static By Overview=By.xpath("//*[@class=\"icon-eye-open\"]");
-
-
+    public static By Overview = By.xpath("//*[@class=\"icon-eye-open\"]");
 
 
     // //*[contains(text(),'Overview')]
@@ -86,13 +86,14 @@ public class Services {
     public static By moveinSearch = By.xpath("//label[text()='Move-In Date']");
     public static By serviceSuccMsg = By.xpath("//div[contains(text(),'The Service has been created successfully.')]");
 
-    public static String M_AddService(String offMarket,String subField,String StateName) throws InterruptedException {
+    public static String M_AddService(String offMarket, String subField, String StateName) throws InterruptedException {
         WebDriverWaits.ClickOn(searchIcon);
         WebDriverWaits.Waituntilvisible(searchField);
         WebDriverWaits.ClickOn(searchField);
         Thread.sleep(2000);
         String ThirdRecID = WebDriverWaits.GetText(selectRecord);
         WebDriverWaits.SendKeys(searchField, ThirdRecID);
+
         WebDriverWaits.ClickOn(selectRecord);
         //  WebDriverWaits.ClickOn(selectRecord);
         //  Customer.switchToCustomerpage();
@@ -101,31 +102,31 @@ public class Services {
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);
         WebDriverWaits.Waituntilvisible(market_Type_Field);
         WebDriverWaits.ClickOn(market_Type_Field);
-        WebDriverWaits.selectByVisibleText(market_Type_Field,offMarket);
+        WebDriverWaits.selectByVisibleText(market_Type_Field, offMarket);
         WebDriverWaits.scrollIntoView(nMI_Field);
         WebDriverWaits.ClickOn(nMI_Field);
 //        String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
 //        WebDriverWaits.SendKeys(nMI_Field, ServiceIDLater1);
         WebDriverWaits.Waituntilvisible(service_Plan_Dropdown);
         WebDriverWaits.ClickOn(service_Plan_Dropdown);
-        Thread.sleep(2000);
+        Thread.sleep(6000);
         WebDriverWaits.ClickOn(service_Plan_Elec);
         WebDriverWaits.SendKeys(move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         WebDriverWaits.scrollIntoView(suburb_Field);
         WebDriverWaits.ClickOn(suburb_Field);
-        WebDriverWaits.SendKeys(suburb_Field,  subField);
+        WebDriverWaits.SendKeys(suburb_Field, subField);
         WebDriverWaits.ClickOn(postal_Code_field);
         String RandomNumber2 = RandomStrings.RequiredDigits(15);
         WebDriverWaits.SendKeys(postal_Code_field, RandomNumber2);
         WebDriverWaits.ClickOn(stateDropdown);
-        WebDriverWaits.selectByVisibleText(stateDropdown,StateName);
+        WebDriverWaits.selectByVisibleText(stateDropdown, StateName);
         WebDriverWaits.ClickOn(addButton);
         Thread.sleep(3000);
         System.out.println(ServiceIDLater1);
         return ServiceIDLater1;
     }
 
-    public static String addService(String offMarket,String StateName,String subField) throws InterruptedException {
+    public static String addService(String offMarket, String StateName, String subField) throws InterruptedException {
         Customer.switchToCustomerpage();
         //   WebDriverWaits.SwitchToNewTab();
         Thread.sleep(1000);
@@ -133,7 +134,7 @@ public class Services {
         WebDriverWaits.ClickOn(retailElectricity_Plus_Subtab);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(market_Type_Field);
-        WebDriverWaits.selectByVisibleText(market_Type_Field,offMarket);
+        WebDriverWaits.selectByVisibleText(market_Type_Field, offMarket);
         WebDriverWaits.scrollIntoView(nMI_Field);
         WebDriverWaits.ClickOn(nMI_Field);
         String ServiceIDLater1 = RandomStrings.RequiredDigits(10);
@@ -147,12 +148,12 @@ public class Services {
         //  WebDriverWaits.SendKeys(move_In_Date_Datepicker, DateAndTime.DateTimeGenerator("dd/MM/yyyy"));
         WebDriverWaits.scrollIntoView(suburb_Field);
         WebDriverWaits.ClickOn(suburb_Field);
-        WebDriverWaits.SendKeys(suburb_Field, subField );
+        WebDriverWaits.SendKeys(suburb_Field, subField);
         WebDriverWaits.ClickOn(postal_Code_field);
         String RandomNumber2 = RandomStrings.RequiredDigits(15);
         WebDriverWaits.SendKeys(postal_Code_field, RandomNumber2);
         WebDriverWaits.ClickOn(stateDropdown);
-        WebDriverWaits.selectByVisibleText(stateDropdown,StateName );
+        WebDriverWaits.selectByVisibleText(stateDropdown, StateName);
         WebDriverWaits.ClickOn(addButton);
         System.out.println(ServiceIDLater1);
 
@@ -247,7 +248,6 @@ public class Services {
     // Methods to add Residential Service
 
 
-
     // Methods to add Business Service
 
 
@@ -257,15 +257,15 @@ public class Services {
         WebDriverWaits.ClickOn(edit_icon);
         WebDriverWaits.scrollIntoView(service_Status_Dropdown);
         WebDriverWaits.ClickOn(service_Status_Dropdown);
-        WebDriverWaits.selectByVisibleText(service_Status_Dropdown,serviceStatus);
+        WebDriverWaits.selectByVisibleText(service_Status_Dropdown, serviceStatus);
         WebDriverWaits.scrollIntoView(saveChanges_Button);
         WebDriverWaits.ClickOn(saveChanges_Button);
         WebDriverWaits.WaitUntilVisible(OkButton);
         WebDriverWaits.ClickOn(OkButton);
         System.out.println("Successfully edited customer");
+        driver.navigate().refresh();
 
     }
-
 
 
 }

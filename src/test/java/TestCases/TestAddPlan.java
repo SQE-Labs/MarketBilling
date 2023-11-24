@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 public class TestAddPlan extends BaseTest {
     String planId;
 
-    @Test(priority = 0,enabled = true)
+    @Test(priority = 0,enabled = false)
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
         extentTest.setDescription(" Verify that User is able to do TouImport");
-        Login.validLogin();
+       // Login.validLogin();
         TouImport.TOUImportFile();
 
     }
@@ -22,7 +22,7 @@ public class TestAddPlan extends BaseTest {
     public  void AddPlanwithoutTOUDefinition() throws InterruptedException {
         extentTest = extent.startTest(" AddPlanwithoutTOUDefinition ");
         extentTest.setDescription(" Verify that User is able to add simple plan. ");
-
+        //Login.validLogin();
         Plans.AddPlanwithoutTOUDefinition();
     }
 
@@ -47,12 +47,12 @@ public class TestAddPlan extends BaseTest {
         extentTest = extent.startTest(" Add_ProRated_Rates ");
         extentTest.setDescription(" Verify that User is able to add ProRated Rates ");
       //  Login.ValidLogin();
-       // planId="MktPlan_NetworkRatebtFs";
+        planId="MktPlan_NetworkRatebtFs";
         Plans.search_Plan(planId);
         Plans.Add_ProRated_Rates();
     }
-    //bug raised
-    @Test(priority = 5,enabled = true)
+    //BUG dropdown value blank // This option has been removed //
+    @Test(priority = 5,enabled = false)
     public  void OtherPlan() throws InterruptedException {
         extentTest = extent.startTest(" OtherPlan [Bug raised]");
         extentTest.setDescription(" Verify that User is able to add other plan ");

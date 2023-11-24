@@ -21,7 +21,7 @@ public class InvoiceTest extends BaseTest {
         extentTest.setDescription(" Verify that User is able to create Invoice Template. ");
         //Login.validLogin();
         admin.navigateToInvoiceSetup();
-        invoice.create_Invoice("TRANSACTION-SUMMARY","TRANSACTION-SUMMARY-LIST","TRANSACTION-SUMMARY-LIST","Sample template text" );
+        invoice.create_Invoice("TRANSACTION-SUMMARY","PPA-ENERGY-CHARGES-SUMMARY","TRANSACTION-SUMMARY-LIST","Sample template text" );
 
     }
     @Test(priority = 2,enabled = true)

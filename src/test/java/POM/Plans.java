@@ -71,6 +71,7 @@ public class Plans extends BaseTest {
 		public static By ProrataPlus_Button = By.xpath("//*[@id='addProrataBtn']");
 		public static By ProrataClose_Button = By.xpath("//*[@id='prorataClose']");
 		public static By ProrataPlanRecord_Edit = By.xpath("(//*[@class='fa fa-pencil '])[1]");
+
 		public static void AddPlanwithoutTOUDefinition() throws InterruptedException {
 			SoftAssert softAssert = new SoftAssert();
 			driver.navigate().refresh();
@@ -94,6 +95,7 @@ public class Plans extends BaseTest {
 			Thread.sleep(1000);
 			WebDriverWaits.ClickOn(Select_Current_ValidDate_To);
 			Thread.sleep(1000);
+			WebDriverWaits.scrollIntoView(Add_Tariff_Button);
 			WebDriverWaits.ClickOn(Add_Tariff_Button);
 			// Assertion_obj.AssertTariffButton
 			Thread.sleep(2000);
@@ -125,6 +127,7 @@ public class Plans extends BaseTest {
 			String RandomRate1 = RandomStrings.RequiredDigits(2);
 			WebDriverWaits.SendKeys(Rate_Field, RandomRate1);
 			Thread.sleep(4000);
+			WebDriverWaits.scrollIntoView(AddTrf_Button);
 			WebDriverWaits.ClickOn(AddTrf_Button);
 			Thread.sleep(4000);
 			WebDriverWaits.ClickOn(Trf_SearchField);
@@ -140,16 +143,23 @@ public class Plans extends BaseTest {
 			System.out.println("Assert passed");
 			Thread.sleep(4000);
 			WebDriverWaits.ClickOn(Publish_Button);
+			Thread.sleep(1000);
 			// Assertion "Market has been successfully created."
 			String ExpectedMsg1 = "Market has been successfully created.";
 			softAssert.assertEquals(ExpectedMsg1, "Market has been successfully created.");
 			System.out.println("Market having Plan without TOUDefinition has been successfully created.");
-			WebDriverWaits.ClickOn(Cross_icon);
-			Thread.sleep(4000);
+			//WebDriverWaits.ClickOn(Cross_icon);
+			Thread.sleep(5000);
 			// Search the same created plan.
+
+			// Assertion that the plan is added.
+			Thread.sleep(5000);
+			driver.navigate().refresh();
+
+			WebDriverWaits.scrollIntoView(Plan_Search_Field);
 			WebDriverWaits.ClickOn(Plan_Search_Field);
 			WebDriverWaits.SendKeys(Plan_Search_Field, RandomName1);
-			// Assertion that the plan is added.
+
             String SearchResultPlanName = WebDriverWaits.GetText(SearchResultForPlanName);
 			Assert.assertEquals(SearchResultPlanName, RandomName1);
 
@@ -227,8 +237,8 @@ public class Plans extends BaseTest {
 			WebDriverWaits.ClickOn(ChargeDescription_Opn);
 			WebDriverWaits.ClickOn(RollupDescription_Field);
 			WebDriverWaits.SendKeys(RollupDescription_Field, "Electricity Usages");
-			WebDriverWaits.ClickOn(RollupDescription_Opn);
-			Thread.sleep(1000);
+			//WebDriverWaits.ClickOn(RollupDescription_Opn);
+			Thread.sleep(2000);
 			WebDriverWaits.ClickOn(ChargeType_Dropdown);
 			WebElement ChargeOption1 = WebDriverWaits.WaitUntilVisibleWE(ChargeType_Dropdown);
 			select = new Select(ChargeOption1);
@@ -241,6 +251,7 @@ public class Plans extends BaseTest {
 				WebDriverWaits.WaitUntilVisible(RatingMethod_Dropdown);
 			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Retail Volume");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
+			Thread.sleep(3000);
 			WebDriverWaits.selectByIndex(Unit_Dropdown,0);
 			WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
 			WebDriverWaits.ClickOn(Rate_Field);
@@ -267,7 +278,10 @@ public class Plans extends BaseTest {
 			String ExpectedMsg2 = "Market has been successfully created.";
 			softAssert.assertEquals(ExpectedMsg2, "Market has been successfully created.");
 			System.out.println("Plan with TOUDefinition Market has been successfully created.");
-			WebDriverWaits.ClickOn(Cross_icon);
+			Thread.sleep(3000);
+			driver.navigate().refresh();
+			//WebDriverWaits.ClickOn(Cross_icon);
+			WebDriverWaits.scrollIntoView(Plan_Search_Field);
 			WebDriverWaits.ClickOn(Plan_Search_Field);
 			WebDriverWaits.SendKeys(Plan_Search_Field, RandomName2);
 			String SearchResultPlanName = WebDriverWaits.GetText(SearchResultForPlanName);
@@ -340,7 +354,7 @@ public class Plans extends BaseTest {
 			WebDriverWaits.ClickOn(ChargeDescription_Opn);
 			WebDriverWaits.ClickOn(RollupDescription_Field);
 			WebDriverWaits.SendKeys(RollupDescription_Field, "Electricity Usages");
-			WebDriverWaits.ClickOn(RollupDescription_Opn);
+			//WebDriverWaits.ClickOn(RollupDescription_Opn);
 			WebDriverWaits.ClickOn(ChargeType_Dropdown);
 			WebElement ChargeOption1 = WebDriverWaits.WaitUntilVisibleWE(ChargeType_Dropdown);
 			select = new Select(ChargeOption1);
@@ -364,8 +378,8 @@ public class Plans extends BaseTest {
 			String RandomRate5 = RandomStrings.RequiredDigits(2);
 			WebDriverWaits.SendKeys(Rate_Field, RandomRate5);
 			WebDriverWaits.ClickOn(AddTrf_Button);
-			WebDriverWaits.ClickOn(Trf_SearchField);
-			WebDriverWaits.SendKeys(Trf_SearchField, RandomRate5);
+//			WebDriverWaits.ClickOn(Trf_SearchField);
+//			WebDriverWaits.SendKeys(Trf_SearchField, RandomRate5);
 
 			// Assertion on Showing 1 to 1 of 1 entries
 			WebDriverWaits.ClickOn(Publish_Button);
@@ -373,7 +387,7 @@ public class Plans extends BaseTest {
 			String ExpectedMsg3 = "Market has been successfully created.";
 			softAssert.assertEquals(ExpectedMsg3, "Market has been successfully created.");
 			System.out.println("Plan with DemandTOUdefinition Market has been successfully created.");
-			WebDriverWaits.ClickOn(Cross_icon);
+			//WebDriverWaits.ClickOn(Cross_icon);
 
 
 return planId;
@@ -382,6 +396,7 @@ return planId;
 		public static void OtherPlan() throws InterruptedException {
 			SoftAssert softAssert = new SoftAssert();
 			driver.navigate().refresh();
+			//Login.validLogin();
 			WebDriverWaits.ClickOn(PlanTab);
 			WebDriverWaits.ClickOn(CreateNewPlan);
 			WebDriverWaits.ClickOn(UsageTypeDropdown);
@@ -418,12 +433,23 @@ return planId;
 			// select.selectByVisibleText("Ausgrid kVA Capacity Charge");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
 			Thread.sleep(1000);
-		//	WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
-			Thread.sleep(1000);
+			WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
 			WebDriverWaits.ClickOn(Rate_Field);
 			// WebDriverWaits.SendKeys(Rate_Field,"10" );
 			String RandomRate6 = RandomStrings.RequiredDigits(2);
 			WebDriverWaits.SendKeys(Rate_Field, RandomRate6);
+
+
+
+
+//			WebDriverWaits.ClickOn(Unit_Dropdown);
+//			Thread.sleep(1000);
+//			WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
+//			Thread.sleep(1000);
+//			WebDriverWaits.ClickOn(Rate_Field);
+//			// WebDriverWaits.SendKeys(Rate_Field,"10" );
+//			String RandomRate6 = RandomStrings.RequiredDigits(2);
+//			WebDriverWaits.SendKeys(Rate_Field, RandomRate6);
 			WebDriverWaits.ClickOn(AddTrf_Button);
 			WebDriverWaits.ClickOn(Trf_SearchField);
 			WebDriverWaits.SendKeys(Rate_Field, RandomRate6);

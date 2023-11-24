@@ -12,7 +12,7 @@ public class Imports extends BaseTest {
     @Test(priority = 0)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");
-         Login.validLogin();
+         //Login.validLogin();
         customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
         serviceId= Services.M_AddService("Off Market","NSW","New South Wales");
         Services.editService("Connected");

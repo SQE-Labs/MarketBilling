@@ -22,11 +22,11 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondenceToggle() throws InterruptedException {
         extentTest = extent.startTest(" Enable Correspondence Toggle");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-        Login.validLogin();
+        //Login.validLogin();
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
-        groupEdit.enable_CorrepondenceToggle();
-        groupEdit.validate_SuccessTXT("Success! Changes have been updated successfully.");
+        GroupEdit.enable_CorrepondenceToggle();
+        GroupEdit.validate_SuccessTXT("Success! Changes have been updated successfully.");
 
     }
 

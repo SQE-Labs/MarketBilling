@@ -1,6 +1,8 @@
 package TestCases;
 
 import CommonMethods.BaseTest;
+import CommonMethods.PropertiesUtil;
+import CommonMethods.WebDriverWaits;
 import POM.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -21,7 +23,7 @@ public class TestAddService extends BaseTest {
         extentTest.setDescription(" Verify that User is able to add Residential Service. ");
        // Login.validLogin();
 
-        Services.addService("Off Market","New South Wales","Almor Distt 324");
+        Services.M_AddService("Off Market","New South Wales","Australian Capital Territory");
     }
 
     @Test(priority = 2)
@@ -36,6 +38,7 @@ public class TestAddService extends BaseTest {
     public void AddMeter_MeterRegisterR() throws InterruptedException {
         extentTest = extent.startTest(" AddMeter and MRegister  for  service ");
         extentTest.setDescription(" Verify that User is able to add Service. ");
+
 
          Metering.AddMeter() ;
         Metering.create_Register("Na","KWH","ALLDAY","5","0","0","17");
@@ -90,7 +93,7 @@ public class TestAddService extends BaseTest {
         extentTest = extent.startTest(" Add Site Parameters ");
         extentTest.setDescription(" Verify that User is able to add  site Paramaters ");
         AddSitePlans.addSiteParameters();
-
+        driver.navigate().refresh();
     }
 
 }

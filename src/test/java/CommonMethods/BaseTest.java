@@ -48,7 +48,7 @@ public class BaseTest extends BrowsersInvoked {
 			System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
 			String screenshotPath = getScreenshot(driver, result.getName());
 			extentTest.log(LogStatus.FAIL, extentTest.addScreenCapture(screenshotPath));
-//			extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
+			extentTest.log(LogStatus.FAIL, extentTest.addScreencast(screenshotPath));
 			extent.endTest(extentTest);
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			extentTest.log(LogStatus.SKIP, "Test Case SKIPPED IS " + result.getName());
