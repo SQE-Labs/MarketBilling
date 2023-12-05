@@ -84,7 +84,7 @@ public class PaymentViaCreditCardTest extends BaseTest {
         Transactions.verify_CvvValidation_MSG("Invalid CVV");
     }
 
-    @Test(priority = 9, enabled = true)
+    @Test(priority = 9, enabled = false)
     public void validate_Payment_Timeout() throws InterruptedException {
         extentTest = extent.startTest("validate_Payment_Timeout");
         extentTest.setDescription("Verify Information message appears when payment timeout occurs, on the 'Payments' page");

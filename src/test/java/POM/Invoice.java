@@ -59,7 +59,7 @@ public class Invoice {
 
     public static void selectCategory(String name) throws InterruptedException {
         WebDriverWaits.WaitUntilVisibleWE(category);
-        WebDriverWaits.selectByValue(category, name);
+        WebDriverWaits.selectByIndex(category, 0);
         Thread.sleep(4000);
     }
 
@@ -70,10 +70,11 @@ public class Invoice {
         selectInvoiceCheckBox(selectCategory1Txt);
         selectInvoiceCheckBox(selectCategory2Txt);
         clickSave();
+        Thread.sleep(3000);
         selectCategory(selectCategory3Txt);
         //enterTemplateText(templateTxt);
         clickSaveTemplate();
-//        click_BackToInvoice();
+        //click_BackToInvoice();
     }
 
     public static void edit_Invoice(String selectCategory1Txt, String selectCategory2Txt, String selectCategory3Txt, String selectCategory4Txt,String templateTxt) throws InterruptedException {
@@ -84,7 +85,7 @@ public class Invoice {
         selectInvoiceCheckBox(selectCategory3Txt);
         clickSave();
         selectCategory(selectCategory4Txt);
-        enterTemplateText(templateTxt);
+       // enterTemplateText(templateTxt);
         clickSaveTemplate();
     }
 

@@ -54,7 +54,7 @@ public class MeterImport extends BaseTest {
         Thread.sleep(5000);
         WebDriverWaits.ClickOn(alertOk);
         Thread.sleep(5000);
-        WebDriverWaits.scrollPageEnd();
+        WebDriverWaits.scrollIntoView(textMsg);
         String Actualtext = WebDriverWaits.GetText(textMsg);
         Assert.assertEquals(Actualtext, "Import Successful!");
     }

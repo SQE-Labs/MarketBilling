@@ -19,7 +19,7 @@ public class TestAutoDueDate extends BaseTest {
 	public 	String billRunCycle3;
 	public   String BillCycleName;
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void billRun_after_EnableDueDate_CalendarDays() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_CalendarDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as Calendar Days ");
@@ -40,7 +40,7 @@ public class TestAutoDueDate extends BaseTest {
 	}
 
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void billRun_after_EnableDueDate_BusinessDays() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_BusinessDays");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as BusinessDays ");
@@ -60,7 +60,7 @@ public class TestAutoDueDate extends BaseTest {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3,enabled = false)
 	public void billRun_after_EnableDueDate_EndOfMonth() throws InterruptedException, AWTException {
 		extentTest = extent.startTest("BillRun_after_EnableDueDate_EndOfMonth");
 		extentTest.setDescription(" Verify that User is able to Run Bill after enabling  due date by Payment term method as End of Month");

@@ -316,8 +316,9 @@ public class WebDriverWaits extends BrowsersInvoked {
 
 	public static void SelectElementByRobotClass() throws AWTException {
 		Robot s = new Robot();
-		s.keyPress(KeyEvent.VK_TAB);
-		s.keyRelease(KeyEvent.VK_TAB);
+		s.keyPress(KeyEvent.VK_ENTER);
+		s.keyRelease(KeyEvent.VK_ENTER
+		);
 	}
 
 	public static void validate_SuccessTXT(By element,String expected) throws InterruptedException {

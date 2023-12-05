@@ -11,7 +11,7 @@ public class Transactions extends TestLogin {
     public static By transaction = By.xpath("//*[@id='content']/div[2]/div[1]/div/div/ul/li[7]/a");
     public static By transactionType = By.id("tranType");
     public static By paymentMethod = By.id("tranSubType");
-    public static By transactionTab = By.xpath("//*[@class=\"icon-money\"]");
+    public static By transactionTab = By.xpath("/html/body/div[5]/div[1]/div[3]/div[2]/div[1]/div/div/ul/li[7]/a");
     public static By amount = By.id("amount");
     public static By activeDate = By.cssSelector(".active.day");
     public static By transactionDate = By.id("tranDate");
@@ -42,10 +42,15 @@ public class Transactions extends TestLogin {
     public static By amountInformationText = By.xpath("//div[@class='bootstrap-dialog-message']");
     public static By amountTxt = By.xpath("//tbody/tr[1]//td[6]");
     public static By duplicateErrorText = By.xpath("(//p[@class='error'])[1]");
+    public static By customer1 = By.xpath("(//td[@class='sorting_1'])[1]");
 
 
     public static void make_Payment(String trxnType, String payMethod) throws InterruptedException {
-        WebDriverWaits.ClickOn(transactionTab);
+//        WebDriverWaits.ClickOn(customer1);
+//        WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.WaitUntilVisible(transaction);
+        WebDriverWaits.ClickOn(transaction);
+        WebDriverWaits.WaitUntilVisible(transactionType);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
         String RandomAmount = "34" + RandomStrings.RequiredDigits(3);
@@ -62,6 +67,9 @@ public class Transactions extends TestLogin {
     }
 
     public static void make_Payment_Cash(String trxnType, String payMethod) throws InterruptedException {
+//        WebDriverWaits.ClickOn(customer1);
+//        WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.WaitUntilVisible(transactionTab);
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
@@ -76,6 +84,9 @@ public class Transactions extends TestLogin {
     }
 
     public static void make_Payment_Cash_Allowed(String trxnType, String payMethod,String amountText) throws InterruptedException {
+//        WebDriverWaits.ClickOn(customer1);
+//        WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.WaitUntilVisible(transactionTab);
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
@@ -92,6 +103,9 @@ public class Transactions extends TestLogin {
     }
 
     public static void make_Payment_Cash_NotAllowed(String trxnType, String payMethod,String amountText) throws InterruptedException {
+//        WebDriverWaits.ClickOn(customer1);
+//        WebDriverWaits.SwitchToNewTab();
+        WebDriverWaits.WaitUntilVisible(transactionTab);
         WebDriverWaits.ClickOn(transactionTab);
         WebDriverWaits.selectByVisibleText(transactionType, trxnType);
         WebDriverWaits.selectByVisibleText(paymentMethod, payMethod);
@@ -163,7 +177,7 @@ public class Transactions extends TestLogin {
     }
 
     public static void verify_CashPaySuccess_MSG(String expected) throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(4000);
         String actual = WebDriverWaits.GetText(paymentTypeText);
         Assert.assertEquals(actual, expected);
     }
@@ -249,6 +263,7 @@ public class Transactions extends TestLogin {
         switchToWindow();
         maximizePage();
         switchToFrame();
+        Thread.sleep(20000);
         enterRoutingNumber(routingNumber);
         selctAccountType(accountType);
         enterAccountNumber(accountNumber);

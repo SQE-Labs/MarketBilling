@@ -23,7 +23,8 @@ public class Metering {
     public static By DateConnected_Datepicker = By.xpath("//*[@id='datecon']");
     public static By Select_DateConnected_Datepicker = By.xpath("//*[@class='active day']");
     public static By CreateMeter_Button = By.xpath("//*[@id='createMeter']");
-    public static By MeterEdit_icon = By.xpath("//*[@class='icon-edit']");
+    public static By MeterEdit_icon = By.xpath("(//*[@class='icon-edit'])[1]");
+    public static By MeterEdit_icon2 = By.xpath("(//*[@class='icon-edit'])[2]");
     public static By AddMeterRegister_Icon = By.xpath("//*[@id='addRegister']");
     public static By RegisterID_Field = By.xpath("//*[@id='registerNo']");
     public static By NetworkTariffCode_Field = By.xpath("//*[@id='networkTariffCode']");
@@ -96,6 +97,8 @@ public class Metering {
     }
 
 
+
+
 //    public static String createRegister(String networkCodeTxt, String unitTxt,String timeofDayTxt,String dailFormatTxt,String demand1Txt,String demand2Txt,String nmiSuffixTxt) throws InterruptedException {
 //       //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 //         WebDriverWaits.scrollIntoView(MeterEdit_icon);
@@ -104,11 +107,13 @@ public class Metering {
     public static String create_Register(String networkCodeTxt, String unitTxt, String timeofDayTxt, String dailFormatTxt,
                                          String demand1Txt, String demand2Txt, String nmiSuffixTxt) throws InterruptedException {
         //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        Thread.sleep(2000);
         WebDriverWaits.scrollIntoView(MeterEdit_icon);
         Thread.sleep(1000);
 
+
         WebDriverWaits.ClickOn(MeterEdit_icon);
-        //   jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(AddMeterRegister_Icon);
         Thread.sleep(2000);
         WebDriverWaits.ClickOn(AddMeterRegister_Icon);
@@ -116,7 +121,7 @@ public class Metering {
         //Create register
         WebDriverWaits.ClickOn(RegisterID_Field);
         Thread.sleep(2000);
-        String registerId = "1215" + RandomStrings.RequiredDigits(3);
+        String registerId = "121534" + RandomStrings.RequiredDigits(3);
         WebDriverWaits.SendKeys(RegisterID_Field, registerId);
         WebDriverWaits.ClickOn(NetworkTariffCode_Field);
         WebDriverWaits.SendKeys(NetworkTariffCode_Field, networkCodeTxt);
@@ -147,6 +152,8 @@ public class Metering {
     }
 
 
+
+
 //    public static void  addMeterReads(String readType,String peakValue, String offPeakValue, String shoulderValue) throws InterruptedException {
 //       Thread.sleep(3000);
 
@@ -156,9 +163,9 @@ public class Metering {
         //   WebDriverWaits.ClickOn(ServiceName_Dropdown);
         Thread.sleep(1000);
        // WebDriverWaits.ClickOn(ServiceName_DropdownOpn);
-      //  WebDriverWaits.ClickOn(MeterNumber_Dropdown);
-        Thread.sleep(3000);
-     //  WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
+        //WebDriverWaits.ClickOn(MeterNumber_Dropdown);
+        Thread.sleep(6000);
+       //WebDriverWaits.ClickOn(MeterNumber_DropdownOpn);
 //        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         WebDriverWaits.scrollIntoView(ViewMeterReads);
         WebDriverWaits.ClickOn(ViewMeterReads);
@@ -166,6 +173,7 @@ public class Metering {
         WebDriverWaits.ClickOn(AddMeterReads);
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(MeterNo_Dropdown);
+        Thread.sleep(5000);
         WebDriverWaits.ClickOn(MeterNo_DropdownOpn);
         WebDriverWaits.ClickOn(RegisterNo_Dropdown);
         WebDriverWaits.ClickOn(RegisterNo_DropdownOpn);

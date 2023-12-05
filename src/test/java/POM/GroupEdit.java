@@ -20,6 +20,7 @@ public class GroupEdit extends TestLogin {
     public static By checkBoxCorrespondence = By.id("flag_enableCorrespondenceLetter");
     public static By saveChanges = By.xpath("//*[@class='btn btn-mini btn-primary']");
     public static By saveConfirmation = By.xpath("//*[@class='btn btn-primary']");
+    public static By CrossIconOffers = By.xpath("//*[@id='frmTransaction']/table/tbody/tr[1]/td/div/div/button");
 
     public static SoftAssert softAssert = new SoftAssert();
 
@@ -63,6 +64,8 @@ public class GroupEdit extends TestLogin {
         String actual = WebDriverWaits.GetText(alertSuccess);
         softAssert.assertEquals(actual, expected);
         softAssert.assertAll();
+        WebDriverWaits.WaitUntilVisible(CrossIconOffers);
+        WebDriverWaits.ClickOn(CrossIconOffers);
     }
 
     public static void navigateToEditGroup() {

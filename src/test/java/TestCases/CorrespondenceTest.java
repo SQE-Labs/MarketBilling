@@ -22,7 +22,7 @@ public class CorrespondenceTest extends BaseTest {
     public void enable_correspondenceToggle() throws InterruptedException {
         extentTest = extent.startTest(" Enable Correspondence Toggle");
         extentTest.setDescription(" Verify that User is able to enable correspondence toggle button ");
-        Login.validLogin();
+        //Login.validLogin();
         admin.navigateToAdmin();
         groupEdit.navigateToEditGroup();
         GroupEdit.enable_CorrepondenceToggle();
@@ -57,8 +57,8 @@ public class CorrespondenceTest extends BaseTest {
     public void delete_CorrespondenceLetter() throws InterruptedException {
         extentTest = extent.startTest(" Delete Correspondence Letter ");
         extentTest.setDescription(" Verify that User is able to delete correspondence letter ");
-        admin.navigateToAdmin();
-        correspondence.navigateToCorrespondenceSetup();
+//        admin.navigateToAdmin();
+//        correspondence.navigateToCorrespondenceSetup();
         correspondence.delete_Correspondenceletter();
         correspondence.validate_DeleteCorrespondenceTXT("No matching records found");
 

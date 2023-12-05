@@ -36,9 +36,7 @@ public class AddSitePlans extends TestLogin {
     public static By paramValue = By.id("paramValue");
     public static By Sitedate=By.xpath("//input[@id='effectiveDate']");
     public static By Today=By.xpath("(//th[text()='Today'])[1]");
-
     public static By Edit_icon = By.xpath("//*[@class=\"btn btn-primary toolt\"]");
-
     public static By AddButt=By.xpath("//button[@id='addParamBtn']");
 
 

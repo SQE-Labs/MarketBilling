@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 public class PaymentViaBankAccountTest extends BaseTest {
 
-
+    // Failing due to pop up does not appear
     @Test(priority = 1,enabled = true)
     public void valid_BankAccountDetails() throws InterruptedException {
         extentTest = extent.startTest("valid_BankAccountDetails");
         extentTest.setDescription("Verify payment status on entering valid bank account details");
-        //Login.ValidLogin();
+        //Login.validLogin();
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.payment_ViaBankAccount("Payment","Bank Account","021000021","Personal Savings","1368513884","Victoria","CA","91001");
 

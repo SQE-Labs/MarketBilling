@@ -38,6 +38,7 @@ public class CorrespondenceSetup extends TestLogin {
     public static By validateDeleteImport = By.xpath("//*[@id='importHistoryTable_info']");
     public static By backToCorrepondenceList = By.xpath("//*[@id=\"correspondenceContent\"]/div[1]/a");
     public static By resultCorrespondencename = By.xpath("//a[@class='underline']");
+    public static By editSaveCorrespondence = By.id("saveCorrespondence");
 
     public static String Correspondence_letterName;
     public static String fileName = "LetterSample.pdf";
@@ -73,6 +74,11 @@ public class CorrespondenceSetup extends TestLogin {
 
     }
 
+    public static void clickSaveCorrespondenceEdit() {
+        WebDriverWaits.ClickOn(editSaveCorrespondence);
+
+    }
+
     public static void clickSaveThisCorrespondenceBtn() throws InterruptedException {
         //   WebDriverWaits.scrollIntoView(saveThisCorrespondence);
         Thread.sleep(4000);
@@ -94,6 +100,7 @@ public class CorrespondenceSetup extends TestLogin {
     }
 
     public static void clickNext() {
+        WebDriverWaits.scrollIntoView(next);
         WebDriverWaits.ClickOn(next);
 
     }
@@ -175,6 +182,7 @@ public class CorrespondenceSetup extends TestLogin {
         clickEditCorrespondence();
         Correspondence_letterName = "NewLetterName" + RandomStrings.RequiredCharacters(5);
         enterNewLetterName(Correspondence_letterName);
+        clickSaveCorrespondenceEdit();
         clickNext();
         clickNext();
         searchCorrespondence(Correspondence_letterName);
@@ -196,6 +204,7 @@ public class CorrespondenceSetup extends TestLogin {
 
 
     public static void validate_DeleteCorrespondenceTXT(String expected) throws InterruptedException {
+        Thread.sleep(2000);
         String actual = WebDriverWaits.GetText(validateDelete);
         softAssert.assertEquals(actual, expected);
         softAssert.assertAll();

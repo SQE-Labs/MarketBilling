@@ -16,6 +16,7 @@ import java.awt.*;
 
 import static BrowsersBase.BrowsersInvoked.driver;
 import static CommonMethods.WebDriverWaits.byToWebElement;
+import static POM.AddSitePlans.Edit_icon;
 import static POM.GroupEdit.softAssert;
 
 public class Services {
@@ -162,9 +163,10 @@ public class Services {
 
 
     public static void navigateToEditServices() throws InterruptedException {
+        WebDriverWaits.WaitUntilVisible(serviceTab);
         WebDriverWaits.ClickOn(serviceTab);
         // Search service id ("N" + random+"11"); which is created above
-        //  WebDriverWaits.ClickOn(Edit_icon);
+          WebDriverWaits.ClickOn(Edit_icon);
 
     }
 

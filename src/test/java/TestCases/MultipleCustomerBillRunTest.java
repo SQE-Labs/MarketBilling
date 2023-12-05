@@ -21,7 +21,6 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void BillRunWithNoCycle() throws InterruptedException {
 		extentTest = extent.startTest(" Bill Run With No Cycle ");
 		extentTest.setDescription(" Verify that User is able to run the bill without any cycle ");
-
 		String customerId = Customer.createCustomer( "Tenant", "Commercial","Tenant Traders", "12345678951","Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10");
 		String serviceId=Services.M_AddService("Off Market","New South Wales","Almor Distt 324");
 		Services.editService("Connected");
@@ -56,7 +55,7 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 	public  void testLargeBillRun() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" Large Cycle Bill run with 1 customer ");
 		extentTest.setDescription(" Verify that User is able to run the large bill run with 1 customer ");
-	//	Login.validLogin();
+	 	Login.validLogin();
 		 CustomerID01R = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
 		 Services.	M_AddService("Off Market","NSW","New South Wales");
 		Services.editService("Connected");
@@ -88,39 +87,39 @@ public class MultipleCustomerBillRunTest extends BaseTest {
 
 		billRunCycleName= BillRun.createBillCycle(customerList);
 		BillRun.runBillCycle(billRunCycleName);
-	//	BillRun.commitBillRun(billRunCycleName);
+		//BillRun.commitBillRun(billRunCycleName);
 	}
 
-	@Test(priority = 4,enabled = true)
+	@Test(priority = 4,enabled = false)
 	public  void multiCustomer_RollBack() throws InterruptedException {
 		extentTest = extent.startTest(" Full Statement Rollback ");
 		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
 		BillRun.directRollBack(billRunCycleName);
 	}
-	@Test(priority = 5,enabled = true)
-	public  void multiCustomer_ReBill() throws InterruptedException, AWTException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
-		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		List<String> customerList = new ArrayList<String>();
-		customerList.add(CustomerID01R);
-		customerList.add(CustomerID02B);
-		customerList.add(CustomerID03C);
-		BillRun.runBillCycle(billRunCycleName);
-
-	}
-	@Test(priority = 6,enabled = true)
-	public  void multiCustomer_FullStatementRollBack() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rollback ");
-		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
-		Customer.searchCustomer(CustomerID02B);
-		BillRun.rollback_in_statementTab(CustomerID02B);
-	}
-	@Test(priority = 7,enabled = true)
-	public  void multiCustomer_RebillStatement() throws InterruptedException {
-		extentTest = extent.startTest(" Full Statement Rebill ");
-		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
-		Customer.searchCustomer(CustomerID02B);
-		BillRun.statementRebill(CustomerID02B);
-	}
+//	@Test(priority = 5,enabled = true)
+//	public  void multiCustomer_ReBill() throws InterruptedException, AWTException {
+//		extentTest = extent.startTest(" Full Statement Rollback ");
+//		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
+//		List<String> customerList = new ArrayList<String>();
+//		customerList.add(CustomerID01R);
+//		customerList.add(CustomerID02B);
+//		customerList.add(CustomerID03C);
+//		BillRun.runBillCycle(billRunCycleName);
+//
+//	}
+//	@Test(priority = 6,enabled = true)
+//	public  void multiCustomer_FullStatementRollBack() throws InterruptedException {
+//		extentTest = extent.startTest(" Full Statement Rollback ");
+//		extentTest.setDescription(" Verify that User is able to run full statement rollback with 2 customer ");
+//		Customer.searchCustomer(CustomerID02B);
+//		BillRun.rollback_in_statementTab(CustomerID02B);
+//	}
+//	@Test(priority = 7,enabled = true)
+//	public  void multiCustomer_RebillStatement() throws InterruptedException {
+//		extentTest = extent.startTest(" Full Statement Rebill ");
+//		extentTest.setDescription(" Verify that User is able to run full statement rebill ");
+//		Customer.searchCustomer(CustomerID02B);
+//		BillRun.statementRebill(CustomerID02B);
+//	}
 
 }

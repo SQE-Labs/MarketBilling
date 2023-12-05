@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 public class TestAddPlan extends BaseTest {
     String planId;
 
-    @Test(priority = 0,enabled = false)
+    @Test(priority = 0,enabled = true)
     public  void TouImport() throws InterruptedException {
         extentTest = extent.startTest(" TouImport ");
         extentTest.setDescription(" Verify that User is able to do TouImport");
-        Login.validLogin();
+       // Login.validLogin();
         TouImport.TOUImportFile();
 
     }

@@ -243,13 +243,13 @@ public class Plans extends BaseTest {
 			WebElement ChargeOption1 = WebDriverWaits.WaitUntilVisibleWE(ChargeType_Dropdown);
 			select = new Select(ChargeOption1);
 			WebDriverWaits.selectByVisibleText(ChargeType_Dropdown,"Electricity Charges");
+			WebDriverWaits.WaitUntilVisible(RatingMethod_Dropdown);
 			WebDriverWaits.ClickOn(RatingMethod_Dropdown);
 		//	WebDriverWaits.ClickOn(RatingMethod_Dropdown_Opn);
 			// WebElement RatingOption1 = WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
 			// select = new Select(RatingOption1);
 			// select.selectByVisibleText("Retail Volume") // Need to scroll the dropdown
-				WebDriverWaits.WaitUntilVisible(RatingMethod_Dropdown);
-			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Volume");
+			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Ausgrid kVA Capacity Charge");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
 			Thread.sleep(3000);
 			WebDriverWaits.selectByIndex(Unit_Dropdown,0);

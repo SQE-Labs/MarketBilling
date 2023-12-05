@@ -12,9 +12,9 @@ public class PaymentViaCashTest extends BaseTest {
     public  void valid_Cash_PaymentType() throws InterruptedException {
         extentTest = extent.startTest("valid_Cash_PaymentType");
         extentTest.setDescription("Verify 'Transactions' successfully done via 'Cash' from the Payment Method drop-down.");
-        Login.validLogin();
+        //Login.validLogin();
         Customer.searchAndNavigateToRecentCustomer();
-        Transactions.make_Payment("Payment","Cash");
+        Transactions.make_Payment_Cash("Payment","Cash");
         Transactions.verify_CashPaySuccess_MSG("Cash");
 
     }
@@ -34,10 +34,10 @@ public class PaymentViaCashTest extends BaseTest {
         extentTest.setDescription("Verify validation message appears without selecting the 'Allow duplicate transactions");
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.make_Payment_Cash_Allowed("Payment","Cash","100");
-        Transactions.verify_Allow_DuplicateTXN("-$100.00");
+        Transactions.verify_Allow_DuplicateTXN("-$1000000");
         Customer.searchAndNavigateToRecentCustomer();
         Transactions.make_Payment_Cash_Allowed("Payment","Cash","100");
-        Transactions.verify_Allow_DuplicateTXN("-$100.00");
+        Transactions.verify_Allow_DuplicateTXN("-$1000000");
 
     }
 

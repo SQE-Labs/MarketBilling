@@ -20,6 +20,7 @@ public class InvoiceTest extends BaseTest {
         extentTest = extent.startTest("Create Invoice Template ");
         extentTest.setDescription(" Verify that User is able to create Invoice Template. ");
         //Login.validLogin();
+        admin.navigateToAdmin();
         admin.navigateToInvoiceSetup();
         invoice.create_Invoice("TRANSACTION-SUMMARY","PPA-ENERGY-CHARGES-SUMMARY","TRANSACTION-SUMMARY-LIST","Sample template text" );
 
@@ -28,7 +29,7 @@ public class InvoiceTest extends BaseTest {
     public  void editInvoice_template() throws InterruptedException {
         extentTest = extent.startTest("Edit Invoice Template ");
         extentTest.setDescription(" Verify that User is able to edit Invoice Template. ");
-        admin.navigateToInvoiceSetup();
+        //admin.navigateToInvoiceSetup();
         invoice.edit_Invoice("TRANSACTION-SUMMARY","TRANSACTION-SUMMARY-LIST","BILLPAY","TRANSACTION-SUMMARY-LIST","Sample  edited template text");
 
 

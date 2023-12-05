@@ -1,9 +1,9 @@
 package POM;
 
 
-
 import CommonMethods.RandomStrings;
 import CommonMethods.WebDriverWaits;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 
 import java.awt.*;
@@ -12,9 +12,6 @@ import static POM.Templates.softAssert;
 
 
 public class Offers {
-
-
-
 
 
     public static By offerTab = By.xpath("//p[text()='Offer']");
@@ -32,7 +29,8 @@ public class Offers {
     public static By editIcon = By.xpath("(//a[@class='btn btn-info'])[1]");
     public static By selectDate = By.xpath("(//td[@class='day'])[6]");
     public static By editSaveButton = By.xpath("(//button[text()='Save'])[1]");
-    public static By crossIcon = By.xpath("//button[text()='×']");
+    public static By crossIcon = By.xpath("(//button[@class='close'])[2]");
+    //  public static By crossIcon = By.xpath("//button[text()='×']");
 
     //++++++Delete offerGroup++++++++++
     public static By deleteIcon = By.xpath("(//a[@class='btn btn-danger'])[1]");
@@ -51,17 +49,18 @@ public class Offers {
     public static By dateValidFrom = By.xpath("//input[@id='dateValidFrom']");
     public static By todayText = By.xpath("//th[text()='Today']");
     public static By offerSaveButton = By.xpath("(//button[text()='Save'])[2]");
-    public static By offerSearchField=By.xpath("(//input[@type='search'])[3]");
-    public static By offerEditIcon=By.xpath("(//a[@class='btn btn-info'])[2]");
-    public static By offerDateValidToField=By.xpath("//input[@id='dateValidTo']");
-    public static By offerToday=By.xpath("(//th[text()='Today'])[1]");
+    public static By offerSearchField = By.xpath("(//input[@type='search'])[3]");
+    public static By offerEditIcon = By.xpath("(//a[@class='btn btn-info'])[2]");
+    public static By offerDateValidToField = By.xpath("//input[@id='dateValidTo']");
+    public static By offerToday = By.xpath("(//th[text()='Today'])[1]");
     public static By offersSaveButton = By.xpath("(//button[text()='Save'])[2]");
     public static By offerCancelButton = By.xpath("(//button[text()='Cancel'])[2]");
-    public static By offerGroupSucc_Msg=By.xpath("//div[@class='bootstrap-dialog-body']");
-    public static By editedOfferGroupSucc_Msg=By.xpath("//div[@class='bootstrap-dialog-message']");
-    public static By deleteOfferGroup=By.xpath("//div[@class='bootstrap-dialog-message']");
-    public static By offerSucc_Msg=By.xpath("//div[@class='bootstrap-dialog-message']");
-    public static By editedOfferSucc_Msg=By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By offerGroupSucc_Msg = By.xpath("//div[@class='bootstrap-dialog-body']");
+    public static By editedOfferGroupSucc_Msg = By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By deleteOfferGroup = By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By offerSucc_Msg = By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By editedOfferSucc_Msg = By.xpath("//div[@class='bootstrap-dialog-message']");
+    public static By offerGroup1ST = By.xpath("//*[@id=\"formOffer\"]/div[4]/div/div[1]/div/ul/li[3]/a/span");
 
     public void clickOnOfferTab() {
         WebDriverWaits.scrollIntoView(offerTab);
@@ -133,6 +132,7 @@ public class Offers {
 
     //++++++++++CRETAE OFFER+++++++++++
     public void clickOnofferPlusIcon() {
+        WebDriverWaits.WaitUntilVisible(offerPlusIcon);
         WebDriverWaits.ClickOn(offerPlusIcon);
     }
 
@@ -144,16 +144,13 @@ public class Offers {
         WebDriverWaits.SendKeysWithClear(offerDisplayName, offerDisplayNameFieldText);
     }
 
-    public void clickOnofferGroupDropDown(String offerGroupSearchFieldText) throws InterruptedException, AWTException, AWTException {
+    public void select_OfferGroupDD(String offerGroupSearchFieldText) throws InterruptedException, AWTException, AWTException {
+        WebDriverWaits.WaitUntilVisible(offerGroupDropDown);
         WebDriverWaits.ClickOn(offerGroupDropDown);
         WebDriverWaits.SendKeysWithClear(offerGroupSearchField, offerGroupSearchFieldText);
         Thread.sleep(2000);
+        //WebDriverWaits.ClickOn(offerGroup1ST);
         WebDriverWaits.SelectElementByRobotClass();
-       // WebDriverWaits.SelectOption(String.valueOf(offerGroupText));
-        // WebDriverWaits.ClickOn(offerGroupText);
-        //WebDriverWaits.SelectOption(String.valueOf(offerGroupText));
-//        WebDriverWaits.byToWebElement(offerGroupText);
-//        WebDriverWaits.clickOnMoveToElemenet(offerGroupText);
     }
 
     public void clickOndateValidFrom() {
@@ -162,39 +159,44 @@ public class Offers {
         WebDriverWaits.ClickOn(todayText);
     }
 
-    public void clickOnOfferSaveButton()   {
+    public void clickOnOfferSaveButton() {
         WebDriverWaits.scrollIntoView(offerSaveButton);
         WebDriverWaits.ClickOn(offerSaveButton);
     }
-    public void enterValueInofferSearchField(String offerSearchFieldText){
-        WebDriverWaits.SendKeysWithClear(offerSearchField,offerSearchFieldText);
+
+    public void enterValueInofferSearchField(String offerSearchFieldText) {
+        WebDriverWaits.SendKeysWithClear(offerSearchField, offerSearchFieldText);
+        WebDriverWaits.scrollIntoView(offerEditIcon);
         WebDriverWaits.ClickOn(offerEditIcon);
         WebDriverWaits.ClickOn(offerDateValidToField);
         WebDriverWaits.ClickOn(offerToday);
     }
-    public void clickOnoffersSaveButton(){
+
+    public void clickOnoffersSaveButton() {
         WebDriverWaits.ClickOn(offersSaveButton);
     }
-    public void clickOnCancelButton(){
+
+    public void clickOnCancelButton() {
         WebDriverWaits.ClickOn(offerCancelButton);
     }
 
 
-// to create new offer group of business categor
-        public void createOfferGroupBusinessType (String RandomName1,String customerTypeDropDownText) throws InterruptedException {
-            clickOnOfferTab();
-            clickOnPlusIcon();
-            enterInofferGroupField(RandomName1);
-            selectcustomerTypeDropDown(customerTypeDropDownText);
-            clickdateValidFromField();
-            //clickdateValidFromField(); valid to
+    // to create new offer group of business categor
+    public void createOfferGroupBusinessType(String RandomName1, String customerTypeDropDownText) throws InterruptedException {
+        clickOnOfferTab();
+        clickOnPlusIcon();
+        enterInofferGroupField(RandomName1);
+        selectcustomerTypeDropDown(customerTypeDropDownText);
+        clickdateValidFromField();
+        //clickdateValidFromField(); valid to
 
-            clickOnSaveButton();
-            Thread.sleep(3000);
-            clickOnOkButton();
+        clickOnSaveButton();
+        Thread.sleep(3000);
+        clickOnOkButton();
 
-        }
-        //search method
+    }
+
+    //search method
     public void editOfferGroupBusinessType(String RandomName1) {
         enterInSearchField(RandomName1);
         clickOnEditIcon();
@@ -203,31 +205,35 @@ public class Offers {
         clickOnCrossIcon();
 
     }
-      public void deleteOfferGroupBusinessType() throws InterruptedException {
-          clickOnDeleteIcon();
-          clickdeleteOkButton();
-            Thread.sleep(2000);
-            clickOkOnsuccMsg();
-          clickOnCrossIcon();
-        }
+
+    public void deleteOfferGroupBusinessType() throws InterruptedException {
+        clickOnDeleteIcon();
+        clickdeleteOkButton();
+        Thread.sleep(2000);
+        clickOkOnsuccMsg();
+        clickOnCrossIcon();
+    }
 
 
-        public void createOffer (String offerName, String randomOfferDisplayName,String RandomName1 ) throws InterruptedException, AWTException {
-            clickOnofferPlusIcon();
-            enterTextInofferNameField(offerName);
-            enterTextInofferDisplayName(randomOfferDisplayName);
-            clickOnofferGroupDropDown(RandomName1);
-            clickOndateValidFrom();
-            clickOnOfferSaveButton();
-            clickOnCrossIcon();
-        }
-
-        public void editOffer(String RandomName1,String offerName) throws InterruptedException {
-            enterValueInofferSearchField(RandomName1);
-            enterTextInofferNameField(offerName);
-            clickOnoffersSaveButton();
-            clickOnCancelButton();
-        }
+    public void createOffer(String offerName, String randomOfferDisplayName, String RandomName1) throws InterruptedException, AWTException {
+        clickOnofferPlusIcon();
+        enterTextInofferNameField(offerName);
+        enterTextInofferDisplayName(randomOfferDisplayName);
+        select_OfferGroupDD(RandomName1);
+        clickOndateValidFrom();
+        clickOnOfferSaveButton();
+        Thread.sleep(5000);
+        clickOnCrossIcon();
 
     }
+
+    public void editOffer(String RandomName1, String offerName) throws InterruptedException {
+        Thread.sleep(2000);
+        enterValueInofferSearchField(RandomName1);
+        enterTextInofferNameField(offerName);
+        clickOnoffersSaveButton();
+        clickOnCancelButton();
+    }
+
+}
 

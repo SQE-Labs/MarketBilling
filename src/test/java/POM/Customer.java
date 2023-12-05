@@ -42,7 +42,7 @@ public class Customer {
     public static By categorydropdown = By.xpath("//*[@id='category']");
     public static By address1field = By.xpath("//*[@id='hAddress']");
     public static By cityfield = By.xpath("//*[@id='hSuburb']");
-    public static By countryDropDown=By.xpath("//select[@id='hCountryList']");
+    public static By countryDropDown = By.xpath("//select[@id='hCountryList']");
     public static By statedropdown = By.xpath("//*[@id='hState']");
     public static By postalCodefield = By.xpath("//*[@name='pcode']");
 
@@ -99,7 +99,7 @@ public class Customer {
         return new Communications();
     }
 
-    public static String createCustomer(String type, String category,  String companyName,String abnField,   String addressField, String cityField, String stateField, String postalField, String titledropDown, String email, String Category, String contactTermField) throws InterruptedException {
+    public static String createCustomer(String type, String category, String companyName, String abnField, String addressField, String cityField, String stateField, String postalField, String titledropDown, String email, String Category, String contactTermField) throws InterruptedException {
         //driver.get(DataInterface.URL);
         Thread.sleep(3000);
         //Account Type
@@ -111,12 +111,12 @@ public class Customer {
         WebDriverWaits.selectByVisibleText(categorydropdown, category);
         //Contact Details
         if (category.equals("Business") || category.equals("Commercial")) {
-            addBusinessDetails(companyName,abnField);
+            addBusinessDetails(companyName, abnField);
         }
         addContactDetails(addressField, cityField, stateField, postalField, titledropDown, email);
         addAccountManagement(Category, contactTermField);
 
-       WebDriverWaits.scrollIntoView(saveCustomerButton);
+        WebDriverWaits.scrollIntoView(saveCustomerButton);
         WebDriverWaits.ClickOn(saveCustomerButton);
         WebDriverWaits.ClickOn(saveOnlyButton);
 
@@ -162,7 +162,7 @@ public class Customer {
     }
 
 
-   // public static void addBusinessDetails(String companyName, String ABNField) throws InterruptedException {
+    // public static void addBusinessDetails(String companyName, String ABNField) throws InterruptedException {
 
     public static void addBusinessDetails(String companyName, String ABNField) throws InterruptedException {
         WebDriverWaits.scrollIntoView(companyNameField);
@@ -226,10 +226,9 @@ public class Customer {
     }
 
 
-
     public static String searchAndNavigateToRecentCustomer() throws InterruptedException {
         //  driver.get(DataInterface.URL);
-driver.navigate().refresh();
+        driver.navigate().refresh();
         Thread.sleep(3000);
         WebDriverWaits.ClickOn(searchIcon);
         Thread.sleep(4000);
@@ -237,6 +236,19 @@ driver.navigate().refresh();
         WebDriverWaits.SendKeys(searchField, customerId);
         WebDriverWaits.ClickOn(searchIcon);
         return customerId;
+    }
+
+    public static String searchAndNavigateToRecentCustomer_CC() throws InterruptedException {
+        //  driver.get(DataInterface.URL);
+        driver.navigate().refresh();
+        Thread.sleep(3000);
+        WebDriverWaits.ClickOn(searchIcon);
+//        Thread.sleep(4000);
+//        String customerId = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
+//        WebDriverWaits.SendKeys(searchField, customerId);
+//        WebDriverWaits.ClickOn(searchIcon);
+//        return customerId;
+        return null;
     }
 
     public static void searchCustomer(String customerId) throws InterruptedException {
@@ -369,19 +381,19 @@ driver.navigate().refresh();
 //        WebDriverWaits.ClickOn(categorydropdown);
 //        WebDriverWaits.selectByVisibleText(categorydropdown, category);
 
-        WebDriverWaits.selectByVisibleText(customerTypedropdown,customerType);
+        WebDriverWaits.selectByVisibleText(customerTypedropdown, customerType);
         WebDriverWaits.ClickOn(categorydropdown);
-        WebDriverWaits.selectByVisibleText(categorydropdown,category);
+        WebDriverWaits.selectByVisibleText(categorydropdown, category);
 
     }
 
-    public static void postalCodeSection(String addressfield, String cityfield1,String countryName, String postalCodefield1, String state) {
+    public static void postalCodeSection(String addressfield, String cityfield1, String countryName, String postalCodefield1, String state) {
         WebDriverWaits.ClickOn(address1field);
         WebDriverWaits.SendKeys(address1field, addressfield);
         WebDriverWaits.ClickOn(cityfield);
         WebDriverWaits.SendKeys(cityfield, cityfield1);
         WebDriverWaits.ClickOn(countryDropDown);
-        WebDriverWaits.selectByVisibleText(countryDropDown,countryName);
+        WebDriverWaits.selectByVisibleText(countryDropDown, countryName);
         WebDriverWaits.ClickOn(statedropdown);
         WebDriverWaits.selectByVisibleText(statedropdown, state);
         WebDriverWaits.ClickOn(postalCodefield);
@@ -492,16 +504,16 @@ driver.navigate().refresh();
     }
 
 
-    public static String createResidentialCustomer(String customerType, String category, String Addressfield, String Cityfield1,String countryName ,String PostalCodefield1, String state, String title, String emailField, String contactTermField, String status) throws InterruptedException {
+    public static String createResidentialCustomer(String customerType, String category, String Addressfield, String Cityfield1, String countryName, String PostalCodefield1, String state, String title, String emailField, String contactTermField, String status) throws InterruptedException {
         SoftAssert softAssert = new SoftAssert();
         //driver.navigate().refresh();
         accountTypeSection(customerType, category);
-        postalCodeSection(Addressfield, Cityfield1, countryName,PostalCodefield1, state);
+        postalCodeSection(Addressfield, Cityfield1, countryName, PostalCodefield1, state);
         contactDetailsSection(title, emailField);
 
         //addAccountManagement(category, contactTermField);// accountManagement
 
-        addAccountManagement(category,contactTermField);// accountManagement
+        addAccountManagement(category, contactTermField);// accountManagement
 
         saveButton();
         statusChangeSection(status);
@@ -511,13 +523,13 @@ driver.navigate().refresh();
     }
 
 
-    public static String creteBusinessCustomer(String customerType, String catagory, String Addressfield, String Cityfield1,String countryName, String PostalCodefield1, String state, String companyName, String abnType, String title, String emailField,String category,String contactTermField, String status) throws InterruptedException {
+    public static String creteBusinessCustomer(String customerType, String catagory, String Addressfield, String Cityfield1, String countryName, String PostalCodefield1, String state, String companyName, String abnType, String title, String emailField, String category, String contactTermField, String status) throws InterruptedException {
         driver.navigate().refresh();
         accountTypeSection(customerType, catagory);
-        postalCodeSection(Addressfield, Cityfield1,countryName, PostalCodefield1, state);
+        postalCodeSection(Addressfield, Cityfield1, countryName, PostalCodefield1, state);
         companyDetailSection(companyName, abnType);
         contactDetailsSection(title, emailField);
-        addAccountManagement(category,contactTermField);
+        addAccountManagement(category, contactTermField);
         saveButton();
         statusChangeSection(status);
         CustomerID02B = WebDriverWaits.GetText(Services.selectBusinessCustomer_Record1);
@@ -525,11 +537,11 @@ driver.navigate().refresh();
 
     }
 
-    public static String createCommercialCustomer(String customerType, String catagory, String Addressfield, String Cityfield1,String countryName, String PostalCodefield1, String state, String companyName, String abnType, String title, String emailField, String categoryTxt, String status) throws InterruptedException {
+    public static String createCommercialCustomer(String customerType, String catagory, String Addressfield, String Cityfield1, String countryName, String PostalCodefield1, String state, String companyName, String abnType, String title, String emailField, String categoryTxt, String status) throws InterruptedException {
 
         driver.navigate().refresh();
         accountTypeSection(customerType, catagory);
-        postalCodeSection(Addressfield, Cityfield1, countryName,PostalCodefield1, state);
+        postalCodeSection(Addressfield, Cityfield1, countryName, PostalCodefield1, state);
         companyDetailSection(companyName, abnType);
         contactDetailsSection(title, emailField);
         accountManagementSection(categoryTxt);
