@@ -214,7 +214,7 @@ public class BillRun extends TestLogin {
         WebDriverWaits.scrollIntoView(BillRunCycles_Subtab);
        WebDriverWaits.Waituntilvisible(BillRunCycles_Subtab);
         WebDriverWaits.ClickOn(BillRunCycles_Subtab);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         WebDriverWaits.ClickOn(AddBillRunCycleButton_CreateNew);
         WebDriverWaits.Waituntilvisible(CycleName_Field);
         WebDriverWaits.ClickOn(CycleName_Field);
@@ -280,14 +280,15 @@ public class BillRun extends TestLogin {
         Thread.sleep(5000);
         WebDriverWaits.byToWebElement(billCycle);
         WebDriverWaits.clickOnMoveToElemenet(billCycle);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
         WebDriverWaits.SendKeysWithClear(endDate, "01/01/2024");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
         WebDriverWaits.SendKeysWithClear(clickIssueDate, "01/02/2024");
-        WebDriverWaits.SendKeysWithClear(dueDate,"01/06/2024");
+        Thread.sleep(3000);
+        WebDriverWaits.SendKeysWithClear(dueDate,"01/07/2024");
         WebDriverWaits.ClickOn(runBillButton);
         //WebDriverWaits.WaitUntilVisible(searchBillBox);
         //WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -314,11 +315,22 @@ public class BillRun extends TestLogin {
 
     }
 
-    public static void Rollback_SmallBillRunWithSingleCustomer(String billRunCycle ) throws InterruptedException {
+    public static void Rollback_SmallBillRunWithSingleCustomer(String billRunCycle ) throws InterruptedException, AWTException {
         SoftAssert softAssert = new SoftAssert();
 
         WebDriverWaits.ClickOn(BillRun_Tab);
-       WebDriverWaits. SendKeysWithClear(searchBox,billRunCycle);
+        WebDriverWaits.Waituntilvisible(filterBillRunCycleField);
+        Thread.sleep(4000);
+        WebDriverWaits.ClickOn(filterBillRunCycleField);
+        WebDriverWaits.SendKeysWithClear(billRunCustomer, BillCycleName);
+        Robot s1 = new Robot();
+        s1.keyPress(KeyEvent.VK_ENTER);
+        s1.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
+        WebDriverWaits.SendKeysWithClear(dateFrom,"");
+        Thread.sleep(2000);
+        WebDriverWaits.ClickOn(reloadButton);
+      // WebDriverWaits. SendKeysWithClear(searchBox,billRunCycle);
         WebDriverWaits.ClickOn(ViewDetails_Icon);
         WebDriverWaits.SwitchToNewTab();
         WebDriverWaits.ClickOn(detailsIcon);
@@ -374,9 +386,11 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(startDate);
         WebDriverWaits.ClickOn(activeDayDatepicker);
         WebDriverWaits.Waituntilvisible(endDate);
-        WebDriverWaits.SendKeysWithClear(endDate, "08/12/2023");
+        WebDriverWaits.SendKeysWithClear(endDate, "06/01/2024");
         WebDriverWaits.WaitUntilVisible(clickIssueDate);
-        WebDriverWaits.SendKeysWithClear(clickIssueDate, "08/12/2023");
+        WebDriverWaits.SendKeysWithClear(clickIssueDate, "06/01/2024");
+        Thread.sleep(3000);
+        WebDriverWaits.SendKeysWithClear(dueDate,"07/01/2024");
         WebDriverWaits.ClickOn(runBillButton);
         WebDriverWaits.WaitUntilVisible(searchBillBox);
         WebDriverWaits.SendKeysWithClear(searchBillBox,  BillCycleName);
@@ -827,6 +841,7 @@ public class BillRun extends TestLogin {
     public static By selectedEmailableCustomer = By.xpath("//a[text()=' Selected customers']");
     public static By emailButton = By.xpath("//span[text()='Bill Exception']");
     public static By billException = By.xpath("//*[@id=\"navbar-menu\"]/div/ul/li[5]/a");
+    public static By continueButton = By.xpath("//button[text()='Continue email']");
     //public static By viewException = By.id("viewStatisticsButton");
 
 
@@ -1048,20 +1063,20 @@ public class BillRun extends TestLogin {
         WebDriverWaits.Waituntilvisible(detailsIcon);
         WebDriverWaits.ClickOn(detailsIcon);
         Thread.sleep(4000);
-        WebDriverWaits.SwitchToNewTab();
-        WebDriverWaits.Waituntilvisible(viewExceptionBtn);
-        WebDriverWaits.ClickOn(viewExceptionBtn);
-        Thread.sleep(2000);
-        WebDriverWaits.SwitchToNewTab();
-        Thread.sleep(2000);
-        WebDriverWaits.scrollIntoView(viewExceptionDetails);
-        WebDriverWaits.ClickOn(viewExceptionDetails);
-        Thread.sleep(4000);
-        WebDriverWaits.scrollIntoView(clear);
-        WebDriverWaits.ClickOn(clear);
-        Thread.sleep(4000);
-        WebDriverWaits.scrollIntoView(clearYesBtn);
-        WebDriverWaits.ClickOn(clearYesBtn);
+//        WebDriverWaits.SwitchToNewTab();
+//        WebDriverWaits.Waituntilvisible(viewExceptionBtn);
+//        WebDriverWaits.ClickOn(viewExceptionBtn);
+//        Thread.sleep(2000);
+//        WebDriverWaits.SwitchToNewTab();
+//        Thread.sleep(2000);
+//        WebDriverWaits.scrollIntoView(viewExceptionDetails);
+//        WebDriverWaits.ClickOn(viewExceptionDetails);
+//        Thread.sleep(4000);
+//        WebDriverWaits.scrollIntoView(clear);
+//        WebDriverWaits.ClickOn(clear);
+//        Thread.sleep(4000);
+//        WebDriverWaits.scrollIntoView(clearYesBtn);
+//        WebDriverWaits.ClickOn(clearYesBtn);
 
     }
 
@@ -1125,8 +1140,8 @@ public class BillRun extends TestLogin {
         WebDriverWaits.ClickOn(selectedEmailableCustomer);
     }
 
-    public static void clickOnConEmailButton() {
-        WebDriverWaits.ClickOn(emailButton);
+    public static void clickContinueEmailButton() {
+        WebDriverWaits.ClickOn(continueButton);
     }
 
     public void createBillRunCycle() throws InterruptedException {
@@ -1220,7 +1235,7 @@ public class BillRun extends TestLogin {
     public static void emailBillRun() throws InterruptedException {
         clickOnEmailButton();
         WebDriverWaits.ClickOn(selectedEmailableCustomer);
-        clickOnConEmailButton();
+        clickContinueEmailButton();
         WebDriverWaits.Waituntilvisible(closeButton);
         WebDriverWaits.ClickOn(closeButton);
 

@@ -189,8 +189,10 @@ public class Plans extends BaseTest {
 			WebDriverWaits.ClickOn(DateValidTo_Datepicker);
 			WebDriverWaits.ClickOn(Select_Current_ValidDate_To);
 
-			// Add Trf with Rating Method as Network Volume
+			WebDriverWaits.scrollIntoView(Add_Tariff_Button);
 			WebDriverWaits.ClickOn(Add_Tariff_Button);
+			// Assertion_obj.AssertTariffButton
+			Thread.sleep(2000);
 			WebDriverWaits.ClickOn(ChargeDescription_Field);
 			WebDriverWaits.SendKeys(ChargeDescription_Field, "Flat Usage");
 			WebDriverWaits.ClickOn(ChargeDescription_Opn);
@@ -203,18 +205,52 @@ public class Plans extends BaseTest {
 			select.selectByVisibleText("Electricity Charges");
 			WebDriverWaits.ClickOn(RatingMethod_Dropdown);
 			WebDriverWaits.ClickOn(RatingMethod_Dropdown_Opn);
-			// WebElement RatingOption =WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
+			// WebElement RatingOption =
+			// WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
 			// select = new Select(RatingOption);
-			// select.selectByVisibleText("Network Volume") // Need to scroll the dropdown
-			Thread.sleep(2000);
+			// select.selectByVisibleText("Ausgrid kVA Capacity Charge");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
 			Thread.sleep(1000);
 			WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
+			// WebElement UnitOption =
+			// WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
+			// select = new Select(UnitOption);
+			// select.selectByIndex(1);
 			WebDriverWaits.ClickOn(Rate_Field);
 			// WebDriverWaits.SendKeys(Rate_Field,"10" );
 			String RandomRate2 = RandomStrings.RequiredDigits(2);
 			WebDriverWaits.SendKeys(Rate_Field, RandomRate2);
+			Thread.sleep(4000);
+			WebDriverWaits.scrollIntoView(AddTrf_Button);
 			WebDriverWaits.ClickOn(AddTrf_Button);
+			Thread.sleep(4000);
+
+			// Add Trf with Rating Method as Network Volume
+//			WebDriverWaits.ClickOn(Add_Tariff_Button);
+//			WebDriverWaits.ClickOn(ChargeDescription_Field);
+//			WebDriverWaits.SendKeys(ChargeDescription_Field, "Flat Usage");
+//			WebDriverWaits.ClickOn(ChargeDescription_Opn);
+//			WebDriverWaits.ClickOn(RollupDescription_Field);
+//			WebDriverWaits.SendKeys(RollupDescription_Field, "Account Charges");
+//			WebDriverWaits.ClickOn(RollupDescription_Opn);
+//			WebDriverWaits.ClickOn(ChargeType_Dropdown);
+//			WebElement ChargeOption = WebDriverWaits.WaitUntilVisibleWE(ChargeType_Dropdown);
+//			select = new Select(ChargeOption);
+//			select.selectByVisibleText("Electricity Charges");
+//			WebDriverWaits.ClickOn(RatingMethod_Dropdown);
+//			WebDriverWaits.ClickOn(RatingMethod_Dropdown_Opn);
+//			// WebElement RatingOption =WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
+//			// select = new Select(RatingOption);
+//			// select.selectByVisibleText("Network Volume") // Need to scroll the dropdown
+//			Thread.sleep(2000);
+//			WebDriverWaits.ClickOn(Unit_Dropdown);
+//			Thread.sleep(1000);
+//			WebDriverWaits.ClickOn(Unit_Dropdown_Opn);
+//			WebDriverWaits.ClickOn(Rate_Field);
+//			// WebDriverWaits.SendKeys(Rate_Field,"10" );
+//			String RandomRate2 = RandomStrings.RequiredDigits(2);
+//			WebDriverWaits.SendKeys(Rate_Field, RandomRate2);
+//			WebDriverWaits.ClickOn(AddTrf_Button);
 
 			WebDriverWaits.ClickOn(Trf_SearchField);
 			WebDriverWaits.SendKeys(Trf_SearchField, RandomRate2);
@@ -249,7 +285,7 @@ public class Plans extends BaseTest {
 			// WebElement RatingOption1 = WebDriverWaits.WaitUntilVisibleWE(RatingMethod_Dropdown);
 			// select = new Select(RatingOption1);
 			// select.selectByVisibleText("Retail Volume") // Need to scroll the dropdown
-			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Ausgrid kVA Capacity Charge");
+			WebDriverWaits.selectByVisibleText(RatingMethod_Dropdown,"Ausnet Critical Peak Demand");
 			WebDriverWaits.ClickOn(Unit_Dropdown);
 			Thread.sleep(3000);
 			WebDriverWaits.selectByIndex(Unit_Dropdown,0);

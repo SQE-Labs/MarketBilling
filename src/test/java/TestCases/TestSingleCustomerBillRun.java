@@ -72,7 +72,7 @@ public class TestSingleCustomerBillRun extends BaseTest {
 
     @Test(priority = 6)
 
-    public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException {
+    public  void Rollback_SmallBillRunWithSingleCustomer() throws InterruptedException, AWTException {
         extentTest = extent.startTest(" Rollback for single customer ");
         extentTest.setDescription(" Verify that User is able to run rollback single customer ");
         BillRun.Rollback_SmallBillRunWithSingleCustomer(billCycleName);

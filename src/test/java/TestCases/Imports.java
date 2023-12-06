@@ -12,7 +12,7 @@ public class Imports extends BaseTest {
     @Test(priority = 0)
     public void Add_Customer_and_Service_for_Imports() throws Exception {
          extentTest = extent.startTest("Add_Customer_and_Service");
-         //Login.validLogin();
+         Login.validLogin();
         customerId = Customer.createCustomer( "Tenant", "Business","Tenant Traders" ,"12345678951" ,"Madirma R-Town","Mills NY","WA","1265","Dr.","residential123@yopmail.com","" ,"10"  );
         serviceId= Services.M_AddService("Off Market","NSW","New South Wales");
         Services.editService("Connected");
@@ -26,14 +26,14 @@ public class Imports extends BaseTest {
         extentTest.setDescription(" Verify that User is able to run meter number import");
         // Login.ValidLogin();
         Thread.sleep(23000);
-//        int random2 = (new Random()).nextInt(900) + 100;
-//        String meterImport_FilePath = System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv";
-//        String col = "*Service ID,*Meter Serial Number,*Status,*Consumption Type,*Configuration,Multiplier,Constant,Hazard,Location,Additional Site Info,Meter Point ID,Next Scheduled Read Date,Manufacturer,Model,Meter Read Type,Route,Walk Order,*Meter Installation Type,*Date Connected,Date Removed";
-//        meterNo = "TestMeter" + random2;
-//        // meterNo="Meters359";
-//        String prodate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
-//        CSVHelper.ImportMeterNumber(meterImport_FilePath, col, serviceId, meterNo, "Current", "Cumulative", "POS", "", "", "", "", "", "", "", "", "", "", "", "", "BASIC", prodate, "");
-//        MeterImport.meterNumberImport(meterImport_FilePath);
+        int random2 = (new Random()).nextInt(900) + 100;
+        String meterImport_FilePath = System.getProperty("user.dir") + "/TestData/Electricity - Meter Import Template.csv";
+        String col = "*Service ID,*Meter Serial Number,*Status,*Consumption Type,*Configuration,Multiplier,Constant,Hazard,Location,Additional Site Info,Meter Point ID,Next Scheduled Read Date,Manufacturer,Model,Meter Read Type,Route,Walk Order,*Meter Installation Type,*Date Connected,Date Removed";
+        meterNo = "TestMeter" + random2;
+        // meterNo="Meters359";
+        String prodate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
+        CSVHelper.ImportMeterNumber(meterImport_FilePath, col, serviceId, meterNo, "Current", "Cumulative", "POS", "", "", "", "", "", "", "", "", "", "", "", "", "BASIC", prodate, "");
+        MeterImport.meterNumberImport(meterImport_FilePath);
     }
 
     @Test(priority = 2,enabled = true)
@@ -41,13 +41,13 @@ public class Imports extends BaseTest {
         extentTest = extent.startTest(" Meter Register Import ");
         extentTest.setDescription(" Verify that User is able to run meter register using Import");
         Thread.sleep(27865);
-//        String path = System.getProperty("user.dir") + "/TestData/Register Import Template.csv";
-//        String prodate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
-//        // meterNo="Meters359";
-//        String col = "*Service ID, *Meter Serial Number, *Register ID, *Network Tariff Code, *Unit Of Measure, *Time Of Day, *Multiplier, *Dial Format, *Suffix, *Controlled Load, *Status, *Consumption Type, *Demand1, *Demand2, *Date Connected, Date Removed ";
-//        CSVHelper.ImportMeterRegister(path,col, serviceId,meterNo,"1","NA","KWH","ALLDAY","1","5","11","No","Current","Cumulative","0","0",prodate,"" );
-//        //CSVHelper.ImportMeterRegister(path,col, serviceId,meterNo,"1","NA","KWH","ALLDAY","1","5","11","No","Current","Actual","0","0",prodate,"" );
-//        MeterImport.meterRegisterImport(path);
+        String path = System.getProperty("user.dir") + "/TestData/Register Import Template.csv";
+        String prodate = DateAndTime.DateTimeGenerator("dd/MM/yyyy");
+        // meterNo="Meters359";
+        String col = "*Service ID, *Meter Serial Number, *Register ID, *Network Tariff Code, *Unit Of Measure, *Time Of Day, *Multiplier, *Dial Format, *Suffix, *Controlled Load, *Status, *Consumption Type, *Demand1, *Demand2, *Date Connected, Date Removed ";
+        CSVHelper.ImportMeterRegister(path,col, serviceId,meterNo,"1","NA","KWH","ALLDAY","1","5","11","No","Current","Cumulative","0","0",prodate,"" );
+        //CSVHelper.ImportMeterRegister(path,col, serviceId,meterNo,"1","NA","KWH","ALLDAY","1","5","11","No","Current","Actual","0","0",prodate,"" );
+        MeterImport.meterRegisterImport(path);
 
     }
     @Test(priority = 3,enabled = true)
